@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- material theme color -->
+    <color name="primaryColor">#f9a825</color>
+    <color name="primaryLightColor">#ffd95a</color>
+    <color name="primaryDarkColor">#c17900</color>
+    <color name="primaryTextColor">#000000</color>
+    <color name="secondaryTextColor">#ffffff</color>
+    <color name="tertiaryColor">#1565c0</color>
+    <color name="tertiaryLightColor">#5e92f3</color>
+    <color name="tertiaryDarkColor">#003c8f</color>
+    <color name="quaternaryColor">#e0e0e0</color>
+    <color name="quaternaryDarkColor">#aeaeae</color>
+
+    <!-- 회색 글자 -->
+    <color name="textColor">#bdbdbd</color>
+    <color name="textLightColor">#efefef</color>
+    <color name="textDarkColor">#8d8d8d</color>
+
+    <!-- 중요 글자 -->
+    <color name="textDarkRed">#8B0000</color>
+
+    <!-- 동그라미 아이콘 색상 -->
+    <color name="iconGreen">#008000</color>
+
+    <color name="baseBackground">#F0F0F0</color>
+
+    <!-- gradient color -->
+    <color name="gradientLightBlue">#6dd5fa</color>
+    <color name="gradientDarkBlue">#2980b9</color>
+    <color name="gradientLightOrange">#fceabb</color>
+    <color name="gradientDarkOrange">#f8b500</color>
+
+    <!-- Opacity(Black) 색상(6자리) 앞에 2자리에 투명도(참고) 기입 -->
+    <color name="opacity5" >#0D000000</color>
+    <color name="opacity10">#1A000000</color>
+    <color name="opacity15">#26000000</color>
+    <color name="opacity20">#33000000</color>
+    <color name="opacity25">#40000000</color>
+    <color name="opacity30">#4D000000</color>
+    <color name="opacity35">#59000000</color>
+    <color name="opacity40">#66000000</color>
+    <color name="opacity45">#73000000</color>
+    <color name="opacity50">#80000000</color>
+    <color name="opacity55">#8C000000</color>
+    <color name="opacity60">#99000000</color>
+    <color name="opacity65">#A6000000</color>
+    <color name="opacity70">#B3000000</color>
+    <color name="opacity75">#BF000000</color>
+    <color name="opacity80">#CC000000</color>
+    <color name="opacity85">#D9000000</color>
+    <color name="opacity90">#E6000000</color>
+    <color name="opacity95">#F2000000</color>
+</resources>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_dong">
+
+    <fragment
+        android:id="@+id/navigation_dong"
+        android:name="com.example.kkf_user_2_0.ui.dong_list.DongFragment"
+        android:label="@string/title_dong"
+        tools:layout="@layout/fragment_dong" />
+
+    <fragment
+        android:id="@+id/navigation_detail"
+        android:name="com.example.kkf_user_2_0.ui.dong_detail.DetailFragment"
+        android:label="@string/title_detail"
+        tools:layout="@layout/fragment_detail" />
+
+    <fragment
+        android:id="@+id/navigation_iotscale"
+        android:name="com.example.kkf_user_2_0.ui.iot_scale.IoTScaleFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_iotscale" />
+
+<!--    <fragment-->
+<!--        android:id="@+id/navigation_feedwater"-->
+<!--        android:name="com.example.kkf_user_2_0.ui.feed_water.FeedWaterFragment"-->
+<!--        android:label="급이/급수"-->
+<!--        tools:layout="@layout/fragment_feed_water"/>-->
+</navigation>

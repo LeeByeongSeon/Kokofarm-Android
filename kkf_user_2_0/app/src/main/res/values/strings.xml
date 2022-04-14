@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">kkf_user_2_0</string>
+    <string name="title_dong">농장현황</string>
+    <string name="title_detail">동별현황</string>
+    <string name="title_notifications">IoT저울</string>
+    <string name="title_feed_water">급이/급수</string>
+    <string name="title_ext_env">외기환경</string>
+    <string name="title_breed_info">사육정보 변경</string>
+    <string name="title_out_record">출하내역</string>
+    <string name="btn_txt_confirm">확인</string>
+    <string name="btn_txt_cancel">취소</string>
+    <string name="btn_txt_submit">요청</string>
+</resources>

@@ -1,0 +1,18 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.Kkf_user_2_0" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+
+        <!-- 타이틀 제거 -->
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+
+        <!-- Primary brand color. -->
+<!--        <item name="colorPrimary">@color/primaryColor</item>-->
+<!--        <item name="colorPrimaryDark">@color/primaryColor</item>-->
+<!--        <item name="colorAccent">@color/primaryDarkColor</item>-->
+        <item name="colorPrimary">@color/tertiaryColor</item>
+        <item name="colorPrimaryDark">@color/tertiaryColor</item>
+        <item name="colorAccent">@color/primaryColor</item>
+
+    </style>
+</resources>

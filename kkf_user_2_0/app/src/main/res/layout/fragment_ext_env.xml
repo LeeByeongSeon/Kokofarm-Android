@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/baseBackground"
+    android:padding="10dp"
+    tools:context="ui.ext_env.ExtEnvFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="10dp"
+                android:text="외기환경 센서"
+                android:textSize="20dp"
+                android:textColor="@color/white"
+                android:background="@drawable/bg_rectangle_radius20_gradient_blue"/>
+
+            <androidx.gridlayout.widget.GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/layout_interval_10dp"
+                app:alignmentMode="alignMargins"
+                app:rowCount="5"
+                app:orientation="vertical">
+
+                <!-- gridview 안에 들어가는 영역 하나 -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:background="@drawable/bg_rectangle_radius20_gradient_orange"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginBottom="5dp"
+                    app:layout_row="0"
+                    app:layout_rowWeight="0.3"
+                    app:layout_column="0"
+                    app:layout_gravity="fill"
+                    app:cardCornerRadius="5dp">
+
+                    <!-- 이미지와 텍스트를 수직 나열 하기위한 layout -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <!-- 이미지 영역 -->
+                        <ImageView
+                            android:layout_width="50dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:src="@drawable/temp" />
+
+                        <!-- 텍스트 영역 -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="온도"
+                            android:textAlignment="center"
+                            android:textColor="@color/textDarkColor"
+                            android:textStyle="bold"
+                            android:textSize="20dp"/>
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:background="@drawable/bg_rectangle_radius20_gradient_orange"
+                    android:layout_marginBottom="5dp"
+                    app:layout_row="0"
+                    app:layout_rowWeight="0.3"
+                    app:layout_column="1"
+                    app:layout_gravity="fill"
+                    app:cardCornerRadius="5dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="50dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:src="@drawable/humi" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="습도"
+                            android:textAlignment="center"
+                            android:textColor="@color/textDarkColor"
+                            android:textStyle="bold"
+                            android:textSize="20dp"/>
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:background="@drawable/bg_rectangle_radius20_gradient_orange"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginBottom="5dp"
+                    app:layout_row="1"
+                    app:layout_rowWeight="0.3"
+                    app:layout_column="0"
+                    app:layout_gravity="fill"
+                    app:cardCornerRadius="5dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="50dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:src="@drawable/co2" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Co2"
+                            android:textAlignment="center"
+                            android:textColor="@color/textDarkColor"
+                            android:textStyle="bold"
+                            android:textSize="20dp"/>
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:background="@drawable/bg_rectangle_radius20_gradient_orange"
+                    android:layout_marginBottom="5dp"
+                    app:layout_row="1"
+                    app:layout_rowWeight="0.3"
+                    app:layout_column="1"
+                    app:layout_columnWeight="1"
+                    app:layout_gravity="fill"
+                    app:cardCornerRadius="5dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="50dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:src="@drawable/nh3" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Nh3"
+                            android:textAlignment="center"
+                            android:textColor="@color/textDarkColor"
+                            android:textStyle="bold"
+                            android:textSize="20dp"/>
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:background="@drawable/bg_rectangle_radius20_gradient_orange"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginBottom="5dp"
+                    app:layout_row="2"
+                    app:layout_rowWeight="0.03"
+                    app:layout_column="0"
+                    app:layout_columnWeight="1"
+                    app:layout_gravity="fill"
+                    app:cardCornerRadius="5dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="50dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:src="@drawable/pm10" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="미세먼지"
+                            android:textAlignment="center"
+                            android:textColor="@color/textDarkColor"
+                            android:textStyle="bold"
+                            android:textSize="20dp"/>
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:background="@drawable/bg_rectangle_radius20_gradient_orange"
+                    android:layout_marginBottom="5dp"
+                    app:layout_row="2"
+                    app:layout_rowWeight="0.03"
+                    app:layout_column="1"
+                    app:layout_columnWeight="1"
+                    app:layout_gravity="fill"
+                    app:cardCornerRadius="5dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="50dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:src="@drawable/pm2_5" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="초미세먼지"
+                            android:textAlignment="center"
+                            android:textColor="@color/textDarkColor"
+                            android:textStyle="bold"
+                            android:textSize="20dp"/>
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:background="@drawable/bg_rectangle_radius20_gradient_orange"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginBottom="5dp"
+                    app:layout_row="3"
+                    app:layout_rowWeight="0.03"
+                    app:layout_column="0"
+                    app:layout_columnWeight="1"
+                    app:layout_gravity="fill"
+                    app:cardCornerRadius="5dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="50dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:src="@drawable/wind_direction" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="풍향"
+                            android:textAlignment="center"
+                            android:textColor="@color/textDarkColor"
+                            android:textStyle="bold"
+                            android:textSize="20dp"/>
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:background="@drawable/bg_rectangle_radius20_gradient_orange"
+                    android:layout_marginBottom="5dp"
+                    app:layout_row="3"
+                    app:layout_rowWeight="0.03"
+                    app:layout_column="1"
+                    app:layout_columnWeight="1"
+                    app:layout_gravity="fill"
+                    app:cardCornerRadius="5dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="50dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:src="@drawable/wind" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="풍속"
+                            android:textAlignment="center"
+                            android:textColor="@color/textDarkColor"
+                            android:textStyle="bold"
+                            android:textSize="20dp"/>
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:background="@drawable/bg_rectangle_radius20_gradient_orange"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginBottom="5dp"
+                    app:layout_row="4"
+                    app:layout_rowWeight="0.03"
+                    app:layout_column="0"
+                    app:layout_columnWeight="1"
+                    app:layout_gravity="fill"
+                    app:cardCornerRadius="5dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="50dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:src="@drawable/solar" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="일사량"
+                            android:textAlignment="center"
+                            android:textColor="@color/textDarkColor"
+                            android:textStyle="bold"
+                            android:textSize="20dp"/>
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+            </androidx.gridlayout.widget.GridLayout>
+            
+            <com.github.mikephil.charting.charts.LineChart
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginBottom="@dimen/layout_interval_10dp"
+                android:background="@drawable/bg_rectangle_radius5_white"/>
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginBottom="@dimen/layout_interval_10dp"
+                android:background="@drawable/bg_rectangle_radius5_white"/>
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
