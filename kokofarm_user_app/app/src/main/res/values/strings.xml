@@ -1,0 +1,54 @@
+<resources>
+    <string name="app_name">kokofarm_user_app</string>
+
+    <string name="login_txt">로그인</string>
+    <string name="login_id">아이디</string>
+    <string name="login_pw">비밀번호</string>
+
+    <!-- Bottom Navigation View Menu Item -->
+    <string name="nav_home">홈</string>
+    <string name="nav_feed">급이/급수</string>
+    <string name="nav_scale">IoT저울</string>
+    <string name="nav_env">외기환경</string>
+    <string name="nav_dong">동별현황</string>
+
+    <string name="nav_breed">사육정보</string>
+    <string name="nav_record">출하내역</string>
+
+    <string name="notice_1">입추 수는 최초 입추 기준(덤 포함)</string>
+    <string name="notice_2">폐사, 도태, 솎기 수는 해당 일자에 발생된 것만 기록</string>
+    <string name="farm_header">전체 현황</string>
+    <string name="feed_header">급이 및 급수</string>
+    <string name="dong_header">동별 현황</string>
+    <string name="avg_weight">평균중량</string>
+    <string name="min_weight">최소</string>
+    <string name="max_weight">최대</string>
+    <string name="live_count">생존</string>
+    <string name="death_count">폐사</string>
+    <string name="cull_count">도태</string>
+    <string name="out_count">솎기</string>
+    <string name="per_feed">수 당 급이량</string>
+    <string name="per_water">수 당 급수량</string>
+    <string name="all_txt">전체</string>
+    <string name="today_txt">오늘</string>
+    <string name="yesterday_txt">어제</string>
+
+    <string name="today_death_count">오늘 폐사 수</string>
+    <string name="today_cull_count">오늘 도태 수</string>
+    <string name="today_out_count">오늘 솎기 수</string>
+
+    <string name="temp_txt">온도</string>
+    <string name="humi_txt">습도</string>
+    <string name="co2_txt">이산화탄소</string>
+    <string name="nh3_txt">암모니아</string>
+    <string name="h2s_txt">황화수소</string>
+    <string name="pm_txt">미세먼지</string>
+    <string name="pm_10_txt">초미세먼지</string>
+    <string name="solar_txt">일사량</string>
+    <string name="lux_txt">조도</string>
+    <string name="wind_txt">풍속</string>
+    <string name="wind_direction_txt">풍향</string>
+
+    <string name="drawer_open">open</string>
+    <string name="drawer_close">close</string>
+</resources>

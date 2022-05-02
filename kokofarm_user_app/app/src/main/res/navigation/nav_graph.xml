@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.kokofarm_user_app.HomeFragment"
+        android:label="@string/nav_home"
+        tools:layout="@layout/fragment_home">
+
+        <action
+            android:id="@+id/nav_home_to_nav_dong"
+            app:destination="@id/nav_dong"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_feed"
+        android:name="com.example.kokofarm_user_app.FeedFragment"
+        android:label="@string/nav_feed"
+        tools:layout="@layout/fragment_feed">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_scale"
+        android:name="com.example.kokofarm_user_app.ScaleFragment"
+        android:label="@string/nav_scale"
+        tools:layout="@layout/fragment_scale">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_breed"
+        android:name="com.example.kokofarm_user_app.BreedFragment"
+        android:label="@string/nav_env"
+        tools:layout="@layout/fragment_env">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_dong"
+        android:name="com.example.kokofarm_user_app.DongFragment"
+        android:label="@string/nav_dong"
+        tools:layout="@layout/fragment_dong">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_env"
+        android:name="com.example.kokofarm_user_app.EnvFragment"
+        android:label="@string/nav_breed"
+        tools:layout="@layout/fragment_breed">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_record"
+        android:name="com.example.kokofarm_user_app.OutRecordFragment"
+        android:label="@string/nav_record"
+        tools:layout="@layout/fragment_out_record">
+
+    </fragment>
+
+</navigation>

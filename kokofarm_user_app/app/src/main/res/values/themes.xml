@@ -1,0 +1,58 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="LightTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/primaryColor</item>
+        <item name="colorPrimaryDark">@color/primaryColor</item>
+        <item name="colorAccent">@color/primaryLightColor</item>
+
+        <item name="android:windowBackground">@color/white</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <!-- base font -->
+    <style name="Text.basic_light_style" parent="android:TextAppearance">
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">@dimen/pixel_18</item>
+        <item name="android:fontFamily">@font/paybooc_light</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="Text.basic_style" parent="android:TextAppearance">
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">@dimen/pixel_18</item>
+        <item name="android:fontFamily">@font/paybooc_medium</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="Text.header_style" parent="android:TextAppearance">
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">@dimen/pixel_18</item>
+        <item name="android:textColor">@color/secondaryDarkColor</item>
+        <item name="android:fontFamily">@font/paybooc_medium</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="Text.basic_bold_style" parent="android:TextAppearance">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/pixel_18</item>
+        <item name="android:fontFamily">@font/paybooc_bold</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <!-- accent font -->
+    <style name="Text.accent_style" parent="android:TextAppearance">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/pixel_22</item>
+        <item name="android:textColor">@color/opacity70</item>
+        <item name="android:fontFamily">@font/paybooc_medium</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <!-- bottom Nav font -->
+    <style name="Text.nav_style" parent="Widget.Design.BottomNavigationView">
+        <item name="android:fontFamily">@font/paybooc_light</item>
+    </style>
+
+</resources>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/nav_home"
+        android:enabled="true"
+        android:title="@string/nav_home"
+        android:icon="@drawable/ic_baseline_home_24"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/nav_feed"
+        android:enabled="true"
+        android:title="@string/nav_feed"
+        android:icon="@drawable/feed"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/nav_scale"
+        android:enabled="true"
+        android:title="@string/nav_scale"
+        android:icon="@drawable/scale"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/nav_breed"
+        android:enabled="true"
+        android:title="@string/nav_breed"
+        android:icon="@drawable/diary"
+        app:showAsAction="always"/>
+</menu>

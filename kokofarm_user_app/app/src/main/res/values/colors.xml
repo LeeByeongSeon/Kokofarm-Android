@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primaryColor">#ff8f00</color>
+    <color name="primaryLightColor">#ffc046</color>
+    <color name="primaryDarkColor">#c56000</color>
+    <color name="secondaryColor">#1b87e5</color>
+    <color name="secondaryLightColor">#69b6ff</color>
+    <color name="secondaryDarkColor">#005bb2</color>
+    <color name="primaryTextColor">#000000</color>
+    <color name="secondaryTextColor">#ffffff</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Font Color -->
+    <color name="feedColor">#c88719</color>
+    <color name="waterColor">#1e88e5</color>
+    <color name="lightRedColor">#f44336</color>
+    <color name="darkRedColor">#870000</color>
+    <color name="lightGreenColor">#00c853</color>
+
+    <!-- up & down -->
+    <color name="upColor">#FF0000</color>
+    <color name="downColor">#1E90FF</color>
+
+    <!-- Opacity(Black) 색상(6자리) 앞에 2자리에 투명도(참고) 기입 -->
+    <color name="opacity5" >#0D000000</color>
+    <color name="opacity10">#1A000000</color>
+    <color name="opacity15">#26000000</color>
+    <color name="opacity20">#33000000</color>
+    <color name="opacity25">#40000000</color>
+    <color name="opacity30">#4D000000</color>
+    <color name="opacity35">#59000000</color>
+    <color name="opacity40">#66000000</color>
+    <color name="opacity45">#73000000</color>
+    <color name="opacity50">#80000000</color>
+    <color name="opacity55">#8C000000</color>
+    <color name="opacity60">#99000000</color>
+    <color name="opacity65">#A6000000</color>
+    <color name="opacity70">#B3000000</color>
+    <color name="opacity75">#BF000000</color>
+    <color name="opacity80">#CC000000</color>
+    <color name="opacity85">#D9000000</color>
+    <color name="opacity90">#E6000000</color>
+    <color name="opacity95">#F2000000</color>
+</resources>

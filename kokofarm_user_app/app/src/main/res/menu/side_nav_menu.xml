@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<!--    <group-->
+<!--        android:checkableBehavior="single">-->
+<!--        -->
+<!--    </group>-->
+    <item android:title="동별세부보기">
+        <menu>
+            <item
+                android:id="@+id/nav_dong"
+                android:title="1동"/>
+        </menu>
+    </item>
+
+    <item android:title="설정">
+        <menu>
+            <item
+                android:id="@+id/nav_env"
+                android:title="@string/nav_env"/>
+            <item
+                android:id="@+id/nav_record"
+                android:title="@string/nav_record"/>
+            <item
+                android:id="@+id/nav_settings"
+                android:title="설정"
+                android:icon="@drawable/ic_baseline_settings_24"/>
+        </menu>
+    </item>
+</menu>

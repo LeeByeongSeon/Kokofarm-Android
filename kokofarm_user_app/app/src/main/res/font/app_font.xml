@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<font-family xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- light -->
+    <font
+        android:font="@font/paybooc_light"
+        android:fontStyle="normal"
+        app:font="@font/paybooc_light"
+        app:fontStyle="normal"/>
+
+    <!-- medium -->
+    <font
+        android:font="@font/paybooc_medium"
+        android:fontStyle="normal"
+        app:font="@font/paybooc_light"
+        app:fontStyle="normal"/>
+
+    <!-- bold -->
+    <font
+        android:font="@font/paybooc_bold"
+        android:fontStyle="normal"
+        app:font="@font/paybooc_light"
+        app:fontStyle="normal"/>
+
+    <!-- extra bold -->
+    <font
+        android:font="@font/paybooc_extra_bold"
+        android:fontStyle="normal"
+        app:font="@font/paybooc_light"
+        app:fontStyle="normal"/>
+
+</font-family>
