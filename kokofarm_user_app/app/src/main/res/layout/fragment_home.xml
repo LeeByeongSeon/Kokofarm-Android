@@ -754,8 +754,8 @@
                             </LinearLayout>
 
                             <ImageView
-                                android:layout_width="@dimen/pixel_50"
-                                android:layout_height="@dimen/pixel_50"
+                                android:layout_width="@dimen/pixel_35"
+                                android:layout_height="@dimen/pixel_35"
                                 android:src="@drawable/diary"/>
 
                         </LinearLayout>
@@ -908,8 +908,8 @@
                             </LinearLayout>
 
                             <ImageView
-                                android:layout_width="@dimen/pixel_50"
-                                android:layout_height="@dimen/pixel_50"
+                                android:layout_width="@dimen/pixel_35"
+                                android:layout_height="@dimen/pixel_35"
                                 android:src="@drawable/diary"/>
 
                         </LinearLayout>
@@ -1039,8 +1039,8 @@
                             </LinearLayout>
 
                             <ImageView
-                                android:layout_width="@dimen/pixel_50"
-                                android:layout_height="@dimen/pixel_50"
+                                android:layout_width="@dimen/pixel_35"
+                                android:layout_height="@dimen/pixel_35"
                                 android:src="@drawable/diary"/>
 
                         </LinearLayout>
