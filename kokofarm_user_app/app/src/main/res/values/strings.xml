@@ -32,6 +32,9 @@
     <string name="all_txt">전체</string>
     <string name="today_txt">오늘</string>
     <string name="yesterday_txt">어제</string>
+    <string name="dong_avg_weight">동별 평균중량 비교</string>
+    <string name="dong_feed">동별 급이량 비교</string>
+    <string name="dong_water">동별 급수량 비교</string>
 
     <string name="today_death_count">오늘 폐사 수</string>
     <string name="today_cull_count">오늘 도태 수</string>
