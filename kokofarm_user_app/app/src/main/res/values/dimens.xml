@@ -15,4 +15,5 @@
     <dimen name="pixel_50">50dp</dimen>
     <dimen name="pixel_100">100dp</dimen>
     <dimen name="pixel_150">150dp</dimen>
+    <dimen name="pixel_300">300dp</dimen>
 </resources>

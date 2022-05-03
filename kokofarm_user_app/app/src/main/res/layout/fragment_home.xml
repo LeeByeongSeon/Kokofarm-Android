@@ -185,7 +185,7 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/home_avg_weight"
-            app:layout_constraintVertical_bias="0.02"
+            app:layout_constraintVertical_bias="0.01"
             app:strokeWidth="@dimen/pixel_1"
             app:strokeColor="@color/opacity20"
             app:cardCornerRadius="@dimen/pixel_10"
@@ -343,7 +343,7 @@
             app:layout_constraintHorizontal_bias="0.01"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/home_su"
-            app:layout_constraintVertical_bias="0.05" />
+            app:layout_constraintVertical_bias="0.01" />
 
         <LinearLayout
             android:id="@+id/home_body_feed"
@@ -355,7 +355,7 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/home_header_feed"
-            app:layout_constraintVertical_bias="0.02">
+            app:layout_constraintVertical_bias="0.01">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -667,12 +667,13 @@
             style="@style/Text.accent_style"
             app:layout_constraintTop_toBottomOf="@id/home_body_feed"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.01"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="0.01"
-            app:layout_constraintVertical_bias="0.055"/>
+            app:layout_constraintVertical_bias="0.015"/>
 
         <LinearLayout
+            android:id="@+id/home_body_dong"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -681,7 +682,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintVertical_bias="0.02">
+            app:layout_constraintVertical_bias="0.01">
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/home_dong_1"
@@ -754,9 +755,9 @@
                             </LinearLayout>
 
                             <ImageView
-                                android:layout_width="@dimen/pixel_35"
-                                android:layout_height="@dimen/pixel_35"
-                                android:src="@drawable/diary"/>
+                                android:layout_width="@dimen/pixel_50"
+                                android:layout_height="@dimen/pixel_50"
+                                android:src="@drawable/feed_0"/>
 
                         </LinearLayout>
 
@@ -777,8 +778,14 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_marginRight="@dimen/pixel_10"
                                 android:text="30,000수"
                                 android:textSize="@dimen/pixel_18"/>
+
+                            <ImageView
+                                android:layout_width="@dimen/pixel_35"
+                                android:layout_height="@dimen/pixel_35"
+                                android:src="@drawable/diary"/>
 
                         </LinearLayout>
 
@@ -908,9 +915,9 @@
                             </LinearLayout>
 
                             <ImageView
-                                android:layout_width="@dimen/pixel_35"
-                                android:layout_height="@dimen/pixel_35"
-                                android:src="@drawable/diary"/>
+                                android:layout_width="@dimen/pixel_50"
+                                android:layout_height="@dimen/pixel_50"
+                                android:src="@drawable/feed_0"/>
 
                         </LinearLayout>
 
@@ -931,8 +938,14 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_marginRight="@dimen/pixel_10"
                                 android:text="30,000수"
                                 android:textSize="@dimen/pixel_18"/>
+
+                            <ImageView
+                                android:layout_width="@dimen/pixel_35"
+                                android:layout_height="@dimen/pixel_35"
+                                android:src="@drawable/diary"/>
 
                         </LinearLayout>
 
@@ -1039,9 +1052,9 @@
                             </LinearLayout>
 
                             <ImageView
-                                android:layout_width="@dimen/pixel_35"
-                                android:layout_height="@dimen/pixel_35"
-                                android:src="@drawable/diary"/>
+                                android:layout_width="@dimen/pixel_50"
+                                android:layout_height="@dimen/pixel_50"
+                                android:src="@drawable/feed_0"/>
 
                         </LinearLayout>
 
@@ -1062,8 +1075,14 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_marginRight="@dimen/pixel_10"
                                 android:text="30,000수"
                                 android:textSize="@dimen/pixel_18"/>
+
+                            <ImageView
+                                android:layout_width="@dimen/pixel_35"
+                                android:layout_height="@dimen/pixel_35"
+                                android:src="@drawable/diary"/>
 
                         </LinearLayout>
 
@@ -1101,6 +1120,75 @@
             </com.google.android.material.card.MaterialCardView>
 
         </LinearLayout>
+        
+        <TextView
+            android:id="@+id/home_header_dong_chart_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dong_avg_weight"
+            style="@style/Text.accent_style"
+            app:layout_constraintTop_toBottomOf="@+id/home_body_dong"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.01"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.02"/>
+
+        <com.github.mikephil.charting.charts.CombinedChart
+            android:id="@+id/dong_chart_1"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/pixel_300"
+            app:layout_constraintTop_toBottomOf="@+id/home_header_dong_chart_1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.01"/>
+
+        <TextView
+            android:id="@+id/home_header_dong_chart_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dong_feed"
+            style="@style/Text.accent_style"
+            app:layout_constraintTop_toBottomOf="@+id/dong_chart_1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.01"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.05"/>
+
+        <com.github.mikephil.charting.charts.CombinedChart
+            android:id="@+id/dong_chart_2"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/pixel_300"
+            app:layout_constraintTop_toBottomOf="@+id/home_header_dong_chart_2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.01"/>
+
+        <TextView
+            android:id="@+id/home_header_dong_chart_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dong_water"
+            style="@style/Text.accent_style"
+            app:layout_constraintTop_toBottomOf="@+id/dong_chart_2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.01"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.05"/>
+
+        <com.github.mikephil.charting.charts.CombinedChart
+            android:id="@+id/dong_chart_3"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/pixel_300"
+            app:layout_constraintTop_toBottomOf="@+id/home_header_dong_chart_3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.01"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
