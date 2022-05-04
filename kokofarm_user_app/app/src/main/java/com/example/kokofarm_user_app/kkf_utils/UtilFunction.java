@@ -1,4 +1,4 @@
-package com.example.kokofarm_user_app;
+package com.example.kokofarm_user_app.kkf_utils;
 
 
 import android.content.Context;

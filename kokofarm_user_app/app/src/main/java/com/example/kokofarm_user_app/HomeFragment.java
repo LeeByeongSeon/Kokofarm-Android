@@ -1,18 +1,22 @@
 package com.example.kokofarm_user_app;
 
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 
+import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 import androidx.transition.AutoTransition;
 import androidx.transition.TransitionManager;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.kokofarm_user_app.databinding.FragmentHomeBinding;
+import com.example.kokofarm_user_app.manager.DataCacheManager;
 
 public class HomeFragment extends Fragment implements View.OnClickListener, OnBackPressedListener {
 
@@ -35,6 +39,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener, OnBa
         }
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -42,6 +47,9 @@ public class HomeFragment extends Fragment implements View.OnClickListener, OnBa
 
         binding.homeSu.setOnClickListener(this::onClick);
         binding.homeDong1.setOnClickListener(this::onClick);
+
+        String code = DataCacheManager.getInstance().getBufferData("KF007101", "beComeinCode");
+        Log.e("code", code);
 
         return binding.getRoot();
     }
