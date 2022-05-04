@@ -3,6 +3,7 @@ package com.example.kokofarm_user_app;
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Build;
+import android.util.Log;
 import android.widget.TextView;
 
 import androidx.annotation.RequiresApi;
@@ -193,14 +194,14 @@ public class CombinedChartMaker {
     }
 
     @RequiresApi(api = Build.VERSION_CODES.O)
-    public void makeChart(String jsonData, HashMap<String, String> fieldMap){
+    public void makeChart(JSONObject jsonData, HashMap<String, String> fieldMap){
 
         try {
 
             initLegend(chart);
             initCombinedChart(chart);
 
-            if (!jsonData.equals("")) {
+            if (jsonData != null) {
 
                 ArrayList<ArrayList<Entry>> lines = new ArrayList<>();
                 ArrayList<ArrayList<BarEntry>> bars = new ArrayList<>();
@@ -212,36 +213,35 @@ public class CombinedChartMaker {
 
                 try {
 
-                    JSONObject jo = new JSONObject(jsonData);
+                    String first = "";
 
-                    if (jo != null && jo.getString("errCode").equals("00")) {
+                    //JSONObject retData = jsonData.getJSONObject("retData");
+                    Iterator<String> iter = jsonData.keys();
+                    while (iter.hasNext()) {
+                        String key = iter.next();
 
-                        String first = jo.getString("first");
-                        timeBase = DateUtil.get_inst().get_timestamp(first);
+                        if(first.equals("")){
+                            first = key;
+                            timeBase = DateUtil.get_inst().get_timestamp(first);
+                        }
 
-                        JSONObject retData = jo.getJSONObject("retData");
-                        Iterator<String> iter = retData.keys();
-                        while (iter.hasNext()) {
-                            String key = iter.next();
+                        //if(!key.substring(11).equals("23:00:00")){
+                        if (!key.substring(14).equals("00:00")) {
+                            continue;
+                        }
 
-                            //if(!key.substring(11).equals("23:00:00")){
-                            if (!key.substring(14).equals("00:00")) {
-                                continue;
-                            }
+                        JSONObject data = jsonData.getJSONObject(key);
 
-                            JSONObject data = retData.getJSONObject(key);
+                        long key_stamp = DateUtil.get_inst().get_timestamp(key);
 
-                            long key_stamp = DateUtil.get_inst().get_timestamp(key);
+                        float diff = (key_stamp - timeBase) / timeTerm ;
 
-                            float diff = (key_stamp - timeBase) / timeTerm ;
-
-                            int idx = 0;
-                            for (String field : fieldMap.keySet()) {
-                                Double val = data.getDouble(field);
-                                lines.get(idx).add(new Entry(diff, val.floatValue()));
-                                bars.get(idx).add(new BarEntry(diff, val.floatValue()));
-                                idx++;
-                            }
+                        int idx = 0;
+                        for (String field : fieldMap.keySet()) {
+                            Double val = data.getDouble(field);
+                            lines.get(idx).add(new Entry(diff, val.floatValue()));
+                            bars.get(idx).add(new BarEntry(diff, val.floatValue()));
+                            idx++;
                         }
                     }
 

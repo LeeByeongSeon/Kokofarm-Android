@@ -53,6 +53,7 @@
             app:layout_constraintVertical_bias="0">
 
                 <TextView
+                    android:id="@+id/home_tv_farm_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="주원농장 전체 평균중량은"
@@ -65,6 +66,7 @@
                     android:orientation="horizontal">
 
                     <TextView
+                        android:id="@+id/home_tv_farm_avg"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="1682.5g"
@@ -84,7 +86,7 @@
         </LinearLayout>
 
         <com.google.android.material.card.MaterialCardView
-            android:id="@+id/home_avg_weight"
+            android:id="@+id/home_cdv_avg_weight"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/pixel_22"
@@ -127,6 +129,7 @@
                         android:textSize="@dimen/pixel_18" />
 
                     <TextView
+                        android:id="@+id/home_tv_farm_avg_min"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/paybooc_medium"
@@ -162,6 +165,7 @@
                         android:textSize="@dimen/pixel_18" />
 
                     <TextView
+                        android:id="@+id/home_tv_farm_avg_max"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/paybooc_medium"
@@ -175,7 +179,7 @@
         </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.card.MaterialCardView
-            android:id="@+id/home_su"
+            android:id="@+id/home_cdv_farm_comein"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/pixel_10"
@@ -184,7 +188,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/home_avg_weight"
+            app:layout_constraintTop_toBottomOf="@+id/home_cdv_avg_weight"
             app:layout_constraintVertical_bias="0.01"
             app:strokeWidth="@dimen/pixel_1"
             app:strokeColor="@color/opacity20"
@@ -217,6 +221,7 @@
                         android:textSize="@dimen/pixel_18" />
 
                     <TextView
+                        android:id="@+id/home_tv_farm_comein"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/paybooc_medium"
@@ -233,7 +238,7 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/home_death_su"
+                    android:id="@+id/home_lo_death"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/pixel_10"
@@ -255,6 +260,7 @@
                         android:textSize="@dimen/pixel_18" />
 
                     <TextView
+                        android:id="@+id/home_tv_farm_death"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/paybooc_medium"
@@ -265,7 +271,7 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/home_cull_su"
+                    android:id="@+id/home_lo_cull"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/pixel_10"
@@ -287,6 +293,7 @@
                         android:textSize="@dimen/pixel_18" />
 
                     <TextView
+                        android:id="@+id/home_tv_farm_cull"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/paybooc_medium"
@@ -297,7 +304,7 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/home_out_su"
+                    android:id="@+id/home_lo_thinout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/pixel_10"
@@ -319,6 +326,7 @@
                         android:textSize="@dimen/pixel_18" />
 
                     <TextView
+                        android:id="@+id/home_tv_farm_thinout"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/paybooc_medium"
@@ -342,7 +350,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.01"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/home_su"
+            app:layout_constraintTop_toBottomOf="@id/home_cdv_farm_comein"
             app:layout_constraintVertical_bias="0.01" />
 
         <LinearLayout
@@ -385,6 +393,7 @@
                             style="@style/Text.basic_style"/>
 
                         <TextView
+                            android:id="@+id/home_tv_farm_feed_per"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="1548.5g"
@@ -419,6 +428,7 @@
                             style="@style/Text.basic_style"/>
 
                         <TextView
+                            android:id="@+id/home_tv_farm_water_per"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="3.179L"
@@ -477,6 +487,7 @@
                                     style="@style/Text.basic_style"/>
 
                                 <TextView
+                                    android:id="@+id/home_tv_all_feed"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="-"
@@ -506,6 +517,7 @@
                                 style="@style/Text.basic_style"/>
 
                             <TextView
+                                android:id="@+id/home_tv_curr_feed"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:textColor="@color/opacity50"
@@ -534,6 +546,7 @@
                                 style="@style/Text.basic_style"/>
 
                             <TextView
+                                android:id="@+id/home_tv_prev_feed"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:textColor="@color/opacity50"
@@ -586,6 +599,7 @@
                                     android:text="@string/all_txt" />
 
                                 <TextView
+                                    android:id="@+id/home_tv_all_water"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="-"
@@ -615,6 +629,7 @@
                                 style="@style/Text.basic_style"/>
 
                             <TextView
+                                android:id="@+id/home_tv_curr_water"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="-"
@@ -643,6 +658,7 @@
                                 style="@style/Text.basic_style"/>
 
                             <TextView
+                                android:id="@+id/home_tv_prev_water"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:textColor="@color/opacity50"
