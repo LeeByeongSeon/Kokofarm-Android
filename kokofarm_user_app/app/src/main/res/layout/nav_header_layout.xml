@@ -2,23 +2,23 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="100dp"
+    android:layout_height="@dimen/pixel_150"
     android:theme="@style/Theme.Material3.Dark"
     android:orientation="horizontal"
     android:paddingStart="@dimen/pixel_16"
-    android:gravity="start|center|center_vertical">
+    android:gravity="start|bottom">
 
     <ImageView
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/pixel_150"
         android:layout_height="wrap_content"
         android:layout_marginRight="@dimen/pixel_10"
-        android:src="@drawable/icon"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="주원농장"
-        android:textColor="@color/opacity60"
-        android:textSize="30dp"
-        style="@style/Text.basic_style"/>
+        android:src="@drawable/logo"/>
+
+<!--    <TextView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="주원농장"-->
+<!--        android:textSize="30dp"-->
+<!--        style="@style/Text.basic_opacity_style"/>-->
 
 </LinearLayout>

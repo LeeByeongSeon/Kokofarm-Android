@@ -151,7 +151,7 @@ public class CombinedChartMaker {
     private void initCombinedChart(CombinedChart chart){
 
         chart.getDescription().setEnabled(false);
-        chart.setBackgroundColor(Color.WHITE);
+        chart.setBackgroundColor(Color.TRANSPARENT);
         chart.setDrawGridBackground(false);
         chart.setDrawBarShadow(false);
         chart.setHighlightFullBarEnabled(false);

@@ -10,6 +10,12 @@
             <item
                 android:id="@+id/nav_dong"
                 android:title="1동"/>
+            <item
+                android:id="@+id/nav_dong_2"
+                android:title="2동"/>
+            <item
+                android:id="@+id/nav_dong_3"
+                android:title="3동"/>
         </menu>
     </item>
 
@@ -19,8 +25,13 @@
                 android:id="@+id/nav_env"
                 android:title="@string/nav_env"/>
             <item
+                android:id="@+id/nav_breed_info"
+                android:title="@string/nav_breed_info"
+                android:icon="@drawable/ic_baseline_calculate_24"/>
+            <item
                 android:id="@+id/nav_record"
-                android:title="@string/nav_record"/>
+                android:title="@string/nav_record"
+                android:icon="@drawable/ic_baseline_list_alt_24"/>
             <item
                 android:id="@+id/nav_settings"
                 android:title="설정"
