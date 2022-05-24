@@ -1,7 +1,6 @@
 package com.example.kokofarm_user_app;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 
@@ -11,7 +10,6 @@ import androidx.navigation.Navigation;
 import androidx.transition.AutoTransition;
 import androidx.transition.TransitionManager;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -76,7 +74,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener, OnBa
         switch (view.getId()){
             case R.id.home_cdv_farm_comein:
                 if(binding.homeLoDeath.getVisibility() != view.VISIBLE){
-                    binding.homeCdvFarmComein.setRippleColorResource(R.color.opacity5);
+                    binding.homeCdvFarmComein.setRippleColorResource(R.color.opacity05_bl);
                     setAutoTransition(binding.homeLoDeath, view.VISIBLE);
                     setAutoTransition(binding.homeLoCull, view.VISIBLE);
                     setAutoTransition(binding.homeLoThinout, view.VISIBLE);
@@ -93,6 +91,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener, OnBa
             case R.id.home_dong_1:
 //                ((MainActivity)getActivity()).replaceFragment(DongFragment.newInstance());
                 moveDongFragment();
+
                 break;
         }
     }
@@ -176,10 +175,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener, OnBa
         dongDiff = Math.sqrt(FloatCompute.divide(dongDiff, cnt));       // 동별 편차
 
         // 데이터 입력 작업
-        binding.homeTvFarmName.setText(fName + " 전체 평균중량은");
-        binding.homeTvFarmAvg.setText(String.format("%.1f", totalAvgWeight) + "g");
-        binding.homeTvFarmAvgMin.setText(String.format("%.1f", totalAvgWeight - totalAvgDevi) + "g");
-        binding.homeTvFarmAvgMax.setText(String.format("%.1f", totalAvgWeight + totalAvgDevi) + "g");
+//        binding.homeTvFarmAvgMin.setText(String.format("%.1f", totalAvgWeight - totalAvgDevi) + "g");
+//        binding.homeTvFarmAvgMax.setText(String.format("%.1f", totalAvgWeight + totalAvgDevi) + "g");
 
         binding.homeTvFarmComein.setText(comeinCount + "수");
         binding.homeTvFarmDeath.setText(deathCount + "수");

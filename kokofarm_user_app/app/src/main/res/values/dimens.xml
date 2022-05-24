@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- layout padding, margin 값 설정 -->
+    <dimen name="pixel_0_1">0.1dp</dimen>
     <dimen name="pixel_1">1dp</dimen>
     <dimen name="pixel_2">2dp</dimen>
     <dimen name="pixel_5">5dp</dimen>
+    <dimen name="pixel_8">8dp</dimen>
     <dimen name="pixel_10">10dp</dimen>
+    <dimen name="pixel_12">12dp</dimen>
     <dimen name="pixel_13">13dp</dimen>
     <dimen name="pixel_16">16dp</dimen>
     <dimen name="pixel_18">18dp</dimen>
@@ -12,8 +15,31 @@
     <dimen name="pixel_28">28dp</dimen>
     <dimen name="pixel_30">30dp</dimen>
     <dimen name="pixel_35">35dp</dimen>
+    <dimen name="pixel_48">48dp</dimen>
     <dimen name="pixel_50">50dp</dimen>
+    <dimen name="pixel_72">72dp</dimen>
     <dimen name="pixel_100">100dp</dimen>
+    <dimen name="pixel_130">130dp</dimen>
     <dimen name="pixel_150">150dp</dimen>
+    <dimen name="pixel_200">200dp</dimen>
+    <dimen name="pixel_220">220dp</dimen>
+    <dimen name="pixel_230">230dp</dimen>
+    <dimen name="pixel_250">250dp</dimen>
     <dimen name="pixel_300">300dp</dimen>
+
+    <dimen name="font_sm">16dp</dimen>
+    <dimen name="font_md">20dp</dimen>
+    <dimen name="font_lg">24dp</dimen>
+
+    <!-- Theme Overlay dimen -->
+    <dimen name="overlay_00">00dp</dimen>
+    <dimen name="overlay_01">01dp</dimen>
+    <dimen name="overlay_02">02dp</dimen>
+    <dimen name="overlay_03">03dp</dimen>
+    <dimen name="overlay_04">04dp</dimen>
+    <dimen name="overlay_06">06dp</dimen>
+    <dimen name="overlay_08">08dp</dimen>
+    <dimen name="overlay_12">12dp</dimen>
+    <dimen name="overlay_14">14dp</dimen>
+    <dimen name="overlay_16">16dp</dimen>
 </resources>

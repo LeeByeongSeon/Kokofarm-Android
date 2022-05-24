@@ -13,11 +13,12 @@
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/env_header_1_txt"
+            android:id="@+id/env_tv_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/pixel_16"
             android:text="외기환경 센서"
-            style="@style/Text.accent_style"
+            style="@style/Text.lg_accent_style"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintHorizontal_bias="0.01"
@@ -26,19 +27,20 @@
             app:layout_constraintVertical_bias="0.02"/>
 
         <com.google.android.material.card.MaterialCardView
-            android:id="@+id/dong_summary_5"
+            android:id="@+id/env_mcv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/pixel_5"
-            app:layout_constraintTop_toBottomOf="@id/env_header_1_txt"
+            android:layout_margin="@dimen/pixel_16"
+            app:cardElevation="@dimen/overlay_04"
+            app:layout_constraintTop_toBottomOf="@id/env_tv_1"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintVertical_bias="0.03"
-            app:contentPadding="@dimen/pixel_16"
             app:cardCornerRadius="@dimen/pixel_10"
+            app:contentPadding="@dimen/pixel_16"
             app:strokeWidth="@dimen/pixel_1"
-            app:strokeColor="@color/opacity20">
+            app:strokeColor="@color/opacity20_bl">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -62,7 +64,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="start"
                         android:text="온도"
-                        style="@style/Text.basic_style"/>
+                        style="@style/Text.md_regular_style"/>
 
                     <ImageView
                         android:layout_width="wrap_content"
@@ -70,14 +72,14 @@
                         android:layout_weight="1"
                         android:layout_marginHorizontal="@dimen/pixel_10"
                         android:layerType="software"
-                        android:src="@drawable/dotted_line_horizontal"/>
+                        android:src="@drawable/dotted_line_horizontal_0_1"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="end"
                         android:text="20.4"
-                        style="@style/Text.basic_style"/>
+                        style="@style/Text.md_regular_style"/>
 
                 </LinearLayout>
 
@@ -99,7 +101,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="start"
                         android:text="습도"
-                        style="@style/Text.basic_style"/>
+                        style="@style/Text.md_regular_style"/>
 
                     <ImageView
                         android:layout_width="wrap_content"
@@ -107,14 +109,14 @@
                         android:layout_weight="1"
                         android:layout_marginHorizontal="@dimen/pixel_10"
                         android:layerType="software"
-                        android:src="@drawable/dotted_line_horizontal"/>
+                        android:src="@drawable/dotted_line_horizontal_0_1"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="end"
                         android:text="59.0"
-                        style="@style/Text.basic_style"/>
+                        style="@style/Text.md_regular_style"/>
 
                 </LinearLayout>
 
@@ -135,7 +137,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="start"
                         android:text="암모니아"
-                        style="@style/Text.basic_style"/>
+                        style="@style/Text.md_regular_style"/>
 
                     <ImageView
                         android:layout_width="wrap_content"
@@ -143,14 +145,14 @@
                         android:layout_weight="1"
                         android:layout_marginHorizontal="@dimen/pixel_10"
                         android:layerType="software"
-                        android:src="@drawable/dotted_line_horizontal"/>
+                        android:src="@drawable/dotted_line_horizontal_0_1"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="end"
                         android:text="-"
-                        style="@style/Text.basic_style"/>
+                        style="@style/Text.md_regular_style"/>
 
                 </LinearLayout>
 
@@ -172,7 +174,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="start"
                         android:text="황화수소"
-                        style="@style/Text.basic_style"/>
+                        style="@style/Text.md_regular_style"/>
 
                     <ImageView
                         android:layout_width="wrap_content"
@@ -180,14 +182,14 @@
                         android:layout_weight="1"
                         android:layout_marginHorizontal="@dimen/pixel_10"
                         android:layerType="software"
-                        android:src="@drawable/dotted_line_horizontal"/>
+                        android:src="@drawable/dotted_line_horizontal_0_1"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="end"
                         android:text="-"
-                        style="@style/Text.basic_style"/>
+                        style="@style/Text.md_regular_style"/>
 
                 </LinearLayout>
 
@@ -208,7 +210,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="start"
                         android:text="미세먼지"
-                        style="@style/Text.basic_style"/>
+                        style="@style/Text.md_regular_style"/>
 
                     <ImageView
                         android:layout_width="wrap_content"
@@ -216,14 +218,14 @@
                         android:layout_weight="1"
                         android:layout_marginHorizontal="@dimen/pixel_10"
                         android:layerType="software"
-                        android:src="@drawable/dotted_line_horizontal"/>
+                        android:src="@drawable/dotted_line_horizontal_0_1"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="end"
                         android:text="-"
-                        style="@style/Text.basic_style"/>
+                        style="@style/Text.md_regular_style"/>
 
                 </LinearLayout>
 
@@ -245,7 +247,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="start"
                         android:text="초미세먼지"
-                        style="@style/Text.basic_style"/>
+                        style="@style/Text.md_regular_style"/>
 
                     <ImageView
                         android:layout_width="wrap_content"
@@ -253,14 +255,14 @@
                         android:layout_weight="1"
                         android:layout_marginHorizontal="@dimen/pixel_10"
                         android:layerType="software"
-                        android:src="@drawable/dotted_line_horizontal"/>
+                        android:src="@drawable/dotted_line_horizontal_0_1"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="end"
                         android:text="좋음"
-                        style="@style/Text.basic_style"/>
+                        style="@style/Text.md_regular_style"/>
 
                 </LinearLayout>
 
@@ -281,7 +283,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="start"
                         android:text="풍향"
-                        style="@style/Text.basic_style"/>
+                        style="@style/Text.md_regular_style"/>
 
                     <ImageView
                         android:layout_width="wrap_content"
@@ -289,14 +291,14 @@
                         android:layout_weight="1"
                         android:layout_marginHorizontal="@dimen/pixel_10"
                         android:layerType="software"
-                        android:src="@drawable/dotted_line_horizontal"/>
+                        android:src="@drawable/dotted_line_horizontal_0_1"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="end"
                         android:text="남동"
-                        style="@style/Text.basic_style"/>
+                        style="@style/Text.md_regular_style"/>
 
                 </LinearLayout>
 
@@ -318,7 +320,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="start"
                         android:text="풍속"
-                        style="@style/Text.basic_style"/>
+                        style="@style/Text.md_regular_style"/>
 
                     <ImageView
                         android:layout_width="wrap_content"
@@ -326,14 +328,14 @@
                         android:layout_weight="1"
                         android:layout_marginHorizontal="@dimen/pixel_10"
                         android:layerType="software"
-                        android:src="@drawable/dotted_line_horizontal"/>
+                        android:src="@drawable/dotted_line_horizontal_0_1"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="end"
                         android:text="1.1"
-                        style="@style/Text.basic_style"/>
+                        style="@style/Text.md_regular_style"/>
 
                 </LinearLayout>
 
@@ -354,7 +356,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="start"
                         android:text="일사량"
-                        style="@style/Text.basic_style"/>
+                        style="@style/Text.md_regular_style"/>
 
                     <ImageView
                         android:layout_width="wrap_content"
@@ -362,20 +364,44 @@
                         android:layout_weight="1"
                         android:layout_marginHorizontal="@dimen/pixel_10"
                         android:layerType="software"
-                        android:src="@drawable/dotted_line_horizontal"/>
+                        android:src="@drawable/dotted_line_horizontal_0_1"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="end"
                         android:text="-"
-                        style="@style/Text.basic_style"/>
+                        style="@style/Text.md_regular_style"/>
 
                 </LinearLayout>
 
             </LinearLayout>
 
         </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/env_tv_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/pixel_16"
+            android:text="오늘 외기환경 변화"
+            app:layout_constraintTop_toBottomOf="@+id/env_mcv"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.01"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.2"
+            style="@style/Text.lg_accent_style"/>
+
+        <com.github.mikephil.charting.charts.CombinedChart
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/pixel_300"
+            android:layout_marginHorizontal="@dimen/pixel_16"
+            app:layout_constraintTop_toBottomOf="@+id/env_tv_2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.1"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

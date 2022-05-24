@@ -2,9 +2,7 @@ package com.example.kokofarm_user_app;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
@@ -12,22 +10,20 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 import androidx.navigation.NavDestination;
-import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.NavigationUI;
 
 import android.annotation.SuppressLint;
-import android.graphics.Color;
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.kokofarm_user_app.databinding.ActivityMainBinding;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.navigation.NavigationBarView;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.Objects;
@@ -41,21 +37,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private FragmentTransaction transaction;
 
     // Toolbar 및 Side Navigation(Drawer) 관련
-    private Toolbar toolbar;
     private NavigationView navigationView;
     private DrawerLayout drawerLayout;
-    private ActionBarDrawerToggle drawerToggle;
 
     // Fragment manager
     private FragmentManager fragmentManager = getSupportFragmentManager();
 
     // Fragment
-    private HomeFragment homeFragment = new HomeFragment();                 // 홈
-    private FeedFragment feedFragment = new FeedFragment();                 // 급이 급수
-    private ScaleFragment scaleFragment = new ScaleFragment();              // IoT 저울
-    private EnvFragment envFragment = new EnvFragment();                    // 외기환경
     private BreedFragment breedFragment = new BreedFragment();              // 사육정보
     private OutRecordFragment outRecordFragment = new OutRecordFragment();  // 출하내역
+    private SettingFragment settingFragment = new SettingFragment();
 
     // 앱 종료
     private long backPressedTime = 0L;
@@ -66,6 +57,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     // navigation
     private NavHostFragment navHostFragment;
     private NavController navController;
+
+    private Context context;
+    boolean themeColor;
     
     @SuppressLint("ClickableViewAccessibility")
     @Override
@@ -73,6 +67,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        context = getApplicationContext();
+        SharedPreferences sharedPreferences = this.getPreferences(Context.MODE_PRIVATE);
 
         // DrawerLayout
         drawerLayout = binding.mainDrawer;
@@ -94,7 +91,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
 
         navHostFragment = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.main_frame);
-        navController = Objects.requireNonNull(navHostFragment).getNavController();
+//        navController = Objects.requireNonNull(navHostFragment).getNavController();
+        navController = navHostFragment.getNavController();
         
         // navigationView 랑 bottomNavigationView 를 navController 에 결합
         navigationView = binding.mainSideNav;
@@ -119,15 +117,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
         });
 
-    }
-
-    // Fragment 이동 제어
-    public void replaceFragment(Fragment fragment) {
-        transaction = fragmentManager.beginTransaction();
-        transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE); // 프래그먼트 전환 시 애니메이션 커밋 전에 세팅해줄 것
-        transaction.replace(R.id.main_frame, fragment);
-        transaction.addToBackStack(null);                                     // 그 전 스택 가져옴
-        transaction.commit();
+        // 다크모드 관련
+        themeColor = SettingFragment.modeLoad(getApplicationContext());
+        SettingFragment.applyTheme(themeColor);
     }
 
     // Side Menu & Bottom Menu Touch Event
@@ -137,21 +129,28 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.nav_breed:
                 replaceFragment(breedFragment);
                 drawerLayout.closeDrawer(GravityCompat.END);
-                break;
+                return true;
             case R.id.nav_record:
                 replaceFragment(outRecordFragment);
                 drawerLayout.closeDrawer(GravityCompat.END);
-                break;
+                return true;
+
+            case R.id.nav_settings:
+                Intent intent = new Intent(getApplicationContext(), SettingActivity.class);
+                startActivity(intent);
+                return true;
         }
-        return true;
+        return false;
     }
 
-    // ToolBar 이름 설정
-    private void setToolbarName(String farmName){
-        TextView textView = binding.mainTextview;
-        textView.setText(farmName);
-        textView.setTextColor(Color.DKGRAY);
-        textView.setTextSize(32);
+    // Fragment 이동 제어
+    public void replaceFragment(Fragment fragment) {
+        transaction = fragmentManager.beginTransaction();
+        transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE); // 프래그먼트 전환 시 애니메이션 커밋 전에 세팅해줄 것
+        transaction.replace(R.id.main_frame, fragment);
+        transaction.addToBackStack(null);                                     // 그 전 스택 가져옴
+        transaction.commit();
+//        fragmentManager.executePendingTransactions();
     }
 
     // Back 처리 (Drawer 닫기, HomeFragment 에서 앱 종료)
@@ -178,8 +177,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
     }
 
+//    // fragment 뒤로가기
 //    @Override
 //    public boolean onSupportNavigateUp(){
-//        return navController.navigateUp();
+//
+//        if(fragmentManager.getBackStackEntryCount() == 0){
+//            finish();
+//        } else {
+//            fragmentManager.popBackStack();
+//        }
+//
+//        return super.onSupportNavigateUp();
 //    }
+
 }

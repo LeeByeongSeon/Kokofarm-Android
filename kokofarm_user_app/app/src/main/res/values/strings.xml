@@ -12,8 +12,9 @@
     <string name="nav_env">외기환경</string>
     <string name="nav_dong">동별현황</string>
 
-    <string name="nav_breed">사육정보</string>
+    <string name="nav_breed">사육일지</string>
     <string name="nav_record">출하내역</string>
+    <string name="nav_breed_info">사육정보</string>
 
     <string name="notice_1">입추 수는 최초 입추 기준(덤 포함)</string>
     <string name="notice_2">폐사, 도태, 솎기 수는 해당 일자에 발생된 것만 기록</string>
@@ -23,7 +24,9 @@
     <string name="avg_weight">평균중량</string>
     <string name="min_weight">최소</string>
     <string name="max_weight">최대</string>
+    <string name="all_in_count">총 입추</string>
     <string name="live_count">생존</string>
+    <string name="live_ratio">생존 율</string>
     <string name="death_count">폐사</string>
     <string name="cull_count">도태</string>
     <string name="out_count">솎기</string>
@@ -39,7 +42,17 @@
     <string name="today_death_count">오늘 폐사 수</string>
     <string name="today_cull_count">오늘 도태 수</string>
     <string name="today_out_count">오늘 솎기 수</string>
+    <string name="today_increase_weight">오늘 증체중량</string>
+    <string name="weight_gaussian">중량별 정규분포</string>
+    <string name="after_15days">15일령 이후 표시</string>
+    <string name="days_env">일령별 환경센서</string>
+    <string name="days_avg_weight">일령별 평균중량</string>
+    <string name="days_feed">일령별 급이량 변화</string>
+    <string name="days_water">일령별 급수량 변화</string>
 
+    <string name="out_txt">지난 출하내역</string>
+
+    <string name="weight_txt">중량</string>
     <string name="temp_txt">온도</string>
     <string name="humi_txt">습도</string>
     <string name="co2_txt">이산화탄소</string>
@@ -52,6 +65,7 @@
     <string name="wind_txt">풍속</string>
     <string name="wind_direction_txt">풍향</string>
 
-    <string name="drawer_open">open</string>
-    <string name="drawer_close">close</string>
+    <string name="set_theme">다크모드</string>
+    <string name="set_alarm">알림</string>
+    <string name="set_notice">공지사항</string>
 </resources>

@@ -2,198 +2,33 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
     android:id="@+id/scroll_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
     android:scrollbars="none"
     tools:context=".HomeFragment">
-    
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
-<!--        <LinearLayout-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:orientation="horizontal"-->
-<!--            android:visibility="gone"-->
-<!--            app:layout_constraintTop_toTopOf="parent"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintBottom_toBottomOf="parent"-->
-<!--            app:layout_constraintVertical_bias="0.02">-->
-
-<!--            <ImageView-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginRight="@dimen/pixel_10"-->
-<!--                android:src="@drawable/ic_baseline_notifications_active_24"-->
-<!--                app:tint="@color/primaryColor" />-->
-
-<!--            <TextView-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="@string/notice"-->
-<!--                android:textSize="@dimen/pixel_18"-->
-<!--                style="@style/Text.basic_light_style"/>-->
-
-<!--        </LinearLayout>-->
-        
-        <LinearLayout
-            android:id="@+id/home_summary_txt"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="@dimen/pixel_16"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintVertical_bias="0">
-
-                <TextView
-                    android:id="@+id/home_tv_farm_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="주원농장 전체 평균중량은"
-                    android:textSize="@dimen/pixel_28"
-                    android:fontFamily="@font/paybooc_medium"/>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:id="@+id/home_tv_farm_avg"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="1682.5g"
-                        android:textSize="@dimen/pixel_30"
-                        android:textStyle="bold"
-                        android:textColor="@color/darkRedColor"
-                        android:fontFamily="@font/paybooc_medium"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text=" 입니다."
-                        android:textSize="@dimen/pixel_28"
-                        android:fontFamily="@font/paybooc_medium"/>
-
-                </LinearLayout>
-
-        </LinearLayout>
-
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/home_cdv_avg_weight"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/pixel_22"
-            android:layout_marginHorizontal="@dimen/pixel_10"
-            app:contentPadding="@dimen/pixel_16"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/home_summary_txt"
-            app:layout_constraintVertical_bias="0.0"
-            app:strokeWidth="@dimen/pixel_1"
-            app:strokeColor="@color/opacity20"
-            app:cardCornerRadius="@dimen/pixel_10"
-            app:cardElevation="@dimen/pixel_5">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="@dimen/pixel_5"
-                        android:src="@drawable/ic_baseline_arrow_circle_down_24"
-                        app:tint="@color/downColor" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:fontFamily="@font/paybooc_medium"
-                        android:text="@string/min_weight"
-                        android:textSize="@dimen/pixel_18" />
-
-                    <TextView
-                        android:id="@+id/home_tv_farm_avg_min"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/paybooc_medium"
-                        android:text="1682.5g"
-                        android:textSize="@dimen/pixel_18" />
-
-                </LinearLayout>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/pixel_1"
-                    android:layout_marginVertical="@dimen/pixel_10"
-                    android:background="@color/opacity5"/>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="@dimen/pixel_5"
-                        android:src="@drawable/ic_baseline_arrow_circle_up_24"
-                        app:tint="@color/upColor" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:fontFamily="@font/paybooc_medium"
-                        android:text="@string/max_weight"
-                        android:textSize="@dimen/pixel_18" />
-
-                    <TextView
-                        android:id="@+id/home_tv_farm_avg_max"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/paybooc_medium"
-                        android:text="1682.5g"
-                        android:textSize="@dimen/pixel_18" />
-
-                </LinearLayout>
-
-            </LinearLayout>
-
-        </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/home_cdv_farm_comein"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/pixel_10"
-            app:contentPadding="@dimen/pixel_16"
+            android:layout_marginHorizontal="@dimen/pixel_16"
+            android:layout_marginVertical="@dimen/pixel_5"
+            app:cardElevation="@dimen/overlay_04"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/home_cdv_avg_weight"
-            app:layout_constraintVertical_bias="0.01"
-            app:strokeWidth="@dimen/pixel_1"
-            app:strokeColor="@color/opacity20"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.005"
             app:cardCornerRadius="@dimen/pixel_10"
-            app:cardElevation="@dimen/pixel_5">
+            app:contentPadding="@dimen/pixel_16">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -208,32 +43,121 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
                         android:layout_marginRight="@dimen/pixel_5"
-                        android:src="@drawable/ic_baseline_check_circle_outline_24"
-                        app:tint="@color/lightGreenColor" />
+                        android:src="@drawable/icon_oval_light_grey" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:fontFamily="@font/paybooc_medium"
+                        android:text="@string/all_in_count"
+                        android:textSize="@dimen/pixel_18"
+                        style="@style/Text.md_regular_style"/>
+
+                    <TextView
+                        android:id="@+id/home_tv_farm_insu"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="90,000수"
+                        android:textSize="@dimen/pixel_18"
+                        style="@style/Text.md_regular_style"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/pixel_10"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="@dimen/pixel_5"
+                        android:src="@drawable/icon_oval_light_grey" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
                         android:text="@string/live_count"
-                        android:textSize="@dimen/pixel_18" />
+                        android:textSize="@dimen/pixel_18"
+                        style="@style/Text.md_regular_style"/>
 
                     <TextView
                         android:id="@+id/home_tv_farm_comein"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/paybooc_medium"
-                        android:paddingRight="@dimen/pixel_10"
                         android:text="90,000수"
-                        android:textSize="@dimen/pixel_18" />
+                        android:textSize="@dimen/pixel_18"
+                        style="@style/Text.md_regular_style"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/home_lo_percent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/pixel_10"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
 
                     <ImageView
-                        android:id="@+id/home_accordion"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/ic_baseline_arrow_down_24" />
+                        android:layout_marginRight="@dimen/pixel_5"
+                        android:src="@drawable/ic_baseline_remove_circle_outline_24" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/death_count"
+                        android:textSize="@dimen/pixel_18"
+                        style="@style/Text.md_regular_style"/>
+
+                    <TextView
+                        android:id="@+id/home_tv_farm_percent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0수"
+                        android:textSize="@dimen/pixel_18"
+                        style="@style/Text.md_regular_style"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/home_lo_all"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/pixel_10"
+                    android:orientation="horizontal"
+                    android:visibility="visible">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="@dimen/pixel_5"
+                        android:src="@drawable/icon_oval_light_grey" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/live_ratio"
+                        android:textSize="@dimen/pixel_18"
+                        style="@style/Text.md_regular_style"/>
+
+                    <TextView
+                        android:id="@+id/home_tv_farm_all"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0%"
+                        android:textSize="@dimen/pixel_18"
+                        style="@style/Text.md_regular_style"/>
 
                 </LinearLayout>
 
@@ -248,25 +172,25 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
                         android:layout_marginRight="@dimen/pixel_5"
-                        android:src="@drawable/ic_baseline_remove_circle_outline_24" />
+                        android:src="@drawable/icon_oval_light_grey" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:fontFamily="@font/paybooc_medium"
                         android:text="@string/death_count"
-                        android:textSize="@dimen/pixel_18" />
+                        android:textSize="@dimen/pixel_18"
+                        style="@style/Text.md_regular_style"/>
 
                     <TextView
                         android:id="@+id/home_tv_farm_death"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/paybooc_medium"
-                        android:paddingRight="@dimen/pixel_35"
                         android:text="0수"
-                        android:textSize="@dimen/pixel_18" />
+                        android:textSize="@dimen/pixel_18"
+                        style="@style/Text.md_regular_style"/>
 
                 </LinearLayout>
 
@@ -281,25 +205,25 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
                         android:layout_marginRight="@dimen/pixel_5"
-                        android:src="@drawable/ic_baseline_remove_circle_outline_24" />
+                        android:src="@drawable/icon_oval_light_grey" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:fontFamily="@font/paybooc_medium"
                         android:text="@string/cull_count"
-                        android:textSize="@dimen/pixel_18" />
+                        android:textSize="@dimen/pixel_18"
+                        style="@style/Text.md_regular_style"/>
 
                     <TextView
                         android:id="@+id/home_tv_farm_cull"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/paybooc_medium"
-                        android:paddingRight="@dimen/pixel_35"
                         android:text="0수"
-                        android:textSize="@dimen/pixel_18" />
+                        android:textSize="@dimen/pixel_18"
+                        style="@style/Text.md_regular_style"/>
 
                 </LinearLayout>
 
@@ -314,27 +238,34 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
                         android:layout_marginRight="@dimen/pixel_5"
-                        android:src="@drawable/ic_baseline_remove_circle_outline_24" />
+                        android:src="@drawable/icon_oval_light_grey" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:fontFamily="@font/paybooc_medium"
                         android:text="@string/out_count"
-                        android:textSize="@dimen/pixel_18" />
+                        android:textSize="@dimen/pixel_18"
+                        style="@style/Text.md_regular_style"/>
 
                     <TextView
                         android:id="@+id/home_tv_farm_thinout"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/paybooc_medium"
-                        android:paddingRight="@dimen/pixel_35"
                         android:text="0수"
-                        android:textSize="@dimen/pixel_18" />
+                        android:textSize="@dimen/pixel_18"
+                        style="@style/Text.md_regular_style"/>
 
                 </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/home_accordion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_baseline_arrow_down_24" />
 
             </LinearLayout>
 
@@ -342,9 +273,10 @@
 
         <TextView
             android:id="@+id/home_header_feed"
-            style="@style/Text.accent_style"
+            style="@style/Text.lg_accent_style"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/pixel_16"
             android:text="@string/feed_header"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -352,6 +284,18 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/home_cdv_farm_comein"
             app:layout_constraintVertical_bias="0.01" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="@dimen/pixel_2"
+            android:layout_margin="@dimen/pixel_16"
+            android:src="@drawable/dotted_line_horizontal_1"
+            app:layout_constraintStart_toEndOf="@+id/home_header_feed"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.99"
+            app:layout_constraintTop_toBottomOf="@+id/home_cdv_farm_comein"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.01"/>
 
         <LinearLayout
             android:id="@+id/home_body_feed"
@@ -363,84 +307,7 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/home_header_feed"
-            app:layout_constraintVertical_bias="0.01">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                
-                <com.google.android.material.card.MaterialCardView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    app:contentPadding="@dimen/pixel_10"
-                    app:cardCornerRadius="0dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/pixel_10"
-                            android:paddingBottom="@dimen/pixel_10"
-                            android:text="@string/per_feed"
-                            style="@style/Text.basic_style"/>
-
-                        <TextView
-                            android:id="@+id/home_tv_farm_feed_per"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="1548.5g"
-                            android:textSize="@dimen/pixel_22"
-                            style="@style/Text.basic_bold_style"
-                            android:textColor="@color/feedColor"/>
-
-                    </LinearLayout>
-
-                </com.google.android.material.card.MaterialCardView>
-
-                <com.google.android.material.card.MaterialCardView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    app:contentPadding="@dimen/pixel_10"
-                    app:cardCornerRadius="0dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/pixel_10"
-                            android:paddingBottom="@dimen/pixel_10"
-                            android:text="@string/per_water"
-                            style="@style/Text.basic_style"/>
-
-                        <TextView
-                            android:id="@+id/home_tv_farm_water_per"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="3.179L"
-                            android:textSize="@dimen/pixel_22"
-                            style="@style/Text.basic_bold_style"
-                            android:textColor="@color/waterColor"/>
-
-                    </LinearLayout>
-
-                </com.google.android.material.card.MaterialCardView>
-
-            </LinearLayout>
+            app:layout_constraintVertical_bias="0.001">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -448,19 +315,49 @@
                 android:orientation="horizontal">
 
                 <com.google.android.material.card.MaterialCardView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:layout_margin="@dimen/pixel_5"
-                    app:contentPadding="@dimen/pixel_10"
+                    android:layout_marginVertical="@dimen/pixel_10"
+                    android:layout_marginStart="@dimen/pixel_16"
+                    android:layout_marginEnd="@dimen/pixel_8"
+                    app:cardElevation="@dimen/overlay_04"
                     app:cardCornerRadius="@dimen/pixel_10"
-                    app:strokeWidth="@dimen/pixel_1"
-                    app:strokeColor="@color/opacity20">
+                    app:contentPadding="@dimen/pixel_16">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/pixel_10"
+                                android:paddingBottom="@dimen/pixel_10"
+                                android:text="@string/per_feed"
+                                style="@style/Text.md_regular_style"/>
+
+                            <TextView
+                                android:id="@+id/home_tv_farm_feed_per"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="1548.5g"
+                                android:textSize="@dimen/pixel_22"
+                                style="@style/Text.md_medium_style"
+                                android:textColor="@color/feedColor"/>
+
+                        </LinearLayout>
+
+                        <View
+                            style="@style/solid_line_horizontal"/>
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -471,7 +368,7 @@
                             <ImageView
                                 android:layout_width="@dimen/pixel_50"
                                 android:layout_height="@dimen/pixel_50"
-                                android:src="@drawable/feed_2"/>
+                                android:src="@drawable/feed_3"/>
 
                             <LinearLayout
                                 android:layout_width="wrap_content"
@@ -484,24 +381,21 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="@string/all_txt"
-                                    style="@style/Text.basic_style"/>
+                                    style="@style/Text.sm_regular_style"/>
 
                                 <TextView
                                     android:id="@+id/home_tv_all_feed"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="-"
-                                    style="@style/Text.accent_style"/>
+                                    style="@style/Text.lg_accent_style"/>
 
                             </LinearLayout>
 
                         </LinearLayout>
 
                         <View
-                            android:layout_width="match_parent"
-                            android:layout_height="@dimen/pixel_1"
-                            android:layout_marginVertical="@dimen/pixel_10"
-                            android:background="@color/opacity10"/>
+                            style="@style/solid_line_horizontal"/>
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -513,24 +407,19 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:text="@string/today_txt"
-                                android:textColor="@color/opacity50"
-                                style="@style/Text.basic_style"/>
+                                style="@style/Text.sm_regular_opacity_style"/>
 
                             <TextView
                                 android:id="@+id/home_tv_curr_feed"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:textColor="@color/opacity50"
                                 android:text="-"
-                                style="@style/Text.basic_style"/>
+                                style="@style/Text.sm_regular_opacity_style"/>
 
                         </LinearLayout>
 
                         <View
-                            android:layout_width="match_parent"
-                            android:layout_height="@dimen/pixel_1"
-                            android:layout_marginVertical="@dimen/pixel_10"
-                            android:background="@color/opacity10"/>
+                            style="@style/solid_line_horizontal"/>
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -542,16 +431,14 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:text="@string/yesterday_txt"
-                                android:textColor="@color/opacity50"
-                                style="@style/Text.basic_style"/>
+                                style="@style/Text.sm_regular_opacity_style"/>
 
                             <TextView
                                 android:id="@+id/home_tv_prev_feed"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:textColor="@color/opacity50"
                                 android:text="-"
-                                style="@style/Text.basic_style"/>
+                                style="@style/Text.sm_regular_opacity_style"/>
 
                         </LinearLayout>
 
@@ -560,19 +447,49 @@
                 </com.google.android.material.card.MaterialCardView>
 
                 <com.google.android.material.card.MaterialCardView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:layout_margin="@dimen/pixel_5"
-                    app:contentPadding="@dimen/pixel_10"
+                    android:layout_marginVertical="@dimen/pixel_10"
+                    android:layout_marginStart="@dimen/pixel_8"
+                    android:layout_marginEnd="@dimen/pixel_16"
+                    app:cardElevation="@dimen/overlay_04"
                     app:cardCornerRadius="@dimen/pixel_10"
-                    app:strokeWidth="@dimen/pixel_1"
-                    app:strokeColor="@color/opacity20">
+                    app:contentPadding="@dimen/pixel_16">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/pixel_10"
+                                android:paddingBottom="@dimen/pixel_10"
+                                android:text="@string/per_water"
+                                style="@style/Text.md_regular_style"/>
+
+                            <TextView
+                                android:id="@+id/home_tv_farm_water_per"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="3.179L"
+                                android:textSize="@dimen/pixel_22"
+                                style="@style/Text.md_medium_style"
+                                android:textColor="@color/waterColor"/>
+
+                        </LinearLayout>
+
+                        <View
+                            style="@style/solid_line_horizontal"/>
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -593,27 +510,24 @@
                                 android:gravity="end">
 
                                 <TextView
-                                    style="@style/Text.basic_style"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="@string/all_txt" />
+                                    android:text="@string/all_txt"
+                                    style="@style/Text.sm_regular_style"/>
 
                                 <TextView
                                     android:id="@+id/home_tv_all_water"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="-"
-                                    style="@style/Text.accent_style"/>
+                                    style="@style/Text.lg_accent_style"/>
 
                             </LinearLayout>
 
                         </LinearLayout>
 
                         <View
-                            android:layout_width="match_parent"
-                            android:layout_height="@dimen/pixel_1"
-                            android:layout_marginVertical="@dimen/pixel_10"
-                            android:background="@color/opacity10"/>
+                            style="@style/solid_line_horizontal"/>
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -625,24 +539,19 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:text="@string/today_txt"
-                                android:textColor="@color/opacity50"
-                                style="@style/Text.basic_style"/>
+                                style="@style/Text.sm_regular_opacity_style"/>
 
                             <TextView
                                 android:id="@+id/home_tv_curr_water"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="-"
-                                android:textColor="@color/opacity50"
-                                style="@style/Text.basic_style"/>
+                                style="@style/Text.sm_regular_opacity_style"/>
 
                         </LinearLayout>
 
                         <View
-                            android:layout_width="match_parent"
-                            android:layout_height="@dimen/pixel_1"
-                            android:layout_marginVertical="@dimen/pixel_10"
-                            android:background="@color/opacity10"/>
+                            style="@style/solid_line_horizontal"/>
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -654,16 +563,14 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:text="@string/yesterday_txt"
-                                android:textColor="@color/opacity50"
-                                style="@style/Text.basic_style"/>
+                                style="@style/Text.sm_regular_opacity_style"/>
 
                             <TextView
                                 android:id="@+id/home_tv_prev_water"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:textColor="@color/opacity50"
                                 android:text="-"
-                                style="@style/Text.basic_style"/>
+                                style="@style/Text.sm_regular_opacity_style"/>
 
                         </LinearLayout>
 
@@ -679,21 +586,33 @@
             android:id="@+id/home_header_dong"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/pixel_16"
             android:text="@string/dong_header"
-            style="@style/Text.accent_style"
+            style="@style/Text.lg_accent_style"
             app:layout_constraintTop_toBottomOf="@id/home_body_feed"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintHorizontal_bias="0.01"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintVertical_bias="0.015"/>
+            app:layout_constraintVertical_bias="0.01"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="@dimen/pixel_2"
+            android:layout_margin="@dimen/pixel_16"
+            android:src="@drawable/dotted_line_horizontal_1"
+            app:layout_constraintStart_toEndOf="@+id/home_header_dong"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.99"
+            app:layout_constraintTop_toBottomOf="@+id/home_body_feed"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.01"/>
 
         <LinearLayout
             android:id="@+id/home_body_dong"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="@dimen/pixel_5"
             app:layout_constraintTop_toBottomOf="@+id/home_header_dong"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -704,11 +623,12 @@
                 android:id="@+id/home_dong_1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/pixel_10"
-                app:contentPadding="@dimen/pixel_16"
-                app:strokeWidth="@dimen/pixel_1"
-                app:strokeColor="@color/opacity20"
-                app:cardCornerRadius="@dimen/pixel_10">
+                android:layout_marginTop="@dimen/pixel_5"
+                android:layout_marginHorizontal="@dimen/pixel_16"
+                android:layout_marginBottom="@dimen/pixel_16"
+                app:cardElevation="@dimen/overlay_04"
+                app:cardCornerRadius="@dimen/pixel_10"
+                app:contentPadding="@dimen/pixel_16">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -753,7 +673,7 @@
                                         android:layout_height="wrap_content"
                                         android:layout_marginRight="@dimen/pixel_10"
                                         android:text="1동"
-                                        style="@style/Text.basic_bold_style"/>
+                                        style="@style/Text.md_medium_style"/>
 
                                     <ImageView
                                         android:layout_width="wrap_content"
@@ -773,7 +693,7 @@
                             <ImageView
                                 android:layout_width="@dimen/pixel_50"
                                 android:layout_height="@dimen/pixel_50"
-                                android:src="@drawable/feed_0"/>
+                                android:src="@drawable/feed_3"/>
 
                         </LinearLayout>
 
@@ -801,7 +721,7 @@
                             <ImageView
                                 android:layout_width="@dimen/pixel_35"
                                 android:layout_height="@dimen/pixel_35"
-                                android:src="@drawable/diary"/>
+                                android:src="@drawable/ic_baseline_edit_note_24"/>
 
                         </LinearLayout>
 
@@ -823,16 +743,23 @@
                                 android:layout_height="wrap_content"
                                 android:text="1682.5g"
                                 android:textColor="@color/darkRedColor"
-                                style="@style/Text.basic_bold_style"/>
+                                style="@style/Text.md_medium_style"/>
 
                         </LinearLayout>
 
-                        <View
+                        <!--                        <View-->
+                        <!--                            android:layout_width="match_parent"-->
+                        <!--                            android:layout_height="@dimen/pixel_1"-->
+                        <!--                            android:layout_marginVertical="@dimen/pixel_10"-->
+                        <!--                            android:background="@android:color/darker_gray"/>-->
+
+                        <ImageView
                             android:layout_width="match_parent"
-                            android:layout_height="@dimen/pixel_1"
-                            android:layout_marginVertical="@dimen/pixel_10"
-                            android:background="@color/opacity10"/>
-                        
+                            android:layout_height="@dimen/pixel_2"
+                            android:layout_marginVertical="@dimen/pixel_16"
+                            android:layerType="software"
+                            android:src="@drawable/dotted_line_horizontal_0_1"/>
+
                         <com.google.android.material.card.MaterialCardView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -841,13 +768,14 @@
                             app:strokeWidth="@dimen/pixel_1"
                             app:strokeColor="@color/primaryLightColor"
                             app:contentPadding="@dimen/pixel_5">
-                            
+
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:background="@android:color/transparent"
                                 android:textColor="@color/white"
                                 android:text="1번 저울"/>
-                            
+
                         </com.google.android.material.card.MaterialCardView>
 
                     </LinearLayout>
@@ -864,11 +792,11 @@
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/pixel_10"
-                app:contentPadding="@dimen/pixel_16"
-                app:strokeWidth="@dimen/pixel_1"
-                app:strokeColor="@color/opacity20"
-                app:cardCornerRadius="@dimen/pixel_10">
+                android:layout_marginHorizontal="@dimen/pixel_16"
+                android:layout_marginBottom="@dimen/pixel_16"
+                app:cardElevation="@dimen/overlay_04"
+                app:cardCornerRadius="@dimen/pixel_10"
+                app:contentPadding="@dimen/pixel_16">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -913,7 +841,7 @@
                                         android:layout_height="wrap_content"
                                         android:layout_marginRight="@dimen/pixel_10"
                                         android:text="2동"
-                                        style="@style/Text.basic_bold_style"/>
+                                        style="@style/Text.md_medium_style"/>
 
                                     <ImageView
                                         android:layout_width="wrap_content"
@@ -933,7 +861,7 @@
                             <ImageView
                                 android:layout_width="@dimen/pixel_50"
                                 android:layout_height="@dimen/pixel_50"
-                                android:src="@drawable/feed_0"/>
+                                android:src="@drawable/feed_2"/>
 
                         </LinearLayout>
 
@@ -961,7 +889,7 @@
                             <ImageView
                                 android:layout_width="@dimen/pixel_35"
                                 android:layout_height="@dimen/pixel_35"
-                                android:src="@drawable/diary"/>
+                                android:src="@drawable/ic_baseline_edit_note_24"/>
 
                         </LinearLayout>
 
@@ -983,7 +911,7 @@
                                 android:layout_height="wrap_content"
                                 android:text="1682.5g"
                                 android:textColor="@color/darkRedColor"
-                                style="@style/Text.basic_bold_style"/>
+                                style="@style/Text.md_medium_style"/>
 
                         </LinearLayout>
 
@@ -1001,11 +929,11 @@
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/pixel_16"
                 android:layout_marginBottom="@dimen/pixel_10"
-                app:contentPadding="@dimen/pixel_16"
-                app:strokeWidth="@dimen/pixel_1"
-                app:strokeColor="@color/opacity20"
-                app:cardCornerRadius="@dimen/pixel_10">
+                app:cardElevation="@dimen/overlay_04"
+                app:cardCornerRadius="@dimen/pixel_10"
+                app:contentPadding="@dimen/pixel_16">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -1050,7 +978,7 @@
                                         android:layout_height="wrap_content"
                                         android:layout_marginRight="@dimen/pixel_10"
                                         android:text="3동"
-                                        style="@style/Text.basic_bold_style"/>
+                                        style="@style/Text.md_medium_style"/>
 
                                     <ImageView
                                         android:layout_width="wrap_content"
@@ -1070,7 +998,7 @@
                             <ImageView
                                 android:layout_width="@dimen/pixel_50"
                                 android:layout_height="@dimen/pixel_50"
-                                android:src="@drawable/feed_0"/>
+                                android:src="@drawable/feed_1"/>
 
                         </LinearLayout>
 
@@ -1098,7 +1026,7 @@
                             <ImageView
                                 android:layout_width="@dimen/pixel_35"
                                 android:layout_height="@dimen/pixel_35"
-                                android:src="@drawable/diary"/>
+                                android:src="@drawable/ic_baseline_edit_note_24"/>
 
                         </LinearLayout>
 
@@ -1120,7 +1048,7 @@
                                 android:layout_height="wrap_content"
                                 android:text="1682.5g"
                                 android:textColor="@color/darkRedColor"
-                                style="@style/Text.basic_bold_style"/>
+                                style="@style/Text.md_medium_style"/>
 
                         </LinearLayout>
 
@@ -1136,13 +1064,14 @@
             </com.google.android.material.card.MaterialCardView>
 
         </LinearLayout>
-        
+
         <TextView
             android:id="@+id/home_header_dong_chart_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/pixel_16"
             android:text="@string/dong_avg_weight"
-            style="@style/Text.accent_style"
+            style="@style/Text.lg_accent_style"
             app:layout_constraintTop_toBottomOf="@+id/home_body_dong"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintHorizontal_bias="0.01"
@@ -1150,10 +1079,24 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintVertical_bias="0.02"/>
 
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="@dimen/pixel_2"
+            android:layout_margin="@dimen/pixel_16"
+            android:src="@drawable/dotted_line_horizontal_1"
+            app:layout_constraintStart_toEndOf="@+id/home_header_dong_chart_1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.99"
+            app:layout_constraintTop_toBottomOf="@+id/home_body_dong"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.02"/>
+
         <com.github.mikephil.charting.charts.CombinedChart
             android:id="@+id/dong_chart_1"
             android:layout_width="match_parent"
             android:layout_height="@dimen/pixel_300"
+            android:layout_marginHorizontal="@dimen/pixel_16"
+            android:background="@android:color/transparent"
             app:layout_constraintTop_toBottomOf="@+id/home_header_dong_chart_1"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -1164,19 +1107,34 @@
             android:id="@+id/home_header_dong_chart_2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/pixel_16"
             android:text="@string/dong_feed"
-            style="@style/Text.accent_style"
+            style="@style/Text.lg_accent_style"
             app:layout_constraintTop_toBottomOf="@+id/dong_chart_1"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintHorizontal_bias="0.01"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintVertical_bias="0.05"/>
+            app:layout_constraintVertical_bias="0.03"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="@dimen/pixel_2"
+            android:layout_margin="@dimen/pixel_16"
+            android:src="@drawable/dotted_line_horizontal_1"
+            app:layout_constraintStart_toEndOf="@+id/home_header_dong_chart_2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.99"
+            app:layout_constraintTop_toBottomOf="@+id/dong_chart_1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.03"/>
 
         <com.github.mikephil.charting.charts.CombinedChart
             android:id="@+id/dong_chart_2"
             android:layout_width="match_parent"
             android:layout_height="@dimen/pixel_300"
+            android:layout_marginHorizontal="@dimen/pixel_16"
+            android:background="@android:color/transparent"
             app:layout_constraintTop_toBottomOf="@+id/home_header_dong_chart_2"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -1187,19 +1145,34 @@
             android:id="@+id/home_header_dong_chart_3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/pixel_16"
             android:text="@string/dong_water"
-            style="@style/Text.accent_style"
+            style="@style/Text.lg_accent_style"
             app:layout_constraintTop_toBottomOf="@+id/dong_chart_2"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintHorizontal_bias="0.01"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintVertical_bias="0.05"/>
+            app:layout_constraintVertical_bias="0.09"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="@dimen/pixel_2"
+            android:layout_margin="@dimen/pixel_16"
+            android:src="@drawable/dotted_line_horizontal_1"
+            app:layout_constraintStart_toEndOf="@+id/home_header_dong_chart_3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.99"
+            app:layout_constraintTop_toBottomOf="@+id/dong_chart_2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.09"/>
 
         <com.github.mikephil.charting.charts.CombinedChart
             android:id="@+id/dong_chart_3"
             android:layout_width="match_parent"
             android:layout_height="@dimen/pixel_300"
+            android:layout_marginHorizontal="@dimen/pixel_16"
+            android:background="@android:color/transparent"
             app:layout_constraintTop_toBottomOf="@+id/home_header_dong_chart_3"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

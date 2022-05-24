@@ -4,12 +4,15 @@
     <color name="primaryLightColor">#ffc046</color>
     <color name="primaryDarkColor">#c56000</color>
     <color name="secondaryColor">#1b87e5</color>
+    <color name="secondaryColorOpacity20">#331b87e5</color>
     <color name="secondaryLightColor">#69b6ff</color>
     <color name="secondaryDarkColor">#005bb2</color>
     <color name="primaryTextColor">#000000</color>
     <color name="secondaryTextColor">#ffffff</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="lightGrey">#fafafa</color>
+    <color name="grey">#cfcfcf</color>
 
     <!-- Font Color -->
     <color name="feedColor">#c88719</color>
@@ -23,23 +26,44 @@
     <color name="downColor">#1E90FF</color>
 
     <!-- Opacity(Black) 색상(6자리) 앞에 2자리에 투명도(참고) 기입 -->
-    <color name="opacity5" >#0D000000</color>
-    <color name="opacity10">#1A000000</color>
-    <color name="opacity15">#26000000</color>
-    <color name="opacity20">#33000000</color>
-    <color name="opacity25">#40000000</color>
-    <color name="opacity30">#4D000000</color>
-    <color name="opacity35">#59000000</color>
-    <color name="opacity40">#66000000</color>
-    <color name="opacity45">#73000000</color>
-    <color name="opacity50">#80000000</color>
-    <color name="opacity55">#8C000000</color>
-    <color name="opacity60">#99000000</color>
-    <color name="opacity65">#A6000000</color>
-    <color name="opacity70">#B3000000</color>
-    <color name="opacity75">#BF000000</color>
-    <color name="opacity80">#CC000000</color>
-    <color name="opacity85">#D9000000</color>
-    <color name="opacity90">#E6000000</color>
-    <color name="opacity95">#F2000000</color>
+    <color name="opacity05_bl">#0D000000</color>
+    <color name="opacity10_bl">#1A000000</color>
+    <color name="opacity15_bl">#26000000</color>
+    <color name="opacity20_bl">#33000000</color>
+    <color name="opacity25_bl">#40000000</color>
+    <color name="opacity30_bl">#4D000000</color>
+    <color name="opacity35_bl">#59000000</color>
+    <color name="opacity40_bl">#66000000</color>
+    <color name="opacity45_bl">#73000000</color>
+    <color name="opacity50_bl">#80000000</color>
+    <color name="opacity55_bl">#8C000000</color>
+    <color name="opacity60_bl">#99000000</color>
+    <color name="opacity65_bl">#A6000000</color>
+    <color name="opacity70_bl">#B3000000</color>
+    <color name="opacity75_bl">#BF000000</color>
+    <color name="opacity80_bl">#CC000000</color>
+    <color name="opacity85_bl">#D9000000</color>
+    <color name="opacity90_bl">#E6000000</color>
+    <color name="opacity95_bl">#F2000000</color>
+
+    <!-- Opacity(White) -->
+    <color name="opacity05_wh">#0DFFFFFF</color>
+    <color name="opacity10_wh">#1AFFFFFF</color>
+    <color name="opacity15_wh">#26FFFFFF</color>
+    <color name="opacity20_wh">#33FFFFFF</color>
+    <color name="opacity25_wh">#40FFFFFF</color>
+    <color name="opacity30_wh">#4DFFFFFF</color>
+    <color name="opacity35_wh">#59FFFFFF</color>
+    <color name="opacity40_wh">#66FFFFFF</color>
+    <color name="opacity45_wh">#73FFFFFF</color>
+    <color name="opacity50_wh">#80FFFFFF</color>
+    <color name="opacity55_wh">#8CFFFFFF</color>
+    <color name="opacity60_wh">#99FFFFFF</color>
+    <color name="opacity65_wh">#A6FFFFFF</color>
+    <color name="opacity70_wh">#B3FFFFFF</color>
+    <color name="opacity75_wh">#BFFFFFFF</color>
+    <color name="opacity80_wh">#CCFFFFFF</color>
+    <color name="opacity85_wh">#D9FFFFFF</color>
+    <color name="opacity90_wh">#E6FFFFFF</color>
+    <color name="opacity95_wh">#F2FFFFFF</color>
 </resources>

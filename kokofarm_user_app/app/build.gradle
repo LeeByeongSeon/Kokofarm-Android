@@ -37,9 +37,16 @@ dependencies {
     // MPAndroidChart 라이브러리
     implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
 
+    // Material Data Table 라이브러리
+    implementation 'com.github.salehyarahmadi:DataTable:v1.0.0'
+
 //    def nav_version = "2.1.0-rc01"
 //    implementation "androidx.navigation:navigation-fragment:$nav_version"
 //    implementation "androidx.navigation:navigation-ui:$nav_version"
+
+    // Preference 관련
+    implementation "androidx.legacy:legacy-preference-v14:1.0.0"
+    implementation "androidx.preference:preference:1.2.0"
 
     implementation 'androidx.appcompat:appcompat:1.0.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'

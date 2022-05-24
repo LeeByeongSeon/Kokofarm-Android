@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
@@ -10,8 +11,167 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+        
+        <TextView
+            android:id="@+id/out_record_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/out_txt"
+            style="@style/Text.lg_accent_style"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.01"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.01"/>
+        
+        <ir.androidexception.datatable.DataTable
+            android:id="@+id/out_record_table"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/pixel_5"
+            app:layout_constraintTop_toBottomOf="@+id/out_record_txt"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.02"
+            app:header_gravity="center"
+            app:header_background_color="@color/primaryDarkColor"
+            app:row_gravity="center"
+            app:corner_radius="@dimen/pixel_10"
+            app:shadow="@dimen/pixel_5"/>
+        
+        <TextView
+            android:id="@+id/out_days_weight_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/days_avg_weight"
+            app:layout_constraintTop_toBottomOf="@+id/out_record_table"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.01"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.02"
+            style="@style/Text.lg_accent_style"/>
+        
+        <com.github.mikephil.charting.charts.CombinedChart
+            android:id="@+id/out_days_weight_chart"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/pixel_300"
+            app:layout_constraintTop_toBottomOf="@+id/out_days_weight_header"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.02"/>
+        
+        <TextView
+            android:id="@+id/out_weight_gaussian_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/weight_gaussian"
+            app:layout_constraintTop_toBottomOf="@+id/out_days_weight_chart"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.01"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.03"
+            style="@style/Text.lg_accent_style"/>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/pixel_2"
+            android:background="@drawable/bg_rectangle_radius5_blue"
+            android:text="@string/after_15days"
+            android:textColor="@color/white"
+            android:textSize="@dimen/pixel_16"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.1"
+            app:layout_constraintStart_toEndOf="@+id/out_weight_gaussian_header"
+            app:layout_constraintTop_toBottomOf="@+id/out_days_weight_chart"
+            app:layout_constraintVertical_bias="0.03"
+            style="@style/Text.md_regular_style"/>
 
+        <com.github.mikephil.charting.charts.CombinedChart
+            android:id="@+id/out_gaussian_chart"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/pixel_300"
+            app:layout_constraintTop_toBottomOf="@+id/out_weight_gaussian_header"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.02"/>
+
+        <TextView
+            android:id="@+id/out_days_env_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/days_env"
+            app:layout_constraintTop_toBottomOf="@+id/out_gaussian_chart"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.01"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.05"
+            style="@style/Text.lg_accent_style"/>
+
+        <com.github.mikephil.charting.charts.CombinedChart
+            android:id="@+id/out_days_env_chart"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/pixel_300"
+            app:layout_constraintTop_toBottomOf="@+id/out_days_env_header"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.02"/>
+
+        <TextView
+            android:id="@+id/out_days_feed_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/days_feed"
+            app:layout_constraintTop_toBottomOf="@+id/out_days_env_chart"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.01"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.1"
+            style="@style/Text.lg_accent_style"/>
+
+        <com.github.mikephil.charting.charts.CombinedChart
+            android:id="@+id/out_days_feed_chart"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/pixel_300"
+            app:layout_constraintTop_toBottomOf="@+id/out_days_feed_header"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.1"/>
+
+        <TextView
+            android:id="@+id/out_days_water_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/days_water"
+            app:layout_constraintTop_toBottomOf="@+id/out_days_feed_chart"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.01"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.1"
+            style="@style/Text.lg_accent_style"/>
+
+        <com.github.mikephil.charting.charts.CombinedChart
+            android:id="@+id/out_days_water_chart"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/pixel_300"
+            app:layout_constraintTop_toBottomOf="@+id/out_days_water_header"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.1"/>
+        
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>
