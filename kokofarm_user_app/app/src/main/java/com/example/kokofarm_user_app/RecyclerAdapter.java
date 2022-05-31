@@ -1,13 +1,12 @@
 package com.example.kokofarm_user_app;
 
-import android.animation.ValueAnimator;
 import android.content.Context;
+import android.content.Intent;
 import android.util.SparseBooleanArray;
+import android.view.ContentInfo;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -22,11 +21,15 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ItemVi
     private SparseBooleanArray selectedItems = new SparseBooleanArray();    // Item 의 클릭 상태를 저장할 array 객체
     private int prePosition = -1;                                           // 직전에 클릭됐던 Item 의 position
 
+    public RecyclerAdapter(Context context){
+        this.context = context;
+    }
+
     @NonNull
     @Override
     public ItemViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType){
         context = parent.getContext();
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_scale_item, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_out_record_item, parent, false);
         return new ItemViewHolder(view);
     }
 
@@ -53,7 +56,15 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ItemVi
         ItemViewHolder(View itemView){
             super(itemView);
 
-            textViewTitle   = itemView.findViewById(R.id.text_view_title);  // 리사이클러뷰 item 의 제목
+            textViewTitle = itemView.findViewById(R.id.out_tv_number);  // 리사이클러뷰 item 의 제목
+
+            textViewTitle.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View view){
+                    Intent intent = new Intent(view.getContext(), OutRecordChartActivity.class);
+                    context.startActivity(intent);
+                }
+            });
         }
 
         void onBind(String data, int position){

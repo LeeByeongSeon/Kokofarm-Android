@@ -3,6 +3,7 @@ package com.example.kokofarm_user_app;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,6 +21,9 @@ import ir.androidexception.datatable.model.DataTableRow;
 public class OutRecordFragment extends Fragment {
 
     private FragmentOutRecordBinding binding;
+
+    // Fragment manager
+    private FragmentManager fragmentManager;
 
     public OutRecordFragment() {
 

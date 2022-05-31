@@ -14,6 +14,7 @@ import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.NavigationUI;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -46,7 +47,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     // Fragment
     private BreedFragment breedFragment = new BreedFragment();              // 사육정보
     private OutRecordFragment outRecordFragment = new OutRecordFragment();  // 출하내역
-    private SettingFragment settingFragment = new SettingFragment();
 
     // 앱 종료
     private long backPressedTime = 0L;
@@ -68,8 +68,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        context = getApplicationContext();
-        SharedPreferences sharedPreferences = this.getPreferences(Context.MODE_PRIVATE);
+        // 다크모드 관련
+        themeColor = SettingFragment.modeLoad(getApplicationContext());
+        SettingFragment.applyTheme(themeColor);
 
         // DrawerLayout
         drawerLayout = binding.mainDrawer;
@@ -91,7 +92,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
 
         navHostFragment = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.main_frame);
-//        navController = Objects.requireNonNull(navHostFragment).getNavController();
+        navController = Objects.requireNonNull(navHostFragment).getNavController();
         navController = navHostFragment.getNavController();
         
         // navigationView 랑 bottomNavigationView 를 navController 에 결합
@@ -105,42 +106,49 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             @Override
             public void onDestinationChanged(@NonNull NavController navController, @NonNull NavDestination navDestination, @Nullable Bundle bundle) {
                 switch (navDestination.getId()){
+                    default:
+                        binding.mainBottomNav.setVisibility(View.VISIBLE);
+                        break;
                     case R.id.nav_dong:
-//                        if(navDestination.getId() == R.id.nav_dong){
-//                            binding.mainBottomNav.setVisibility(View.GONE);
-//                        }else{
-//                            binding.mainBottomNav.setVisibility(View.VISIBLE);
-//                        }
-
+                        if(navDestination.getId() == R.id.nav_dong){
+                            binding.mainBottomNav.setVisibility(View.GONE);
+                        }
                         break;
                 }
             }
         });
-
-        // 다크모드 관련
-        themeColor = SettingFragment.modeLoad(getApplicationContext());
-        SettingFragment.applyTheme(themeColor);
     }
 
-    // Side Menu & Bottom Menu Touch Event
+    // Side Menu Touch Event
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item){
         switch (item.getItemId()){
-            case R.id.nav_breed:
-                replaceFragment(breedFragment);
-                drawerLayout.closeDrawer(GravityCompat.END);
+            case R.id.nav_env:
+                moveActivity(OutEnvironmentActivity.class);
                 return true;
+
+            case R.id.nav_breed_info:
+                moveActivity(BreedInfoActivity.class);
+                return true;
+
             case R.id.nav_record:
-                replaceFragment(outRecordFragment);
-                drawerLayout.closeDrawer(GravityCompat.END);
+//                replaceFragment(outRecordFragment);
+//                drawerLayout.closeDrawer(GravityCompat.END);
+                moveActivity(OutRecordActivity.class);
                 return true;
 
             case R.id.nav_settings:
-                Intent intent = new Intent(getApplicationContext(), SettingActivity.class);
-                startActivity(intent);
+//                Intent intent = new Intent(getApplicationContext(), SettingActivity.class);
+//                startActivity(intent);
+                moveActivity(SettingActivity.class);
                 return true;
         }
         return false;
+    }
+
+    public void moveActivity(Class<?> cls){
+        Intent intent = new Intent(getApplicationContext(), cls);
+        startActivity(intent);
     }
 
     // Fragment 이동 제어
@@ -177,17 +185,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
     }
 
-//    // fragment 뒤로가기
-//    @Override
-//    public boolean onSupportNavigateUp(){
-//
-//        if(fragmentManager.getBackStackEntryCount() == 0){
-//            finish();
-//        } else {
-//            fragmentManager.popBackStack();
-//        }
-//
-//        return super.onSupportNavigateUp();
-//    }
+    // fragment 뒤로가기
+    @Override
+    public boolean onSupportNavigateUp(){
+        if(fragmentManager.getBackStackEntryCount() == 0){
+            finish();
+        } else {
+            fragmentManager.popBackStack();
+        }
+        return super.onSupportNavigateUp();
+    }
 
 }

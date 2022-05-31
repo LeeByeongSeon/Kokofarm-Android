@@ -42,15 +42,6 @@ public class ScaleFragment extends Fragment {
 
         binding = FragmentScaleBinding.inflate(inflater);
 
-        recyclerView = binding.scaleListView;
-
-        RecyclerAdapter recyclerAdapter = new RecyclerAdapter();
-        for(int i=1; i<=9; i++){
-            String str = "0"+i;
-            recyclerAdapter.addItem(str);
-        }
-        recyclerView.setAdapter(recyclerAdapter);
-
         return binding.getRoot();
     }
 }

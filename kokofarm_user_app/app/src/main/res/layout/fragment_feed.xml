@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:scrollbars="none"
     tools:context=".FeedFragment">
     
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -11,7 +13,7 @@
         android:layout_height="match_parent">
 
         <LinearLayout
-            android:id="@+id/home_body_feed"
+            android:id="@+id/feed_ll_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -22,84 +24,20 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.02">
 
-<!--            <LinearLayout-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:orientation="horizontal">-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/feed_dong"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginHorizontal="@dimen/pixel_16"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu">
 
-<!--                <com.google.android.material.card.MaterialCardView-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_weight="1"-->
-<!--                    app:cardElevation="0dp"-->
-<!--                    app:cardBackgroundColor="@android:color/transparent"-->
-<!--                    app:contentPadding="@dimen/pixel_16"-->
-<!--                    app:cardCornerRadius="0dp">-->
+                <AutoCompleteTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none"/>
 
-<!--                    <LinearLayout-->
-<!--                        android:layout_width="match_parent"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:layout_weight="1"-->
-<!--                        android:gravity="center"-->
-<!--                        android:orientation="vertical">-->
-
-<!--                        <TextView-->
-<!--                            android:layout_width="wrap_content"-->
-<!--                            android:layout_height="wrap_content"-->
-<!--                            android:layout_marginTop="@dimen/pixel_10"-->
-<!--                            android:paddingBottom="@dimen/pixel_10"-->
-<!--                            android:text="@string/per_feed"-->
-<!--                            style="@style/Text.md_regular_style"/>-->
-
-<!--                        <TextView-->
-<!--                            android:layout_width="wrap_content"-->
-<!--                            android:layout_height="wrap_content"-->
-<!--                            android:text="1548.5g"-->
-<!--                            android:textSize="@dimen/pixel_22"-->
-<!--                            style="@style/Text.md_medium_style"-->
-<!--                            android:textColor="@color/feedColor"/>-->
-
-<!--                    </LinearLayout>-->
-
-<!--                </com.google.android.material.card.MaterialCardView>-->
-
-<!--                <com.google.android.material.card.MaterialCardView-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_weight="1"-->
-<!--                    app:cardElevation="0dp"-->
-<!--                    app:cardBackgroundColor="@android:color/transparent"-->
-<!--                    app:contentPadding="@dimen/pixel_16"-->
-<!--                    app:cardCornerRadius="0dp">-->
-
-<!--                    <LinearLayout-->
-<!--                        android:layout_width="match_parent"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:layout_weight="1"-->
-<!--                        android:gravity="center"-->
-<!--                        android:orientation="vertical">-->
-
-<!--                        <TextView-->
-<!--                            android:layout_width="wrap_content"-->
-<!--                            android:layout_height="wrap_content"-->
-<!--                            android:layout_marginTop="@dimen/pixel_10"-->
-<!--                            android:paddingBottom="@dimen/pixel_10"-->
-<!--                            android:text="@string/per_water"-->
-<!--                            style="@style/Text.md_regular_style"/>-->
-
-<!--                        <TextView-->
-<!--                            android:layout_width="wrap_content"-->
-<!--                            android:layout_height="wrap_content"-->
-<!--                            android:text="3.179L"-->
-<!--                            android:textSize="@dimen/pixel_22"-->
-<!--                            style="@style/Text.md_medium_style"-->
-<!--                            android:textColor="@color/waterColor"/>-->
-
-<!--                    </LinearLayout>-->
-
-<!--                </com.google.android.material.card.MaterialCardView>-->
-
-<!--            </LinearLayout>-->
+            </com.google.android.material.textfield.TextInputLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -365,6 +303,106 @@
             </LinearLayout>
 
         </LinearLayout>
+
+        <TextView
+            android:id="@+id/feed_tv_tf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/pixel_16"
+            android:text="오늘 급이량 변화"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/feed_ll_view"
+            app:layout_constraintHorizontal_bias="0.01"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.02"
+            style="@style/Text.lg_accent_style"/>
+        
+        <com.github.mikephil.charting.charts.CombinedChart
+            android:id="@+id/feed_cc_tf"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/pixel_300"
+            android:layout_marginHorizontal="@dimen/pixel_16"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/feed_tv_tf"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.02"/>
+        
+        <TextView
+            android:id="@+id/feed_tv_df"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/pixel_16"
+            android:text="일령별 급이량 변화"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/feed_cc_tf"
+            app:layout_constraintHorizontal_bias="0.01"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.02"
+            style="@style/Text.lg_accent_style"/>
+
+        <com.github.mikephil.charting.charts.CombinedChart
+            android:id="@+id/feed_cc_df"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/pixel_300"
+            android:layout_marginHorizontal="@dimen/pixel_16"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/feed_tv_df"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.02"/>
+
+        <TextView
+            android:id="@+id/feed_tv_tw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/pixel_16"
+            android:text="오늘 급수량 변화"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/feed_cc_df"
+            app:layout_constraintHorizontal_bias="0.01"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.02"
+            style="@style/Text.lg_accent_style"/>
+
+        <com.github.mikephil.charting.charts.CombinedChart
+            android:id="@+id/feed_cc_tw"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/pixel_300"
+            android:layout_marginHorizontal="@dimen/pixel_16"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/feed_tv_tw"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.02"/>
+
+        <TextView
+            android:id="@+id/feed_tv_dw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/pixel_16"
+            android:text="일령별 급수량 변화"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/feed_cc_tw"
+            app:layout_constraintHorizontal_bias="0.01"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.02"
+            style="@style/Text.lg_accent_style"/>
+        
+        <com.github.mikephil.charting.charts.CombinedChart
+            android:id="@+id/feed_cc_dw"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/pixel_300"
+            android:layout_marginHorizontal="@dimen/pixel_16"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/feed_tv_dw"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.02"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

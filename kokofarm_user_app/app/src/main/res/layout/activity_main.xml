@@ -5,6 +5,7 @@
     android:id="@+id/main_drawer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     tools:openDrawer="end"
     tools:context=".MainActivity">
 
@@ -194,19 +195,7 @@
 
         </androidx.core.widget.NestedScrollView>
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/scroll_top_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|end"
-            android:layout_marginEnd="@dimen/pixel_16"
-            android:layout_marginBottom="@dimen/pixel_72"
-            android:clickable="true"
-            android:src="@drawable/ic_baseline_arrow_upward_24"
-            app:tint="@color/white"
-            app:backgroundTint="@color/secondaryColor"
-            app:fabSize="mini"
-            app:borderWidth="0dp"/>
+        <include layout="@layout/floating_action_button"/>
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/main_bottom_nav"
@@ -226,6 +215,7 @@
         android:layout_height="match_parent"
         android:layout_gravity="end"
         android:paddingTop="@dimen/pixel_16"
+        android:fitsSystemWindows="true"
         app:itemTextAppearance="@style/Text.md_medium_style"
         app:menu="@menu/side_nav_menu"
         app:headerLayout="@layout/nav_header_layout" />

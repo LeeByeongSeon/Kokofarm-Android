@@ -5,7 +5,6 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
 public class SettingActivity extends AppCompatActivity {    // SettingFragment 의 화면을 띄우기 위한 빈 액티비티 생성
     FragmentManager fragmentManager;
@@ -45,18 +44,5 @@ public class SettingActivity extends AppCompatActivity {    // SettingFragment �
 //                .commit();
 //
 //        return true;
-//    }
-
-//    // fragment 뒤로가기
-//    @Override
-//    public boolean onSupportNavigateUp(){
-//
-//        if(fragmentManager.getBackStackEntryCount() == 0){
-//            finish();
-//        } else {
-//            fragmentManager.popBackStack();
-//        }
-//
-//        return super.onSupportNavigateUp();
 //    }
 }

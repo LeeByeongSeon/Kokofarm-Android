@@ -15,6 +15,10 @@
             android:id="@+id/nav_home_to_nav_dong"
             app:destination="@id/nav_dong"/>
 
+        <action
+            android:id="@+id/nav_home_to_nav_record"
+            app:destination="@+id/nav_record"/>
+
     </fragment>
 
     <fragment
@@ -36,7 +40,7 @@
     <fragment
         android:id="@+id/nav_breed"
         android:name="com.example.kokofarm_user_app.BreedFragment"
-        android:label="@string/nav_env"
+        android:label="@string/nav_breed_info"
         tools:layout="@layout/fragment_env">
 
     </fragment>
@@ -52,7 +56,7 @@
     <fragment
         android:id="@+id/nav_env"
         android:name="com.example.kokofarm_user_app.EnvFragment"
-        android:label="@string/nav_breed"
+        android:label="@string/nav_env"
         tools:layout="@layout/fragment_breed">
 
     </fragment>
