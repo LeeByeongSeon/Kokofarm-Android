@@ -27,6 +27,10 @@
         android:label="@string/nav_feed"
         tools:layout="@layout/fragment_feed">
 
+        <action
+            android:id="@+id/nav_feed_to_nav_feed_dong"
+            app:destination="@+id/nav_feed_dong"/>
+
     </fragment>
 
     <fragment
@@ -66,6 +70,14 @@
         android:name="com.example.kokofarm_user_app.OutRecordFragment"
         android:label="@string/nav_record"
         tools:layout="@layout/fragment_out_record">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_feed_dong"
+        android:name="com.example.kokofarm_user_app.FeedChartFragment"
+        android:label="동별 급이/급수 현황"
+        tools:layout="@layout/fragment_feed_chart">
 
     </fragment>
 

@@ -180,6 +180,7 @@
         </com.google.android.material.appbar.AppBarLayout>
 
         <androidx.core.widget.NestedScrollView
+            android:id="@+id/main_scroll_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layout_behavior="@string/appbar_scrolling_view_behavior">
@@ -195,7 +196,50 @@
 
         </androidx.core.widget.NestedScrollView>
 
-        <include layout="@layout/floating_action_button"/>
+        <include
+            android:id="@+id/main_fab"
+            layout="@layout/floating_action_button"/>
+
+        <HorizontalScrollView
+            android:id="@+id/main_hs_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginHorizontal="@dimen/pixel_16"
+            android:layout_marginBottom="@dimen/pixel_60"
+            android:scrollbars="none">
+
+            <!-- HorizontalScrollView 는 자식 View 를 하나만 둘 수 있어서 LinearLayout 으로 Button 묶음 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/all_txt"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/pixel_10"
+                    android:text="1동"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2동"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/pixel_10"
+                    android:text="3동"/>
+
+            </LinearLayout>
+
+        </HorizontalScrollView>
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/main_bottom_nav"

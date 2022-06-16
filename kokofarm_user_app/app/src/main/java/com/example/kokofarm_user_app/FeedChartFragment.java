@@ -1,31 +1,25 @@
 package com.example.kokofarm_user_app;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.kokofarm_user_app.databinding.FragmentScaleBinding;
+import androidx.fragment.app.Fragment;
 
-import java.util.ArrayList;
+import com.example.kokofarm_user_app.databinding.FragmentFeedChartBinding;
 
-public class ScaleFragment extends Fragment {
+public class FeedChartFragment extends Fragment {
 
-    private FragmentScaleBinding binding;
-    private RecyclerView recyclerView;
+    private FragmentFeedChartBinding binding;
 
-    public ScaleFragment() {
+    public FeedChartFragment() {
 
     }
 
-    public static ScaleFragment newInstance() {
+    public static FeedChartFragment newInstance() {
 
-        return new ScaleFragment();
+        return new FeedChartFragment();
     }
 
     @Override
@@ -39,8 +33,7 @@ public class ScaleFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
-        binding = FragmentScaleBinding.inflate(inflater);
+        binding = FragmentFeedChartBinding.inflate(inflater);
 
         return binding.getRoot();
     }

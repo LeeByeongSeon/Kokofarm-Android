@@ -17,8 +17,12 @@
     <dimen name="pixel_35">35dp</dimen>
     <dimen name="pixel_48">48dp</dimen>
     <dimen name="pixel_50">50dp</dimen>
+    <dimen name="pixel_60">60dp</dimen>
+    <dimen name="pixel_65">65dp</dimen>
     <dimen name="pixel_72">72dp</dimen>
     <dimen name="pixel_100">100dp</dimen>
+    <dimen name="pixel_110">110dp</dimen>
+    <dimen name="pixel_120">120dp</dimen>
     <dimen name="pixel_130">130dp</dimen>
     <dimen name="pixel_150">150dp</dimen>
     <dimen name="pixel_200">200dp</dimen>

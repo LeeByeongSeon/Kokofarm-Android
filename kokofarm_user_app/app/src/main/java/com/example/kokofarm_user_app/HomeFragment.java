@@ -55,7 +55,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener, OnBa
         binding = FragmentHomeBinding.inflate(inflater);
 
         binding.homeCdvFarmComein.setOnClickListener(this::onClick);
-        binding.homeDong1.setOnClickListener(this::onClick);
+        binding.homeDongList.homeDong1.setOnClickListener(this::onClick);
 
         setFragmentData(container.getContext());
 

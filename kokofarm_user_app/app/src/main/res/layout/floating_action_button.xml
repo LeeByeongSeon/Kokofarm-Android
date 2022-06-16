@@ -6,7 +6,7 @@
     android:layout_height="wrap_content"
     android:layout_gravity="bottom|end"
     android:layout_marginEnd="@dimen/pixel_16"
-    android:layout_marginBottom="@dimen/pixel_72"
+    android:layout_marginBottom="@dimen/pixel_110"
     android:clickable="true"
     android:src="@drawable/ic_baseline_arrow_upward_24"
     app:tint="@color/white"
