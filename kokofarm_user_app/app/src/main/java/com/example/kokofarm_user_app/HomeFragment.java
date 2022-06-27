@@ -10,13 +10,17 @@ import androidx.navigation.Navigation;
 import androidx.transition.AutoTransition;
 import androidx.transition.TransitionManager;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.example.kokofarm_user_app.databinding.FragmentHomeBinding;
 import com.example.kokofarm_user_app.kkf_utils.FloatCompute;
 import com.example.kokofarm_user_app.manager.DataCacheManager;
+import com.example.kokofarm_user_app.piece.DongCardView;
 import com.github.mikephil.charting.charts.CombinedChart;
 
 import org.json.JSONException;
@@ -26,6 +30,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 public class HomeFragment extends Fragment implements View.OnClickListener, OnBackPressedListener {
 
@@ -55,7 +60,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener, OnBa
         binding = FragmentHomeBinding.inflate(inflater);
 
         binding.homeCdvFarmComein.setOnClickListener(this::onClick);
-        binding.homeDongList.homeDong1.setOnClickListener(this::onClick);
+        //binding.homeDongList.homeDong1.setOnClickListener(this::onClick);
 
         setFragmentData(container.getContext());
 
@@ -88,11 +93,11 @@ public class HomeFragment extends Fragment implements View.OnClickListener, OnBa
 
                 break;
 
-            case R.id.home_dong_1:
-//                ((MainActivity)getActivity()).replaceFragment(DongFragment.newInstance());
-                moveDongFragment();
-
-                break;
+//            case R.id.home_dong_1:
+////                ((MainActivity)getActivity()).replaceFragment(DongFragment.newInstance());
+//                moveDongFragment();
+//
+//                break;
         }
     }
 
@@ -130,12 +135,25 @@ public class HomeFragment extends Fragment implements View.OnClickListener, OnBa
         int feedMax = 0;                    // 사료빈 중량
         int feedRemain = 0;                 // 사료빈 잔량
 
+        HashMap<String, List<Float>> dongMap = new HashMap<String, List<Float>>() {{
+            put("avgWeight", new ArrayList<>());
+            put("feed", new ArrayList<>());
+            put("water", new ArrayList<>());
+        }};
+
+        // 동별 요약 카드뷰를 넣을 레이아웃 위치
+        LinearLayout dongCardViewLay = binding.homeDongBody;
+
         try {
             for (Iterator<String> it = buffer.keys(); it.hasNext(); ) {
                 cnt++;
 
                 String id = it.next();
                 JSONObject dongJson = buffer.getJSONObject(id);
+
+                DongCardView cdv = new DongCardView(context);
+                cdv.initData(id);
+                dongCardViewLay.addView(cdv);
 
                 dongWeightList.add(dongJson.getDouble("beAvgWeight"));
                 totalAvgWeight += dongJson.getDouble("beAvgWeight");
@@ -159,6 +177,10 @@ public class HomeFragment extends Fragment implements View.OnClickListener, OnBa
 
                 JSONObject shFeedData = new JSONObject(dongJson.getString("shFeedData"));
                 waterPerHour += shFeedData.getInt("feed_water");
+
+                dongMap.get("avgWeight").add((float)dongJson.getDouble("beAvgWeight"));
+                dongMap.get("feed").add((float)dongJson.getDouble("sfDailyFeed"));
+                dongMap.get("water").add((float)dongJson.getDouble("sfDailyWater"));
 
             }
 
@@ -192,21 +214,39 @@ public class HomeFragment extends Fragment implements View.OnClickListener, OnBa
 
         //DataCacheManager.getInstance().getFeedPerData("KF0071");
 
-        JSONObject jj = DataCacheManager.getInstance().getJsonData("avgWeight", new HashMap<String, String>() {{
+        JSONObject avgJson = DataCacheManager.getInstance().getJsonData("avgWeight", new HashMap<String, String>() {{
             put("userType", "user");
             put("userID", "kk0071");
             put("setComm", "avgWeight");
             put("code", "20220312082856_KF007101");
         }});
 
+//        CombinedChart chart = binding.dongChart1;
+//        CombinedChartMaker maker = new CombinedChartMaker(chart);
+//        maker.setDateStyle(60*60f, "MM-dd HH:mm");
+//        maker.makeTimeLineChart(avgJson,
+//                new HashMap<String, String>() {{
+//                    put("awWeight", "평균중량");
+//                    put("refWeight", "권고중량");
+//                }});
+//        maker.setMarker(context, R.layout.marker_text_view);
+//        chart.invalidate();
+
         CombinedChart chart = binding.dongChart1;
         CombinedChartMaker maker = new CombinedChartMaker(chart);
-        maker.setDateStyle(60*60f, "MM-dd HH:mm");
-        maker.makeChart(jj,
-                new HashMap<String, String>() {{
-                    put("awWeight", "평균중량");
-                    put("refWeight", "권고중량");
-                }});
+        maker.makeSimpleChart("평균중량", dongMap.get("avgWeight") ,0);
+        maker.setMarker(context, R.layout.marker_text_view);
+        chart.invalidate();
+
+        chart = binding.dongChart2;
+        maker = new CombinedChartMaker(chart);
+        maker.makeSimpleChart("일일 급이량", dongMap.get("feed"), 1);
+        maker.setMarker(context, R.layout.marker_text_view);
+        chart.invalidate();
+
+        chart = binding.dongChart3;
+        maker = new CombinedChartMaker(chart);
+        maker.makeSimpleChart("일일 급수량", dongMap.get("water"), 2);
         maker.setMarker(context, R.layout.marker_text_view);
         chart.invalidate();
 

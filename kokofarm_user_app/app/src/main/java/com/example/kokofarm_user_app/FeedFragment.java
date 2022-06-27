@@ -37,7 +37,7 @@ public class FeedFragment extends Fragment implements View.OnClickListener {
                              Bundle savedInstanceState) {
         binding = FragmentFeedBinding.inflate(inflater);
 
-        binding.feedDongList.homeDong1.setOnClickListener(this::onClick);
+        //binding.feedDongList.homeDong1.setOnClickListener(this::onClick);
 
         return binding.getRoot();
     }
@@ -46,10 +46,10 @@ public class FeedFragment extends Fragment implements View.OnClickListener {
     public void onClick(View view){
         switch (view.getId()){
 
-            case R.id.home_dong_1:
-                moveDongFragment(R.id.nav_feed_dong);
-
-                break;
+//            case R.id.home_dong_1:
+//                moveDongFragment(R.id.nav_feed_dong);
+//
+//                break;
         }
     }
 

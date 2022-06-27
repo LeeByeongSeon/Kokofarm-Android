@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cdv_body"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="@dimen/pixel_50"
+    app:cardBackgroundColor="@color/primaryLightColor"
+    app:strokeWidth="@dimen/pixel_1"
+    app:strokeColor="@color/primaryLightColor"
+    app:contentPadding="@dimen/pixel_5">
+
+    <TextView
+        android:id="@+id/tv_contents"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:textColor="@color/white"
+        android:text="1번 저울"/>
+
+</com.google.android.material.card.MaterialCardView>

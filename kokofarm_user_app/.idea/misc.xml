@@ -43,6 +43,14 @@
         <entry key="..\:/Users/JOSO/Documents/Kokofarm-Android/kokofarm_user_app/app/src/main/res/menu/bottom_nav_menu.xml" value="0.29322916666666665" />
         <entry key="..\:/Users/JOSO/Documents/Kokofarm-Android/kokofarm_user_app/app/src/main/res/menu/side_nav_menu.xml" value="0.5354166666666667" />
         <entry key="..\:/Users/JOSO/Documents/Kokofarm-Android/kokofarm_user_app/app/src/main/res/xml/settings_preference.xml" value="0.5354166666666667" />
+        <entry key="..\:/Users/bslee/Documents/Kokofarm-Android/kokofarm_user_app/app/src/main/res/layout/activity_main.xml" value="0.24375" />
+        <entry key="..\:/Users/bslee/Documents/Kokofarm-Android/kokofarm_user_app/app/src/main/res/layout/activity_setting.xml" value="0.24375" />
+        <entry key="..\:/Users/bslee/Documents/Kokofarm-Android/kokofarm_user_app/app/src/main/res/layout/activity_splash.xml" value="0.24375" />
+        <entry key="..\:/Users/bslee/Documents/Kokofarm-Android/kokofarm_user_app/app/src/main/res/layout/badge_card_view.xml" value="0.26614583333333336" />
+        <entry key="..\:/Users/bslee/Documents/Kokofarm-Android/kokofarm_user_app/app/src/main/res/layout/dong_card_view.xml" value="0.24947916666666667" />
+        <entry key="..\:/Users/bslee/Documents/Kokofarm-Android/kokofarm_user_app/app/src/main/res/layout/dong_list.xml" value="0.24947916666666667" />
+        <entry key="..\:/Users/bslee/Documents/Kokofarm-Android/kokofarm_user_app/app/src/main/res/layout/floating_action_button.xml" value="0.24947916666666667" />
+        <entry key="..\:/Users/bslee/Documents/Kokofarm-Android/kokofarm_user_app/app/src/main/res/layout/fragment_home.xml" value="0.24947916666666667" />
       </map>
     </option>
   </component>

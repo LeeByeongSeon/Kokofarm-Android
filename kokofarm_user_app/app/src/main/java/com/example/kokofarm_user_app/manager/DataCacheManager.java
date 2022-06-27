@@ -37,10 +37,28 @@ public class DataCacheManager {
     // 멤버 선언부
     private String userID = "kk0071";
     private String userPW = "24342434";
+    private String selectFarm = "KF0071";
+    private String selectDong = "01";
 
     private HashMap<String, JSONObject> cacheDataMap;
     private HashMap<String, Long> cacheStampMap;
     private HashMap<String, String> cacheFeedPerMap;
+
+    public void setUserID(String userID) {
+        this.userID = userID;
+    }
+
+    public void setUserPW(String userPW){
+        this.userPW = userPW;
+    }
+
+    public void setSelectFarm(String selectFarm){
+        this.selectFarm = selectFarm;
+    }
+
+    public void setSelectDong(String selectDong){
+        this.selectDong = selectDong;
+    }
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     public JSONObject getJsonData(String key){
@@ -169,7 +187,8 @@ public class DataCacheManager {
                 String key = it.next();
 
             }
-                Log.e("getFeedPerData", json.getJSONObject("KF007102").toString());
+            Log.e("getFeedPerData", json.getJSONObject("KF007102").toString());
+
         } catch (JSONException e) {
             e.printStackTrace();
         }

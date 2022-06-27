@@ -59,7 +59,7 @@
                         android:id="@+id/home_tv_farm_insu"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="90,000수"
+                        android:text="0수"
                         android:textSize="@dimen/pixel_18"
                         style="@style/Text.md_regular_style"/>
 
@@ -90,7 +90,7 @@
                         android:id="@+id/home_tv_farm_comein"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="90,000수"
+                        android:text="0수"
                         android:textSize="@dimen/pixel_18"
                         style="@style/Text.md_regular_style"/>
 
@@ -582,13 +582,46 @@
 
         </LinearLayout>
 
-       <include
-           android:id="@+id/home_dong_list"
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           app:layout_constraintTop_toBottomOf="@+id/feed_ll_view"
-           app:layout_constraintVertical_bias="0.3"
-           layout="@layout/dong_list"/>
+<!--       <include-->
+<!--           android:id="@+id/home_dong_list"-->
+<!--           android:layout_width="match_parent"-->
+<!--           android:layout_height="wrap_content"-->
+<!--           app:layout_constraintTop_toBottomOf="@+id/feed_ll_view"-->
+<!--           app:layout_constraintVertical_bias="0.3"-->
+<!--           layout="@layout/dong_list"/>-->
+
+        <LinearLayout
+            android:id="@+id/home_dong_head"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/feed_ll_view"
+            tools:layout_editor_absoluteX="-25dp">
+
+            <TextView
+                style="@style/Text.lg_accent_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/pixel_16"
+                android:text="@string/dong_header" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="@dimen/pixel_2"
+                android:layout_margin="@dimen/pixel_16"
+                android:layout_weight="1"
+                android:src="@drawable/dotted_line_horizontal_1" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/home_dong_body"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@+id/home_dong_head"
+            app:layout_constraintVertical_bias="0.3">
+
+        </LinearLayout>
 
         <TextView
             android:id="@+id/home_header_dong_chart_1"
@@ -597,7 +630,7 @@
             android:layout_marginHorizontal="@dimen/pixel_16"
             android:text="@string/dong_avg_weight"
             style="@style/Text.lg_accent_style"
-            app:layout_constraintTop_toBottomOf="@+id/home_dong_list"
+            app:layout_constraintTop_toBottomOf="@+id/home_dong_body"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintHorizontal_bias="0.01"
             app:layout_constraintEnd_toEndOf="parent"
@@ -612,7 +645,7 @@
             app:layout_constraintStart_toEndOf="@+id/home_header_dong_chart_1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.99"
-            app:layout_constraintTop_toBottomOf="@+id/home_dong_list"
+            app:layout_constraintTop_toBottomOf="@+id/home_dong_body"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintVertical_bias="0.02"/>
 

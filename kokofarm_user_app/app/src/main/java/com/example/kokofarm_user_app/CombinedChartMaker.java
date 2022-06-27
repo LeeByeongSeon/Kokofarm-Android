@@ -34,18 +34,21 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
 
 public class CombinedChartMaker {
 
     public static final int[] graphColors = new int[]{
             Color.parseColor("#F79F81"),
             Color.parseColor("#F3E2A9"),
+            Color.parseColor("#2ECCFA"),
             Color.parseColor("#FF00FF")
     };
 
     public static final int[] backColors = new int[]{
             Color.parseColor("#F5BCA9"),
             Color.parseColor("#F3F781"),
+            Color.parseColor("#848484"),
             Color.parseColor("#2E2E2E")
     };
 
@@ -78,6 +81,17 @@ public class CombinedChartMaker {
         public String getFormattedValue(float val){
 
             return getDateFromValue(val);
+        }
+    }
+
+    // x 축을 날짜 형식으로 변환
+    class DongAxisValueFormat extends IndexAxisValueFormatter {
+
+        @RequiresApi(api = Build.VERSION_CODES.O)
+        @Override
+        public String getFormattedValue(float val){
+
+            return ((int)val + 1) + "동";
         }
     }
 
@@ -194,7 +208,7 @@ public class CombinedChartMaker {
     }
 
     @RequiresApi(api = Build.VERSION_CODES.O)
-    public void makeChart(JSONObject jsonData, HashMap<String, String> fieldMap){
+    public void makeTimeLineChart(JSONObject jsonData, HashMap<String, String> fieldMap){
 
         try {
 
@@ -299,5 +313,49 @@ public class CombinedChartMaker {
         }catch (Exception e){
             e.printStackTrace();
         }
+    }
+
+    public void makeSimpleChart(String label, List<Float> data, int colorIdx){
+        initLegend(chart);
+        initCombinedChart(chart);
+
+        ArrayList<Entry> lines = new ArrayList<>();
+        ArrayList<BarEntry> bars = new ArrayList<>();
+
+        for(int i=0; i<data.size(); i++){
+            lines.add(new Entry(i, data.get(i)));
+            bars.add(new BarEntry(i, data.get(i)));
+        }
+
+        LineData ld = new LineData();
+        BarData bd = new BarData();
+
+        ld.addDataSet(makeLineDataSet(lines, label, colorIdx));
+        bd.addDataSet(makeBarDataSet(bars, label, colorIdx));
+
+        bd.setBarWidth(0.5f);
+
+        CombinedData combinedData = new CombinedData();
+        //data.setData(bd);
+        combinedData.setData(bd);
+        chart.setData(combinedData);
+
+        YAxis rightAxis = chart.getAxisRight();
+        rightAxis.setDrawGridLines(false);
+        rightAxis.setAxisMinimum(combinedData.getYMin());
+
+        YAxis leftAxis = chart.getAxisLeft();
+        leftAxis.setDrawGridLines(false);
+        leftAxis.setAxisMinimum(combinedData.getYMin());
+
+        XAxis xAxis = chart.getXAxis();
+        xAxis.setValueFormatter(new DongAxisValueFormat());
+        xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
+        //xAxis.setLabelCount(4, false);
+        xAxis.setSpaceMax(1f);
+        xAxis.setSpaceMin(1f);
+        xAxis.setGranularity(1f);
+        //xAxis.setGranularityEnabled(true);
+
     }
 }

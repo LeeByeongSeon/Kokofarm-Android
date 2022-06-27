@@ -23,7 +23,6 @@ import java.util.HashMap;
 
 public class DongFragment extends Fragment {
     private FragmentDongBinding binding;
-    private BarChart barChart;
     private CombinedChart combinedChart;
 
     @RequiresApi(api = Build.VERSION_CODES.O)
