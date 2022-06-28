@@ -309,309 +309,38 @@
             app:layout_constraintTop_toBottomOf="@id/home_header_feed"
             app:layout_constraintVertical_bias="0.001">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <com.google.android.material.card.MaterialCardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginVertical="@dimen/pixel_10"
-                    android:layout_marginStart="@dimen/pixel_16"
-                    android:layout_marginEnd="@dimen/pixel_8"
-                    app:cardElevation="@dimen/overlay_04"
-                    app:cardCornerRadius="@dimen/pixel_10"
-                    app:contentPadding="@dimen/pixel_16">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="@dimen/pixel_10"
-                                android:paddingBottom="@dimen/pixel_10"
-                                android:text="@string/per_feed"
-                                style="@style/Text.md_regular_style"/>
-
-                            <TextView
-                                android:id="@+id/home_tv_farm_feed_per"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="1548.5g"
-                                android:textSize="@dimen/pixel_22"
-                                style="@style/Text.md_medium_style"
-                                android:textColor="@color/feedColor"/>
-
-                        </LinearLayout>
-
-                        <View
-                            style="@style/solid_line_horizontal"/>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:gravity="center">
-
-                            <ImageView
-                                android:layout_width="@dimen/pixel_50"
-                                android:layout_height="@dimen/pixel_50"
-                                android:src="@drawable/feed_3"/>
-
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:orientation="vertical"
-                                android:gravity="end">
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="@string/all_txt"
-                                    style="@style/Text.sm_regular_style"/>
-
-                                <TextView
-                                    android:id="@+id/home_tv_all_feed"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="-"
-                                    style="@style/Text.lg_accent_style"/>
-
-                            </LinearLayout>
-
-                        </LinearLayout>
-
-                        <View
-                            style="@style/solid_line_horizontal"/>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="@string/today_txt"
-                                style="@style/Text.sm_regular_opacity_style"/>
-
-                            <TextView
-                                android:id="@+id/home_tv_curr_feed"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="-"
-                                style="@style/Text.sm_regular_opacity_style"/>
-
-                        </LinearLayout>
-
-                        <View
-                            style="@style/solid_line_horizontal"/>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="@string/yesterday_txt"
-                                style="@style/Text.sm_regular_opacity_style"/>
-
-                            <TextView
-                                android:id="@+id/home_tv_prev_feed"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="-"
-                                style="@style/Text.sm_regular_opacity_style"/>
-
-                        </LinearLayout>
-
-                    </LinearLayout>
-
-                </com.google.android.material.card.MaterialCardView>
-
-                <com.google.android.material.card.MaterialCardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginVertical="@dimen/pixel_10"
-                    android:layout_marginStart="@dimen/pixel_8"
-                    android:layout_marginEnd="@dimen/pixel_16"
-                    app:cardElevation="@dimen/overlay_04"
-                    app:cardCornerRadius="@dimen/pixel_10"
-                    app:contentPadding="@dimen/pixel_16">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="@dimen/pixel_10"
-                                android:paddingBottom="@dimen/pixel_10"
-                                android:text="@string/per_water"
-                                style="@style/Text.md_regular_style"/>
-
-                            <TextView
-                                android:id="@+id/home_tv_farm_water_per"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="3.179L"
-                                android:textSize="@dimen/pixel_22"
-                                style="@style/Text.md_medium_style"
-                                android:textColor="@color/waterColor"/>
-
-                        </LinearLayout>
-
-                        <View
-                            style="@style/solid_line_horizontal"/>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:gravity="center">
-
-                            <ImageView
-                                android:layout_width="@dimen/pixel_50"
-                                android:layout_height="@dimen/pixel_50"
-                                android:src="@drawable/drop"/>
-
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:orientation="vertical"
-                                android:gravity="end">
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="@string/all_txt"
-                                    style="@style/Text.sm_regular_style"/>
-
-                                <TextView
-                                    android:id="@+id/home_tv_all_water"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="-"
-                                    style="@style/Text.lg_accent_style"/>
-
-                            </LinearLayout>
-
-                        </LinearLayout>
-
-                        <View
-                            style="@style/solid_line_horizontal"/>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="@string/today_txt"
-                                style="@style/Text.sm_regular_opacity_style"/>
-
-                            <TextView
-                                android:id="@+id/home_tv_curr_water"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="-"
-                                style="@style/Text.sm_regular_opacity_style"/>
-
-                        </LinearLayout>
-
-                        <View
-                            style="@style/solid_line_horizontal"/>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="@string/yesterday_txt"
-                                style="@style/Text.sm_regular_opacity_style"/>
-
-                            <TextView
-                                android:id="@+id/home_tv_prev_water"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="-"
-                                style="@style/Text.sm_regular_opacity_style"/>
-
-                        </LinearLayout>
-
-                    </LinearLayout>
-
-                </com.google.android.material.card.MaterialCardView>
-
-            </LinearLayout>
+            <include
+                android:id="@+id/home_feed_water"
+                layout="@layout/layout_feed_water"/>
 
         </LinearLayout>
 
-<!--       <include-->
-<!--           android:id="@+id/home_dong_list"-->
-<!--           android:layout_width="match_parent"-->
-<!--           android:layout_height="wrap_content"-->
-<!--           app:layout_constraintTop_toBottomOf="@+id/feed_ll_view"-->
-<!--           app:layout_constraintVertical_bias="0.3"-->
-<!--           layout="@layout/dong_list"/>-->
-
-        <LinearLayout
+        <TextView
             android:id="@+id/home_dong_head"
-            android:layout_width="match_parent"
+            style="@style/Text.lg_accent_style"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/pixel_16"
+            android:text="@string/dong_header"
             app:layout_constraintTop_toBottomOf="@+id/feed_ll_view"
-            tools:layout_editor_absoluteX="-25dp">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.01"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.01"/>
 
-            <TextView
-                style="@style/Text.lg_accent_style"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/pixel_16"
-                android:text="@string/dong_header" />
-
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="@dimen/pixel_2"
-                android:layout_margin="@dimen/pixel_16"
-                android:layout_weight="1"
-                android:src="@drawable/dotted_line_horizontal_1" />
-
-        </LinearLayout>
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="@dimen/pixel_2"
+            android:layout_margin="@dimen/pixel_16"
+            android:layout_weight="1"
+            android:src="@drawable/dotted_line_horizontal_1"
+            app:layout_constraintStart_toEndOf="@+id/home_dong_head"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.99"
+            app:layout_constraintTop_toBottomOf="@+id/feed_ll_view"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.01"/>
 
         <LinearLayout
             android:id="@+id/home_dong_body"
@@ -687,17 +416,21 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintVertical_bias="0.03"/>
 
-        <com.github.mikephil.charting.charts.CombinedChart
-            android:id="@+id/dong_chart_2"
+        <LinearLayout
+            android:id="@+id/home_dong_chart_2"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/pixel_300"
-            android:layout_marginHorizontal="@dimen/pixel_16"
-            android:background="@android:color/transparent"
+            android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@+id/home_header_dong_chart_2"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintVertical_bias="0.01"/>
+            app:layout_constraintVertical_bias="0.01">
+
+            <include
+                android:id="@+id/dong_chart_2"
+                layout="@layout/layout_combine_chart"/>
+
+        </LinearLayout>
 
         <TextView
             android:id="@+id/home_header_dong_chart_3"
@@ -706,7 +439,7 @@
             android:layout_marginHorizontal="@dimen/pixel_16"
             android:text="@string/dong_water"
             style="@style/Text.lg_accent_style"
-            app:layout_constraintTop_toBottomOf="@+id/dong_chart_2"
+            app:layout_constraintTop_toBottomOf="@+id/home_dong_chart_2"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintHorizontal_bias="0.01"
             app:layout_constraintEnd_toEndOf="parent"
@@ -721,21 +454,25 @@
             app:layout_constraintStart_toEndOf="@+id/home_header_dong_chart_3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.99"
-            app:layout_constraintTop_toBottomOf="@+id/dong_chart_2"
+            app:layout_constraintTop_toBottomOf="@+id/home_dong_chart_2"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintVertical_bias="0.09"/>
-
-        <com.github.mikephil.charting.charts.CombinedChart
-            android:id="@+id/dong_chart_3"
+        
+        <LinearLayout
+            android:id="@+id/home_dong_chart_3"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/pixel_300"
-            android:layout_marginHorizontal="@dimen/pixel_16"
-            android:background="@android:color/transparent"
+            android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@+id/home_header_dong_chart_3"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintVertical_bias="0.01"/>
+            app:layout_constraintVertical_bias="0.01">
+
+            <include
+                android:id="@+id/dong_chart_3"
+                layout="@layout/layout_combine_chart"/>
+
+        </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

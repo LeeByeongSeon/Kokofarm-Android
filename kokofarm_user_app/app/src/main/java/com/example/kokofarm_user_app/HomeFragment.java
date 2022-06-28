@@ -205,12 +205,12 @@ public class HomeFragment extends Fragment implements View.OnClickListener, OnBa
         binding.homeTvFarmCull.setText(cullCount + "수");
         binding.homeTvFarmThinout.setText(thinoutCount + "수");
 
-        binding.homeTvAllFeed.setText("" + allFeed);
-        binding.homeTvCurrFeed.setText("" + currFeed);
-        binding.homeTvPrevFeed.setText("" + prevFeed);
-        binding.homeTvAllWater.setText("" + allWater);
-        binding.homeTvCurrWater.setText("" + currWater);
-        binding.homeTvPrevWater.setText("" + prevWater);
+        binding.homeFeedWater.homeTvAllFeed.setText("" + allFeed);
+        binding.homeFeedWater.homeTvCurrFeed.setText("" + currFeed);
+        binding.homeFeedWater.homeTvPrevFeed.setText("" + prevFeed);
+        binding.homeFeedWater.homeTvAllWater.setText("" + allWater);
+        binding.homeFeedWater.homeTvCurrWater.setText("" + currWater);
+        binding.homeFeedWater.homeTvPrevWater.setText("" + prevWater);
 
         //DataCacheManager.getInstance().getFeedPerData("KF0071");
 
@@ -238,13 +238,13 @@ public class HomeFragment extends Fragment implements View.OnClickListener, OnBa
         maker.setMarker(context, R.layout.marker_text_view);
         chart.invalidate();
 
-        chart = binding.dongChart2;
+        chart = binding.dongChart2.combineChart;
         maker = new CombinedChartMaker(chart);
         maker.makeSimpleChart("일일 급이량", dongMap.get("feed"), 1);
         maker.setMarker(context, R.layout.marker_text_view);
         chart.invalidate();
 
-        chart = binding.dongChart3;
+        chart = binding.dongChart3.combineChart;
         maker = new CombinedChartMaker(chart);
         maker.makeSimpleChart("일일 급수량", dongMap.get("water"), 2);
         maker.setMarker(context, R.layout.marker_text_view);
