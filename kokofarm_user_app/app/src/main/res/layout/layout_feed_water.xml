@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginVertical="@dimen/pixel_10"
+        android:layout_marginStart="@dimen/pixel_16"
+        android:layout_marginEnd="@dimen/pixel_8"
+        app:cardElevation="@dimen/overlay_04"
+        app:cardCornerRadius="@dimen/pixel_10"
+        app:contentPadding="@dimen/pixel_16">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/pixel_10"
+                    android:paddingBottom="@dimen/pixel_10"
+                    android:text="@string/per_feed"
+                    style="@style/Text.md_regular_style"/>
+
+                <TextView
+                    android:id="@+id/home_tv_farm_feed_per"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1548.5g"
+                    android:textSize="@dimen/pixel_22"
+                    style="@style/Text.md_medium_style"
+                    android:textColor="@color/feedColor"/>
+
+            </LinearLayout>
+
+            <View
+                style="@style/solid_line_horizontal"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="@dimen/pixel_50"
+                    android:layout_height="@dimen/pixel_50"
+                    android:src="@drawable/feed_3"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="end">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/all_txt"
+                        style="@style/Text.sm_regular_style"/>
+
+                    <TextView
+                        android:id="@+id/home_tv_all_feed"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="-"
+                        style="@style/Text.lg_accent_style"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/pixel_16">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/remain_feed"
+                    style="@style/Text.sm_regular_style"/>
+
+                <TextView
+                    android:id="@+id/homr_tv_per_feed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-"
+                    style="@style/Text.sm_regular_style"/>
+
+            </LinearLayout>
+
+            <View
+                style="@style/solid_line_horizontal"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/today_txt"
+                    style="@style/Text.sm_regular_opacity_style"/>
+
+                <TextView
+                    android:id="@+id/home_tv_curr_feed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-"
+                    style="@style/Text.sm_regular_opacity_style"/>
+
+            </LinearLayout>
+
+            <View
+                style="@style/solid_line_horizontal"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/yesterday_txt"
+                    style="@style/Text.sm_regular_opacity_style"/>
+
+                <TextView
+                    android:id="@+id/home_tv_prev_feed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-"
+                    style="@style/Text.sm_regular_opacity_style"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginVertical="@dimen/pixel_10"
+        android:layout_marginStart="@dimen/pixel_8"
+        android:layout_marginEnd="@dimen/pixel_16"
+        app:cardElevation="@dimen/overlay_04"
+        app:cardCornerRadius="@dimen/pixel_10"
+        app:contentPadding="@dimen/pixel_16">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/pixel_10"
+                    android:paddingBottom="@dimen/pixel_10"
+                    android:text="@string/per_water"
+                    style="@style/Text.md_regular_style"/>
+
+                <TextView
+                    android:id="@+id/home_tv_farm_water_per"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3.179L"
+                    android:textSize="@dimen/pixel_22"
+                    style="@style/Text.md_medium_style"
+                    android:textColor="@color/waterColor"/>
+
+            </LinearLayout>
+
+            <View
+                style="@style/solid_line_horizontal"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="@dimen/pixel_50"
+                    android:layout_height="@dimen/pixel_50"
+                    android:src="@drawable/drop"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="end">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/all_txt"
+                        style="@style/Text.sm_regular_style"/>
+
+                    <TextView
+                        android:id="@+id/home_tv_all_water"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="-"
+                        style="@style/Text.lg_accent_style"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/pixel_16">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/per_hour_water"
+                    style="@style/Text.sm_regular_style"/>
+
+                <TextView
+                    android:id="@+id/homr_tv_per_water"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-"
+                    style="@style/Text.sm_regular_style"/>
+
+            </LinearLayout>
+
+            <View
+                style="@style/solid_line_horizontal"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/today_txt"
+                    style="@style/Text.sm_regular_opacity_style"/>
+
+                <TextView
+                    android:id="@+id/home_tv_curr_water"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-"
+                    style="@style/Text.sm_regular_opacity_style"/>
+
+            </LinearLayout>
+
+            <View
+                style="@style/solid_line_horizontal"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/yesterday_txt"
+                    style="@style/Text.sm_regular_opacity_style"/>
+
+                <TextView
+                    android:id="@+id/home_tv_prev_water"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-"
+                    style="@style/Text.sm_regular_opacity_style"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</LinearLayout>

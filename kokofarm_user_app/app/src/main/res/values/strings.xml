@@ -33,6 +33,8 @@
     <string name="out_count">솎기</string>
     <string name="per_feed">수 당 급이량</string>
     <string name="per_water">수 당 급수량</string>
+    <string name="remain_feed">사료잔량</string>
+    <string name="per_hour_water">시간당 급수량</string>
     <string name="all_txt">전체</string>
     <string name="today_txt">오늘</string>
     <string name="yesterday_txt">어제</string>

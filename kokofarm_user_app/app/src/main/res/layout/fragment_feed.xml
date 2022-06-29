@@ -289,14 +289,14 @@
 
         </LinearLayout>
 
-        <include
-            android:id="@+id/feed_dong_list"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/pixel_16"
-            app:layout_constraintTop_toBottomOf="@+id/feed_ll_view"
-            app:layout_constraintVertical_bias="0.3"
-            layout="@layout/dong_list"/>
+<!--        <include-->
+<!--            android:id="@+id/feed_dong_list"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="@dimen/pixel_16"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/feed_ll_view"-->
+<!--            app:layout_constraintVertical_bias="0.3"-->
+<!--            layout="@layout/dong_list"/>-->
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
