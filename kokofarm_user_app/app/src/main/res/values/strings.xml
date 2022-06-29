@@ -27,6 +27,7 @@
     <string name="all_in_count">총 입추</string>
     <string name="live_count">생존</string>
     <string name="live_ratio">생존 율</string>
+    <string name="extra_count">덤 입추</string>
     <string name="death_count">폐사</string>
     <string name="cull_count">도태</string>
     <string name="out_count">솎기</string>

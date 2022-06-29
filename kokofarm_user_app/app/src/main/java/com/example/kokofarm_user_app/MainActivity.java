@@ -264,6 +264,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     // Back 처리 (Drawer 닫기, HomeFragment 에서 앱 종료)
     @Override
     public void onBackPressed() {
+
         // Drawer 닫기
         if(drawerLayout.isDrawerOpen(GravityCompat.END)) {
             drawerLayout.closeDrawer(GravityCompat.END);

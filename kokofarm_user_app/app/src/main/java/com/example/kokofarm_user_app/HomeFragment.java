@@ -10,12 +10,10 @@ import androidx.navigation.Navigation;
 import androidx.transition.AutoTransition;
 import androidx.transition.TransitionManager;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import com.example.kokofarm_user_app.databinding.FragmentHomeBinding;
 import com.example.kokofarm_user_app.kkf_utils.FloatCompute;
@@ -30,7 +28,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
 
 public class HomeFragment extends Fragment implements View.OnClickListener, OnBackPressedListener {
 
@@ -155,6 +152,11 @@ public class HomeFragment extends Fragment implements View.OnClickListener, OnBa
                 cdv.initData(id);
                 dongCardViewLay.addView(cdv);
 
+                cdv.setOnClickListener(view -> {
+                    ((MainActivity)getActivity()).replaceFragment(DongFragment.newInstance(id));
+                    moveDongFragment();
+                });
+
                 dongWeightList.add(dongJson.getDouble("beAvgWeight"));
                 totalAvgWeight += dongJson.getDouble("beAvgWeight");
                 totalAvgDevi += dongJson.getDouble("beDevi");
@@ -260,5 +262,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener, OnBa
 
     public void moveDongFragment(){
         Navigation.findNavController(binding.getRoot()).navigate(R.id.nav_dong);
+        // 스크롤 설정 필요
     }
 }

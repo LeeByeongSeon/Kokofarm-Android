@@ -95,6 +95,7 @@
                                     android:background="@color/secondaryLightColor"/>
 
                                 <TextView
+                                    android:id="@+id/tv_top_left_title"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginVertical="@dimen/pixel_5"
@@ -102,6 +103,7 @@
                                     style="@style/Text.sm_light_style"/>
 
                                 <TextView
+                                    android:id="@+id/tv_top_left_content"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="292.9g"
@@ -125,6 +127,7 @@
                                     android:background="@color/secondaryColor"/>
 
                                 <TextView
+                                    android:id="@+id/tv_top_center_title"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginVertical="@dimen/pixel_5"
@@ -132,6 +135,7 @@
                                     style="@style/Text.sm_light_style"/>
 
                                 <TextView
+                                    android:id="@+id/tv_top_center_content"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="99910수"
@@ -155,6 +159,7 @@
                                     android:background="@color/secondaryDarkColor"/>
 
                                 <TextView
+                                    android:id="@+id/tv_top_right_title"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginVertical="@dimen/pixel_5"
@@ -162,6 +167,7 @@
                                     style="@style/Text.sm_light_style"/>
 
                                 <TextView
+                                    android:id="@+id/tv_top_right_content"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="31.2g"

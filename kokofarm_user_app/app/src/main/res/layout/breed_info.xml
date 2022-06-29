@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cdv_breed_info"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="@dimen/pixel_10"
+    app:cardElevation="@dimen/overlay_04"
+    app:contentPadding="@dimen/pixel_16">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="@dimen/pixel_5"
+                android:src="@drawable/icon_oval_light_grey" />
+
+            <TextView
+                style="@style/Text.md_regular_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/all_in_count"
+                android:textSize="@dimen/pixel_18" />
+
+            <TextView
+                android:id="@+id/tv_insu"
+                style="@style/Text.md_regular_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0수"
+                android:textSize="@dimen/pixel_18" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/pixel_10"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="@dimen/pixel_5"
+                android:src="@drawable/icon_oval_light_grey" />
+
+            <TextView
+                style="@style/Text.md_regular_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/live_count"
+                android:textSize="@dimen/pixel_18" />
+
+            <TextView
+                android:id="@+id/tv_live"
+                style="@style/Text.md_regular_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0수"
+                android:textSize="@dimen/pixel_18" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/pixel_10"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="@dimen/pixel_5"
+                android:src="@drawable/icon_oval_light_grey" />
+
+            <TextView
+                style="@style/Text.md_regular_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/live_ratio"
+                android:textSize="@dimen/pixel_18" />
+
+            <TextView
+                android:id="@+id/tv_live_per"
+                style="@style/Text.md_regular_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0%"
+                android:textSize="@dimen/pixel_18" />
+
+        </LinearLayout>
+
+<!--        <LinearLayout-->
+<!--            android:id="@+id/lay_live_per"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="@dimen/pixel_10"-->
+<!--            android:orientation="horizontal"-->
+<!--            android:visibility="gone">-->
+
+<!--            <ImageView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginRight="@dimen/pixel_5"-->
+<!--                android:src="@drawable/ic_baseline_remove_circle_outline_24" />-->
+
+<!--            <TextView-->
+<!--                style="@style/Text.md_regular_style"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="1"-->
+<!--                android:text="@string/death_count"-->
+<!--                android:textSize="@dimen/pixel_18" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/home_tv_farm_percent"-->
+<!--                style="@style/Text.md_regular_style"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="0수"-->
+<!--                android:textSize="@dimen/pixel_18" />-->
+
+<!--        </LinearLayout>-->
+
+        <LinearLayout
+            android:id="@+id/lay_extra"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/pixel_10"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="@dimen/pixel_5"
+                android:src="@drawable/icon_oval_light_grey" />
+
+            <TextView
+                style="@style/Text.md_regular_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/extra_count"
+                android:textSize="@dimen/pixel_18" />
+
+            <TextView
+                android:id="@+id/tv_extra"
+                style="@style/Text.md_regular_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0수"
+                android:textSize="@dimen/pixel_18" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lay_death"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/pixel_10"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="@dimen/pixel_5"
+                android:src="@drawable/icon_oval_light_grey" />
+
+            <TextView
+                style="@style/Text.md_regular_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/death_count"
+                android:textSize="@dimen/pixel_18" />
+
+            <TextView
+                android:id="@+id/tv_death"
+                style="@style/Text.md_regular_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0수"
+                android:textSize="@dimen/pixel_18" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lay_cull"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/pixel_10"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="@dimen/pixel_5"
+                android:src="@drawable/icon_oval_light_grey" />
+
+            <TextView
+                style="@style/Text.md_regular_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/cull_count"
+                android:textSize="@dimen/pixel_18" />
+
+            <TextView
+                android:id="@+id/tv_cull"
+                style="@style/Text.md_regular_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0수"
+                android:textSize="@dimen/pixel_18" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lay_thinout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/pixel_10"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="@dimen/pixel_5"
+                android:src="@drawable/icon_oval_light_grey" />
+
+            <TextView
+                style="@style/Text.md_regular_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/out_count"
+                android:textSize="@dimen/pixel_18" />
+
+            <TextView
+                android:id="@+id/tv_thinout"
+                style="@style/Text.md_regular_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0수"
+                android:textSize="@dimen/pixel_18" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/home_accordion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_baseline_arrow_down_24" />
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

@@ -13,7 +13,7 @@
         android:layout_height="match_parent">
         
         <com.google.android.material.card.MaterialCardView
-            android:id="@+id/dong_summary_1"
+            android:id="@+id/dong_cdv_summary"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/pixel_16"
@@ -59,22 +59,25 @@
 
                             <TextView
                                 style="@style/Text.md_regular_style"
+                                android:id="@+id/dong_tv_dong"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginRight="@dimen/pixel_10"
                                 android:text="1동" />
 
                             <ImageView
+                                android:id="@+id/dong_img_error"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:src="@drawable/icon_oval_red"/>
 
                             <TextView
+                                android:id="@+id/dong_tv_day"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:gravity="end"
-                                android:text="23일령"
+                                android:text="0일령"
                                 style="@style/Text.md_regular_style"/>
 
                         </LinearLayout>
@@ -94,9 +97,10 @@
                                 android:text="평균중량" />
 
                             <TextView
+                                android:id="@+id/dong_tv_avg_weight"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="1682.5g"
+                                android:text="0g"
                                 android:textColor="@color/darkRedColor"
                                 style="@style/Text.lg_accent_style"/>
 
@@ -116,9 +120,10 @@
                                 android:text="표준편차" />
 
                             <TextView
+                                android:id="@+id/dong_tv_devi"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="32.5g"
+                                android:text="0"
                                 style="@style/Text.md_regular_style"/>
 
                         </LinearLayout>
@@ -150,6 +155,7 @@
                             style="@style/Text.md_regular_style"/>
 
                         <TextView
+                            android:id="@+id/dong_tv_comein_date"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="2022-04-25"
@@ -160,38 +166,48 @@
 
                 </LinearLayout>
 
-                <View
-                    style="@style/solid_line_horizontal"/>
+<!--                <View-->
+<!--                    style="@style/solid_line_horizontal"/>-->
 
-                <com.google.android.material.card.MaterialCardView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:cardCornerRadius="@dimen/pixel_50"
-                    app:cardBackgroundColor="@color/primaryLightColor"
-                    app:strokeWidth="@dimen/pixel_1"
-                    app:strokeColor="@color/primaryLightColor"
-                    app:contentPadding="@dimen/pixel_5">
+<!--                <com.google.android.material.card.MaterialCardView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    app:cardCornerRadius="@dimen/pixel_50"-->
+<!--                    app:cardBackgroundColor="@color/primaryLightColor"-->
+<!--                    app:strokeWidth="@dimen/pixel_1"-->
+<!--                    app:strokeColor="@color/primaryLightColor"-->
+<!--                    app:contentPadding="@dimen/pixel_5">-->
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@android:color/transparent"
-                        android:textColor="@color/white"
-                        android:text="1번 저울"/>
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:background="@android:color/transparent"-->
+<!--                        android:textColor="@color/white"-->
+<!--                        android:text="1번 저울"/>-->
 
-                </com.google.android.material.card.MaterialCardView>
+<!--                </com.google.android.material.card.MaterialCardView>-->
             </LinearLayout>
 
         </com.google.android.material.card.MaterialCardView>
 
+        <include
+            android:id="@+id/cdv_dong_breed"
+            layout="@layout/breed_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/pixel_16"
+            android:layout_marginVertical="@dimen/pixel_5"
+            app:layout_constraintTop_toBottomOf="@+id/dong_cdv_summary"
+            tools:layout_editor_absoluteX="0dp" />
+
         <TextView
-            android:id="@+id/dong_summary_2_txt"
+            android:id="@+id/title_mean_weight"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/pixel_16"
             android:text="예측 평체"
             style="@style/Text.lg_accent_style"
-            app:layout_constraintTop_toBottomOf="@+id/dong_summary_1"
+            app:layout_constraintTop_toBottomOf="@+id/cdv_dong_breed"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintHorizontal_bias="0.01"
             app:layout_constraintEnd_toEndOf="parent"
@@ -203,10 +219,10 @@
             android:layout_height="@dimen/pixel_2"
             android:layout_margin="@dimen/pixel_16"
             android:src="@drawable/dotted_line_horizontal_1"
-            app:layout_constraintStart_toEndOf="@+id/dong_summary_2_txt"
+            app:layout_constraintStart_toEndOf="@+id/title_mean_weight"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.99"
-            app:layout_constraintTop_toBottomOf="@+id/dong_summary_1"
+            app:layout_constraintTop_toBottomOf="@+id/cdv_dong_breed"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintVertical_bias="0.03"/>
 
@@ -216,7 +232,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center"
-            app:layout_constraintTop_toBottomOf="@+id/dong_summary_2_txt"
+            app:layout_constraintTop_toBottomOf="@+id/title_mean_weight"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -250,10 +266,11 @@
                         style="@style/Text.md_regular_style"/>
 
                     <TextView
+                        android:id="@+id/dong_tv_mean_weight_1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginVertical="@dimen/pixel_16"
-                        android:text="1652.5g"
+                        android:text="0g"
                         style="@style/Text.md_regular_style"/>
 
                     <TextView
@@ -286,17 +303,19 @@
                     android:gravity="center">
 
                     <TextView
+                        android:id="@+id/dong_tv_mean_day_2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="일령"
+                        android:text="16일령"
                         android:textSize="@dimen/pixel_16"
                         style="@style/Text.md_regular_style"/>
 
                     <TextView
+                        android:id="@+id/dong_tv_mean_weight_2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginVertical="@dimen/pixel_16"
-                        android:text="1652.5g"
+                        android:text="0g"
                         style="@style/Text.md_regular_style"/>
 
                     <LinearLayout
@@ -316,6 +335,7 @@
                             style="@style/Text.md_regular_style"/>
 
                         <TextView
+                            android:id="@+id/dong_tv_mean_diff_2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textSize="@dimen/pixel_16"
@@ -350,17 +370,19 @@
                     android:gravity="center">
 
                     <TextView
+                        android:id="@+id/dong_tv_mean_day_3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="일령"
+                        android:text="17일령"
                         android:textSize="@dimen/pixel_16"
                         style="@style/Text.md_regular_style"/>
 
                     <TextView
+                        android:id="@+id/dong_tv_mean_weight_3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginVertical="@dimen/pixel_16"
-                        android:text="1652.5g"
+                        android:text="0g"
                         style="@style/Text.md_regular_style"/>
 
                     <LinearLayout
@@ -379,6 +401,7 @@
                             style="@style/Text.md_regular_style"/>
 
                         <TextView
+                            android:id="@+id/dong_tv_mean_diff_3"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="0.0"
@@ -475,11 +498,12 @@
                             style="@style/Text.sm_regular_style"/>
 
                         <TextView
+                            android:id="@+id/dong_tv_avg_temp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="center"
-                            android:text="30.1"
+                            android:text="0"
                             style="@style/Text.md_regular_style"/>
 
                     </LinearLayout>
@@ -530,11 +554,12 @@
                             style="@style/Text.sm_regular_style"/>
 
                         <TextView
+                            android:id="@+id/dong_tv_avg_humi"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="center"
-                            android:text="72.6"
+                            android:text="0"
                             style="@style/Text.md_regular_style"/>
 
                     </LinearLayout>
@@ -585,11 +610,12 @@
                             style="@style/Text.sm_regular_style"/>
 
                         <TextView
+                            android:id="@+id/dong_tv_avg_co2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="center"
-                            android:text="2,402.7"
+                            android:text="0"
                             style="@style/Text.md_regular_style"/>
 
                     </LinearLayout>
@@ -640,6 +666,7 @@
                             style="@style/Text.sm_regular_style"/>
 
                         <TextView
+                            android:id="@+id/dong_tv_avg_nh3"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -695,6 +722,7 @@
                             style="@style/Text.sm_regular_style"/>
 
                         <TextView
+                            android:id="@+id/dong_tv_avg_dust"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -750,6 +778,7 @@
                             style="@style/Text.sm_regular_style"/>
 
                         <TextView
+                            android:id="@+id/dong_tv_avg_light"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
