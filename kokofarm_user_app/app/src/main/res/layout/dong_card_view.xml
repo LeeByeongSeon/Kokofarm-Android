@@ -77,11 +77,24 @@
 
                 </LinearLayout>
 
-                <ImageView
-                    android:id="@+id/img_feed"
-                    android:layout_width="@dimen/pixel_50"
-                    android:layout_height="@dimen/pixel_50"
-                    android:src="@drawable/feed_3"/>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:id="@+id/img_feed"
+                        android:layout_width="@dimen/pixel_50"
+                        android:layout_height="@dimen/pixel_50"
+                        android:src="@drawable/feed_3"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="- (kg)"/>
+
+                </LinearLayout>
 
             </LinearLayout>
 
