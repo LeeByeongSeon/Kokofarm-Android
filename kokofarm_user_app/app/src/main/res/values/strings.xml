@@ -19,6 +19,8 @@
     <string name="notice_1">입추 수는 최초 입추 기준(덤 포함)</string>
     <string name="notice_2">폐사, 도태, 솎기 수는 해당 일자에 발생된 것만 기록</string>
     <string name="farm_header">전체 현황</string>
+    <string name="fcr_header">사료요구율(FCR)</string>
+    <string name="fcr_16days">※ 16일령 이후 계산</string>
     <string name="feed_header">급이 및 급수</string>
     <string name="dong_header">동별 현황</string>
     <string name="avg_weight">평균중량</string>
