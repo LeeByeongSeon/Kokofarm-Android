@@ -38,7 +38,7 @@
                     style="@style/Text.md_regular_style"/>
 
                 <TextView
-                    android:id="@+id/home_tv_farm_feed_per"
+                    android:id="@+id/tv_feed_per"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="1548.5g"
@@ -58,6 +58,7 @@
                 android:gravity="center">
 
                 <ImageView
+                    android:id="@+id/img_feed"
                     android:layout_width="@dimen/pixel_50"
                     android:layout_height="@dimen/pixel_50"
                     android:src="@drawable/feed_3"/>
@@ -76,7 +77,7 @@
                         style="@style/Text.sm_regular_style"/>
 
                     <TextView
-                        android:id="@+id/home_tv_all_feed"
+                        android:id="@+id/tv_all_feed"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="-"
@@ -99,7 +100,7 @@
                     style="@style/Text.sm_regular_style"/>
 
                 <TextView
-                    android:id="@+id/homr_tv_per_feed"
+                    android:id="@+id/tv_remain_feed"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="-"
@@ -123,7 +124,7 @@
                     style="@style/Text.sm_regular_opacity_style"/>
 
                 <TextView
-                    android:id="@+id/home_tv_curr_feed"
+                    android:id="@+id/tv_curr_feed"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="-"
@@ -147,7 +148,7 @@
                     style="@style/Text.sm_regular_opacity_style"/>
 
                 <TextView
-                    android:id="@+id/home_tv_prev_feed"
+                    android:id="@+id/tv_prev_feed"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="-"
@@ -191,7 +192,7 @@
                     style="@style/Text.md_regular_style"/>
 
                 <TextView
-                    android:id="@+id/home_tv_farm_water_per"
+                    android:id="@+id/tv_water_per"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="3.179L"
@@ -229,7 +230,7 @@
                         style="@style/Text.sm_regular_style"/>
 
                     <TextView
-                        android:id="@+id/home_tv_all_water"
+                        android:id="@+id/tv_all_water"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="-"
@@ -252,7 +253,7 @@
                     style="@style/Text.sm_regular_style"/>
 
                 <TextView
-                    android:id="@+id/homr_tv_per_water"
+                    android:id="@+id/tv_hour_water"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="-"
@@ -276,7 +277,7 @@
                     style="@style/Text.sm_regular_opacity_style"/>
 
                 <TextView
-                    android:id="@+id/home_tv_curr_water"
+                    android:id="@+id/tv_curr_water"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="-"
@@ -300,7 +301,7 @@
                     style="@style/Text.sm_regular_opacity_style"/>
 
                 <TextView
-                    android:id="@+id/home_tv_prev_water"
+                    android:id="@+id/tv_prev_water"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="-"

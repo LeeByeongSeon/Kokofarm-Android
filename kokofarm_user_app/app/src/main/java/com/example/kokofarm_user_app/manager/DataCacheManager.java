@@ -7,6 +7,7 @@ import androidx.annotation.RequiresApi;
 
 import com.example.kokofarm_user_app.kkf_utils.BackTasker;
 import com.example.kokofarm_user_app.kkf_utils.DateUtil;
+import com.example.kokofarm_user_app.kkf_utils.FloatCompute;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -20,6 +21,8 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ExecutionException;
 
@@ -53,7 +56,7 @@ public class DataCacheManager {
 
     private HashMap<String, HashMap<String, JSONObject>> cacheDataMap;      //[farmID][dataComm]
     private HashMap<String, HashMap<String, Long>> cacheStampMap;           //[farmID][dataComm]
-    private HashMap<String, String> cacheFeedPerMap;                        //[id][data]
+    private HashMap<String, float[]> cacheFeedPerMap;                        //[id][data]
 
     public void setUserID(String userID) {
         this.userID = userID;
@@ -291,41 +294,104 @@ public class DataCacheManager {
     }
 
     @RequiresApi(api = Build.VERSION_CODES.O)
-    public String getFeedPerData(String id){
+    public float[] getFeedPerData(String id){
 
-        String farm = "";
-
-        if(id.length() > 6){
-            farm = id.substring(0, 6);
-        }
-        else{
-            farm = id;
-        }
+        String farm = id.length() > 6 ? id.substring(0, 6) : id;
 
         if(cacheFeedPerMap.containsKey(id) && !needRefresh("feedPer")){
             return cacheFeedPerMap.get(id);
         }
 
-        final String farmID = farm;
+        JSONObject json = loadDailyFeedBreedData(farm);
+        JSONObject buffer = loadBufferData(farm);
 
-        JSONObject json = loadDailyFeedBreedData();
+        LinkedHashMap<String, HashMap<String, Integer>> totalList = new LinkedHashMap<>();
 
         try {
             for (Iterator<String> it = json.keys(); it.hasNext(); ){
                 String key = it.next();
                 JSONObject dongJson = json.getJSONObject(key);
+                JSONObject dongBuffer = buffer.getJSONObject(key);
 
+                int inCount = dongBuffer.getInt("cmInsu") + dongBuffer.getInt("cmExtraSu");
+                int live = 0;
+                int death = 0;
+                float feedPer = 0f;
+                float waterPer = 0f;
 
+                String inDate = dongBuffer.getString("cmIndate").substring(0, 10);
+                String outDate = dongBuffer.getString("cmOutdate");
+                String endDate = outDate.length() < 2 ? DateUtil.get_inst().get_now() : outDate;
+                endDate = endDate.substring(0, 10);
 
+                String loopDate = inDate;
 
+                // 동별로 구하기
+                while(true){
+
+                    if(!dongJson.isNull(loopDate)){
+
+                        if(!totalList.containsKey(loopDate)){
+                            totalList.put(loopDate, new HashMap<>());
+                        }
+                        HashMap<String, Integer> totalMap = totalList.get(loopDate);
+
+                        JSONObject jo = dongJson.getJSONObject(loopDate);
+
+                        int feed = jo.getInt("feed") * 1000;
+                        feed += inDate.equals(loopDate) ? dongBuffer.getInt("cmAlreadyFeed") * 1000 : 0;
+
+                        int water = jo.getInt("water");
+
+                        live = inCount - death;
+
+                        feedPer += FloatCompute.divide(feed, live);
+                        waterPer += FloatCompute.divide(water, live);
+
+                        death += jo.getInt("death") + jo.getInt("cull") + jo.getInt("thinout");
+
+                        totalMap.put("feed", totalMap.getOrDefault("feed", 0) + feed);
+                        totalMap.put("water", totalMap.getOrDefault("water", 0) + water);
+                        totalMap.put("live", totalMap.getOrDefault("live", 0) + live);
+
+//                        Log.e("getFeed", feed + " " + water + " " + live);
+                    }
+
+                    if(loopDate.equals(endDate)){
+                        break;
+                    }
+
+                    loopDate = DateUtil.get_inst().get_plus_minus_minute_time(loopDate + " 12:00:00", 24 * 60);
+                    loopDate = loopDate.substring(0, 10);
+                }
+
+                float[] data = new float[]{feedPer, waterPer, 0f};
+                cacheFeedPerMap.put(key, data);
 //                Log.e("getFeedPerData", json.getJSONObject(key).toString());
             }
 
+            float feedPer = 0f;
+            float waterPer = 0f;
+            // 동 전체 구하기
+            for(Map.Entry<String, HashMap<String, Integer>> entry : totalList.entrySet()){
+                String date = entry.getKey();
+                HashMap<String, Integer> map = entry.getValue();
+
+                feedPer += FloatCompute.divide(map.get("feed"), map.get("live"));
+                waterPer += FloatCompute.divide(map.get("water"), map.get("live"));
+
+//                Log.e("date", date);
+            }
+
+            float[] data = new float[]{feedPer, waterPer, 0f};
+            cacheFeedPerMap.put(farm, data);
+
+
         } catch (JSONException e) {
-            e.printStackTrace();
+            Log.e("JSONException", e.getMessage());
         }
 
-        return "";
+        return cacheFeedPerMap.get(id);
 
     }
 }
