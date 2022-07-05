@@ -51,9 +51,9 @@ public class DataCacheManager {
     private String selectFarm = "KF0071";
     private String selectDong = "01";
 
-    private HashMap<String, JSONObject> cacheDataMap;
-    private HashMap<String, Long> cacheStampMap;
-    private HashMap<String, String> cacheFeedPerMap;
+    private HashMap<String, HashMap<String, JSONObject>> cacheDataMap;      //[farmID][dataComm]
+    private HashMap<String, HashMap<String, Long>> cacheStampMap;           //[farmID][dataComm]
+    private HashMap<String, String> cacheFeedPerMap;                        //[id][data]
 
     public void setUserID(String userID) {
         this.userID = userID;
@@ -73,24 +73,33 @@ public class DataCacheManager {
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     public JSONObject getCacheData(String key){
-        return cacheDataMap.getOrDefault(key, null);
+        return cacheDataMap.getOrDefault(selectFarm, new HashMap<>()).getOrDefault(key, null);
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.N)
+    public JSONObject getCacheData(String farm, String key){
+        return cacheDataMap.getOrDefault(farm, new HashMap<>()).getOrDefault(key, null);
     }
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     public JSONObject getCacheData(String key, HashMap<String, String> map){
+        return getCacheData(selectFarm, key, map);
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    public JSONObject getCacheData(String farm, String key, HashMap<String, String> map){
 
         JSONObject ret;
-        //String key = map.get("setComm");
 
         if(key == null) return null;
 
-        if(needRefresh(key)){
+        if(needRefresh(farm, key)){
             ret = getApiJson(map);
-            cacheDataMap.put(key, ret);
-            cacheStampMap.put(key, DateUtil.get_inst().get_now_timestamp());
+            cacheDataMap.get(farm).put(key, ret);
+            cacheStampMap.get(farm).put(key, DateUtil.get_inst().get_now_timestamp());
         }
         else{
-            ret = cacheDataMap.get(key);
+            ret = cacheDataMap.get(farm).get(key);
         }
 
         return ret;
@@ -98,11 +107,22 @@ public class DataCacheManager {
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     private boolean needRefresh(String key){
+        return needRefresh(selectFarm, key);
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    private boolean needRefresh(String farm, String key){
 
         boolean ret = false;
 
-        if(cacheDataMap.containsKey(key)){
-            long prev = cacheStampMap.get(key);
+        if(!cacheDataMap.containsKey(farm)){
+            cacheDataMap.put(farm, new HashMap<>());
+            cacheStampMap.put(farm, new HashMap<>());
+            return true;
+        }
+
+        if(cacheDataMap.get(farm).containsKey(key)){
+            long prev = cacheStampMap.get(farm).get(key);
             long curr = DateUtil.get_inst().get_now_timestamp();
 
             if(curr - prev > 300){
@@ -119,10 +139,11 @@ public class DataCacheManager {
     @RequiresApi(api = Build.VERSION_CODES.O)
     public JSONObject getBufferData(String id){
 
-        JSONObject buffer = getCacheData("buffer");
+        String farm = id.length() > 6 ? id.substring(0, 6) : id;
+
+        JSONObject buffer = getCacheData(farm, "buffer");
         if(buffer == null){
-            loadBufferData();
-            buffer = getCacheData("buffer");
+            buffer = loadBufferData(farm);
         }
 
         JSONObject ret = null;
@@ -222,24 +243,60 @@ public class DataCacheManager {
     }
 
     @RequiresApi(api = Build.VERSION_CODES.O)
-    public void loadBufferData(){
+    public JSONObject loadBufferData(){
+        return loadBufferData(selectFarm);
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    public JSONObject loadBufferData(String farm){
 
         JSONObject json = getCacheData("buffer", new HashMap<String, String>() {{
             put("userType", "user");
             put("userID", userID);
+            put("farmID", farm);
             put("setComm", "buffer");
         }});
+
+        return json;
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    public JSONObject loadFcrData(){
+
+        JSONObject json = getCacheData("fcr", new HashMap<String, String>() {{
+            put("userType", "user");
+            put("userID", userID);
+            put("setComm", "fcr");
+        }});
+
+        return json;
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    public JSONObject loadDailyFeedBreedData(){
+        return loadDailyFeedBreedData(selectFarm);
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    public JSONObject loadDailyFeedBreedData(String farm){
+
+        JSONObject json = getCacheData("feedPer", new HashMap<String, String>() {{
+            put("userType", "user");
+            put("userID", userID);
+            put("farmID", farm);
+            put("setComm", "feedPer");
+        }});
+
+        return json;
     }
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     public String getFeedPerData(String id){
 
         String farm = "";
-        //String dong = "";
 
         if(id.length() > 6){
             farm = id.substring(0, 6);
-            //dong = id.substring(6);
         }
         else{
             farm = id;
@@ -251,19 +308,18 @@ public class DataCacheManager {
 
         final String farmID = farm;
 
-        JSONObject json = getCacheData("feedPer", new HashMap<String, String>() {{
-            put("userType", "user");
-            put("userID", userID);
-            put("farmID", farmID);
-            put("setComm", "feedPer");
-        }});
+        JSONObject json = loadDailyFeedBreedData();
 
         try {
             for (Iterator<String> it = json.keys(); it.hasNext(); ){
                 String key = it.next();
+                JSONObject dongJson = json.getJSONObject(key);
 
+
+
+
+//                Log.e("getFeedPerData", json.getJSONObject(key).toString());
             }
-            Log.e("getFeedPerData", json.getJSONObject("KF007102").toString());
 
         } catch (JSONException e) {
             e.printStackTrace();
