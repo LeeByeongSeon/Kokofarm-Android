@@ -11,6 +11,7 @@
     app:contentPadding="@dimen/pixel_16">
 
     <LinearLayout
+        android:id="@+id/lay_cdv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
@@ -272,7 +273,7 @@
         </LinearLayout>
 
         <ImageView
-            android:id="@+id/home_accordion"
+            android:id="@+id/img_accordion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"

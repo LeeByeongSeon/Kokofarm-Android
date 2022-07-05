@@ -1,6 +1,8 @@
 package com.example.kokofarm_user_app;
 
+import android.app.Activity;
 import android.content.Context;
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 
@@ -10,12 +12,14 @@ import androidx.navigation.Navigation;
 import androidx.transition.AutoTransition;
 import androidx.transition.TransitionManager;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
 import com.example.kokofarm_user_app.databinding.FragmentHomeBinding;
+import com.example.kokofarm_user_app.kkf_utils.BackTasker;
 import com.example.kokofarm_user_app.kkf_utils.FloatCompute;
 import com.example.kokofarm_user_app.manager.DataCacheManager;
 import com.example.kokofarm_user_app.piece.DongCardView;
@@ -28,6 +32,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Future;
 
 public class HomeFragment extends Fragment implements View.OnClickListener, OnBackPressedListener {
 
@@ -56,8 +62,12 @@ public class HomeFragment extends Fragment implements View.OnClickListener, OnBa
                              Bundle savedInstanceState) {
         binding = FragmentHomeBinding.inflate(inflater);
 
+        Log.e("onCreateView", "onCreateView");
+
         binding.homeCdvFarmComein.setOnClickListener(this::onClick);
         //binding.homeDongList.homeDong1.setOnClickListener(this::onClick);
+
+        DataCacheManager.getInstance().loadBufferData();
 
         setFragmentData(container.getContext());
 
@@ -67,6 +77,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener, OnBa
     // fragment 메모리 누수 방지
     @Override
     public void onDestroyView(){
+//        Log.e("onDestroyView", "onDestroyView: ");
         super.onDestroyView();
         binding = null;
     }
@@ -106,8 +117,9 @@ public class HomeFragment extends Fragment implements View.OnClickListener, OnBa
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     public void setFragmentData(Context context){
-        String fName = DataCacheManager.getInstance().getBufferData("KF007101", "fName");
-        JSONObject buffer = DataCacheManager.getInstance().getJsonData("buffer");
+        JSONObject buffer = DataCacheManager.getInstance().getCacheData("buffer");
+
+//        Log.e("buffer", buffer.toString());
 
         int cnt = 0;
         double totalAvgWeight = 0.0;        // 농장 전체 평균중량
@@ -216,7 +228,11 @@ public class HomeFragment extends Fragment implements View.OnClickListener, OnBa
 
         //DataCacheManager.getInstance().getFeedPerData("KF0071");
 
-        JSONObject avgJson = DataCacheManager.getInstance().getJsonData("avgWeight", new HashMap<String, String>() {{
+        String feedPerJson = DataCacheManager.getInstance().getFeedPerData("KF0071");
+
+        Log.e("feedPerJson", feedPerJson);
+
+        JSONObject avgJson = DataCacheManager.getInstance().getCacheData("avgWeight", new HashMap<String, String>() {{
             put("userType", "user");
             put("userID", "kk0071");
             put("setComm", "avgWeight");

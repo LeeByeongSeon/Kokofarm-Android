@@ -3,7 +3,6 @@ package com.example.kokofarm_user_app.piece;
 import android.content.Context;
 import android.os.Build;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -108,7 +107,7 @@ public class DongCardView extends LinearLayout {
     public void initData(String id){
         this.id = id;
 
-        JSONObject buffer = DataCacheManager.getInstance().getJsonData("buffer");
+        JSONObject buffer = DataCacheManager.getInstance().getCacheData("buffer");
 
         try {
             JSONObject dongJson = buffer.getJSONObject(id);

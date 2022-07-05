@@ -5,18 +5,29 @@ import android.util.Log;
 
 import androidx.annotation.RequiresApi;
 
+import com.example.kokofarm_user_app.kkf_utils.BackTasker;
 import com.example.kokofarm_user_app.kkf_utils.DateUtil;
-import com.example.kokofarm_user_app.kkf_utils.UtilFunction;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.BufferedReader;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Map;
+import java.util.concurrent.ExecutionException;
 
 public class DataCacheManager {
 
     private static DataCacheManager instance = null;
+
+    private static final String API_KEY = "06071227041701229789";
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     public static DataCacheManager getInstance(){
@@ -61,12 +72,12 @@ public class DataCacheManager {
     }
 
     @RequiresApi(api = Build.VERSION_CODES.N)
-    public JSONObject getJsonData(String key){
+    public JSONObject getCacheData(String key){
         return cacheDataMap.getOrDefault(key, null);
     }
 
     @RequiresApi(api = Build.VERSION_CODES.O)
-    public JSONObject getJsonData(String key, HashMap<String, String> map){
+    public JSONObject getCacheData(String key, HashMap<String, String> map){
 
         JSONObject ret;
         //String key = map.get("setComm");
@@ -106,20 +117,19 @@ public class DataCacheManager {
     }
 
     @RequiresApi(api = Build.VERSION_CODES.O)
-    public String getBufferData(String id, String key){
+    public JSONObject getBufferData(String id){
 
-        JSONObject buffer = getJsonData("buffer");
+        JSONObject buffer = getCacheData("buffer");
         if(buffer == null){
             loadBufferData();
-            buffer = getJsonData("buffer");
+            buffer = getCacheData("buffer");
         }
 
-        String ret = "";
+        JSONObject ret = null;
 
         if(buffer != null){
             try {
-                JSONObject dong = buffer.getJSONObject(id);
-                ret = dong.getString(key);
+                ret = buffer.getJSONObject(id);
             } catch (JSONException e) {
                 e.printStackTrace();
             }
@@ -128,10 +138,76 @@ public class DataCacheManager {
         return ret;
     }
 
+    private String getApiData(HashMap<String, String> request){
+
+        final String API_URL = "http://api.kokofarm.co.kr/contents/android_api.php";
+
+        String recvMsg = "";
+
+        BackTasker bt = new BackTasker() {
+
+            @Override
+            protected String doInBackground() {
+
+                String ret = "";
+                try{
+
+                    String postData = "apiKey=" + API_KEY;
+
+                    if(request == null) return ret;
+                    for(Map.Entry<String, String> entry : request.entrySet()){
+                        postData += "&" + entry.getKey() + "=" + entry.getValue();
+                    }
+
+                    Log.e("postData", postData);
+
+                    URL url = new URL(API_URL + "?" + postData);
+
+                    HttpURLConnection httpConn = (HttpURLConnection) url.openConnection();
+                    httpConn.setRequestMethod("POST");
+                    httpConn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded;charset=UTF-8");
+
+                    DataOutputStream out = new DataOutputStream(httpConn.getOutputStream());
+                    out.writeBytes(postData);
+                    out.flush();
+                    out.close();
+
+                    InputStreamReader inReader = new InputStreamReader(httpConn.getInputStream(), "UTF-8");
+                    BufferedReader reader = new BufferedReader(inReader);
+                    StringBuffer buffer = new StringBuffer();
+
+                    String str = "";
+                    while ((str = reader.readLine()) != null){
+                        buffer.append(str);
+                    }
+                    ret = buffer.toString();
+
+                    reader.close();
+
+                } catch (MalformedURLException e) {
+                    e.printStackTrace();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+                return ret;
+            }
+        };
+
+        try {
+            recvMsg = (String) bt.execute().get();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return recvMsg;
+    }
+
     private JSONObject getApiJson(HashMap<String, String> map){
 
         try {
-            String data = UtilFunction.get_api_data(map);
+            String data = getApiData(map);
             JSONObject jo = new JSONObject(data);
 
             if(jo.get("errCode").equals("00")){
@@ -148,7 +224,7 @@ public class DataCacheManager {
     @RequiresApi(api = Build.VERSION_CODES.O)
     public void loadBufferData(){
 
-        JSONObject json = getJsonData("buffer", new HashMap<String, String>() {{
+        JSONObject json = getCacheData("buffer", new HashMap<String, String>() {{
             put("userType", "user");
             put("userID", userID);
             put("setComm", "buffer");
@@ -175,7 +251,7 @@ public class DataCacheManager {
 
         final String farmID = farm;
 
-        JSONObject json = getJsonData("feedPer", new HashMap<String, String>() {{
+        JSONObject json = getCacheData("feedPer", new HashMap<String, String>() {{
             put("userType", "user");
             put("userID", userID);
             put("farmID", farmID);
