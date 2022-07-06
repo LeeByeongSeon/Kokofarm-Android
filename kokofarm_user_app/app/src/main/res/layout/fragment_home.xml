@@ -16,7 +16,7 @@
 
         <include
             android:id="@+id/cdv_home_breed"
-            layout="@layout/breed_info"
+            layout="@layout/include_breed_info"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/pixel_16"

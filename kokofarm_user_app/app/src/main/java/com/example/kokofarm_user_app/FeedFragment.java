@@ -27,6 +27,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Locale;
 
 public class FeedFragment extends Fragment {
 
@@ -158,17 +159,17 @@ public class FeedFragment extends Fragment {
 
         // 급이 및 급수
         binding.feedFeedWater.tvAllFeed.setText("" + allFeed);
-        binding.feedFeedWater.tvRemainFeed.setText("" + feedRemain);
-        binding.feedFeedWater.tvCurrFeed.setText("" + currFeed);
-        binding.feedFeedWater.tvPrevFeed.setText("" + prevFeed);
+        binding.feedFeedWater.tvCurrFeed.setText("" + currFeed + "(Kg)");
+        binding.feedFeedWater.tvPrevFeed.setText("" + prevFeed + "(Kg)");
+        binding.feedFeedWater.tvRemainFeed.setText("" + feedRemain + "(Kg)");
         binding.feedFeedWater.tvAllWater.setText("" + allWater);
-        binding.feedFeedWater.tvPerWater.setText("" + waterPerHour);
-        binding.feedFeedWater.tvCurrWater.setText("" + currWater);
-        binding.feedFeedWater.tvPrevWater.setText("" + prevWater);
+        binding.feedFeedWater.tvCurrWater.setText("" + currWater + "(L)");
+        binding.feedFeedWater.tvPrevWater.setText("" + prevWater + "(L)");
+        binding.feedFeedWater.tvHourWater.setText("" + waterPerHour + "(L)");
 
-        String feedPerJson = DataCacheManager.getInstance().getFeedPerData("KF0071");
-
-        Log.e("feedPerJson", feedPerJson);
+        float[] feedPerData = DataCacheManager.getInstance().getFeedPerData("KF0071");
+        binding.feedFeedWater.tvFeedPer.setText(String.format(Locale.getDefault(), "%.1fg", feedPerData[0]));
+        binding.feedFeedWater.tvWaterPer.setText(String.format(Locale.getDefault(), "%.3fL", feedPerData[1]));
 
         JSONObject avgJson = DataCacheManager.getInstance().getCacheData("avgWeight", new HashMap<String, String>() {{
             put("userType", "user");

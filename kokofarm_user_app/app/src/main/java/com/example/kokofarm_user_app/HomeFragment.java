@@ -29,10 +29,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
-<<<<<<< HEAD
-=======
 import java.util.Locale;
->>>>>>> 8237355be81eb0d1fd5d81987be2a5bf76a824cc
 
 public class HomeFragment extends Fragment implements View.OnClickListener, OnBackPressedListener {
 
@@ -219,23 +216,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener, OnBa
 //        binding.homeTvFarmAvgMin.setText(String.format("%.1f", totalAvgWeight - totalAvgDevi) + "g");
 //        binding.homeTvFarmAvgMax.setText(String.format("%.1f", totalAvgWeight + totalAvgDevi) + "g");
 
-<<<<<<< HEAD
-        // 현황
-        binding.homeTvFarmComein.setText(comeinCount + "수");
-        binding.homeTvFarmDeath.setText(deathCount + "수");
-        binding.homeTvFarmCull.setText(cullCount + "수");
-        binding.homeTvFarmThinout.setText(thinoutCount + "수");
-
-        // 급이 및 급수
-        binding.homeFeedWater.tvAllFeed.setText("" + allFeed);
-        binding.homeFeedWater.tvRemainFeed.setText("" + feedRemain);
-        binding.homeFeedWater.tvCurrFeed.setText("" + currFeed);
-        binding.homeFeedWater.tvPrevFeed.setText("" + prevFeed);
-        binding.homeFeedWater.tvAllWater.setText("" + allWater);
-        binding.homeFeedWater.tvPerWater.setText("" + waterPerHour);
-        binding.homeFeedWater.tvCurrWater.setText("" + currWater);
-        binding.homeFeedWater.tvPrevWater.setText("" + prevWater);
-=======
         int live = comeinCount - deathCount - cullCount - thinoutCount;
         // 생육정보
         binding.cdvHomeBreed.tvInsu.setText(Integer.toString(comeinCount));
@@ -250,10 +230,11 @@ public class HomeFragment extends Fragment implements View.OnClickListener, OnBa
         binding.homeFeedWater.tvAllFeed.setText("" + allFeed);
         binding.homeFeedWater.tvCurrFeed.setText("" + currFeed + "(Kg)");
         binding.homeFeedWater.tvPrevFeed.setText("" + prevFeed + "(Kg)");
+        binding.homeFeedWater.tvRemainFeed.setText("" + feedRemain + "(Kg)");
         binding.homeFeedWater.tvAllWater.setText("" + allWater);
         binding.homeFeedWater.tvCurrWater.setText("" + currWater + "(L)");
         binding.homeFeedWater.tvPrevWater.setText("" + prevWater + "(L)");
->>>>>>> 8237355be81eb0d1fd5d81987be2a5bf76a824cc
+        binding.homeFeedWater.tvHourWater.setText("" + waterPerHour + "(L)");
 
         //DataCacheManager.getInstance().getFeedPerData("KF0071");
 
@@ -312,7 +293,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener, OnBa
     }
 
     private void toggleBreedInfo(){
-
         if(binding.cdvHomeBreed.layExtra.getVisibility() == View.GONE){
             binding.cdvHomeBreed.layExtra.setVisibility(View.VISIBLE);
             binding.cdvHomeBreed.layDeath.setVisibility(View.VISIBLE);
