@@ -32,8 +32,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Future;
 
 public class HomeFragment extends Fragment implements View.OnClickListener, OnBackPressedListener {
 
@@ -214,17 +212,21 @@ public class HomeFragment extends Fragment implements View.OnClickListener, OnBa
 //        binding.homeTvFarmAvgMin.setText(String.format("%.1f", totalAvgWeight - totalAvgDevi) + "g");
 //        binding.homeTvFarmAvgMax.setText(String.format("%.1f", totalAvgWeight + totalAvgDevi) + "g");
 
+        // 현황
         binding.homeTvFarmComein.setText(comeinCount + "수");
         binding.homeTvFarmDeath.setText(deathCount + "수");
         binding.homeTvFarmCull.setText(cullCount + "수");
         binding.homeTvFarmThinout.setText(thinoutCount + "수");
 
-        binding.homeFeedWater.homeTvAllFeed.setText("" + allFeed);
-        binding.homeFeedWater.homeTvCurrFeed.setText("" + currFeed);
-        binding.homeFeedWater.homeTvPrevFeed.setText("" + prevFeed);
-        binding.homeFeedWater.homeTvAllWater.setText("" + allWater);
-        binding.homeFeedWater.homeTvCurrWater.setText("" + currWater);
-        binding.homeFeedWater.homeTvPrevWater.setText("" + prevWater);
+        // 급이 및 급수
+        binding.homeFeedWater.tvAllFeed.setText("" + allFeed);
+        binding.homeFeedWater.tvRemainFeed.setText("" + feedRemain);
+        binding.homeFeedWater.tvCurrFeed.setText("" + currFeed);
+        binding.homeFeedWater.tvPrevFeed.setText("" + prevFeed);
+        binding.homeFeedWater.tvAllWater.setText("" + allWater);
+        binding.homeFeedWater.tvPerWater.setText("" + waterPerHour);
+        binding.homeFeedWater.tvCurrWater.setText("" + currWater);
+        binding.homeFeedWater.tvPrevWater.setText("" + prevWater);
 
         //DataCacheManager.getInstance().getFeedPerData("KF0071");
 
@@ -250,18 +252,21 @@ public class HomeFragment extends Fragment implements View.OnClickListener, OnBa
 //        maker.setMarker(context, R.layout.marker_text_view);
 //        chart.invalidate();
 
+        // 동별 평균중량 비교
         CombinedChart chart = binding.dongChart1;
         CombinedChartMaker maker = new CombinedChartMaker(chart);
         maker.makeSimpleChart("평균중량", dongMap.get("avgWeight") ,0);
         maker.setMarker(context, R.layout.marker_text_view);
         chart.invalidate();
 
+        // 동별 급이량 비교
         chart = binding.dongChart2.combineChart;
         maker = new CombinedChartMaker(chart);
         maker.makeSimpleChart("일일 급이량", dongMap.get("feed"), 1);
         maker.setMarker(context, R.layout.marker_text_view);
         chart.invalidate();
 
+        // 동별 급수량 비교
         chart = binding.dongChart3.combineChart;
         maker = new CombinedChartMaker(chart);
         maker.makeSimpleChart("일일 급수량", dongMap.get("water"), 2);

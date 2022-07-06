@@ -5,6 +5,7 @@
     android:id="@+id/nav_graph"
     app:startDestination="@id/nav_home">
 
+    <!-- 홈 -->
     <fragment
         android:id="@+id/nav_home"
         android:name="com.example.kokofarm_user_app.HomeFragment"
@@ -21,6 +22,7 @@
 
     </fragment>
 
+    <!-- 급이/급수 -->
     <fragment
         android:id="@+id/nav_feed"
         android:name="com.example.kokofarm_user_app.FeedFragment"
@@ -33,6 +35,7 @@
 
     </fragment>
 
+    <!-- IoT저울 -->
     <fragment
         android:id="@+id/nav_scale"
         android:name="com.example.kokofarm_user_app.ScaleFragment"
@@ -41,6 +44,7 @@
 
     </fragment>
 
+    <!-- 사육일지 -->
     <fragment
         android:id="@+id/nav_breed"
         android:name="com.example.kokofarm_user_app.BreedFragment"
@@ -49,6 +53,7 @@
 
     </fragment>
 
+    <!-- 동별 현황 -->
     <fragment
         android:id="@+id/nav_dong"
         android:name="com.example.kokofarm_user_app.DongFragment"
@@ -57,6 +62,7 @@
 
     </fragment>
 
+    <!-- 외기환경 -->
     <fragment
         android:id="@+id/nav_env"
         android:name="com.example.kokofarm_user_app.EnvFragment"
@@ -65,6 +71,7 @@
 
     </fragment>
 
+    <!-- 출하내역 -->
     <fragment
         android:id="@+id/nav_record"
         android:name="com.example.kokofarm_user_app.OutRecordFragment"
@@ -73,6 +80,7 @@
 
     </fragment>
 
+    <!-- 동별 급이/급수 현황 -->
     <fragment
         android:id="@+id/nav_feed_dong"
         android:name="com.example.kokofarm_user_app.FeedChartFragment"

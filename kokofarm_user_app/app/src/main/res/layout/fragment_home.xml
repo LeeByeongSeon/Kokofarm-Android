@@ -396,7 +396,7 @@
 
             <include
                 android:id="@+id/home_feed_water"
-                layout="@layout/layout_feed_water"/>
+                layout="@layout/include_feed_water"/>
 
         </LinearLayout>
 
@@ -513,7 +513,7 @@
 
             <include
                 android:id="@+id/dong_chart_2"
-                layout="@layout/layout_combine_chart"/>
+                layout="@layout/include_combine_chart"/>
 
         </LinearLayout>
 
@@ -555,7 +555,7 @@
 
             <include
                 android:id="@+id/dong_chart_3"
-                layout="@layout/layout_combine_chart"/>
+                layout="@layout/include_combine_chart"/>
 
         </LinearLayout>
 

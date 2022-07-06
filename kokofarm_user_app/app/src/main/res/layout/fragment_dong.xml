@@ -42,7 +42,7 @@
                         android:layout_width="@dimen/pixel_100"
                         android:layout_height="@dimen/pixel_100"
                         android:layout_marginRight="@dimen/pixel_10"
-                        android:src="@drawable/hen_3"/>
+                        android:src="@drawable/hen3_g"/>
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -192,7 +192,7 @@
 
         <include
             android:id="@+id/cdv_dong_breed"
-            layout="@layout/breed_info"
+            layout="@layout/include_breed_info"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/pixel_16"
@@ -212,7 +212,7 @@
             app:layout_constraintHorizontal_bias="0.01"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintVertical_bias="0.03"/>
+            app:layout_constraintVertical_bias="0.02"/>
 
         <ImageView
             android:layout_width="0dp"
@@ -224,7 +224,7 @@
             app:layout_constraintHorizontal_bias="0.99"
             app:layout_constraintTop_toBottomOf="@+id/cdv_dong_breed"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintVertical_bias="0.03"/>
+            app:layout_constraintVertical_bias="0.02"/>
 
         <LinearLayout
             android:id="@+id/dong_summary_2"
@@ -429,7 +429,7 @@
             app:layout_constraintHorizontal_bias="0.01"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintVertical_bias="0.03"/>
+            app:layout_constraintVertical_bias="0.02"/>
 
         <ImageView
             android:layout_width="0dp"
@@ -441,7 +441,7 @@
             app:layout_constraintHorizontal_bias="0.99"
             app:layout_constraintTop_toBottomOf="@+id/dong_summary_2"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintVertical_bias="0.03"/>
+            app:layout_constraintVertical_bias="0.02"/>
 
         <GridLayout
             android:id="@+id/dong_summary_3"
@@ -806,7 +806,7 @@
             app:layout_constraintHorizontal_bias="0.01"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintVertical_bias="0.03"/>
+            app:layout_constraintVertical_bias="0.02"/>
 
         <ImageView
             android:layout_width="0dp"
@@ -818,7 +818,7 @@
             app:layout_constraintHorizontal_bias="0.99"
             app:layout_constraintTop_toBottomOf="@+id/dong_summary_3"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintVertical_bias="0.03"/>
+            app:layout_constraintVertical_bias="0.02"/>
 
         <LinearLayout
             android:id="@+id/dong_summary_4"

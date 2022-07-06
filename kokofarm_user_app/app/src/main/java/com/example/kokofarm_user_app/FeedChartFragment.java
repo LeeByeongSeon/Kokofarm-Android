@@ -12,14 +12,17 @@ import com.example.kokofarm_user_app.databinding.FragmentFeedChartBinding;
 public class FeedChartFragment extends Fragment {
 
     private FragmentFeedChartBinding binding;
+    String id;
 
     public FeedChartFragment() {
 
     }
 
-    public static FeedChartFragment newInstance() {
+    public FeedChartFragment(String id){ this.id = id; }
 
-        return new FeedChartFragment();
+    public static FeedChartFragment newInstance(String id) {
+
+        return new FeedChartFragment(id);
     }
 
     @Override

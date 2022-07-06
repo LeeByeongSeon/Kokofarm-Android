@@ -22,6 +22,8 @@
         <entry key="..\:/Users/JOSO/Documents/Kokofarm-Android/kokofarm_user_app/app/src/main/res/layout/activity_out_record_item.xml" value="0.5354166666666667" />
         <entry key="..\:/Users/JOSO/Documents/Kokofarm-Android/kokofarm_user_app/app/src/main/res/layout/activity_setting.xml" value="0.5" />
         <entry key="..\:/Users/JOSO/Documents/Kokofarm-Android/kokofarm_user_app/app/src/main/res/layout/activity_splash.xml" value="0.5354166666666667" />
+        <entry key="..\:/Users/JOSO/Documents/Kokofarm-Android/kokofarm_user_app/app/src/main/res/layout/badge_card_view.xml" value="0.262037037037037" />
+        <entry key="..\:/Users/JOSO/Documents/Kokofarm-Android/kokofarm_user_app/app/src/main/res/layout/breed_info.xml" value="0.262037037037037" />
         <entry key="..\:/Users/JOSO/Documents/Kokofarm-Android/kokofarm_user_app/app/src/main/res/layout/combine_chart.xml" value="0.5354166666666667" />
         <entry key="..\:/Users/JOSO/Documents/Kokofarm-Android/kokofarm_user_app/app/src/main/res/layout/content_view.xml" value="0.5354166666666667" />
         <entry key="..\:/Users/JOSO/Documents/Kokofarm-Android/kokofarm_user_app/app/src/main/res/layout/dialog_layout.xml" value="0.5354166666666667" />
@@ -30,15 +32,19 @@
         <entry key="..\:/Users/JOSO/Documents/Kokofarm-Android/kokofarm_user_app/app/src/main/res/layout/feed_water_layout.xml" value="0.5354166666666667" />
         <entry key="..\:/Users/JOSO/Documents/Kokofarm-Android/kokofarm_user_app/app/src/main/res/layout/floating_action_button.xml" value="0.33" />
         <entry key="..\:/Users/JOSO/Documents/Kokofarm-Android/kokofarm_user_app/app/src/main/res/layout/fragment_breed.xml" value="0.5354166666666667" />
-        <entry key="..\:/Users/JOSO/Documents/Kokofarm-Android/kokofarm_user_app/app/src/main/res/layout/fragment_dong.xml" value="0.4459869848156182" />
+        <entry key="..\:/Users/JOSO/Documents/Kokofarm-Android/kokofarm_user_app/app/src/main/res/layout/fragment_dong.xml" value="0.3420683200748713" />
         <entry key="..\:/Users/JOSO/Documents/Kokofarm-Android/kokofarm_user_app/app/src/main/res/layout/fragment_env.xml" value="0.5354166666666667" />
-        <entry key="..\:/Users/JOSO/Documents/Kokofarm-Android/kokofarm_user_app/app/src/main/res/layout/fragment_feed.xml" value="0.5" />
+        <entry key="..\:/Users/JOSO/Documents/Kokofarm-Android/kokofarm_user_app/app/src/main/res/layout/fragment_feed.xml" value="0.47962962962962963" />
         <entry key="..\:/Users/JOSO/Documents/Kokofarm-Android/kokofarm_user_app/app/src/main/res/layout/fragment_feed_chart.xml" value="0.43385416666666665" />
         <entry key="..\:/Users/JOSO/Documents/Kokofarm-Android/kokofarm_user_app/app/src/main/res/layout/fragment_home.xml" value="0.3136574074074074" />
         <entry key="..\:/Users/JOSO/Documents/Kokofarm-Android/kokofarm_user_app/app/src/main/res/layout/fragment_out_record.xml" value="0.33529028049575993" />
         <entry key="..\:/Users/JOSO/Documents/Kokofarm-Android/kokofarm_user_app/app/src/main/res/layout/fragment_scale.xml" value="0.3721940622737147" />
         <entry key="..\:/Users/JOSO/Documents/Kokofarm-Android/kokofarm_user_app/app/src/main/res/layout/fragment_scale_item.xml" value="0.5354166666666667" />
+        <entry key="..\:/Users/JOSO/Documents/Kokofarm-Android/kokofarm_user_app/app/src/main/res/layout/include_breed_info.xml" value="0.262037037037037" />
         <entry key="..\:/Users/JOSO/Documents/Kokofarm-Android/kokofarm_user_app/app/src/main/res/layout/include_cardview_fcr.xml" value="0.5354166666666667" />
+        <entry key="..\:/Users/JOSO/Documents/Kokofarm-Android/kokofarm_user_app/app/src/main/res/layout/include_combine_chart.xml" value="0.262037037037037" />
+        <entry key="..\:/Users/JOSO/Documents/Kokofarm-Android/kokofarm_user_app/app/src/main/res/layout/include_dong_card_view.xml" value="0.1" />
+        <entry key="..\:/Users/JOSO/Documents/Kokofarm-Android/kokofarm_user_app/app/src/main/res/layout/include_feed_water.xml" value="0.262037037037037" />
         <entry key="..\:/Users/JOSO/Documents/Kokofarm-Android/kokofarm_user_app/app/src/main/res/layout/include_range_slider.xml" value="0.48592870544090055" />
         <entry key="..\:/Users/JOSO/Documents/Kokofarm-Android/kokofarm_user_app/app/src/main/res/layout/layout_combine_chart.xml" value="0.28229166666666666" />
         <entry key="..\:/Users/JOSO/Documents/Kokofarm-Android/kokofarm_user_app/app/src/main/res/layout/layout_feed_water.xml" value="0.28229166666666666" />
