@@ -342,11 +342,11 @@ public class CombinedChartMaker {
 
         YAxis rightAxis = chart.getAxisRight();
         rightAxis.setDrawGridLines(false);
-        rightAxis.setAxisMinimum(combinedData.getYMin());
+        rightAxis.setAxisMinimum(combinedData.getYMin() / 2);
 
         YAxis leftAxis = chart.getAxisLeft();
         leftAxis.setDrawGridLines(false);
-        leftAxis.setAxisMinimum(combinedData.getYMin());
+        leftAxis.setAxisMinimum(combinedData.getYMin() / 2);
 
         XAxis xAxis = chart.getXAxis();
         xAxis.setValueFormatter(new DongAxisValueFormat());

@@ -38,7 +38,7 @@
                     style="@style/Text.md_regular_style"/>
 
                 <TextView
-                    android:id="@+id/tv_farm_feed_per"
+                    android:id="@+id/tv_feed_per"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="1548.5g"
@@ -58,6 +58,7 @@
                 android:gravity="center">
 
                 <ImageView
+                    android:id="@+id/img_feed"
                     android:layout_width="@dimen/pixel_50"
                     android:layout_height="@dimen/pixel_50"
                     android:src="@drawable/feed_3"/>
@@ -191,7 +192,7 @@
                     style="@style/Text.md_regular_style"/>
 
                 <TextView
-                    android:id="@+id/tv_farm_water_per"
+                    android:id="@+id/tv_water_per"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="3.179L"
@@ -252,7 +253,7 @@
                     style="@style/Text.sm_regular_style"/>
 
                 <TextView
-                    android:id="@+id/tv_per_water"
+                    android:id="@+id/tv_hour_water"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="-"

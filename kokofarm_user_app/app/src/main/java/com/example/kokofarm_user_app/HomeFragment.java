@@ -1,8 +1,6 @@
 package com.example.kokofarm_user_app;
 
-import android.app.Activity;
 import android.content.Context;
-import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 
@@ -19,7 +17,6 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
 import com.example.kokofarm_user_app.databinding.FragmentHomeBinding;
-import com.example.kokofarm_user_app.kkf_utils.BackTasker;
 import com.example.kokofarm_user_app.kkf_utils.FloatCompute;
 import com.example.kokofarm_user_app.manager.DataCacheManager;
 import com.example.kokofarm_user_app.piece.DongCardView;
@@ -32,6 +29,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+<<<<<<< HEAD
+=======
+import java.util.Locale;
+>>>>>>> 8237355be81eb0d1fd5d81987be2a5bf76a824cc
 
 public class HomeFragment extends Fragment implements View.OnClickListener, OnBackPressedListener {
 
@@ -62,8 +63,12 @@ public class HomeFragment extends Fragment implements View.OnClickListener, OnBa
 
         Log.e("onCreateView", "onCreateView");
 
-        binding.homeCdvFarmComein.setOnClickListener(this::onClick);
+        //binding.homeCdvFarmComein.setOnClickListener(this::onClick);
         //binding.homeDongList.homeDong1.setOnClickListener(this::onClick);
+
+        binding.cdvHomeBreed.layCdv.setOnClickListener(view -> {
+            toggleBreedInfo();
+        });
 
         DataCacheManager.getInstance().loadBufferData();
 
@@ -82,29 +87,29 @@ public class HomeFragment extends Fragment implements View.OnClickListener, OnBa
 
     @Override
     public void onClick(View view){
-        switch (view.getId()){
-            case R.id.home_cdv_farm_comein:
-                if(binding.homeLoDeath.getVisibility() != view.VISIBLE){
-                    binding.homeCdvFarmComein.setRippleColorResource(R.color.opacity05_bl);
-                    setAutoTransition(binding.homeLoDeath, view.VISIBLE);
-                    setAutoTransition(binding.homeLoCull, view.VISIBLE);
-                    setAutoTransition(binding.homeLoThinout, view.VISIBLE);
-                    binding.homeAccordion.setImageResource(R.drawable.ic_baseline_arrow_up_24);
-                } else {
-                    setAutoTransition(binding.homeLoDeath, view.GONE);
-                    setAutoTransition(binding.homeLoCull, view.GONE);
-                    setAutoTransition(binding.homeLoThinout, view.GONE);
-                    binding.homeAccordion.setImageResource(R.drawable.ic_baseline_arrow_down_24);
-                }
-
-                break;
-
-//            case R.id.home_dong_1:
-////                ((MainActivity)getActivity()).replaceFragment(DongFragment.newInstance());
-//                moveDongFragment();
+//        switch (view.getId()){
+//            case R.id.cdv_home_breed:
+//                if(binding.homeLoDeath.getVisibility() != view.VISIBLE){
+//                    binding.homeCdvFarmComein.setRippleColorResource(R.color.opacity05_bl);
+//                    setAutoTransition(binding.homeLoDeath, view.VISIBLE);
+//                    setAutoTransition(binding.homeLoCull, view.VISIBLE);
+//                    setAutoTransition(binding.homeLoThinout, view.VISIBLE);
+//                    binding.homeAccordion.setImageResource(R.drawable.ic_baseline_arrow_up_24);
+//                } else {
+//                    setAutoTransition(binding.homeLoDeath, view.GONE);
+//                    setAutoTransition(binding.homeLoCull, view.GONE);
+//                    setAutoTransition(binding.homeLoThinout, view.GONE);
+//                    binding.homeAccordion.setImageResource(R.drawable.ic_baseline_arrow_down_24);
+//                }
 //
 //                break;
-        }
+//
+////            case R.id.home_dong_1:
+//////                ((MainActivity)getActivity()).replaceFragment(DongFragment.newInstance());
+////                moveDongFragment();
+////
+////                break;
+//        }
     }
 
     @Override
@@ -135,6 +140,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener, OnBa
         int waterPerHour = 0;               // 1시간 급수량
 
         int comeinCount = 0;                // 입추수
+        int extraCount = 0;                 // 덤 수
         int deathCount = 0;                 // 폐사 수
         int cullCount = 0;                  // 도태 수
         int thinoutCount = 0;               // 솎기 수
@@ -179,7 +185,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener, OnBa
                 prevWater += dongJson.getInt("sfPrevWater");
                 allWater += dongJson.getInt("sfAllWater");
 
-                comeinCount += dongJson.getInt("cmInsu");
+                comeinCount += dongJson.getInt("cmInsu") + dongJson.getInt("cmExtraSu");
+                extraCount += dongJson.getInt("cmExtraSu");
                 deathCount += dongJson.getInt("cmDeathCount");
                 cullCount += dongJson.getInt("cmCullCount");
                 thinoutCount += dongJson.getInt("cmThinoutCount");
@@ -212,6 +219,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener, OnBa
 //        binding.homeTvFarmAvgMin.setText(String.format("%.1f", totalAvgWeight - totalAvgDevi) + "g");
 //        binding.homeTvFarmAvgMax.setText(String.format("%.1f", totalAvgWeight + totalAvgDevi) + "g");
 
+<<<<<<< HEAD
         // 현황
         binding.homeTvFarmComein.setText(comeinCount + "수");
         binding.homeTvFarmDeath.setText(deathCount + "수");
@@ -227,12 +235,34 @@ public class HomeFragment extends Fragment implements View.OnClickListener, OnBa
         binding.homeFeedWater.tvPerWater.setText("" + waterPerHour);
         binding.homeFeedWater.tvCurrWater.setText("" + currWater);
         binding.homeFeedWater.tvPrevWater.setText("" + prevWater);
+=======
+        int live = comeinCount - deathCount - cullCount - thinoutCount;
+        // 생육정보
+        binding.cdvHomeBreed.tvInsu.setText(Integer.toString(comeinCount));
+        binding.cdvHomeBreed.tvLive.setText(Integer.toString(live));
+        binding.cdvHomeBreed.tvLivePer.setText(String.format(Locale.getDefault(), "%.1f", ((float)live/comeinCount) * 100f) + "%");
+        binding.cdvHomeBreed.tvExtra.setText(Integer.toString(extraCount));
+        binding.cdvHomeBreed.tvDeath.setText(Integer.toString(deathCount));
+        binding.cdvHomeBreed.tvCull.setText(Integer.toString(cullCount));
+        binding.cdvHomeBreed.tvThinout.setText(Integer.toString(thinoutCount));
+
+        // 급이 급수 정보
+        binding.homeFeedWater.tvAllFeed.setText("" + allFeed);
+        binding.homeFeedWater.tvCurrFeed.setText("" + currFeed + "(Kg)");
+        binding.homeFeedWater.tvPrevFeed.setText("" + prevFeed + "(Kg)");
+        binding.homeFeedWater.tvAllWater.setText("" + allWater);
+        binding.homeFeedWater.tvCurrWater.setText("" + currWater + "(L)");
+        binding.homeFeedWater.tvPrevWater.setText("" + prevWater + "(L)");
+>>>>>>> 8237355be81eb0d1fd5d81987be2a5bf76a824cc
 
         //DataCacheManager.getInstance().getFeedPerData("KF0071");
 
-        String feedPerJson = DataCacheManager.getInstance().getFeedPerData("KF0071");
+        float[] feedPerData = DataCacheManager.getInstance().getFeedPerData("KF0071");
+        binding.homeFeedWater.tvFeedPer.setText(String.format(Locale.getDefault(), "%.1fg", feedPerData[0]));
+        binding.homeFeedWater.tvWaterPer.setText(String.format(Locale.getDefault(), "%.3fL", feedPerData[1]));
 
-        Log.e("feedPerJson", feedPerJson);
+//        String test = String.format("%.1f", feedPerData[0]) + " // " + String.format("%.3f", feedPerData[1]);
+//        Log.e("test", test);
 
         JSONObject avgJson = DataCacheManager.getInstance().getCacheData("avgWeight", new HashMap<String, String>() {{
             put("userType", "user");
@@ -279,6 +309,24 @@ public class HomeFragment extends Fragment implements View.OnClickListener, OnBa
     public void setAutoTransition(ViewGroup viewGroup, int visibility){
         TransitionManager.beginDelayedTransition(viewGroup, new AutoTransition());
         viewGroup.setVisibility(visibility);
+    }
+
+    private void toggleBreedInfo(){
+
+        if(binding.cdvHomeBreed.layExtra.getVisibility() == View.GONE){
+            binding.cdvHomeBreed.layExtra.setVisibility(View.VISIBLE);
+            binding.cdvHomeBreed.layDeath.setVisibility(View.VISIBLE);
+            binding.cdvHomeBreed.layCull.setVisibility(View.VISIBLE);
+            binding.cdvHomeBreed.layThinout.setVisibility(View.VISIBLE);
+            binding.cdvHomeBreed.imgAccordion.setImageResource(R.drawable.ic_baseline_arrow_up_24);
+        }
+        else{
+            binding.cdvHomeBreed.layExtra.setVisibility(View.GONE);
+            binding.cdvHomeBreed.layDeath.setVisibility(View.GONE);
+            binding.cdvHomeBreed.layCull.setVisibility(View.GONE);
+            binding.cdvHomeBreed.layThinout.setVisibility(View.GONE);
+            binding.cdvHomeBreed.imgAccordion.setImageResource(R.drawable.ic_baseline_arrow_down_24);
+        }
     }
 
     public void moveDongFragment(){
