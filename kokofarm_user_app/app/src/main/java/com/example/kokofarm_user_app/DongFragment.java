@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ScrollView;
 
 import com.example.kokofarm_user_app.databinding.FragmentDongBinding;
 import com.example.kokofarm_user_app.manager.DataCacheManager;
@@ -35,6 +36,7 @@ public class DongFragment extends Fragment implements OnBackPressedListener {
 
     public static DongFragment newInstance(String id) {
 
+        Log.d("::::::::ID:::::::::", id);
         return new DongFragment(id);
     }
 

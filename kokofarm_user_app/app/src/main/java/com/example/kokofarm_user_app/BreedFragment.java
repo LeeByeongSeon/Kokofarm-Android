@@ -14,10 +14,11 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import com.example.kokofarm_user_app.databinding.FragmentBreedBinding;
+import com.example.kokofarm_user_app.databinding.FragmentBreedListBinding;
 
 public class BreedFragment extends Fragment {
 
-    private FragmentBreedBinding binding;
+    private FragmentBreedListBinding binding;
 
     public BreedFragment() {
 
@@ -39,7 +40,7 @@ public class BreedFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        binding = FragmentBreedBinding.inflate(inflater);
+        binding = FragmentBreedListBinding.inflate(inflater);
 
         binding.breedInfo.setOnClickListener(new View.OnClickListener() {
             @Override

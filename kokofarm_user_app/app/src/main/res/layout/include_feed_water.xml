@@ -41,7 +41,7 @@
                     android:id="@+id/tv_feed_per"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="1548.5g"
+                    android:text="0.0g"
                     android:textSize="@dimen/pixel_22"
                     style="@style/Text.md_medium_style"
                     android:textColor="@color/feedColor"/>
@@ -195,7 +195,7 @@
                     android:id="@+id/tv_water_per"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="3.179L"
+                    android:text="0.0L"
                     android:textSize="@dimen/pixel_22"
                     style="@style/Text.md_medium_style"
                     android:textColor="@color/waterColor"/>

@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <com.google.android.material.card.MaterialCardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -80,82 +79,147 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:orientation="vertical"
                     android:gravity="center">
-
-                    <ImageView
-                        android:id="@+id/img_feed"
-                        android:layout_width="@dimen/pixel_50"
-                        android:layout_height="@dimen/pixel_50"
-                        android:src="@drawable/feed_3"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="- (kg)"/>
+                        android:text="@string/avg_weight"
+                        style="@style/Text.md_regular_style"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" - (kg)"
+                        style="@style/Text.md_medium_style"/>
 
                 </LinearLayout>
 
             </LinearLayout>
 
+            <View
+                style="@style/solid_line_horizontal"/>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center"
-                android:layout_marginBottom="@dimen/pixel_5">
+                android:orientation="horizontal">
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="@dimen/pixel_72"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/live_count"
-                    android:textSize="@dimen/pixel_18"/>
+                    android:text="@string/temp_txt"
+                    android:textSize="@dimen/pixel_13"
+                    style="@style/Text.md_regular_style"/>
 
                 <TextView
-                    android:id="@+id/tv_live"
+                    android:layout_width="@dimen/pixel_10"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textSize="@dimen/pixel_13"
+                    style="@style/Text.md_regular_style"/>
+
+
+                <TextView
+                    android:id="@+id/tv_temp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="@dimen/pixel_10"
-                    android:text="30,000수"
-                    android:textSize="@dimen/pixel_18"/>
-
-                <ImageView
-                    android:id="@+id/img_breed_note"
-                    android:layout_width="@dimen/pixel_35"
-                    android:layout_height="@dimen/pixel_35"
-                    android:src="@drawable/ic_baseline_edit_note_24"/>
+                    android:text="0.0"
+                    android:textSize="@dimen/pixel_16"
+                    android:textColor="@color/secondaryColor"/>
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center">
+                android:orientation="horizontal">
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="@dimen/pixel_72"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/avg_weight"
-                    android:textSize="@dimen/pixel_18"/>
+                    android:text="@string/humi_txt"
+                    android:textSize="@dimen/pixel_13"
+                    style="@style/Text.md_regular_style"/>
 
                 <TextView
-                    android:id="@+id/tv_avg_weight"
+                    android:layout_width="@dimen/pixel_10"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textSize="@dimen/pixel_13"
+                    style="@style/Text.md_regular_style"/>
+
+                <TextView
+                    android:id="@+id/tv_humi"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="1682.5g"
-                    android:textColor="@color/darkRedColor"
-                    style="@style/Text.md_medium_style"/>
-
+                    android:includeFontPadding="false"
+                    android:text="0.0"
+                    android:textSize="@dimen/pixel_16"
+                    android:textColor="@color/secondaryColor"/>
             </LinearLayout>
 
-            <!--                        <View-->
-            <!--                            android:layout_width="match_parent"-->
-            <!--                            android:layout_height="@dimen/pixel_1"-->
-            <!--                            android:layout_marginVertical="@dimen/pixel_10"-->
-            <!--                            android:background="@android:color/darker_gray"/>-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="@dimen/pixel_72"
+                    android:layout_height="wrap_content"
+                    android:text="@string/co2_txt"
+                    android:textSize="@dimen/pixel_13"
+                    style="@style/Text.md_regular_style"/>
+
+                <TextView
+                    android:layout_width="@dimen/pixel_10"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textSize="@dimen/pixel_13"
+                    style="@style/Text.md_regular_style"/>
+
+                <TextView
+                    android:id="@+id/tv_co2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:includeFontPadding="false"
+                    android:text="0.0"
+                    android:textSize="@dimen/pixel_16"
+                    android:textColor="@color/secondaryColor" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="@dimen/pixel_72"
+                    android:layout_height="wrap_content"
+                    android:includeFontPadding="false"
+                    android:text="@string/nh3_txt"
+                    android:textSize="@dimen/pixel_13"
+                    style="@style/Text.md_regular_style"/>
+
+                <TextView
+                    android:layout_width="@dimen/pixel_10"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textSize="@dimen/pixel_13"
+                    style="@style/Text.md_regular_style"/>
+
+                <TextView
+                    android:id="@+id/tv_h2s"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:includeFontPadding="false"
+                    android:text="0.0"
+                    android:textSize="@dimen/pixel_16"
+                    android:textColor="@color/secondaryColor" />
+
+            </LinearLayout>
 
             <ImageView
                 android:id="@+id/img_dot_line"

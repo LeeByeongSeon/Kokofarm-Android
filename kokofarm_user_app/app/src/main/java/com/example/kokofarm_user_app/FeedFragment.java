@@ -117,7 +117,7 @@ public class FeedFragment extends Fragment {
                 dongCardViewLay.addView(cdv);
 
                 cdv.setOnClickListener(view -> {
-                    ((MainActivity)getActivity()).replaceFragment(DongFragment.newInstance(id));
+//                    ((MainActivity)getActivity()).replaceFragment(FeedChartFragment.newInstance(id));
                     moveDongFragment();
                 });
 

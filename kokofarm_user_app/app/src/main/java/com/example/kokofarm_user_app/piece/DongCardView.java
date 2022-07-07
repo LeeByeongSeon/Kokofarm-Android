@@ -41,7 +41,7 @@ public class DongCardView extends LinearLayout {
     private void init(Context context){
         this.context = context;
         inflater =(LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        inflater.inflate(R.layout.include_dong_card_view,this,true);
+        inflater.inflate(R.layout.include_cardview_dong,this,true);
     }
 
     public void setDong(String dong){

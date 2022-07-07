@@ -14,7 +14,13 @@
 
         <action
             android:id="@+id/nav_home_to_nav_dong"
-            app:destination="@id/nav_dong"/>
+            app:destination="@id/nav_dong"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@animator/nav_default_exit_anim"
+            app:popUpTo="@+id/nav_dong"
+            app:popUpToInclusive="true"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"/>
 
         <action
             android:id="@+id/nav_home_to_nav_record"

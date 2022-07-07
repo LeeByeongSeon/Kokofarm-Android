@@ -31,7 +31,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 
-public class HomeFragment extends Fragment implements View.OnClickListener, OnBackPressedListener {
+public class HomeFragment extends Fragment implements View.OnClickListener {
 
     private FragmentHomeBinding binding;
 
@@ -109,12 +109,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener, OnBa
 //        }
     }
 
-    @Override
-    public void onBackPressed(){
-        MainActivity mainActivity = (MainActivity) getActivity();
-        mainActivity.finish();
-    }
-
     @RequiresApi(api = Build.VERSION_CODES.O)
     public void setFragmentData(Context context){
         JSONObject buffer = DataCacheManager.getInstance().getCacheData("buffer");
@@ -166,8 +160,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener, OnBa
                 dongCardViewLay.addView(cdv);
 
                 cdv.setOnClickListener(view -> {
-                    ((MainActivity)getActivity()).replaceFragment(DongFragment.newInstance(id));
-                    moveDongFragment();
+//                    ((MainActivity)getActivity()).replaceFragment(DongFragment.newInstance(id));
+                    moveDongFragment(id);
                 });
 
                 dongWeightList.add(dongJson.getDouble("beAvgWeight"));
@@ -309,7 +303,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener, OnBa
         }
     }
 
-    public void moveDongFragment(){
+    public void moveDongFragment(String id){
+        DongFragment.newInstance(id);
         Navigation.findNavController(binding.getRoot()).navigate(R.id.nav_dong);
         // 스크롤 설정 필요
     }

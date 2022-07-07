@@ -5,21 +5,7 @@
 <!--        android:checkableBehavior="single">-->
 <!--        -->
 <!--    </group>-->
-    <item android:title="동별세부보기">
-        <menu>
-            <item
-                android:id="@+id/nav_dong"
-                android:title="1동"/>
-            <item
-                android:id="@+id/nav_dong_2"
-                android:title="2동"/>
-            <item
-                android:id="@+id/nav_dong_3"
-                android:title="3동"/>
-        </menu>
-    </item>
-
-    <item android:title="설정">
+    <item android:title="세부보기">
         <menu>
             <item
                 android:id="@+id/nav_env"
@@ -33,6 +19,11 @@
                 android:id="@+id/nav_record"
                 android:title="@string/nav_record"
                 android:icon="@drawable/ic_baseline_list_alt_24"/>
+        </menu>
+    </item>
+
+    <item android:title="설정">
+        <menu>
             <item
                 android:id="@+id/nav_settings"
                 android:title="설정"

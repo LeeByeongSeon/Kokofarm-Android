@@ -78,4 +78,6 @@
     <string name="dong_txt">동</string>
     <string name="in_date_txt">입추일자</string>
     <string name="out_date_txt">출하일자</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

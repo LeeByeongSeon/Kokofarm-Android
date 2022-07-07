@@ -286,15 +286,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
     }
 
-    // fragment 뒤로가기
-    @Override
-    public boolean onSupportNavigateUp(){
-        if(fragmentManager.getBackStackEntryCount() == 0){
-            finish();
-        } else {
-            fragmentManager.popBackStack();
-        }
-        return super.onSupportNavigateUp();
-    }
+//    // fragment 뒤로가기
+//    @Override
+//    public boolean onSupportNavigateUp(){
+//        if(fragmentManager.getBackStackEntryCount() == 0){
+//            finish();
+//        } else {
+//            fragmentManager.popBackStack();
+//        }
+//        return super.onSupportNavigateUp();
+//    }
 
 }

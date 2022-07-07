@@ -1,66 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
     android:scrollbars="none"
-    tools:context=".FeedChartFragment"
     android:orientation="vertical">
-    
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
+        <include
+            layout="@layout/include_cardview_scale"/>
+
         <TextView
-            android:id="@+id/feed_tv_tf"
+            android:id="@+id/scale_tv_tf"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/pixel_16"
             android:layout_marginHorizontal="@dimen/pixel_16"
-            android:text="오늘 급이량 변화"
+            android:text="평균중량"
             style="@style/Text.lg_accent_style"/>
 
         <include
-            android:id="@+id/feed_cc_tf"
+            android:id="@+id/scale_cc_tf"
             layout="@layout/include_combine_chart"/>
 
         <TextView
-            android:id="@+id/feed_tv_df"
+            android:id="@+id/scale_tv_df"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/pixel_16"
-            android:text="일령별 급이량 변화"
+            android:text="중량별 정규분포"
             style="@style/Text.lg_accent_style"/>
 
         <include
-            android:id="@+id/feed_cc_df"
+            android:id="@+id/scale_cc_df"
             layout="@layout/include_combine_chart"/>
 
         <TextView
-            android:id="@+id/feed_tv_tw"
+            android:id="@+id/scale_tv_tw"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/pixel_16"
-            android:text="오늘 급수량 변화"
+            android:text="오늘 증체중량"
             style="@style/Text.lg_accent_style"/>
 
         <include
-            android:id="@+id/feed_cc_tw"
+            android:id="@+id/scale_cc_tw"
             layout="@layout/include_combine_chart"/>
 
         <TextView
-            android:id="@+id/feed_tv_dw"
+            android:id="@+id/scale_tv_dw"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/pixel_16"
-            android:text="일령별 급수량 변화"
+            android:text="일령별 환경센서"
             style="@style/Text.lg_accent_style"/>
 
         <include
-            android:id="@+id/feed_cc_dw"
+            android:id="@+id/scale_cc_dw"
             layout="@layout/include_combine_chart"/>
 
     </LinearLayout>
