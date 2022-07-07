@@ -21,6 +21,9 @@
     <color name="darkRedColor">#870000</color>
     <color name="lightGreenColor">#00c853</color>
 
+    <color name="kakaoColor">#fae100</color>
+    <color name="kakaoIconColor">#392828</color>
+
     <!-- up & down -->
     <color name="upColor">#FF0000</color>
     <color name="downColor">#1E90FF</color>
