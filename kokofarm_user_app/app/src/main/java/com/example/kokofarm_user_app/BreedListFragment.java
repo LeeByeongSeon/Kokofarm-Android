@@ -65,21 +65,6 @@ public class BreedListFragment extends Fragment {
 //            }
 //        });
 
-        // 리사이클러뷰
-        recyclerView = binding.breedRcvList;
-        RecyclerAdapter recyclerAdapter = new RecyclerAdapter(container.getContext());
-        for(int i=1; i<=20; i++){
-            String str;
-            if(i<10){
-                str = "0"+i;
-            } else {
-                str = String.valueOf(i);
-            }
-            recyclerAdapter.addItem(str);
-        }
-        recyclerView.setAdapter(recyclerAdapter);
-        
-        
         return binding.getRoot();
     }
 
