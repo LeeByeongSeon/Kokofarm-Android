@@ -71,9 +71,15 @@ public class MainActivity extends AppCompatActivity {
     @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+//        if(!DataCacheManager.getInstance().isLogin()){
+//            PageManager.getInstance().moveActivity(this, LoginActivity.class);
+//            return;
+//        }
 
         // 동 선택 레이아웃 숨기기 타이머
         startHideTimer();
@@ -259,8 +265,6 @@ public class MainActivity extends AppCompatActivity {
                     floatingFadeOut();
                 });
             }
-
-            Log.e("tik", "" + tik );
         });
         timer.start(100, 1000);
     }

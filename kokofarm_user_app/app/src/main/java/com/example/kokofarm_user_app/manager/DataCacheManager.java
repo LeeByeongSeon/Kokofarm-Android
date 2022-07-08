@@ -5,7 +5,6 @@ import android.util.Log;
 
 import androidx.annotation.RequiresApi;
 
-import com.example.kokofarm_user_app.MainActivity;
 import com.example.kokofarm_user_app.kkf_utils.BackTasker;
 import com.example.kokofarm_user_app.kkf_utils.DateUtil;
 import com.example.kokofarm_user_app.kkf_utils.FloatCompute;
@@ -15,7 +14,6 @@ import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
-import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
@@ -23,7 +21,6 @@ import java.net.URL;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ExecutionException;
 
@@ -32,6 +29,7 @@ public class DataCacheManager {
     private static DataCacheManager instance = null;
 
     private static final String API_KEY = "06071227041701229789";
+    private static final String API_URL = "http://api.kokofarm.co.kr/contents/";
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     public static DataCacheManager getInstance(){
@@ -50,10 +48,12 @@ public class DataCacheManager {
     }
 
     // 멤버 선언부
+    private boolean loginStatus = false;
+
     private String userID = "kk0071";
     private String userPW = "24342434";
     private String selectFarm = "KF0071";
-    private String selectDong = "01";
+    private String selectDong = "";
 
     private HashMap<String, HashMap<String, JSONObject>> cacheDataMap;      //[farmID][dataComm]
     private HashMap<String, HashMap<String, Long>> cacheStampMap;           //[farmID][dataComm]
@@ -76,6 +76,43 @@ public class DataCacheManager {
     public String getUserPW(){ return userPW; }
     public String getSelectFarm(){ return selectFarm; }
     public String getSelectDong(){ return selectDong; }
+
+    public boolean isLogin(){
+        return loginStatus;
+    }
+
+    public int login(String id, String pw){
+
+        int ret = 1;
+
+        String response = getApiData("login_api.php", new HashMap<String, String>() {{
+            put("userID", id);
+            put("userPW", pw);
+        }});
+
+        Log.e("response", response);
+
+        try {
+            JSONObject jo = new JSONObject(response);
+            if(jo.get("errCode").equals("00")){
+                JSONObject info = jo.getJSONObject("retData").getJSONObject("info");
+
+                setUserID(info.getString("fID"));
+                setUserPW(info.getString("fPW"));
+                setSelectFarm(info.getString("fFarmid"));
+
+                loginStatus = true;
+            }
+
+            ret = Integer.parseInt(jo.getString("errCode"));
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        return ret;
+
+    }
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     public JSONObject getCacheData(String key){
@@ -165,10 +202,7 @@ public class DataCacheManager {
         return ret;
     }
 
-    private String getApiData(HashMap<String, String> request){
-
-        final String API_URL = "http://api.kokofarm.co.kr/contents/android_api.php";
-
+    private String getApiData(String apiName, HashMap<String, String> request){
         String recvMsg = "";
 
         BackTasker bt = new BackTasker() {
@@ -188,7 +222,8 @@ public class DataCacheManager {
 
                     Log.e("postData", postData);
 
-                    URL url = new URL(API_URL + "?" + postData);
+//                    URL url = new URL(API_URL + apiName + "?" + postData);
+                    URL url = new URL(API_URL + apiName + "?" + postData);
 
                     HttpURLConnection httpConn = (HttpURLConnection) url.openConnection();
                     httpConn.setRequestMethod("POST");
@@ -229,6 +264,10 @@ public class DataCacheManager {
             e.printStackTrace();
         }
         return recvMsg;
+    }
+
+    private String getApiData(HashMap<String, String> request){
+        return getApiData("android_api.php", request);
     }
 
     private JSONObject getApiJson(HashMap<String, String> map){
