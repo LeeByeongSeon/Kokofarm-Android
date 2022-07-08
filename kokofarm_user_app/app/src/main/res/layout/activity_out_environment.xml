@@ -31,6 +31,7 @@
             app:layout_constraintVertical_bias="0.001">
 
             <include
+                android:id="@+id/cdv_out_sensor"
                 layout="@layout/include_cardview_out_env"/>
 
         </LinearLayout>

@@ -30,7 +30,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="start"
-                android:text="온도"
+                android:text="온도 (°C)"
                 style="@style/Text.md_regular_style"/>
 
             <ImageView
@@ -42,10 +42,11 @@
                 android:src="@drawable/dotted_line_horizontal_0_1"/>
 
             <TextView
+                android:id="@+id/tv_out_temp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="end"
-                android:text="20.4"
+                android:text="-"
                 style="@style/Text.md_regular_style"/>
 
         </LinearLayout>
@@ -67,7 +68,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="start"
-                android:text="습도"
+                android:text="습도 (%)"
                 style="@style/Text.md_regular_style"/>
 
             <ImageView
@@ -79,10 +80,11 @@
                 android:src="@drawable/dotted_line_horizontal_0_1"/>
 
             <TextView
+                android:id="@+id/tv_out_humi"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="end"
-                android:text="59.0"
+                android:text="-"
                 style="@style/Text.md_regular_style"/>
 
         </LinearLayout>
@@ -103,7 +105,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="start"
-                android:text="암모니아"
+                android:text="암모니아 (ppm)"
                 style="@style/Text.md_regular_style"/>
 
             <ImageView
@@ -115,6 +117,7 @@
                 android:src="@drawable/dotted_line_horizontal_0_1"/>
 
             <TextView
+                android:id="@+id/tv_out_nh3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="end"
@@ -140,7 +143,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="start"
-                android:text="황화수소"
+                android:text="황화수소 (ppm)"
                 style="@style/Text.md_regular_style"/>
 
             <ImageView
@@ -152,6 +155,7 @@
                 android:src="@drawable/dotted_line_horizontal_0_1"/>
 
             <TextView
+                android:id="@+id/tv_out_h2s"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="end"
@@ -188,6 +192,7 @@
                 android:src="@drawable/dotted_line_horizontal_0_1"/>
 
             <TextView
+                android:id="@+id/tv_out_dust"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="end"
@@ -225,10 +230,11 @@
                 android:src="@drawable/dotted_line_horizontal_0_1"/>
 
             <TextView
+                android:id="@+id/tv_out_udust"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="end"
-                android:text="좋음"
+                android:text="-"
                 style="@style/Text.md_regular_style"/>
 
         </LinearLayout>
@@ -261,10 +267,11 @@
                 android:src="@drawable/dotted_line_horizontal_0_1"/>
 
             <TextView
+                android:id="@+id/tv_wind_direc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="end"
-                android:text="남동"
+                android:text="-"
                 style="@style/Text.md_regular_style"/>
 
         </LinearLayout>
@@ -286,7 +293,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="start"
-                android:text="풍속"
+                android:text="풍속 (m/s)"
                 style="@style/Text.md_regular_style"/>
 
             <ImageView
@@ -298,10 +305,11 @@
                 android:src="@drawable/dotted_line_horizontal_0_1"/>
 
             <TextView
+                android:id="@+id/tv_wind_speed"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="end"
-                android:text="1.1"
+                android:text="-"
                 style="@style/Text.md_regular_style"/>
 
         </LinearLayout>
@@ -322,7 +330,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="start"
-                android:text="일사량"
+                android:text="일사량 (lux)"
                 style="@style/Text.md_regular_style"/>
 
             <ImageView
@@ -334,6 +342,7 @@
                 android:src="@drawable/dotted_line_horizontal_0_1"/>
 
             <TextView
+                android:id="@+id/tv_solar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="end"

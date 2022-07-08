@@ -13,7 +13,7 @@
         <entry key="..\:/Users/JOSO/Documents/Kokofarm-Android/kokofarm_user_app/app/src/main/res/drawable/icon_oval_light_grey.xml" value="0.297" />
         <entry key="..\:/Users/JOSO/Documents/Kokofarm-Android/kokofarm_user_app/app/src/main/res/font/app_font.xml" value="0.565625" />
         <entry key="..\:/Users/JOSO/Documents/Kokofarm-Android/kokofarm_user_app/app/src/main/res/layout/activity_breed_info.xml" value="0.5354166666666667" />
-        <entry key="..\:/Users/JOSO/Documents/Kokofarm-Android/kokofarm_user_app/app/src/main/res/layout/activity_login.xml" value="0.67" />
+        <entry key="..\:/Users/JOSO/Documents/Kokofarm-Android/kokofarm_user_app/app/src/main/res/layout/activity_login.xml" value="0.5354166666666667" />
         <entry key="..\:/Users/JOSO/Documents/Kokofarm-Android/kokofarm_user_app/app/src/main/res/layout/activity_main.xml" value="0.27529182879377434" />
         <entry key="..\:/Users/JOSO/Documents/Kokofarm-Android/kokofarm_user_app/app/src/main/res/layout/activity_mode_dialog.xml" value="0.5354166666666667" />
         <entry key="..\:/Users/JOSO/Documents/Kokofarm-Android/kokofarm_user_app/app/src/main/res/layout/activity_out_environment.xml" value="0.27852545348156815" />
@@ -57,14 +57,18 @@
         <entry key="..\:/Users/JOSO/Documents/Kokofarm-Android/kokofarm_user_app/app/src/main/res/menu/side_nav_menu.xml" value="0.5354166666666667" />
         <entry key="..\:/Users/JOSO/Documents/Kokofarm-Android/kokofarm_user_app/app/src/main/res/xml/settings_preference.xml" value="0.5354166666666667" />
         <entry key="..\:/Users/bslee/Documents/Kokofarm-Android/kokofarm_user_app/app/src/main/res/layout/activity_main.xml" value="0.20677083333333332" />
+        <entry key="..\:/Users/bslee/Documents/Kokofarm-Android/kokofarm_user_app/app/src/main/res/layout/activity_out_environment.xml" value="0.20677083333333332" />
+        <entry key="..\:/Users/bslee/Documents/Kokofarm-Android/kokofarm_user_app/app/src/main/res/layout/activity_out_record.xml" value="0.20677083333333332" />
         <entry key="..\:/Users/bslee/Documents/Kokofarm-Android/kokofarm_user_app/app/src/main/res/layout/badge_card_view.xml" value="0.20677083333333332" />
         <entry key="..\:/Users/bslee/Documents/Kokofarm-Android/kokofarm_user_app/app/src/main/res/layout/breed_info.xml" value="0.20677083333333332" />
+        <entry key="..\:/Users/bslee/Documents/Kokofarm-Android/kokofarm_user_app/app/src/main/res/layout/floating_action_button.xml" value="0.20677083333333332" />
         <entry key="..\:/Users/bslee/Documents/Kokofarm-Android/kokofarm_user_app/app/src/main/res/layout/fragment_dong.xml" value="0.20677083333333332" />
         <entry key="..\:/Users/bslee/Documents/Kokofarm-Android/kokofarm_user_app/app/src/main/res/layout/fragment_home.xml" value="0.20677083333333332" />
         <entry key="..\:/Users/bslee/Documents/Kokofarm-Android/kokofarm_user_app/app/src/main/res/layout/include_breed_info.xml" value="0.20677083333333332" />
         <entry key="..\:/Users/bslee/Documents/Kokofarm-Android/kokofarm_user_app/app/src/main/res/layout/include_button_main.xml" value="0.20677083333333332" />
         <entry key="..\:/Users/bslee/Documents/Kokofarm-Android/kokofarm_user_app/app/src/main/res/layout/include_cardview_breed.xml" value="0.20677083333333332" />
         <entry key="..\:/Users/bslee/Documents/Kokofarm-Android/kokofarm_user_app/app/src/main/res/layout/include_cardview_dong.xml" value="0.20677083333333332" />
+        <entry key="..\:/Users/bslee/Documents/Kokofarm-Android/kokofarm_user_app/app/src/main/res/layout/include_cardview_out_env.xml" value="0.20677083333333332" />
         <entry key="..\:/Users/bslee/Documents/Kokofarm-Android/kokofarm_user_app/app/src/main/res/layout/layout_feed_water.xml" value="0.20677083333333332" />
         <entry key="..\:/Users/bslee/Documents/Kokofarm-Android/kokofarm_user_app/app/src/main/res/layout/toolbar.xml" value="0.20677083333333332" />
         <entry key="..\:/Users/bslee/Documents/Kokofarm-Android/kokofarm_user_app/app/src/main/res/menu/bottom_nav_menu.xml" value="0.20677083333333332" />

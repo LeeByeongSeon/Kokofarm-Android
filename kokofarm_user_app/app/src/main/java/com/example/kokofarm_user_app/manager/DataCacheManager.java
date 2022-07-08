@@ -256,7 +256,7 @@ public class DataCacheManager {
     @RequiresApi(api = Build.VERSION_CODES.O)
     public JSONObject loadBufferData(String farm){
 
-        JSONObject json = getCacheData("buffer", new HashMap<String, String>() {{
+        JSONObject json = getCacheData(farm, "buffer", new HashMap<String, String>() {{
             put("userType", "user");
             put("userID", userID);
             put("farmID", farm);
@@ -279,6 +279,24 @@ public class DataCacheManager {
     }
 
     @RequiresApi(api = Build.VERSION_CODES.O)
+    public JSONObject loadOutSensorData(){
+        return loadOutSensorData(selectFarm);
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    public JSONObject loadOutSensorData(String farm){
+
+        JSONObject json = getCacheData(farm, "outSensor", new HashMap<String, String>() {{
+            put("userType", "user");
+            put("userID", userID);
+            put("farmID", farm);
+            put("setComm", "outSensor");
+        }});
+
+        return json;
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.O)
     public JSONObject loadDailyFeedBreedData(){
         return loadDailyFeedBreedData(selectFarm);
     }
@@ -286,11 +304,24 @@ public class DataCacheManager {
     @RequiresApi(api = Build.VERSION_CODES.O)
     public JSONObject loadDailyFeedBreedData(String farm){
 
-        JSONObject json = getCacheData("feedPer", new HashMap<String, String>() {{
+        JSONObject json = getCacheData(farm, "feedPer", new HashMap<String, String>() {{
             put("userType", "user");
             put("userID", userID);
             put("farmID", farm);
             put("setComm", "feedPer");
+        }});
+
+        return json;
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    public JSONObject loadSensorHistory(String code){
+
+        JSONObject json = getCacheData(code, "sensorHistory", new HashMap<String, String>() {{
+            put("userType", "user");
+            put("userID", userID);
+            put("code", code);
+            put("setComm", "sensorHistory");
         }});
 
         return json;
@@ -396,5 +427,54 @@ public class DataCacheManager {
 
         return cacheFeedPerMap.get(id);
 
+    }
+
+    public String getDustStatus(int val){
+        String ret = "좋음";
+
+        if(val >= 16 && val < 36) ret = "보통";
+        else if(val >= 36 && val < 76) ret = "나쁨";
+        else if(val >= 76) ret = "매우나쁨";
+        else if(val < 0) ret = "-";
+
+        return ret;
+    }
+
+    public String getWindDirection(int val){
+
+        String ret = "-";
+
+        switch(val){
+            case 0:
+            case 360:
+                ret = "북";
+                break;
+            case 45:
+                ret = "북동";
+                break;
+            case 90:
+                ret = "동";
+                break;
+            case 135:
+                ret = "남동";
+                break;
+            case 180:
+                ret = "남";
+                break;
+            case 225:
+                ret = "남서";
+                break;
+            case 270:
+                ret = "서";
+                break;
+            case 315:
+                ret = "북서";
+                break;
+            default :
+                ret ="-";
+                break;
+        }
+
+        return ret;
     }
 }

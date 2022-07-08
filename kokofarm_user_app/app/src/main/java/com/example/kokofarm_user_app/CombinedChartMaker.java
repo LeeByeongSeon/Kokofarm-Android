@@ -57,7 +57,11 @@ public class CombinedChartMaker {
     private float timeTerm;
     private String timeFormat;
 
-    public boolean isDateFormat = false;
+    private boolean isSetY = false;
+    private float yMax = 0;
+    private float yMin = 0;
+
+    private boolean isDateFormat = false;
 
     public CombinedChartMaker(CombinedChart chart){
         this.chart = chart;
@@ -67,6 +71,12 @@ public class CombinedChartMaker {
         isDateFormat = true;
         this.timeTerm = timeTerm;
         this.timeFormat = timeFormat;
+    }
+
+    public void setYAxisRange(float yMin, float yMax){
+        isSetY = true;
+        this.yMin = yMin;
+        this.yMax = yMax;
     }
 
     public void setTimeBase(long timeBase){
@@ -282,13 +292,18 @@ public class CombinedChartMaker {
 
                 //Log.e("CombinedData", "" + data.getBarData().getDataSets());
 
+                yMin = isSetY ? yMin : data.getYMin() - 1;
+                yMax = isSetY ? yMax : data.getYMax() + 1;
+
                 YAxis rightAxis = chart.getAxisRight();
                 rightAxis.setDrawGridLines(false);
-                rightAxis.setAxisMinimum(data.getYMin()); // this replaces setStartAtZero(true)
+                rightAxis.setAxisMinimum(yMin);
+                rightAxis.setAxisMaximum(yMax);
 
                 YAxis leftAxis = chart.getAxisLeft();
                 leftAxis.setDrawGridLines(false);
-                leftAxis.setAxisMinimum(data.getYMin()); // this replaces setStartAtZero(true)
+                leftAxis.setAxisMinimum(yMin);
+                leftAxis.setAxisMaximum(yMax);
 
                 XAxis xAxis = chart.getXAxis();
                 xAxis.setValueFormatter(new DateTimeAxisValueFormat());

@@ -1,43 +1,38 @@
 package com.example.kokofarm_user_app;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.core.widget.NestedScrollView;
 import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
-import androidx.navigation.ui.NavigationUI;
 
+import android.animation.ObjectAnimator;
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.GestureDetector;
-import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
-import android.widget.Button;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.example.kokofarm_user_app.databinding.ActivityMainBinding;
+import com.example.kokofarm_user_app.kkf_utils.SimpleTimer;
 import com.example.kokofarm_user_app.manager.DataCacheManager;
 import com.example.kokofarm_user_app.manager.PageManager;
 import com.example.kokofarm_user_app.piece.MainButton;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.navigation.NavigationBarView;
 import com.google.android.material.navigation.NavigationView;
 
 import org.json.JSONObject;
 
 import java.util.Iterator;
-import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -57,15 +52,20 @@ public class MainActivity extends AppCompatActivity {
     // 앱 종료
     private long backPressedTime = 0L;
 
-    // 제스처 감지
-    GestureDetector gesture;
-
     // navigation
     private NavHostFragment navHostFragment;
     private NavController navController;
 
     private Context context;
     boolean themeColor;
+
+    // 플로팅바 관련
+    SimpleTimer timer;
+    int tik = 0;
+    final int hideCount = 2;
+    Animation fadeIn;
+    Animation fadeOut;
+
     
     @RequiresApi(api = Build.VERSION_CODES.O)
     @SuppressLint("ClickableViewAccessibility")
@@ -74,6 +74,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        // 동 선택 레이아웃 숨기기 타이머
+        startHideTimer();
+
+        // 애니메이션 로드
+        fadeIn = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_in);
+        fadeOut = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_out);
 
         // 다크모드 관련
         themeColor = SettingFragment.modeLoad(getApplicationContext());
@@ -105,16 +112,8 @@ public class MainActivity extends AppCompatActivity {
 
         Log.e("onCreate", "onCreate");
 
-//        navHostFragment = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.main_frame);
-//        navController = Objects.requireNonNull(navHostFragment).getNavController();
-//        navController = navHostFragment.getNavController();
-
-        // navigationView 랑 bottomNavigationView 를 navController 에 결합
         sideNav = binding.mainSideNav;
-//        NavigationUI.setupWithNavController(sideNav, navController);
-
         botNav = binding.mainBottomNav;
-//        NavigationUI.setupWithNavController(botNav, navController);
 
         setClickEvent();
         setSelectBar();
@@ -143,8 +142,26 @@ public class MainActivity extends AppCompatActivity {
     protected void onDestroy() {
 
 //        Log.e("onDestroy", "onDestroy");
-
+        stopHideTimer();
         super.onDestroy();
+    }
+
+    // activity 터치 이벤트
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent event) {
+        int userAction = event.getAction();
+        switch (userAction) {
+            case MotionEvent.ACTION_DOWN:
+                if(tik > hideCount){
+                    tik = 0;
+                    floatingFadeIn();
+                }
+                break;
+
+            default:
+                break;
+        }
+        return super.dispatchTouchEvent(event);
     }
 
     public void setClickEvent(){
@@ -225,6 +242,53 @@ public class MainActivity extends AppCompatActivity {
             super.onBackPressed();
         }
     }
+    
+    private void startHideTimer(){
+        stopHideTimer();
+
+        timer = SimpleTimer.create_inst();
+
+        timer.set_runnable(() -> {
+
+            if(tik < hideCount){
+                tik++;
+            }
+            else if(tik == hideCount){
+                tik++;
+                runOnUiThread(() -> {
+                    floatingFadeOut();
+                });
+            }
+
+            Log.e("tik", "" + tik );
+        });
+        timer.start(100, 1000);
+    }
+
+    private void stopHideTimer(){
+        if(timer != null){
+            timer.stop();
+            timer = null;
+        }
+
+        tik = 0;
+    }
+
+    private void floatingFadeIn(){
+        binding.selectBar.startAnimation(fadeIn);
+        binding.mainFab.scrollTopBtn.startAnimation(fadeIn);
+//        binding.selectBar.setVisibility(View.VISIBLE);
+//        binding.mainFab.scrollTopBtn.setVisibility(View.VISIBLE);
+    }
+
+    private void floatingFadeOut(){
+        binding.selectBar.startAnimation(fadeOut);
+        binding.mainFab.scrollTopBtn.startAnimation(fadeOut);
+//        binding.selectBar.setVisibility(View.GONE);
+//        binding.mainFab.scrollTopBtn.setVisibility(View.GONE);
+    }
+
+
 
 //    // fragment 뒤로가기
 //    @Override
