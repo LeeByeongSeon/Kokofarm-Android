@@ -68,7 +68,17 @@
             <com.google.android.material.button.MaterialButton
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="저장하기"/>
+                android:text="로그인"/>
+            
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="카카오로 로그인"
+                app:icon="@drawable/kakao"
+                app:iconGravity="textStart"
+                app:iconSize="@dimen/pixel_22"
+                app:iconTint="@color/kakaoIconColor"
+                app:backgroundTint="@color/kakaoColor"/>
 
         </LinearLayout>
         
