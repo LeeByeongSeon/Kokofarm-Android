@@ -9,6 +9,8 @@
     <dimen name="pixel_10">10dp</dimen>
     <dimen name="pixel_12">12dp</dimen>
     <dimen name="pixel_13">13dp</dimen>
+    <dimen name="pixel_14">14dp</dimen>
+    <dimen name="pixel_15">15dp</dimen>
     <dimen name="pixel_16">16dp</dimen>
     <dimen name="pixel_18">18dp</dimen>
     <dimen name="pixel_22">22dp</dimen>

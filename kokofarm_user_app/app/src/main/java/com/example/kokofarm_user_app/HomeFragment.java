@@ -1,12 +1,12 @@
 package com.example.kokofarm_user_app;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
 
 import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.Navigation;
 import androidx.transition.AutoTransition;
 import androidx.transition.TransitionManager;
 
@@ -22,10 +22,12 @@ import com.example.kokofarm_user_app.manager.DataCacheManager;
 import com.example.kokofarm_user_app.manager.PageManager;
 import com.example.kokofarm_user_app.piece.DongCardView;
 import com.github.mikephil.charting.charts.CombinedChart;
+import com.google.android.material.slider.Slider;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -73,8 +75,39 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
         setFragmentData(container.getContext());
 
+        // FCR Slider 관련
+        setFcrVal();
+        Slider slider = binding.homeRsFcr.sdFcr;
+        slider.addOnSliderTouchListener(sliderTouchListener);
+
         return binding.getRoot();
     }
+
+    // fcr 값
+    public void setFcrVal(){
+        DecimalFormat decimalFormat = new DecimalFormat("#.###");
+
+        double fcrVal = binding.homeRsFcr.sdFcr.getValue();
+        String fcrStr = decimalFormat.format(fcrVal);
+        binding.homeRsFcr.tvFcr.setText(fcrStr);
+    }
+
+    // FCR Slider 관련
+    private final Slider.OnSliderTouchListener sliderTouchListener =
+        new Slider.OnSliderTouchListener() {
+            @SuppressLint("RestrictedApi")
+            @Override
+            public void onStartTrackingTouch(Slider slider) {
+                Log.d("StartTrack", "Start");
+                setFcrVal();
+            }
+
+            @SuppressLint("RestrictedApi")
+            public void onStopTrackingTouch(Slider slider) {
+                Log.d("StopTrack", "Stop");
+                setFcrVal();
+            }
+        };
 
     // fragment 메모리 누수 방지
     @Override

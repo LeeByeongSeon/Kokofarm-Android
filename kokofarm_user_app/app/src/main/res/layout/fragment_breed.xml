@@ -13,6 +13,7 @@
         android:layout_height="wrap_content">
 
         <LinearLayout
+            android:id="@+id/breed_dong_list"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -22,9 +23,6 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintVertical_bias="0.0">
 
-            <include
-                android:id="@+id/breed_cdv"
-                layout="@layout/include_cardview_dong"/>
 
         </LinearLayout>
 

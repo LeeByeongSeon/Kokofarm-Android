@@ -76,9 +76,12 @@
             style="@style/solid_line_horizontal"/>
 
         <com.google.android.material.slider.Slider
-            android:id="@+id/rs_fcr"
+            android:id="@+id/sd_fcr"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:valueFrom="0.7"
+            android:valueTo="2"
+            android:value="0.7"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -99,6 +102,7 @@
                     style="@style/Text.md_medium_style"/>
 
                 <TextView
+                    android:id="@+id/tv_fcr"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="-"
