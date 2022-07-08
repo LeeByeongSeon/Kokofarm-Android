@@ -1,19 +1,29 @@
 package com.example.kokofarm_user_app;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.util.SparseBooleanArray;
 import android.view.ContentInfo;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.kokofarm_user_app.databinding.FragmentBreedListBinding;
+import com.example.kokofarm_user_app.databinding.FragmentBreedListItemBinding;
+import com.google.android.material.card.MaterialCardView;
+
 import java.util.ArrayList;
 
+// 뷰 어댑터
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ItemViewHolder> {
 
     private ArrayList<String> listData = new ArrayList<>();
@@ -29,7 +39,9 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ItemVi
     @Override
     public ItemViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType){
         context = parent.getContext();
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_out_record_item, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_breed_list_item, parent, false);
+//        RecyclerView.LayoutParams lp = new RecyclerView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+//        view.setLayoutParams(lp);
         return new ItemViewHolder(view);
     }
 
@@ -47,22 +59,39 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ItemVi
         listData.add(data);
     }
 
+    // 뷰홀더
     class ItemViewHolder extends RecyclerView.ViewHolder{
 
         private String data;
         private int position;
-        public TextView textViewTitle;
+        public MaterialCardView mCardView;
+
+        TextView textView;
 
         ItemViewHolder(View itemView){
             super(itemView);
+            // 테스트용...
+            textView = itemView.findViewById(R.id.tv_date);
 
-            textViewTitle = itemView.findViewById(R.id.out_tv_number);  // 리사이클러뷰 item 의 제목
+            mCardView = itemView.findViewById(R.id.breed_list);
 
-            textViewTitle.setOnClickListener(new View.OnClickListener(){
+            mCardView.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public void onClick(View view){
-                    Intent intent = new Intent(view.getContext(), OutRecordChartActivity.class);
-                    context.startActivity(intent);
+                public void onClick(View view) {
+                    Dialog dialog = new Dialog(view.getContext());
+                    dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+
+                    WindowManager.LayoutParams winLayout = new WindowManager.LayoutParams();
+                    winLayout.copyFrom(dialog.getWindow().getAttributes());
+                    winLayout.width = WindowManager.LayoutParams.MATCH_PARENT;
+                    winLayout.height = WindowManager.LayoutParams.WRAP_CONTENT;
+
+                    dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                    dialog.setContentView(R.layout.dialog_layout);
+                    dialog.show();
+
+    //               dialog.findViewById(R.id.dialog_cancel);
+
                 }
             });
         }
@@ -71,7 +100,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ItemVi
             this.data = data;
             this.position = position;
 
-            textViewTitle.setText(data);
+            textView.setText(data);
         }
     }
 }

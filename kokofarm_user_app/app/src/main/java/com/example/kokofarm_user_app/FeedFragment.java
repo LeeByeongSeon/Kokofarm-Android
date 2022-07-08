@@ -17,6 +17,7 @@ import android.widget.LinearLayout;
 import com.example.kokofarm_user_app.databinding.FragmentFeedBinding;
 import com.example.kokofarm_user_app.kkf_utils.FloatCompute;
 import com.example.kokofarm_user_app.manager.DataCacheManager;
+import com.example.kokofarm_user_app.manager.PageManager;
 import com.example.kokofarm_user_app.piece.DongCardView;
 import com.github.mikephil.charting.charts.CombinedChart;
 
@@ -68,9 +69,9 @@ public class FeedFragment extends Fragment {
         binding = null;
     }
 
-    public void moveDongFragment(){
-        Navigation.findNavController(binding.getRoot()).navigate(R.id.nav_feed_dong);
-    }
+//    public void moveDongFragment(){
+//        Navigation.findNavController(binding.getRoot()).navigate(R.id.nav_feed_dong);
+//    }
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     public void setFragmentData(Context context){
@@ -117,8 +118,7 @@ public class FeedFragment extends Fragment {
                 dongCardViewLay.addView(cdv);
 
                 cdv.setOnClickListener(view -> {
-//                    ((MainActivity)getActivity()).replaceFragment(FeedChartFragment.newInstance(id));
-                    moveDongFragment();
+                    PageManager.getInstance().eventSelectBar(id.substring(6));
                 });
 
                 dongWeightList.add(dongJson.getDouble("beAvgWeight"));

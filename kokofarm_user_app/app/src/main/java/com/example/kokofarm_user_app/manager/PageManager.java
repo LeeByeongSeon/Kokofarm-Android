@@ -12,12 +12,15 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.example.kokofarm_user_app.BreedFragment;
 import com.example.kokofarm_user_app.BreedInfoActivity;
+import com.example.kokofarm_user_app.BreedListFragment;
 import com.example.kokofarm_user_app.DongFragment;
+import com.example.kokofarm_user_app.FeedChartFragment;
 import com.example.kokofarm_user_app.FeedFragment;
 import com.example.kokofarm_user_app.HomeFragment;
 import com.example.kokofarm_user_app.OutEnvironmentActivity;
 import com.example.kokofarm_user_app.OutRecordActivity;
 import com.example.kokofarm_user_app.R;
+import com.example.kokofarm_user_app.ScaleChartFragment;
 import com.example.kokofarm_user_app.ScaleFragment;
 import com.example.kokofarm_user_app.SettingActivity;
 
@@ -111,15 +114,30 @@ public class PageManager {
                 break;
 
             case R.id.nav_feed:
-                moveFragment(FeedFragment.newInstance());
+                if(lastDong.equals("")){
+                    moveFragment(FeedFragment.newInstance());
+                }
+                else{
+                    moveFragment(FeedChartFragment.newInstance(lastDong));
+                }
                 break;
 
             case R.id.nav_scale:
-                moveFragment(ScaleFragment.newInstance());
+                if(lastDong.equals("")){
+                    moveFragment(ScaleFragment.newInstance());
+                }
+                else{
+                    moveFragment(ScaleChartFragment.newInstance(lastDong));
+                }
                 break;
 
             case R.id.nav_breed:
-                moveFragment(BreedFragment.newInstance());
+                if(lastDong.equals("")){
+                    moveFragment(BreedFragment.newInstance());
+                }
+                else{
+                    moveFragment(BreedListFragment.newInstance(lastDong));
+                }
                 break;
 
         }
