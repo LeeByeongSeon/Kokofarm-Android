@@ -5,6 +5,7 @@ import android.util.Log;
 
 import androidx.annotation.RequiresApi;
 
+import com.example.kokofarm_user_app.MainActivity;
 import com.example.kokofarm_user_app.kkf_utils.BackTasker;
 import com.example.kokofarm_user_app.kkf_utils.DateUtil;
 import com.example.kokofarm_user_app.kkf_utils.FloatCompute;
@@ -61,18 +62,20 @@ public class DataCacheManager {
     public void setUserID(String userID) {
         this.userID = userID;
     }
-
     public void setUserPW(String userPW){
         this.userPW = userPW;
     }
-
     public void setSelectFarm(String selectFarm){
         this.selectFarm = selectFarm;
     }
-
     public void setSelectDong(String selectDong){
         this.selectDong = selectDong;
     }
+
+    public String getUserID(){ return userID; }
+    public String getUserPW(){ return userPW; }
+    public String getSelectFarm(){ return selectFarm; }
+    public String getSelectDong(){ return selectDong; }
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     public JSONObject getCacheData(String key){

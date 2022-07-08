@@ -35,13 +35,12 @@ public class DongFragment extends Fragment implements OnBackPressedListener {
     }
 
     public static DongFragment newInstance(String id) {
-
-        Log.d("::::::::ID:::::::::", id);
         return new DongFragment(id);
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        Log.e("onCreate", "onCreate: Dong");
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
 
@@ -52,6 +51,8 @@ public class DongFragment extends Fragment implements OnBackPressedListener {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        Log.e("onCreateView", "onCreateView: Dong");
 
         binding = FragmentDongBinding.inflate(inflater);
         setFragmentData(container.getContext());
@@ -65,6 +66,7 @@ public class DongFragment extends Fragment implements OnBackPressedListener {
 
     @Override
     public void onDestroyView(){
+        Log.e("onDestroyView", "onDestroyView: Dong");
         super.onDestroyView();
         binding = null;
     }
@@ -77,11 +79,12 @@ public class DongFragment extends Fragment implements OnBackPressedListener {
     @RequiresApi(api = Build.VERSION_CODES.O)
     public void setFragmentData(Context context){
 
+        Log.e("setFragmentData", "setFragmentData");
+
         JSONObject buffer = DataCacheManager.getInstance().getCacheData("buffer");
 
-
         try {
-            JSONObject dongJson = buffer.getJSONObject(id);
+            JSONObject dongJson = buffer.getJSONObject(DataCacheManager.getInstance().getSelectFarm() + id);
             
             double avgWeight = dongJson.getDouble("beAvgWeight");
             double devi = 0.0;                  // 표준편차

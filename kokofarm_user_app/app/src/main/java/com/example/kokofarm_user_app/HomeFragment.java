@@ -19,6 +19,7 @@ import android.widget.LinearLayout;
 import com.example.kokofarm_user_app.databinding.FragmentHomeBinding;
 import com.example.kokofarm_user_app.kkf_utils.FloatCompute;
 import com.example.kokofarm_user_app.manager.DataCacheManager;
+import com.example.kokofarm_user_app.manager.PageManager;
 import com.example.kokofarm_user_app.piece.DongCardView;
 import com.github.mikephil.charting.charts.CombinedChart;
 
@@ -46,6 +47,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        Log.e("onCreate", "onCreate: Home");
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
 
@@ -58,7 +60,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                              Bundle savedInstanceState) {
         binding = FragmentHomeBinding.inflate(inflater);
 
-        Log.e("onCreateView", "onCreateView");
+        Log.e("onCreateView", "onCreateView: Home");
 
         //binding.homeCdvFarmComein.setOnClickListener(this::onClick);
         //binding.homeDongList.homeDong1.setOnClickListener(this::onClick);
@@ -77,7 +79,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     // fragment 메모리 누수 방지
     @Override
     public void onDestroyView(){
-//        Log.e("onDestroyView", "onDestroyView: ");
+        Log.e("onDestroyView", "onDestroyView: Home");
         super.onDestroyView();
         binding = null;
     }
@@ -161,7 +163,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
                 cdv.setOnClickListener(view -> {
 //                    ((MainActivity)getActivity()).replaceFragment(DongFragment.newInstance(id));
-                    moveDongFragment(id);
+                    PageManager.getInstance().eventSelectBar(id.substring(6));
+//                    moveDongFragment(id);
                 });
 
                 dongWeightList.add(dongJson.getDouble("beAvgWeight"));
@@ -301,11 +304,5 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             binding.cdvHomeBreed.layThinout.setVisibility(View.GONE);
             binding.cdvHomeBreed.imgAccordion.setImageResource(R.drawable.ic_baseline_arrow_down_24);
         }
-    }
-
-    public void moveDongFragment(String id){
-        DongFragment.newInstance(id);
-        Navigation.findNavController(binding.getRoot()).navigate(R.id.nav_dong);
-        // 스크롤 설정 필요
     }
 }
