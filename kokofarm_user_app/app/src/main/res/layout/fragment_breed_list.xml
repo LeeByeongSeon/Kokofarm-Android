@@ -6,35 +6,35 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-<!--    <androidx.constraintlayout.widget.ConstraintLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content">-->
-
-<!--        <LinearLayout-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:orientation="vertical"-->
-<!--            app:layout_constraintTop_toTopOf="parent"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintBottom_toBottomOf="parent"-->
-<!--            app:layout_constraintVertical_bias="0.0">-->
-
-<!--            <include-->
-<!--                android:id="@+id/breed_breed_list"-->
-<!--                layout="@layout/include_cardview_breed"/>-->
-
-<!--        </LinearLayout>-->
-
-
-<!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/breed_rcv_list"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:layout_editor_absoluteY="-252dp"
-        tools:listitem="@layout/activity_out_record_item" />
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/breed_lay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.0">
+
+            <include
+                android:id="@+id/breed_top_paging"
+                layout="@layout/include_paging_btn"/>
+
+            <include
+                android:id="@+id/breed_breed_list"
+                layout="@layout/include_cardview_breed"/>
+
+            <include
+                android:id="@+id/breed_bottom_paging"
+                layout="@layout/include_paging_btn"/>
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </LinearLayout>

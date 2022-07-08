@@ -4,6 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:fillViewport="true"
+    android:scrollbars="none"
     tools:context=".OutRecordActivity">
 
     <include layout="@layout/toolbar"/>
@@ -68,15 +70,20 @@
 
     </LinearLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/scale_list_view"
+    <include
+        android:id="@+id/breed_top_paging"
+        layout="@layout/include_paging_btn"/>
+
+    <LinearLayout
+        android:id="@+id/out_record_list"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="-252dp"
-        tools:listitem="@layout/activity_out_record_item" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    </LinearLayout>
+
+    <include
+        android:id="@+id/breed_bottom_paging"
+        layout="@layout/include_paging_btn"/>
 
 </LinearLayout>
