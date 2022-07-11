@@ -190,17 +190,31 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintVertical_bias="0.02"/>
 
-        <com.github.mikephil.charting.charts.CombinedChart
-            android:id="@+id/dong_chart_1"
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/dong_cdv_char1"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/pixel_300"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/pixel_10"
             android:layout_marginHorizontal="@dimen/pixel_16"
-            android:background="@android:color/transparent"
+            app:cardElevation="@dimen/overlay_04"
+            app:cardCornerRadius="@dimen/pixel_10"
+            app:contentPadding="@dimen/pixel_16"
             app:layout_constraintTop_toBottomOf="@+id/home_header_dong_chart_1"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintVertical_bias="0.01"/>
+            app:layout_constraintVertical_bias="0.01">
+
+            <com.github.mikephil.charting.charts.CombinedChart
+                android:id="@+id/dong_chart_1"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/pixel_300"
+                android:layout_marginHorizontal="@dimen/pixel_16"
+                android:background="@android:color/transparent"/>
+
+
+        </com.google.android.material.card.MaterialCardView>
 
         <TextView
             android:id="@+id/home_header_dong_chart_2"
@@ -209,7 +223,7 @@
             android:layout_marginHorizontal="@dimen/pixel_16"
             android:text="@string/dong_feed"
             style="@style/Text.lg_accent_style"
-            app:layout_constraintTop_toBottomOf="@+id/dong_chart_1"
+            app:layout_constraintTop_toBottomOf="@+id/dong_cdv_char1"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintHorizontal_bias="0.01"
             app:layout_constraintEnd_toEndOf="parent"
@@ -224,7 +238,7 @@
             app:layout_constraintStart_toEndOf="@+id/home_header_dong_chart_2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.99"
-            app:layout_constraintTop_toBottomOf="@+id/dong_chart_1"
+            app:layout_constraintTop_toBottomOf="@+id/dong_cdv_char1"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintVertical_bias="0.03"/>
 
