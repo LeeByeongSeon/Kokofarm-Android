@@ -75,6 +75,15 @@ public class FeedFragment extends Fragment {
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     public void setFragmentData(Context context){
+
+        // 선택된 농장이 없으면 관리자 화면으로 보냄
+        if(DataCacheManager.getInstance().getSelectFarm().equals("")){
+            PageManager.getInstance().movePage("manager");
+            return;
+        }
+        // 상단 데이터 출력
+        PageManager.getInstance().showFarmTopContents("");
+
         JSONObject buffer = DataCacheManager.getInstance().getCacheData("buffer");
 
 //        Log.e("buffer", buffer.toString());
@@ -96,6 +105,9 @@ public class FeedFragment extends Fragment {
 
         int feedMax = 0;                    // 사료빈 중량
         int feedRemain = 0;                 // 사료빈 잔량
+
+        float farmPerFeed = 0f;                // 농장 전체 수 당 급이량
+        float farmPerWater = 0f;               // 농장 전체 수 당 급수량
 
         HashMap<String, List<Float>> dongMap = new HashMap<String, List<Float>>() {{
             put("avgWeight", new ArrayList<>());
@@ -143,6 +155,8 @@ public class FeedFragment extends Fragment {
                 dongMap.get("feed").add((float)dongJson.getDouble("sfDailyFeed"));
                 dongMap.get("water").add((float)dongJson.getDouble("sfDailyWater"));
 
+                farmPerFeed = (float) dongJson.getDouble("fFeedPer");
+                farmPerWater = (float) dongJson.getDouble("fWaterPer");
             }
 
         } catch (JSONException e) {
@@ -167,16 +181,10 @@ public class FeedFragment extends Fragment {
         binding.feedFeedWater.tvPrevWater.setText("" + prevWater + "(L)");
         binding.feedFeedWater.tvHourWater.setText("" + waterPerHour + "(L)");
 
-        float[] feedPerData = DataCacheManager.getInstance().getFeedPerData("KF0071");
-        binding.feedFeedWater.tvFeedPer.setText(String.format(Locale.getDefault(), "%.1fg", feedPerData[0]));
-        binding.feedFeedWater.tvWaterPer.setText(String.format(Locale.getDefault(), "%.3fL", feedPerData[1]));
+        binding.feedFeedWater.tvFeedPer.setText(String.format(Locale.getDefault(), "%.1fg", farmPerFeed));
+        binding.feedFeedWater.tvWaterPer.setText(String.format(Locale.getDefault(), "%.3fL", farmPerWater));
 
-        JSONObject avgJson = DataCacheManager.getInstance().getCacheData("avgWeight", new HashMap<String, String>() {{
-            put("userType", "user");
-            put("userID", "kk0071");
-            put("setComm", "avgWeight");
-            put("code", "20220312082856_KF007101");
-        }});
+//        JSONObject avgJson = DataCacheManager.getInstance().getCacheData("avgWeight");
     }
 
 }

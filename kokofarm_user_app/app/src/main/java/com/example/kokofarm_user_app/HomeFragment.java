@@ -15,12 +15,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.example.kokofarm_user_app.databinding.FragmentHomeBinding;
 import com.example.kokofarm_user_app.kkf_utils.FloatCompute;
 import com.example.kokofarm_user_app.manager.DataCacheManager;
 import com.example.kokofarm_user_app.manager.PageManager;
 import com.example.kokofarm_user_app.piece.DongCardView;
+import com.example.kokofarm_user_app.piece.MainButton;
 import com.github.mikephil.charting.charts.CombinedChart;
 import com.google.android.material.slider.Slider;
 
@@ -34,9 +36,10 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 
-public class HomeFragment extends Fragment implements View.OnClickListener {
+public class HomeFragment extends Fragment {
 
     private FragmentHomeBinding binding;
+    DecimalFormat decimalFormat = new DecimalFormat("#.###");
 
     public HomeFragment() {
 
@@ -62,21 +65,25 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                              Bundle savedInstanceState) {
         binding = FragmentHomeBinding.inflate(inflater);
 
-        Log.e("onCreateView", "onCreateView: Home");
+        // 화면 맨 위로
+//        final View.OnClickListener listener = new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                binding.scrollView.fullScroll(View.FOCUS_UP);
+//            }
+//        };
+////        PageManager.getInstance().setScrollUpBtnEvent(view -> binding.scrollView.fullScroll(View.FOCUS_UP));
+//        PageManager.getInstance().setScrollUpBtnEvent(listener);
 
-        //binding.homeCdvFarmComein.setOnClickListener(this::onClick);
-        //binding.homeDongList.homeDong1.setOnClickListener(this::onClick);
+        Log.e("onCreateView", "onCreateView: Home");
 
         binding.cdvHomeBreed.layCdv.setOnClickListener(view -> {
             toggleBreedInfo();
         });
 
-        DataCacheManager.getInstance().loadBufferData();
-
         setFragmentData(container.getContext());
 
         // FCR Slider 관련
-        setFcrVal();
         Slider slider = binding.homeRsFcr.sdFcr;
         slider.addOnSliderTouchListener(sliderTouchListener);
 
@@ -84,12 +91,34 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     }
 
     // fcr 값
-    public void setFcrVal(){
-        DecimalFormat decimalFormat = new DecimalFormat("#.###");
+//    public void setFcrVal(){
+//        float fcrVal = binding.homeRsFcr.sdFcr.getValue();
+//        String fcrStr = decimalFormat.format(fcrVal);
+//        binding.homeRsFcr.tvSelectFcr.setText(fcrStr);
+//
+//        String feedStr = binding.homeFeedWater.tvFeedPer.toString();
+//        float feed = Float.parseFloat(feedStr);
+//        String mean = decimalFormat.format(feed / fcrVal);
+//        binding.homeRsFcr.tvMean.setText(mean);
+//    }
 
-        double fcrVal = binding.homeRsFcr.sdFcr.getValue();
-        String fcrStr = decimalFormat.format(fcrVal);
-        binding.homeRsFcr.tvFcr.setText(fcrStr);
+    public void setFcrVal(float val){
+
+        if(val < 0.01f){
+            return;
+        }
+
+        binding.homeRsFcr.sdFcr.setValue(val);
+        String fcrStr = decimalFormat.format(val);
+        binding.homeRsFcr.tvSelectFcr.setText(fcrStr);
+
+        String feedStr = binding.homeFeedWater.tvFeedPer.getText().toString();
+        feedStr = feedStr.substring(0, feedStr.length() - 2);
+
+        float feed = Float.parseFloat(feedStr);
+        String mean = String.format("%.1f", feed / val);
+        binding.homeRsFcr.tvMean.setText(mean);
+
     }
 
     // FCR Slider 관련
@@ -99,13 +128,15 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             @Override
             public void onStartTrackingTouch(Slider slider) {
                 Log.d("StartTrack", "Start");
-                setFcrVal();
+                float fcrVal = binding.homeRsFcr.sdFcr.getValue();
+                setFcrVal(fcrVal);
             }
 
             @SuppressLint("RestrictedApi")
             public void onStopTrackingTouch(Slider slider) {
                 Log.d("StopTrack", "Stop");
-                setFcrVal();
+                float fcrVal = binding.homeRsFcr.sdFcr.getValue();
+                setFcrVal(fcrVal);
             }
         };
 
@@ -117,39 +148,25 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         binding = null;
     }
 
-    @Override
-    public void onClick(View view){
-//        switch (view.getId()){
-//            case R.id.cdv_home_breed:
-//                if(binding.homeLoDeath.getVisibility() != view.VISIBLE){
-//                    binding.homeCdvFarmComein.setRippleColorResource(R.color.opacity05_bl);
-//                    setAutoTransition(binding.homeLoDeath, view.VISIBLE);
-//                    setAutoTransition(binding.homeLoCull, view.VISIBLE);
-//                    setAutoTransition(binding.homeLoThinout, view.VISIBLE);
-//                    binding.homeAccordion.setImageResource(R.drawable.ic_baseline_arrow_up_24);
-//                } else {
-//                    setAutoTransition(binding.homeLoDeath, view.GONE);
-//                    setAutoTransition(binding.homeLoCull, view.GONE);
-//                    setAutoTransition(binding.homeLoThinout, view.GONE);
-//                    binding.homeAccordion.setImageResource(R.drawable.ic_baseline_arrow_down_24);
-//                }
-//
-//                break;
-//
-////            case R.id.home_dong_1:
-//////                ((MainActivity)getActivity()).replaceFragment(DongFragment.newInstance());
-////                moveDongFragment();
-////
-////                break;
-//        }
-    }
-
     @RequiresApi(api = Build.VERSION_CODES.O)
     public void setFragmentData(Context context){
+
+        // 선택된 농장이 없으면 관리자 화면으로 보냄
+        Log.e("getSelectFarm", DataCacheManager.getInstance().getSelectFarm());
+        if(DataCacheManager.getInstance().getSelectFarm().equals("")){
+            PageManager.getInstance().movePage("manager");
+            return;
+        }
+
         JSONObject buffer = DataCacheManager.getInstance().getCacheData("buffer");
+
+        // 동 선택버튼 생성
+        PageManager.getInstance().setSelectBar(buffer);
 
 //        Log.e("buffer", buffer.toString());
 
+        String fName = "";                  // 농장 이름
+        
         int cnt = 0;
         double totalAvgWeight = 0.0;        // 농장 전체 평균중량
         double totalAvgDevi = 0.0;          // 농장 평균 표준편차
@@ -174,6 +191,11 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         int feedMax = 0;                    // 사료빈 중량
         int feedRemain = 0;                 // 사료빈 잔량
 
+        float farmPerFeed = 0f;                // 농장 전체 수 당 급이량
+        float farmPerWater = 0f;               // 농장 전체 수 당 급수량
+        float farmFcr = 0f;                 // 농장 최고 일령 FCR 값
+        float farmFcrWeight = 0f;           // 농장 FCR 예측중량
+
         HashMap<String, List<Float>> dongMap = new HashMap<String, List<Float>>() {{
             put("avgWeight", new ArrayList<>());
             put("feed", new ArrayList<>());
@@ -195,39 +217,53 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 dongCardViewLay.addView(cdv);
 
                 cdv.setOnClickListener(view -> {
-//                    ((MainActivity)getActivity()).replaceFragment(DongFragment.newInstance(id));
                     PageManager.getInstance().eventSelectBar(id.substring(6));
-//                    moveDongFragment(id);
                 });
 
-                dongWeightList.add(dongJson.getDouble("beAvgWeight"));
-                totalAvgWeight += dongJson.getDouble("beAvgWeight");
-                totalAvgDevi += dongJson.getDouble("beDevi");
+                fName = dongJson.getString("fName");
 
-                currFeed += dongJson.getInt("sfDailyFeed");
-                prevFeed += dongJson.getInt("sfPrevFeed");
-                allFeed += dongJson.getInt("sfAllFeed");
+                dongWeightList.add(dongJson.optDouble("beAvgWeight"));
+                totalAvgWeight += dongJson.optDouble("beAvgWeight");
+                totalAvgDevi += dongJson.optDouble("beDevi");
 
-                currWater += dongJson.getInt("sfDailyWater");
-                prevWater += dongJson.getInt("sfPrevWater");
-                allWater += dongJson.getInt("sfAllWater");
+                currFeed += dongJson.optInt("sfDailyFeed");
+                prevFeed += dongJson.optInt("sfPrevFeed");
+                allFeed += dongJson.optInt("sfAllFeed");
 
-                comeinCount += dongJson.getInt("cmInsu") + dongJson.getInt("cmExtraSu");
-                extraCount += dongJson.getInt("cmExtraSu");
-                deathCount += dongJson.getInt("cmDeathCount");
-                cullCount += dongJson.getInt("cmCullCount");
-                thinoutCount += dongJson.getInt("cmThinoutCount");
+                currWater += dongJson.optInt("sfDailyWater");
+                prevWater += dongJson.optInt("sfPrevWater");
+                allWater += dongJson.optInt("sfAllWater");
 
-                feedMax += dongJson.getInt("sfFeedMax");
-                feedRemain += dongJson.getInt("sfFeed");
+                comeinCount += dongJson.optInt("cmInsu") + dongJson.optInt("cmExtraSu");
+                deathCount += dongJson.optInt("cmDeathCount");
+                cullCount += dongJson.optInt("cmCullCount");
+                thinoutCount += dongJson.optInt("cmThinoutCount");
 
-                JSONObject shFeedData = new JSONObject(dongJson.getString("shFeedData"));
-                waterPerHour += shFeedData.getInt("feed_water");
+                feedMax += dongJson.optInt("sfFeedMax");
+                feedRemain += dongJson.optInt("sfFeed");
 
-                dongMap.get("avgWeight").add((float)dongJson.getDouble("beAvgWeight"));
-                dongMap.get("feed").add((float)dongJson.getDouble("sfDailyFeed"));
-                dongMap.get("water").add((float)dongJson.getDouble("sfDailyWater"));
+                String shFeedDataStr = dongJson.getString("shFeedData");
+                if(shFeedDataStr.equals("") || shFeedDataStr.equals("0")){
+                    waterPerHour = 0;
+                }
+                else{
+                    JSONObject shFeedData = new JSONObject(dongJson.getString("shFeedData"));
+                    waterPerHour += shFeedData.optInt("feed_water");
+                }
 
+                dongMap.get("avgWeight").add((float)dongJson.optDouble("beAvgWeight"));
+                dongMap.get("feed").add((float)dongJson.optDouble("sfDailyFeed"));
+                dongMap.get("water").add((float)dongJson.optDouble("sfDailyWater"));
+
+                farmPerFeed = (float) dongJson.optDouble("fFeedPer");
+                farmPerWater = (float) dongJson.optDouble("fWaterPer");
+                farmFcrWeight = (float) dongJson.optDouble("fFcrWeight");
+
+                // FCR 계산 - 오류방지
+                if(farmPerFeed > 10f && farmFcrWeight > 10f){
+                    farmFcr = (farmPerFeed / farmFcrWeight);
+                    farmFcr = Math.round(farmFcr * 1000f) / 1000f;
+                }
             }
 
         } catch (JSONException e) {
@@ -242,11 +278,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         }
         dongDiff = Math.sqrt(FloatCompute.divide(dongDiff, cnt));       // 동별 편차
 
-        // 데이터 입력 작업
-//        binding.homeTvFarmAvgMin.setText(String.format("%.1f", totalAvgWeight - totalAvgDevi) + "g");
-//        binding.homeTvFarmAvgMax.setText(String.format("%.1f", totalAvgWeight + totalAvgDevi) + "g");
-
         int live = comeinCount - deathCount - cullCount - thinoutCount;
+
         // 생육정보
         binding.cdvHomeBreed.tvInsu.setText(Integer.toString(comeinCount));
         binding.cdvHomeBreed.tvLive.setText(Integer.toString(live));
@@ -266,32 +299,28 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         binding.homeFeedWater.tvPrevWater.setText("" + prevWater + "(L)");
         binding.homeFeedWater.tvHourWater.setText("" + waterPerHour + "(L)");
 
-        //DataCacheManager.getInstance().getFeedPerData("KF0071");
+        binding.homeFeedWater.tvFeedPer.setText(String.format(Locale.getDefault(), "%.1fg", farmPerFeed));
+        binding.homeFeedWater.tvWaterPer.setText(String.format(Locale.getDefault(), "%.3fL", farmPerWater));
 
-        float[] feedPerData = DataCacheManager.getInstance().getFeedPerData("KF0071");
-        binding.homeFeedWater.tvFeedPer.setText(String.format(Locale.getDefault(), "%.1fg", feedPerData[0]));
-        binding.homeFeedWater.tvWaterPer.setText(String.format(Locale.getDefault(), "%.3fL", feedPerData[1]));
+        // topContents 설정
+        PageManager.getInstance().setTopContentsData(
+                fName,
+                String.format(Locale.getDefault(), "%.1fg", totalAvgWeight),
+                live + "수",
+                String.format(Locale.getDefault(), "%.1fg", dongDiff)
+        );
+        PageManager.getInstance().showFarmTopContents("");
 
-//        String test = String.format("%.1f", feedPerData[0]) + " // " + String.format("%.3f", feedPerData[1]);
-//        Log.e("test", test);
+        // FCR 관련 정보
+        binding.homeRsFcr.tvStandardFcr.setText(Float.toString(farmFcr));
+        binding.homeRsFcr.tvFcrWeight.setText(Float.toString(farmFcrWeight));
 
-        JSONObject avgJson = DataCacheManager.getInstance().getCacheData("avgWeight", new HashMap<String, String>() {{
-            put("userType", "user");
-            put("userID", "kk0071");
-            put("setComm", "avgWeight");
-            put("code", "20220312082856_KF007101");
-        }});
-
-//        CombinedChart chart = binding.dongChart1;
-//        CombinedChartMaker maker = new CombinedChartMaker(chart);
-//        maker.setDateStyle(60*60f, "MM-dd HH:mm");
-//        maker.makeTimeLineChart(avgJson,
-//                new HashMap<String, String>() {{
-//                    put("awWeight", "평균중량");
-//                    put("refWeight", "권고중량");
-//                }});
-//        maker.setMarker(context, R.layout.marker_text_view);
-//        chart.invalidate();
+        // 슬라이더 범위 설정
+        float from = farmFcr > 1 ? farmFcr - 1 : 0;
+        float to = farmFcr + 1;
+        binding.homeRsFcr.sdFcr.setValueFrom(from);
+        binding.homeRsFcr.sdFcr.setValueTo(to);
+        setFcrVal(farmFcr);
 
         // 동별 평균중량 비교
         CombinedChart chart = binding.dongChart1;

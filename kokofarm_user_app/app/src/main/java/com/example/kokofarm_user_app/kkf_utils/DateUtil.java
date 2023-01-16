@@ -119,6 +119,17 @@ public class DateUtil {
             return tp.minusMinutes(gap).format(default_form);
         }
     }
+    public String get_plus_minus_minute_time(int gap) {
+
+        if(gap > 0) {
+            LocalDateTime tp = LocalDateTime.parse(get_now(), default_form);	//"yyyy-MM-dd HH:mm:ss"
+            return tp.plusMinutes(gap).format(default_form);
+        }else {
+            gap = gap * -1;
+            LocalDateTime tp = LocalDateTime.parse(get_now(), default_form);
+            return tp.minusMinutes(gap).format(default_form);
+        }
+    }
 
     //**********************************************
     // 일령 구하기

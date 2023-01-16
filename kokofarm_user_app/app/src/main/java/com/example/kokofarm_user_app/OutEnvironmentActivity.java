@@ -44,7 +44,7 @@ public class OutEnvironmentActivity extends AppCompatActivity {
     private void setData(){
 
         String tfarm = "KF0027";
-        JSONObject outJson = DataCacheManager.getInstance().loadOutSensorData(tfarm);
+        JSONObject outJson = DataCacheManager.getInstance().getCacheData("outSensor");
 
         try {
 
@@ -80,10 +80,10 @@ public class OutEnvironmentActivity extends AppCompatActivity {
             String farmID = json.getString("soFarmid");
             String dongID = json.getString("soDongid");
 
-            JSONObject buffer = DataCacheManager.getInstance().loadBufferData(farmID).getJSONObject(farmID + dongID);
+            JSONObject buffer = DataCacheManager.getInstance().getCacheData("buffer").getJSONObject(farmID + dongID);
             String code = buffer.getString("beComeinCode");
 
-            JSONObject sensorHistory = DataCacheManager.getInstance().loadSensorHistory(code);
+            JSONObject sensorHistory = DataCacheManager.getInstance().getCacheData("sensorHistory");
 //            Log.e("sensorHistory", sensorHistory.toString());
 
             JSONObject extSensorJson = new JSONObject();

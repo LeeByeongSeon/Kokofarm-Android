@@ -70,6 +70,11 @@
     <string name="wind_txt">풍속</string>
     <string name="wind_direction_txt">풍향</string>
 
+    <string name="avg_temp_txt">평균 온도</string>
+    <string name="avg_humi_txt">평균 습도</string>
+    <string name="avg_co2_txt">평균 CO2</string>
+    <string name="avg_nh3_txt">평균 NH3</string>
+
     <string name="set_theme">다크모드</string>
     <string name="set_alarm">알림</string>
     <string name="set_notice">공지사항</string>

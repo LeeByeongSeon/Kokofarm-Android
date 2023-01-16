@@ -33,7 +33,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:includeFontPadding="false"
-                    android:text="TextView"
+                    android:text="1번 저울"
                     style="@style/Text.md_medium_style"/>
 
                 <TextView
@@ -52,7 +52,7 @@
                     style="@style/Text.md_medium_style"/>
 
                 <TextView
-                    android:id="@+id/tv_avg_weight"
+                    android:id="@+id/tv_weight"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:includeFontPadding="false"
@@ -62,8 +62,8 @@
 
             </LinearLayout>
 
-            <View
-                style="@style/solid_line_horizontal"/>
+<!--            <View-->
+<!--                style="@style/solid_line_horizontal"/>-->
 
             <LinearLayout
                 android:id="@+id/scale_lv_visible"
@@ -92,9 +92,32 @@
 
 
                     <TextView
+                        android:layout_width="@dimen/pixel_100"
                         android:id="@+id/tv_temp"
+                        android:layout_height="wrap_content"
+                        android:text="0.0"
+                        android:textSize="@dimen/pixel_16"
+                        android:textColor="@color/secondaryColor"/>
+
+                    <TextView
+                        android:layout_width="@dimen/pixel_72"
+                        android:layout_height="wrap_content"
+                        android:text="@string/co2_txt"
+                        android:textSize="@dimen/pixel_13"
+                        style="@style/Text.md_regular_style"/>
+
+                    <TextView
+                        android:layout_width="@dimen/pixel_10"
+                        android:layout_height="wrap_content"
+                        android:text=":"
+                        android:textSize="@dimen/pixel_13"
+                        style="@style/Text.md_regular_style"/>
+
+                    <TextView
+                        android:id="@+id/tv_co2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:includeFontPadding="false"
                         android:text="0.0"
                         android:textSize="@dimen/pixel_16"
                         android:textColor="@color/secondaryColor"/>
@@ -121,48 +144,13 @@
                         style="@style/Text.md_regular_style"/>
 
                     <TextView
+                        android:layout_width="@dimen/pixel_100"
                         android:id="@+id/tv_humi"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:includeFontPadding="false"
-                        android:text="0.0"
-                        android:textSize="@dimen/pixel_16"
-                        android:textColor="@color/secondaryColor"/>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="@dimen/pixel_72"
-                        android:layout_height="wrap_content"
-                        android:text="@string/co2_txt"
-                        android:textSize="@dimen/pixel_13"
-                        style="@style/Text.md_regular_style"/>
-
-                    <TextView
-                        android:layout_width="@dimen/pixel_10"
-                        android:layout_height="wrap_content"
-                        android:text=":"
-                        android:textSize="@dimen/pixel_13"
-                        style="@style/Text.md_regular_style"/>
-
-                    <TextView
-                        android:id="@+id/tv_co2"
-                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:includeFontPadding="false"
                         android:text="0.0"
                         android:textSize="@dimen/pixel_16"
                         android:textColor="@color/secondaryColor" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
 
                     <TextView
                         android:layout_width="@dimen/pixel_72"
@@ -180,15 +168,15 @@
                         style="@style/Text.md_regular_style"/>
 
                     <TextView
-                        android:id="@+id/tv_h2s"
+                        android:id="@+id/tv_nh3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:includeFontPadding="false"
                         android:text="0.0"
                         android:textSize="@dimen/pixel_16"
                         android:textColor="@color/secondaryColor" />
-
                 </LinearLayout>
+
 
             </LinearLayout>
 

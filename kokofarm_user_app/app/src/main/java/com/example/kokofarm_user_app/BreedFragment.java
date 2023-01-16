@@ -68,6 +68,15 @@ public class BreedFragment extends Fragment {
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     public void setFragmentData(Context context){
+
+        // 선택된 농장이 없으면 관리자 화면으로 보냄
+        if(DataCacheManager.getInstance().getSelectFarm().equals("")){
+            PageManager.getInstance().movePage("manager");
+            return;
+        }
+        // 상단 데이터 출력
+        PageManager.getInstance().showFarmTopContents("");
+
         JSONObject buffer = DataCacheManager.getInstance().getCacheData("buffer");
 
 //        Log.e("buffer", buffer.toString());
@@ -142,20 +151,13 @@ public class BreedFragment extends Fragment {
             e.printStackTrace();
         }
 
-        totalAvgWeight = FloatCompute.divide(totalAvgWeight, cnt);
+//        totalAvgWeight = FloatCompute.divide(totalAvgWeight, cnt);
 
-        for(double d : dongWeightList){
-            double diff = totalAvgWeight - d;
-            dongDiff += Math.pow(diff, 2);
-        }
-        dongDiff = Math.sqrt(FloatCompute.divide(dongDiff, cnt));       // 동별 편차
-
-        JSONObject avgJson = DataCacheManager.getInstance().getCacheData("avgWeight", new HashMap<String, String>() {{
-            put("userType", "user");
-            put("userID", "kk0071");
-            put("setComm", "avgWeight");
-            put("code", "20220312082856_KF007101");
-        }});
+//        for(double d : dongWeightList){
+//            double diff = totalAvgWeight - d;
+//            dongDiff += Math.pow(diff, 2);
+//        }
+//        dongDiff = Math.sqrt(FloatCompute.divide(dongDiff, cnt));       // 동별 편차
     }
 
 

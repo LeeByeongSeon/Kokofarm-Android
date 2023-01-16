@@ -32,7 +32,7 @@
 
             <include
                 android:id="@+id/cdv_out_sensor"
-                layout="@layout/include_cardview_out_env"/>
+                layout="@layout/include_cardview_out_sensor"/>
 
         </LinearLayout>
 

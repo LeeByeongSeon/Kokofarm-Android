@@ -40,12 +40,13 @@
                     android:layout_height="wrap_content"
                     android:text="표준 FCR"
                     style="@style/Text.sm_regular_style"/>
-                
+
                 <TextView
+                    android:id="@+id/tv_standard_fcr"
+                    style="@style/Text.md_medium_style"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="-"
-                    style="@style/Text.md_medium_style"/>
+                    android:text="1.17" />
 
             </LinearLayout>
 
@@ -63,9 +64,10 @@
                     style="@style/Text.sm_regular_style"/>
 
                 <TextView
+                    android:id="@+id/tv_fcr_weight"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="- g"
+                    android:text="1128.7g"
                     style="@style/Text.md_medium_style"/>
 
             </LinearLayout>
@@ -102,7 +104,7 @@
                     style="@style/Text.md_medium_style"/>
 
                 <TextView
-                    android:id="@+id/tv_fcr"
+                    android:id="@+id/tv_select_fcr"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="-"
@@ -124,6 +126,7 @@
                     style="@style/Text.md_medium_style"/>
 
                 <TextView
+                    android:id="@+id/tv_mean"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="- g"

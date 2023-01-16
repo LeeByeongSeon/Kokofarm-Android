@@ -23,9 +23,6 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintVertical_bias="0.02">
 
-            <include
-                layout="@layout/include_cardview_scale_dong"/>
-
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

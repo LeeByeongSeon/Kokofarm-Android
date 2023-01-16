@@ -1,5 +1,6 @@
 package com.example.kokofarm_user_app;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
@@ -15,6 +16,7 @@ import android.widget.ScrollView;
 
 import com.example.kokofarm_user_app.databinding.FragmentDongBinding;
 import com.example.kokofarm_user_app.manager.DataCacheManager;
+import com.example.kokofarm_user_app.manager.PageManager;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -76,8 +78,17 @@ public class DongFragment extends Fragment implements OnBackPressedListener {
         
     }
 
+    @SuppressLint("SetTextI18n")
     @RequiresApi(api = Build.VERSION_CODES.O)
     public void setFragmentData(Context context){
+
+        // 선택된 농장이 없으면 관리자 화면으로 보냄
+        if(DataCacheManager.getInstance().getSelectFarm().equals("")){
+            PageManager.getInstance().movePage("manager");
+            return;
+        }
+        // 상단 데이터 출력
+        PageManager.getInstance().showFarmTopContents(id);
 
         Log.e("setFragmentData", "setFragmentData");
 
@@ -114,10 +125,15 @@ public class DongFragment extends Fragment implements OnBackPressedListener {
 //            Log.e("comeinCount", comeinCount + "");
 //            Log.e("live/comeinCount", ((float)live/comeinCount) + "");
 
+//            Log.e("dongJson", dongJson.toString());
+
+            int interm = dongJson.getInt("beInterm");
+
             binding.dongTvDong.setText(dongJson.getString("beDongid") + "동");
-            binding.dongTvDay.setText(dongJson.getString("interm") + "일령");
+            binding.dongTvDay.setText(interm + "일령");
             binding.dongTvAvgWeight.setText(String.format(Locale.getDefault(), "%.1fg", dongJson.getDouble("beAvgWeight")));
             binding.dongTvDevi.setText(String.format(Locale.getDefault(), "%.1f", dongJson.getDouble("beDevi")));
+            binding.dongTvComeinDate.setText(dongJson.getString("cmIndate"));
 
             // 생육정보
             binding.cdvDongBreed.tvInsu.setText(Integer.toString(comeinCount));
@@ -128,6 +144,22 @@ public class DongFragment extends Fragment implements OnBackPressedListener {
             binding.cdvDongBreed.tvCull.setText(Integer.toString(cullCount));
             binding.cdvDongBreed.tvThinout.setText(Integer.toString(thinoutCount));
 
+            // 어제 및 예측중량
+            binding.dongTvMeanDay2.setText((interm + 1) + "일령");
+            binding.dongTvMeanDay2.setText((interm + 2) + "일령");
+
+            double w = dongJson.getDouble("awWeight");         //어제
+            double m1 = dongJson.getDouble("awEstiT1");         //오늘 예측()
+            double m2 = dongJson.getDouble("awEstiT2");         //내일
+            double m3 = dongJson.getDouble("awEstiT3");         //모레
+
+            binding.dongTvMeanWeight1.setText(String.format(Locale.getDefault(), "%.1fg", w));      //어제
+            binding.dongTvMeanWeight2.setText(String.format(Locale.getDefault(), "%.1fg", m2));      //내일
+            binding.dongTvMeanWeight3.setText(String.format(Locale.getDefault(), "%.1fg", m3));      //모레
+
+            binding.dongTvMeanDiff2.setText(String.format(Locale.getDefault(), "%.1f", m2 - m1));
+            binding.dongTvMeanDiff3.setText(String.format(Locale.getDefault(), "%.1f", m3 - m2));
+
             // 센서정보
             binding.dongTvAvgTemp.setText(String.format(Locale.getDefault(), "%.1f", dongJson.getDouble("beAvgTemp")));
             binding.dongTvAvgHumi.setText(String.format(Locale.getDefault(), "%.1f", dongJson.getDouble("beAvgHumi")));
@@ -135,7 +167,20 @@ public class DongFragment extends Fragment implements OnBackPressedListener {
             binding.dongTvAvgNh3.setText(String.format(Locale.getDefault(), "%.1f", dongJson.getDouble("beAvgNh3")));
             binding.dongTvAvgDust.setText(String.format(Locale.getDefault(), "%.1f", dongJson.getDouble("beAvgDust")));
 
-//            Log.e("dongJson", dongJson.toString());
+            // 급이 급수
+            binding.dongFeedWater.tvAllFeed.setText(dongJson.getInt("sfAllFeed") + "");
+            binding.dongFeedWater.tvCurrFeed.setText(dongJson.getInt("sfDailyFeed") + " (Kg)");
+            binding.dongFeedWater.tvPrevFeed.setText(dongJson.getInt("sfPrevFeed") + " (Kg)");
+            binding.dongFeedWater.tvRemainFeed.setText(dongJson.getInt("sfFeed") + " (Kg)");
+
+            binding.dongFeedWater.tvAllWater.setText(dongJson.getInt("sfAllWater") + "");
+            binding.dongFeedWater.tvCurrWater.setText(dongJson.getInt("sfDailyWater") + " (L)");
+            binding.dongFeedWater.tvPrevWater.setText(dongJson.getInt("sfPrevWater") + " (L)");
+            JSONObject shFeedData = new JSONObject(dongJson.getString("shFeedData"));
+            binding.dongFeedWater.tvHourWater.setText(shFeedData.getInt("feed_water") + " (L)");
+
+            binding.dongFeedWater.tvFeedPer.setText(String.format(Locale.getDefault(), "%.1fg", dongJson.getDouble("sfFeedPer")));
+            binding.dongFeedWater.tvWaterPer.setText(String.format(Locale.getDefault(), "%.3fL", dongJson.getDouble("sfWaterPer")));
 
 
         } catch (JSONException e) {

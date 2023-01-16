@@ -3,6 +3,7 @@ package com.example.kokofarm_user_app.piece;
 import android.content.Context;
 import android.os.Build;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -51,7 +52,7 @@ public class DongCardView extends LinearLayout {
 
     public void setDay(String day){
         TextView tv = this.findViewById(R.id.tv_day);
-        tv.setText(day + "일령");
+        tv.setText(day);
     }
 
     public void setLive(String live){
@@ -84,9 +85,21 @@ public class DongCardView extends LinearLayout {
         //img.setImageResource();
     }
 
-    public void setImgFeed(int idx){
+    public void setFeed(int remain, int max){
+
         ImageView img = this.findViewById(R.id.img_feed);
-        //img.setImageResource();
+
+        int per = Math.round(((float) remain / max) * 100f);
+
+        if(per <= 10) { img.setImageResource(R.drawable.feed_0); }
+        else if(per <= 35) { img.setImageResource(R.drawable.feed_1); }
+        else if(per <= 65) { img.setImageResource(R.drawable.feed_2); }
+        else if(per <= 90) { img.setImageResource(R.drawable.feed_3); }
+        else { img.setImageResource(R.drawable.feed_4); }
+
+        TextView tv = this.findViewById(R.id.tv_feed);
+        tv.setText(remain + " (kg)");
+
     }
 
     public void addErrorCard(){
@@ -95,7 +108,7 @@ public class DongCardView extends LinearLayout {
 
         //inflater.inflate(R.layout.badge_card_view, this.findViewById(R.id.badge_error_zone), true);
         BadgeCardView cdv = new BadgeCardView(context);
-        cdv.setContents("ssibal");
+//        cdv.setContents("ssibal");
 
         errorBadgeList.add(cdv);
 
@@ -114,8 +127,15 @@ public class DongCardView extends LinearLayout {
 
             //Log.e("dongJson", dongJson.toString());
 
+            String beStatus = dongJson.getString("beStatus");
+            if(beStatus.equals("O")){
+                setDay("출하상태");
+            }
+            else{
+                setDay(dongJson.getString("beInterm") + "일령");
+            }
+
             setDong(dongJson.getString("beDongid"));
-            setDay(dongJson.getString("interm"));
 
             int live = dongJson.getInt("cmInsu") + dongJson.getInt("cmExtraSu")
                     - dongJson.getInt("cmDeathCount") - dongJson.getInt("cmCullCount")
@@ -123,6 +143,8 @@ public class DongCardView extends LinearLayout {
 
             setLive("" + live);
             setAvgWeight(String.format(Locale.getDefault(), "%.1f", dongJson.getDouble("beAvgWeight")));
+
+            setFeed(dongJson.getInt("sfFeed"), dongJson.getInt("sfFeedMax"));
 
             setImgError(1);
 //            addErrorCard();

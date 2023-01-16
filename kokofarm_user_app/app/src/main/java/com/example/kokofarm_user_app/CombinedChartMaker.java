@@ -63,6 +63,11 @@ public class CombinedChartMaker {
 
     private boolean isDateFormat = false;
 
+    private String graphStyle = "line";
+    private float zoom = 5f;
+    private float barWidth = 0.5f;
+    private int startIdx = 0;       // 그래프 첫 데이터의 색상을 뭘로 표기할지
+
     public CombinedChartMaker(CombinedChart chart){
         this.chart = chart;
     }
@@ -71,6 +76,22 @@ public class CombinedChartMaker {
         isDateFormat = true;
         this.timeTerm = timeTerm;
         this.timeFormat = timeFormat;
+    }
+
+    public void setGraphStyle(String graphStyle){
+        this.graphStyle = graphStyle;
+    }
+
+    public void setZoom(float zoom){
+        this.zoom = zoom;
+    }
+
+    public void setBarWidth(float barWidth){
+        this.barWidth = barWidth;
+    }
+
+    public void setStartIdx(int startIdx){
+        this.startIdx = startIdx;
     }
 
     public void setYAxisRange(float yMin, float yMax){
@@ -111,8 +132,9 @@ public class CombinedChartMaker {
 
         String ret = DateUtil.get_inst().timestamp_to_date(timestamp, timeFormat);
 
-        if(ret.substring(11).equals("00:00:00")){
-            return ret.substring(5, 7) + "월 " + ret.substring(8, 10) + "일";
+//        Log.e("val", val + "");
+        if(ret.length() < 6 || ret.substring(6).equals("00:00")){
+            return ret.substring(0, 2) + "월 " + ret.substring(3, 5) + "일";
         }
 
         return ret;
@@ -236,6 +258,7 @@ public class CombinedChartMaker {
                 }
 
                 try {
+//                    Log.e("jsonData", jsonData.toString());
 
                     String first = "";
 
@@ -243,30 +266,41 @@ public class CombinedChartMaker {
                     Iterator<String> iter = jsonData.keys();
                     while (iter.hasNext()) {
                         String key = iter.next();
-
-                        if(first.equals("")){
-                            first = key;
-                            timeBase = DateUtil.get_inst().get_timestamp(first);
-                        }
-
-                        //if(!key.substring(11).equals("23:00:00")){
-                        if (!key.substring(14).equals("00:00")) {
-                            continue;
-                        }
-
                         JSONObject data = jsonData.getJSONObject(key);
 
-                        long key_stamp = DateUtil.get_inst().get_timestamp(key);
+                        if(isDateFormat){
+                            if(first.equals("")){
+                                first = key;
+                                timeBase = DateUtil.get_inst().get_timestamp(first);
+                            }
 
-                        float diff = (key_stamp - timeBase) / timeTerm ;
+                            //if(!key.substring(11).equals("23:00:00")){
+                            if (!key.substring(14).equals("00:00")) {
+                                continue;
+                            }
 
-                        int idx = 0;
-                        for (String field : fieldMap.keySet()) {
-                            Double val = data.getDouble(field);
-                            lines.get(idx).add(new Entry(diff, val.floatValue()));
-                            bars.get(idx).add(new BarEntry(diff, val.floatValue()));
-                            idx++;
+                            long key_stamp = DateUtil.get_inst().get_timestamp(key);
+
+                            float diff = (key_stamp - timeBase) / timeTerm ;
+
+                            int idx = 0;
+                            for (String field : fieldMap.keySet()) {
+                                Double val = data.getDouble(field);
+                                lines.get(idx).add(new Entry(diff, val.floatValue()));
+                                bars.get(idx).add(new BarEntry(diff, val.floatValue()));
+                                idx++;
+                            }
                         }
+                        else{
+                            int idx = 0;
+                            for (String field : fieldMap.keySet()) {
+                                Double val = data.getDouble(field);
+                                lines.get(idx).add(new Entry(Float.parseFloat(key), val.floatValue()));
+                                bars.get(idx).add(new BarEntry(Float.parseFloat(key), val.floatValue()));
+                                idx++;
+                            }
+                        }
+
                     }
 
                 } catch (JSONException e) {
@@ -278,22 +312,32 @@ public class CombinedChartMaker {
 
                 int idx = 0;
                 for (String field : fieldMap.keySet()) {
-                    ld.addDataSet(makeLineDataSet(lines.get(idx), fieldMap.get(field), idx));
-                    bd.addDataSet(makeBarDataSet(bars.get(idx), fieldMap.get(field), idx));
+                    ld.addDataSet(makeLineDataSet(lines.get(idx), fieldMap.get(field), startIdx + idx));
+                    bd.addDataSet(makeBarDataSet(bars.get(idx), fieldMap.get(field), startIdx + idx));
                     idx++;
                 }
 
-                bd.setBarWidth(0.5f);
+                bd.setBarWidth(barWidth);
 
                 CombinedData data = new CombinedData();
-                //data.setData(bd);
-                data.setData(ld);
+                switch (graphStyle){
+                    case "bar":
+                        data.setData(bd);
+                        break;
+                    case "combine":
+                        data.setData(bd);
+                        data.setData(ld);
+                        break;
+                    default:
+                        data.setData(ld);
+                        break;
+                }
                 chart.setData(data);
 
                 //Log.e("CombinedData", "" + data.getBarData().getDataSets());
 
-                yMin = isSetY ? yMin : data.getYMin() - 1;
-                yMax = isSetY ? yMax : data.getYMax() + 1;
+                yMin = isSetY ? yMin : data.getYMin() - 1f;
+                yMax = isSetY ? yMax : data.getYMax() + 30f;
 
                 YAxis rightAxis = chart.getAxisRight();
                 rightAxis.setDrawGridLines(false);
@@ -306,7 +350,7 @@ public class CombinedChartMaker {
                 leftAxis.setAxisMaximum(yMax);
 
                 XAxis xAxis = chart.getXAxis();
-                xAxis.setValueFormatter(new DateTimeAxisValueFormat());
+                if(isDateFormat) xAxis.setValueFormatter(new DateTimeAxisValueFormat());
                 xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
                 xAxis.setLabelCount(4, false);
                 xAxis.setSpaceMax(1f);
@@ -317,7 +361,7 @@ public class CombinedChartMaker {
                 xAxis.setAxisMinimum(data.getXMin() - 1f);
                 xAxis.setAxisMaximum(data.getXMax() + 1f);
 
-                chart.zoom(5f, 0f, 0f, 0);
+                chart.zoom(zoom, 0f, 0f, 0);
                 chart.moveViewToX(data.getXMax());
                 //chart.zoomToCenter(5f, 1f);
                 //chart.zoom(5f, 1f, 100f, 1f, YAxis.AxisDependency.LEFT);

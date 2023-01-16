@@ -8,25 +8,22 @@ import com.example.kokofarm_user_app.kkf_utils.UtilFunction;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Map.Entry;
 
 public class ConfigManager {
 
     private static ConfigManager instance = null;
 
-    public static ConfigManager get_inst() {
+    public static ConfigManager getInstance() {
         if(instance == null){
             instance = new ConfigManager();
         }
         return instance;
     }
 
-    final String CONFIG_FILE_NAME = "/config/kokofarm_user.cfg";                               //설정파일 명
-    final String URL_HEN = "http://app.kokofarm.co.kr/contents/0000.php";
-    final String URL_LAY = "http://app.kokofarm.kr/contents/0000.php";
+    final String CONFIG_FILE_NAME = "/config/kokofarm_app.cfg";                               //설정파일 명
 
-    final String MISO_HEN = "http://control.kokofarm.co.kr/app/contents/0000.php";
-
-    HashMap<String, String> config_map = new HashMap<String, String>();
+    HashMap<String, String> configMap = new HashMap<>();
 
     private Context context;
 
@@ -34,7 +31,7 @@ public class ConfigManager {
 
     }
 
-    public void set_context(Context context){
+    public void setContext(Context context){
         this.context = context;
     }
 
@@ -61,16 +58,14 @@ public class ConfigManager {
     }
 
     public String getDownloadFolderPath(){
-        String ret = "";
-
-        ret = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).getPath();
+        String ret = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).getPath();
 
         return ret;
     }
 
     public boolean readConfig(){
 
-        String read = UtilFunction.private_file_read(context, CONFIG_FILE_NAME);
+        String read = UtilFunction.privateFileRead(context, CONFIG_FILE_NAME);
 
         if(read.length() < 5){
             return false;
@@ -83,7 +78,7 @@ public class ConfigManager {
                 String[] option = token.trim().split(":");
 
                 if(option.length > 1){
-                    config_map.put(option[0], option[1]);
+                    configMap.put(option[0], option[1]);
                 }
             }
         }
@@ -91,7 +86,7 @@ public class ConfigManager {
             e.printStackTrace();
         }
 
-        if(config_map.size() > 0){
+        if(configMap.size() > 0){
             return true;
         }
 
@@ -99,30 +94,30 @@ public class ConfigManager {
     }
 
     public String getOption(String key){
-        String val = config_map.get(key);
+        String val = configMap.get(key);
         val = val == null ? "" : val;
         return val;
     }
 
-    public boolean write_config(String m_id, String m_pw, String m_type){
+    public boolean writeConfig(String m_id, String m_pw, String m_type){
         String write = "";
-        write += "user_id:" + m_id + ";\n";
-        write += "user_pw:" + m_pw + ";\n";
-        write += "type:" + m_type + ";\n";
+        write += "userID:" + m_id + ";\n";
+        write += "userPW:" + m_pw + ";\n";
+        write += "userType:" + m_type + ";\n";
 
-        return UtilFunction.private_file_write(context, CONFIG_FILE_NAME, write);
+        return UtilFunction.privateFileWrite(context, CONFIG_FILE_NAME, write);
     }
 
-    public boolean write_config(HashMap<String, String> map){
+    public boolean writeConfig(HashMap<String, String> map){
         String write = "";
-        for (Map.Entry entry : map.entrySet()){
+        for (Entry entry : map.entrySet()){
             write += entry.getKey() + "|" + entry.getValue() + ";\n";
         }
 
-        return UtilFunction.private_file_write(context, CONFIG_FILE_NAME, write);
+        return UtilFunction.privateFileWrite(context, CONFIG_FILE_NAME, write);
     }
 
-    public boolean delete_config(){
-        return  UtilFunction.private_file_delete(context, CONFIG_FILE_NAME);
+    public boolean deleteConfig(){
+        return  UtilFunction.privateFileDelete(context, CONFIG_FILE_NAME);
     }
 }

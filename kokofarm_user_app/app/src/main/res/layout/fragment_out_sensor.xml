@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:scrollbars="none">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+<!--        <include layout="@layout/toolbar"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintVertical_bias="0"/>-->
+
+        <LinearLayout
+            android:id="@+id/out_lay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="?attr/actionBarSize"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.001">
+
+            <include
+                android:id="@+id/cdv_out_sensor"
+                layout="@layout/include_cardview_out_sensor" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/env_tv_to"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/pixel_16"
+            android:text="일령별 외기환경 변화"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/out_lay"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.01"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.05"
+            style="@style/Text.lg_accent_style"/>
+
+        <com.github.mikephil.charting.charts.CombinedChart
+            android:id="@+id/env_chart_daily"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/pixel_300"
+            android:layout_marginHorizontal="@dimen/pixel_16"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/env_tv_to"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.05"/>
+
+<!--        <TextView-->
+<!--            android:id="@+id/env_tv_do"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginHorizontal="@dimen/pixel_16"-->
+<!--            android:text="일령별 외기환경 변화"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/env_cc_to"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.01"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintVertical_bias="0.05"-->
+<!--            style="@style/Text.lg_accent_style"/>-->
+
+<!--        <com.github.mikephil.charting.charts.CombinedChart-->
+<!--            android:id="@+id/env_chart_daily"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="@dimen/pixel_300"-->
+<!--            android:layout_marginHorizontal="@dimen/pixel_16"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/env_tv_do"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintVertical_bias="0.05"/>-->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

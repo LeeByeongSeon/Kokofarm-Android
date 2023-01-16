@@ -13,8 +13,14 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <include
-            layout="@layout/include_cardview_scale"/>
+        <LinearLayout
+            android:id="@+id/scale_ll_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+        </LinearLayout>
 
         <TextView
             android:id="@+id/scale_tv_tf"
@@ -26,7 +32,7 @@
             style="@style/Text.lg_accent_style"/>
 
         <include
-            android:id="@+id/scale_cc_tf"
+            android:id="@+id/scale_chart_avg_weight"
             layout="@layout/include_combine_chart"/>
 
         <TextView
@@ -38,7 +44,7 @@
             style="@style/Text.lg_accent_style"/>
 
         <include
-            android:id="@+id/scale_cc_df"
+            android:id="@+id/scale_chart_ndis"
             layout="@layout/include_combine_chart"/>
 
         <TextView
@@ -50,7 +56,7 @@
             style="@style/Text.lg_accent_style"/>
 
         <include
-            android:id="@+id/scale_cc_tw"
+            android:id="@+id/scale_chart_plus_weight"
             layout="@layout/include_combine_chart"/>
 
         <TextView
@@ -62,7 +68,7 @@
             style="@style/Text.lg_accent_style"/>
 
         <include
-            android:id="@+id/scale_cc_dw"
+            android:id="@+id/scale_chart_sensor"
             layout="@layout/include_combine_chart"/>
 
     </LinearLayout>

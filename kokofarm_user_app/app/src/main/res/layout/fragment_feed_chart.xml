@@ -15,7 +15,7 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/feed_tv_tf"
+            android:id="@+id/feed_tv_today"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/pixel_16"
@@ -24,11 +24,11 @@
             style="@style/Text.lg_accent_style"/>
 
         <include
-            android:id="@+id/feed_cc_tf"
+            android:id="@+id/feed_chart_today"
             layout="@layout/include_combine_chart"/>
 
         <TextView
-            android:id="@+id/feed_tv_df"
+            android:id="@+id/feed_tv_daily"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/pixel_16"
@@ -36,11 +36,11 @@
             style="@style/Text.lg_accent_style"/>
 
         <include
-            android:id="@+id/feed_cc_df"
+            android:id="@+id/feed_chart_daily"
             layout="@layout/include_combine_chart"/>
 
         <TextView
-            android:id="@+id/feed_tv_tw"
+            android:id="@+id/water_tv_today"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/pixel_16"
@@ -48,11 +48,11 @@
             style="@style/Text.lg_accent_style"/>
 
         <include
-            android:id="@+id/feed_cc_tw"
+            android:id="@+id/water_char_today"
             layout="@layout/include_combine_chart"/>
 
         <TextView
-            android:id="@+id/feed_tv_dw"
+            android:id="@+id/water_tv_daily"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/pixel_16"
@@ -60,7 +60,7 @@
             style="@style/Text.lg_accent_style"/>
 
         <include
-            android:id="@+id/feed_cc_dw"
+            android:id="@+id/water_chart_daily"
             layout="@layout/include_combine_chart"/>
 
     </LinearLayout>

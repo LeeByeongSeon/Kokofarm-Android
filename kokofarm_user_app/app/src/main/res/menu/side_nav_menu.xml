@@ -8,12 +8,18 @@
     <item android:title="세부보기">
         <menu>
             <item
+                android:id="@+id/nav_manager"
+                android:title="농장현황"
+                android:visible="false"
+                android:icon="@drawable/ic_baseline_home_24"/>
+            <item
                 android:id="@+id/nav_env"
                 android:title="@string/nav_env"
                 android:icon="@drawable/ic_baseline_app_settings_alt_24"/>
             <item
                 android:id="@+id/nav_breed_info"
                 android:title="@string/nav_breed_info"
+                android:visible="false"
                 android:icon="@drawable/ic_baseline_calculate_24"/>
             <item
                 android:id="@+id/nav_record"
@@ -27,6 +33,10 @@
             <item
                 android:id="@+id/nav_settings"
                 android:title="설정"
+                android:icon="@drawable/ic_baseline_settings_24"/>
+            <item
+                android:id="@+id/nav_logout"
+                android:title="로그아웃"
                 android:icon="@drawable/ic_baseline_settings_24"/>
         </menu>
     </item>

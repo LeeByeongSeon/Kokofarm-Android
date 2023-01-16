@@ -15,14 +15,14 @@ import java.io.IOException;
 public class UtilFunction {
 
     // 토스트 메시지 출력
-    public static void toast_short(Context context, String msg){
+    public static void toastShort(Context context, String msg){
         Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();
     }
-    public static void toast_long(Context context, String msg){
+    public static void toastLong(Context context, String msg){
         Toast.makeText(context, msg, Toast.LENGTH_LONG).show();
     }
 
-    public static boolean file_exist(String file_path){
+    public static boolean fileExist(String file_path){
 
         try{
             File file = new File(file_path);
@@ -38,7 +38,7 @@ public class UtilFunction {
         return false;
     }
 
-    public static String file_read(String file_path){
+    public static String fileRead(String file_path){
         String ret = "";
 
         try{
@@ -64,7 +64,7 @@ public class UtilFunction {
         return ret;
     }
 
-    public static boolean file_write(String file_path, String contents){
+    public static boolean fileWrite(String file_path, String contents){
         try{
             File file = new File(file_path);
 
@@ -90,7 +90,7 @@ public class UtilFunction {
         return false;
     }
 
-    public static boolean file_delete(String file_path){
+    public static boolean fileDelete(String file_path){
         try{
             File file = new File(file_path);
 
@@ -106,94 +106,19 @@ public class UtilFunction {
         return false;
     }
 
-    public static boolean private_file_exist(Context context, String file_path){
-        return file_exist(context.getFilesDir() + file_path);
+    public static boolean privateFileExist(Context context, String file_path){
+        return fileExist(context.getFilesDir() + file_path);
     }
 
-    public static String private_file_read(Context context, String file_path){
-        return file_read(context.getFilesDir() + file_path);
+    public static String privateFileRead(Context context, String file_path){
+        return fileRead(context.getFilesDir() + file_path);
     }
 
-    public static boolean private_file_write(Context context, String file_path, String contents){
-        return file_write(context.getFilesDir() + file_path, contents);
+    public static boolean privateFileWrite(Context context, String file_path, String contents){
+        return fileWrite(context.getFilesDir() + file_path, contents);
     }
 
-    public static boolean private_file_delete(Context context, String file_path){
-        return file_delete(context.getFilesDir() + file_path);
+    public static boolean privateFileDelete(Context context, String file_path){
+        return fileDelete(context.getFilesDir() + file_path);
     }
-
-//    @SuppressLint("NewApi")
-//    public static String get_api_data(HashMap<String, String> request){
-//        String ret = "";
-//
-//        try {
-//            ret = new RestAPITask(request).execute().get();
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        } catch (ExecutionException e) {
-//            e.printStackTrace();
-//        }
-//
-//        return ret;
-//    }
-//
-//    @SuppressLint("NewApi")
-//    public static class RestAPITask extends AsyncTask<String, Void, String>{
-//
-//        final String API_URL = "http://api.kokofarm.co.kr/contents/android_api.php";
-//        HashMap<String, String> request;
-//
-//        public RestAPITask(HashMap<String, String> request){
-//            this.request = request;
-//        }
-//
-//        @Override
-//        protected String doInBackground(String... strings) {
-//
-//            String recvMsg = "";
-//            try{
-//                //URL url = new URL(API_URL);
-//
-//                String postData = "apiKey=" + API_KEY;
-//
-//                if(request == null) return recvMsg;
-//                for(Map.Entry<String, String> entry : request.entrySet()){
-//                    postData += "&" + entry.getKey() + "=" + entry.getValue();
-//                }
-//
-//                Log.e("postData", postData);
-//
-//                URL url = new URL(API_URL + "?" + postData);
-//                //URL url = new URL(API_URL);
-//
-//                HttpURLConnection httpConn = (HttpURLConnection) url.openConnection();
-//                httpConn.setRequestMethod("POST");
-//                httpConn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded;charset=UTF-8");
-//
-//                DataOutputStream out = new DataOutputStream(httpConn.getOutputStream());
-//                out.writeBytes(postData);
-//                out.flush();
-//                out.close();
-//
-//                InputStreamReader inReader = new InputStreamReader(httpConn.getInputStream(), "UTF-8");
-//                BufferedReader reader = new BufferedReader(inReader);
-//                StringBuffer buffer = new StringBuffer();
-//
-//                String str = "";
-//                while ((str = reader.readLine()) != null){
-//                    buffer.append(str);
-//                }
-//                recvMsg = buffer.toString();
-//
-//                reader.close();
-//
-//            } catch (MalformedURLException e) {
-//                e.printStackTrace();
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-//
-//            return recvMsg;
-//        }
-//    }
 }

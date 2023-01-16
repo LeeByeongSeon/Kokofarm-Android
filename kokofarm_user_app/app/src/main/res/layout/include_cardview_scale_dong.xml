@@ -90,6 +90,7 @@
                         style="@style/Text.md_regular_style"/>
 
                     <TextView
+                        android:id="@+id/tv_avg_weight"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text=" - (kg)"
@@ -110,7 +111,7 @@
                 <TextView
                     android:layout_width="@dimen/pixel_72"
                     android:layout_height="wrap_content"
-                    android:text="@string/temp_txt"
+                    android:text="@string/avg_temp_txt"
                     android:textSize="@dimen/pixel_13"
                     style="@style/Text.md_regular_style"/>
 
@@ -140,7 +141,7 @@
                 <TextView
                     android:layout_width="@dimen/pixel_72"
                     android:layout_height="wrap_content"
-                    android:text="@string/humi_txt"
+                    android:text="@string/avg_humi_txt"
                     android:textSize="@dimen/pixel_13"
                     style="@style/Text.md_regular_style"/>
 
@@ -154,11 +155,11 @@
                 <TextView
                     android:id="@+id/tv_humi"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:includeFontPadding="false"
                     android:text="0.0"
-                    android:textSize="@dimen/pixel_16"
-                    android:textColor="@color/secondaryColor"/>
+                    android:textColor="@color/secondaryColor"
+                    android:textSize="@dimen/pixel_16" />
             </LinearLayout>
 
             <LinearLayout
@@ -169,7 +170,7 @@
                 <TextView
                     android:layout_width="@dimen/pixel_72"
                     android:layout_height="wrap_content"
-                    android:text="@string/co2_txt"
+                    android:text="@string/avg_co2_txt"
                     android:textSize="@dimen/pixel_13"
                     style="@style/Text.md_regular_style"/>
 
@@ -183,11 +184,11 @@
                 <TextView
                     android:id="@+id/tv_co2"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:includeFontPadding="false"
                     android:text="0.0"
-                    android:textSize="@dimen/pixel_16"
-                    android:textColor="@color/secondaryColor" />
+                    android:textColor="@color/secondaryColor"
+                    android:textSize="@dimen/pixel_16" />
             </LinearLayout>
 
             <LinearLayout
@@ -199,7 +200,7 @@
                     android:layout_width="@dimen/pixel_72"
                     android:layout_height="wrap_content"
                     android:includeFontPadding="false"
-                    android:text="@string/nh3_txt"
+                    android:text="@string/avg_nh3_txt"
                     android:textSize="@dimen/pixel_13"
                     style="@style/Text.md_regular_style"/>
 
@@ -211,7 +212,7 @@
                     style="@style/Text.md_regular_style"/>
 
                 <TextView
-                    android:id="@+id/tv_h2s"
+                    android:id="@+id/tv_nh3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:includeFontPadding="false"
@@ -232,6 +233,15 @@
 
             <LinearLayout
                 android:id="@+id/badge_error_zone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="left">
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/cell_zone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"

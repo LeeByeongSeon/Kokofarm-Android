@@ -8,6 +8,8 @@ import android.widget.TextView;
 
 import com.example.kokofarm_user_app.R;
 
+import org.json.JSONObject;
+
 public class BreedCardView extends LinearLayout {
 
     Context context;
@@ -47,16 +49,28 @@ public class BreedCardView extends LinearLayout {
 
     public void setDeath(String death){
         TextView tv = this.findViewById(R.id.tv_death);
-        tv.setText(death + "수");
+        tv.setText(death);
     }
 
     public void setCull(String cull){
         TextView tv = this.findViewById(R.id.tv_cull);
-        tv.setText(cull + "수");
+        tv.setText(cull);
     }
 
     public void setThinout(String thinout){
         TextView tv = this.findViewById(R.id.tv_thinout);
-        tv.setText(thinout + "수");
+        tv.setText(thinout);
+    }
+
+    public void initData(String date, int live, int day, JSONObject jo){
+        setDate(date);
+
+        setLive(Integer.toString(live));
+        setDeath(jo.optString("cdDeath"));
+        setCull(jo.optString("cdCull"));
+        setThinout(jo.optString("cdThinout"));
+
+        setDay(Integer.toString(day));
+
     }
 }

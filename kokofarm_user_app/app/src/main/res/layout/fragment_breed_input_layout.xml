@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    tools:ignore="MissingDefaultResource">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/breed_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/pixel_10"
+        android:layout_marginHorizontal="@dimen/pixel_16"
+        app:cardElevation="@dimen/overlay_04"
+        app:cardCornerRadius="@dimen/pixel_10"
+        app:contentPadding="@dimen/pixel_16">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- textView 수직 정렬을 위한 layout -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center_vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:includeFontPadding="false"
+                        android:text="사육일지 입력"
+                        style="@style/Text.lg_accent_style"/>
+
+                    <TextView
+                        android:id="@+id/tv_dong_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/pixel_72"
+                        android:layout_marginRight="@dimen/pixel_10"
+                        android:includeFontPadding="false"
+                        android:text="드림농장 1동"
+                        style="@style/Text.md_regular_style"/>
+
+                </LinearLayout>
+
+                <View
+                    style="@style/solid_line_horizontal"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/pixel_10"
+                        android:includeFontPadding="false"
+                        android:text="기준일자"
+                        style="@style/Text.sm_regular_style"/>
+
+                    <TextView
+                        android:layout_width="@dimen/pixel_10"
+                        android:layout_height="wrap_content"
+                        android:text=":"
+                        style="@style/Text.sm_regular_style"/>
+
+                    <TextView
+                        android:id="@+id/tv_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:includeFontPadding="false"
+                        android:text="2023-01-10"
+                        android:layout_marginRight="@dimen/pixel_35"
+                        style="@style/Text.sm_regular_style"
+                        android:textColor="@color/darkRedColor"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/pixel_28"
+                        android:includeFontPadding="false"
+                        android:text="축종"
+                        style="@style/Text.sm_regular_style"/>
+
+                    <TextView
+                        android:id="@+id/tv_type"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:includeFontPadding="false"
+                        android:text="육계"
+                        style="@style/Text.lg_accent_style"
+                        android:textColor="@color/darkRedColor"/>
+
+                </LinearLayout>
+
+                <View
+                    style="@style/solid_line_horizontal"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/pixel_10"
+                        android:includeFontPadding="false"
+                        android:text="입추 전 사료 투입량 (Kg)"
+                        style="@style/Text.sm_regular_style"/>
+
+                    <TextView
+                        android:layout_width="@dimen/pixel_10"
+                        android:layout_height="wrap_content"
+                        android:text=":"
+                        style="@style/Text.sm_regular_style"/>
+
+                    <EditText
+                        android:id="@+id/et_already_feed"
+                        android:inputType="number"
+                        android:maxLength="6"
+                        android:text="0"
+                        android:layout_width="@dimen/pixel_100"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+                <View
+                    style="@style/solid_line_horizontal"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginRight="@dimen/pixel_10"
+                        android:includeFontPadding="false"
+                        android:text="입추 수"
+                        style="@style/Text.sm_regular_style"/>
+
+                    <TextView
+                        android:layout_width="@dimen/pixel_10"
+                        android:layout_height="wrap_content"
+                        android:text=":"
+                        style="@style/Text.sm_regular_style"/>
+
+                    <EditText
+                        android:id="@+id/et_in"
+                        android:inputType="number"
+                        android:maxLength="6"
+                        android:text="0"
+                        android:layout_width="@dimen/pixel_100"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginRight="@dimen/pixel_10"
+                        android:includeFontPadding="false"
+                        android:text="덤 수"
+                        style="@style/Text.sm_regular_style"/>
+
+                    <TextView
+                        android:layout_width="@dimen/pixel_10"
+                        android:layout_height="wrap_content"
+                        android:text=":"
+                        style="@style/Text.sm_regular_style"/>
+
+                    <EditText
+                        android:id="@+id/et_extra"
+                        android:inputType="number"
+                        android:maxLength="6"
+                        android:text="0"
+                        android:layout_width="@dimen/pixel_100"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+                <View
+                    style="@style/solid_line_horizontal"/>
+
+                <LinearLayout
+                    android:id="@+id/scale_lv_visible"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="오늘 폐사 수"
+                            android:textSize="@dimen/pixel_14"
+                            style="@style/Text.sm_regular_style"/>
+
+                        <TextView
+                            android:id="@+id/tv_death"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textSize="@dimen/pixel_14"
+                            android:textColor="@color/secondaryColor"
+                            style="@style/Text.sm_regular_style"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="오늘 도태 수"
+                            android:textSize="@dimen/pixel_14"
+                            style="@style/Text.sm_regular_style"/>
+
+                        <TextView
+                            android:id="@+id/tv_cull"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:includeFontPadding="false"
+                            android:text="0"
+                            android:textSize="@dimen/pixel_14"
+                            android:textColor="@color/secondaryColor"
+                            style="@style/Text.sm_regular_style"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:includeFontPadding="false"
+                            android:text="오늘 솎기 수"
+                            android:textSize="@dimen/pixel_14"
+                            style="@style/Text.sm_regular_style"/>
+
+                        <TextView
+                            android:id="@+id/tv_thinout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:includeFontPadding="false"
+                            android:text="0"
+                            android:textSize="@dimen/pixel_14"
+                            android:textColor="@color/secondaryColor"
+                            style="@style/Text.sm_regular_style"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <View
+                    style="@style/solid_line_horizontal"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/pixel_10"
+                        android:includeFontPadding="false"
+                        android:text="폐사 수"
+                        style="@style/Text.sm_regular_style"/>
+
+                    <TextView
+                        android:layout_width="@dimen/pixel_10"
+                        android:layout_height="wrap_content"
+                        android:text=":"
+                        style="@style/Text.sm_regular_style"/>
+
+                    <EditText
+                        android:id="@+id/et_death"
+                        android:inputType="number"
+                        android:maxLength="5"
+                        android:text="0"
+                        android:layout_width="@dimen/pixel_100"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/pixel_10"
+                        android:includeFontPadding="false"
+                        android:text="도태 수"
+                        style="@style/Text.sm_regular_style"/>
+
+                    <TextView
+                        android:layout_width="@dimen/pixel_10"
+                        android:layout_height="wrap_content"
+                        android:text=":"
+                        style="@style/Text.sm_regular_style"/>
+
+                    <EditText
+                        android:id="@+id/et_cull"
+                        android:layout_width="@dimen/pixel_100"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:maxLength="5"
+                        android:text="0"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/pixel_10"
+                        android:includeFontPadding="false"
+                        android:text="솎기 수"
+                        style="@style/Text.sm_regular_style"/>
+
+                    <TextView
+                        android:layout_width="@dimen/pixel_10"
+                        android:layout_height="wrap_content"
+                        android:text=":"
+                        style="@style/Text.sm_regular_style"/>
+
+                    <EditText
+                        android:id="@+id/et_thinout"
+                        android:inputType="number"
+                        android:maxLength="5"
+                        android:text="0"
+                        android:layout_width="@dimen/pixel_100"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+                <View
+                    style="@style/solid_line_horizontal"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/pixel_10"
+                        android:includeFontPadding="false"
+                        android:text="※ 입추, 덤 수는 최초 입추 기준"
+                        style="@style/Text.sm_regular_style"
+                        android:textColor="@color/darkRedColor"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/pixel_10"
+                        android:includeFontPadding="false"
+                        android:text="※ 폐사, 도태, 솎기 수는 해당일자 것만 기록"
+                        style="@style/Text.sm_regular_style"
+                        android:textColor="@color/darkRedColor"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/pixel_10"
+                        android:includeFontPadding="false"
+                        android:text="※ 초과 입력 시 음수(-)를 입력하여 조정"
+                        style="@style/Text.sm_regular_style"
+                        android:textColor="@color/darkRedColor"/>
+
+                </LinearLayout>
+
+                <View
+                    style="@style/solid_line_horizontal"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/pixel_50"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_save"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginHorizontal="@dimen/pixel_28"
+                        android:text="저장"/>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_cancel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginHorizontal="@dimen/pixel_28"
+                        android:backgroundTint="@color/darkRedColor"
+                        android:text="취소"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</LinearLayout>

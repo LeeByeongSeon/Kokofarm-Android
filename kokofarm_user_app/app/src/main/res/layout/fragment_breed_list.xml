@@ -25,9 +25,22 @@
                 android:id="@+id/breed_top_paging"
                 layout="@layout/include_paging_btn"/>
 
-            <include
-                android:id="@+id/breed_breed_list"
-                layout="@layout/include_cardview_breed"/>
+<!--            <include-->
+<!--                android:id="@+id/breed_breed_list"-->
+<!--                layout="@layout/include_cardview_breed"/>-->
+
+            <LinearLayout
+                android:id="@+id/breed_card_zone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintVertical_bias="0.0">
+
+            </LinearLayout>
 
             <include
                 android:id="@+id/breed_bottom_paging"
