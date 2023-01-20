@@ -41,7 +41,7 @@ public class FarmCardViewDetail extends LinearLayout {
 
     public void setDong(String dong){
         TextView tv = this.findViewById(R.id.tv_dong);
-        tv.setText(dong + "동");
+        tv.setText(dong);
     }
 
     public void setDay(String day){
@@ -91,7 +91,7 @@ public class FarmCardViewDetail extends LinearLayout {
                 setDay("출하");
             }
             else{
-                setDay(dongJson.getString("beInterm") + "일령");
+                setDay(dongJson.getString("beInterm"));
             }
 
 //            int live = dongJson.getInt("cmInsu") + dongJson.getInt("cmExtraSu")

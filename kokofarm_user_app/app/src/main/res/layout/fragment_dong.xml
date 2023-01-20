@@ -215,18 +215,6 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintVertical_bias="0.02"/>
 
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="@dimen/pixel_2"
-            android:layout_margin="@dimen/pixel_16"
-            android:src="@drawable/dotted_line_horizontal_1"
-            app:layout_constraintStart_toEndOf="@+id/title_mean_weight"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.99"
-            app:layout_constraintTop_toBottomOf="@+id/cdv_dong_breed"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintVertical_bias="0.02"/>
-
         <LinearLayout
             android:id="@+id/dong_summary_2"
             android:layout_width="match_parent"
@@ -237,7 +225,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintVertical_bias="0.005">
+            app:layout_constraintVertical_bias="0.002">
 
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="wrap_content"
@@ -430,19 +418,7 @@
             app:layout_constraintHorizontal_bias="0.01"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintVertical_bias="0.02"/>
-
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="@dimen/pixel_2"
-            android:layout_margin="@dimen/pixel_16"
-            android:src="@drawable/dotted_line_horizontal_1"
-            app:layout_constraintStart_toEndOf="@+id/dong_summary_3_txt"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.99"
-            app:layout_constraintTop_toBottomOf="@+id/dong_summary_2"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintVertical_bias="0.02"/>
+            app:layout_constraintVertical_bias="0.005"/>
 
         <GridLayout
             android:id="@+id/dong_summary_3"
@@ -455,7 +431,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintVertical_bias="0.008">
+            app:layout_constraintVertical_bias="0.002">
 
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="wrap_content"
@@ -807,19 +783,7 @@
             app:layout_constraintHorizontal_bias="0.01"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintVertical_bias="0.02"/>
-
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="@dimen/pixel_2"
-            android:layout_margin="@dimen/pixel_16"
-            android:src="@drawable/dotted_line_horizontal_1"
-            app:layout_constraintStart_toEndOf="@+id/dong_summary_4_txt"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.99"
-            app:layout_constraintTop_toBottomOf="@+id/dong_summary_3"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintVertical_bias="0.02"/>
+            app:layout_constraintVertical_bias="0.01"/>
 
         <LinearLayout
             android:id="@+id/dong_summary_4"
@@ -837,35 +801,43 @@
                 layout="@layout/include_feed_water"/>
 
         </LinearLayout>
-        
+
         <TextView
             android:id="@+id/dong_summary_5_txt"
+            style="@style/Text.lg_accent_style"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/pixel_16"
             android:text="외기환경 센서"
-            style="@style/Text.lg_accent_style"
-            app:layout_constraintTop_toBottomOf="@id/dong_summary_4"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintHorizontal_bias="0.01"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintVertical_bias="0.065"/>
-
-        <ImageView
-            android:id="@+id/dong_summary_collapse"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/pixel_16"
-            android:src="@drawable/ic_baseline_arrow_up_24"
-            app:layout_constraintTop_toBottomOf="@+id/dong_summary_4"
-            app:layout_constraintStart_toEndOf="@+id/dong_summary_5_txt"
             app:layout_constraintEnd_toEndOf="parent"
+<<<<<<< HEAD
             app:layout_constraintHorizontal_bias="0.97"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintVertical_bias="0.075"/>
 
 
+=======
+            app:layout_constraintHorizontal_bias="0.007"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/dong_summary_4"
+            app:layout_constraintVertical_bias="0.02" />
+
+<!--        <ImageView-->
+<!--            android:id="@+id/dong_summary_collapse"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginEnd="@dimen/pixel_16"-->
+<!--            android:src="@drawable/ic_baseline_arrow_up_24"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/dong_summary_4"-->
+<!--            app:layout_constraintStart_toEndOf="@+id/dong_summary_5_txt"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.97"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintVertical_bias="0.02"/>-->
+        
+        
+>>>>>>> be7ae96d07097d59334d057a4a5758de40f6cbfb
         <LinearLayout
             android:id="@+id/dong_summary_5"
             android:layout_width="match_parent"

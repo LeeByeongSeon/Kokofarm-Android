@@ -72,7 +72,7 @@
 
     <!-- accent font -->
     <style name="Text.lg_accent_style" parent="android:TextAppearance">
-        <item name="android:textStyle">normal</item>
+        <item name="android:textStyle">bold</item>
         <item name="android:textSize">@dimen/font_lg</item>
         <item name="android:fontFamily">@font/pretendard_medium</item>
         <item name="android:includeFontPadding">false</item>
@@ -80,7 +80,7 @@
 
     <!-- bottom Nav font -->
     <style name="Text.nav_style" parent="Widget.MaterialComponents.BottomNavigationView">
-        <item name="android:fontFamily">@font/pretendard_thin</item>
+        <item name="android:fontFamily">@font/pretendard_medium</item>
     </style>
 
     <!-- View style -->

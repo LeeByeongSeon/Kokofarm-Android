@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- medium -->
+    <!-- thin -->
     <font
         android:font="@font/pretendard_thin"
         android:fontStyle="normal"
@@ -17,7 +17,7 @@
         app:font="@font/pretendard_light"
         app:fontStyle="normal"/>
 
-    <!-- medium -->
+    <!-- regular -->
     <font
         android:font="@font/pretendard_regular"
         android:fontStyle="normal"
@@ -30,5 +30,41 @@
         android:fontStyle="normal"
         app:font="@font/pretendard_medium"
         app:fontStyle="normal"/>
+
+    <!-- nanum light -->
+    <font
+        android:font="@font/nanumsquareneo_alt"
+        android:fontStyle="normal"
+        app:font="@font/nanumsquareneo_alt"
+        app:fontStyle="normal"/>
+
+    <!-- nanum regular -->
+    <font
+        android:font="@font/nanumsquareneo_brg"
+        android:fontStyle="normal"
+        app:font="@font/nanumsquareneo_brg"
+        app:fontStyle="normal"/>
+
+    <!-- nanum bold -->
+    <font
+        android:font="@font/nanumsquareneo_cbd"
+        android:fontStyle="normal"
+        app:font="@font/nanumsquareneo_cbd"
+        app:fontStyle="normal"/>
+
+    <!-- nanum Extra bold -->
+    <font
+        android:font="@font/nanumsquareneo_deb"
+        android:fontStyle="normal"
+        app:font="@font/nanumsquareneo_deb"
+        app:fontStyle="normal"/>
+
+    <!-- nanum heavy -->
+    <font
+        android:font="@font/nanumsquareneo_ehv"
+        android:fontStyle="normal"
+        app:font="@font/nanumsquareneo_ehv"
+        app:fontStyle="normal"/>
+
 
 </font-family>

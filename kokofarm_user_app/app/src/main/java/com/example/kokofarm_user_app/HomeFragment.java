@@ -83,9 +83,9 @@ public class HomeFragment extends Fragment {
 
         setFragmentData(container.getContext());
 
-        // FCR Slider 관련
-        Slider slider = binding.homeRsFcr.sdFcr;
-        slider.addOnSliderTouchListener(sliderTouchListener);
+//        // FCR Slider 관련
+//        Slider slider = binding.homeRsFcr.sdFcr;
+//        slider.addOnSliderTouchListener(sliderTouchListener);
 
         return binding.getRoot();
     }
@@ -108,37 +108,37 @@ public class HomeFragment extends Fragment {
             return;
         }
 
-        binding.homeRsFcr.sdFcr.setValue(val);
-        String fcrStr = decimalFormat.format(val);
-        binding.homeRsFcr.tvSelectFcr.setText(fcrStr);
+//        binding.homeRsFcr.sdFcr.setValue(val);
+//        String fcrStr = decimalFormat.format(val);
+//        binding.homeRsFcr.tvSelectFcr.setText(fcrStr);
 
         String feedStr = binding.homeFeedWater.tvFeedPer.getText().toString();
         feedStr = feedStr.substring(0, feedStr.length() - 2);
 
-        float feed = Float.parseFloat(feedStr);
-        String mean = String.format("%.1f", feed / val);
-        binding.homeRsFcr.tvMean.setText(mean);
+//        float feed = Float.parseFloat(feedStr);
+//        String mean = String.format("%.1f", feed / val);
+//        binding.homeRsFcr.tvMean.setText(mean);
 
     }
 
     // FCR Slider 관련
-    private final Slider.OnSliderTouchListener sliderTouchListener =
-        new Slider.OnSliderTouchListener() {
-            @SuppressLint("RestrictedApi")
-            @Override
-            public void onStartTrackingTouch(Slider slider) {
-                Log.d("StartTrack", "Start");
-                float fcrVal = binding.homeRsFcr.sdFcr.getValue();
-                setFcrVal(fcrVal);
-            }
-
-            @SuppressLint("RestrictedApi")
-            public void onStopTrackingTouch(Slider slider) {
-                Log.d("StopTrack", "Stop");
-                float fcrVal = binding.homeRsFcr.sdFcr.getValue();
-                setFcrVal(fcrVal);
-            }
-        };
+//    private final Slider.OnSliderTouchListener sliderTouchListener =
+//        new Slider.OnSliderTouchListener() {
+//            @SuppressLint("RestrictedApi")
+//            @Override
+//            public void onStartTrackingTouch(Slider slider) {
+//                Log.d("StartTrack", "Start");
+//                float fcrVal = binding.homeRsFcr.sdFcr.getValue();
+//                setFcrVal(fcrVal);
+//            }
+//
+//            @SuppressLint("RestrictedApi")
+//            public void onStopTrackingTouch(Slider slider) {
+//                Log.d("StopTrack", "Stop");
+//                float fcrVal = binding.homeRsFcr.sdFcr.getValue();
+//                setFcrVal(fcrVal);
+//            }
+//        };
 
     // fragment 메모리 누수 방지
     @Override
@@ -318,8 +318,8 @@ public class HomeFragment extends Fragment {
         // 슬라이더 범위 설정
         float from = farmFcr > 1 ? farmFcr - 1 : 0;
         float to = farmFcr + 1;
-        binding.homeRsFcr.sdFcr.setValueFrom(from);
-        binding.homeRsFcr.sdFcr.setValueTo(to);
+//        binding.homeRsFcr.sdFcr.setValueFrom(from);
+//        binding.homeRsFcr.sdFcr.setValueTo(to);
         setFcrVal(farmFcr);
 
         // 동별 평균중량 비교

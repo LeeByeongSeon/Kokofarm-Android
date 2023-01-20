@@ -1,7 +1,6 @@
 <resources>
-    <string name="app_name">kokofarm_user_app</string>
+    <string name="app_name" translatable="false">kokofarm_user_app</string>
 
-    <string name="login_txt">로그인</string>
     <string name="login_id">아이디</string>
     <string name="login_pw">비밀번호</string>
 
@@ -84,5 +83,6 @@
     <string name="in_date_txt">입추일자</string>
     <string name="out_date_txt">출하일자</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="login_txt">로그인</string>
 </resources>

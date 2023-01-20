@@ -34,6 +34,7 @@
                 app:collapsedTitleTextColor="@color/secondaryColor"
                 app:expandedTitleGravity="center_vertical|center_horizontal"
                 app:expandedTitleMarginTop="@dimen/pixel_5"
+                app:expandedTitleTextAppearance="@style/Text.lg_accent_style"
                 app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
                 style="@style/Widget.Material3.CollapsingToolbar.toolbar_bg">
 
@@ -197,6 +198,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginBottom="?attr/actionBarSize"
+                android:paddingTop="@dimen/pixel_10"
                 android:name="androidx.navigation.fragment.NavHostFragment"/>
 <!--                app:defaultNavHost="true"-->
 <!--                app:navGraph="@navigation/nav_graph"-->

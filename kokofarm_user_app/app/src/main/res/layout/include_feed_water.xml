@@ -10,9 +10,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:layout_marginVertical="@dimen/pixel_10"
         android:layout_marginStart="@dimen/pixel_16"
         android:layout_marginEnd="@dimen/pixel_8"
+        android:layout_marginTop="@dimen/pixel_5"
         app:cardElevation="@dimen/overlay_04"
         app:cardCornerRadius="@dimen/pixel_10"
         app:contentPadding="@dimen/pixel_16">
@@ -48,8 +48,14 @@
 
             </LinearLayout>
 
-            <View
-                style="@style/solid_line_horizontal"/>
+<!--            <View-->
+<!--                style="@style/solid_line_horizontal"/>-->
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/pixel_2"
+                android:layout_marginVertical="@dimen/pixel_10"
+                android:src="@drawable/dotted_line_horizontal_1"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -108,8 +114,14 @@
 
             </LinearLayout>
 
-            <View
-                style="@style/solid_line_horizontal"/>
+<!--            <View-->
+<!--                style="@style/solid_line_horizontal"/>-->
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/pixel_2"
+                android:layout_marginVertical="@dimen/pixel_10"
+                android:src="@drawable/dotted_line_horizontal_1"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -132,8 +144,14 @@
 
             </LinearLayout>
 
-            <View
-                style="@style/solid_line_horizontal"/>
+<!--            <View-->
+<!--                style="@style/solid_line_horizontal"/>-->
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/pixel_2"
+                android:layout_marginVertical="@dimen/pixel_10"
+                android:src="@drawable/dotted_line_horizontal_1"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -164,8 +182,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:layout_marginVertical="@dimen/pixel_10"
+        android:layout_marginBottom="@dimen/pixel_10"
         android:layout_marginStart="@dimen/pixel_8"
+        android:layout_marginTop="@dimen/pixel_5"
         android:layout_marginEnd="@dimen/pixel_16"
         app:cardElevation="@dimen/overlay_04"
         app:cardCornerRadius="@dimen/pixel_10"
@@ -202,8 +221,14 @@
 
             </LinearLayout>
 
-            <View
-                style="@style/solid_line_horizontal"/>
+<!--            <View-->
+<!--                style="@style/solid_line_horizontal"/>-->
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/pixel_2"
+                android:layout_marginVertical="@dimen/pixel_10"
+                android:src="@drawable/dotted_line_horizontal_1"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -261,8 +286,14 @@
 
             </LinearLayout>
 
-            <View
-                style="@style/solid_line_horizontal"/>
+<!--            <View-->
+<!--                style="@style/solid_line_horizontal"/>-->
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/pixel_2"
+                android:layout_marginVertical="@dimen/pixel_10"
+                android:src="@drawable/dotted_line_horizontal_1"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -285,8 +316,14 @@
 
             </LinearLayout>
 
-            <View
-                style="@style/solid_line_horizontal"/>
+<!--            <View-->
+<!--                style="@style/solid_line_horizontal"/>-->
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/pixel_2"
+                android:layout_marginVertical="@dimen/pixel_10"
+                android:src="@drawable/dotted_line_horizontal_1"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
