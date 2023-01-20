@@ -4,7 +4,9 @@
     android:id="@+id/dong_summary_5"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="@dimen/pixel_16"
+    android:layout_marginTop="@dimen/pixel_5"
+    android:layout_marginBottom="@dimen/pixel_5"
+    android:layout_marginHorizontal="@dimen/pixel_16"
     app:cardElevation="@dimen/overlay_04"
     app:cardCornerRadius="@dimen/pixel_10"
     app:contentPadding="@dimen/pixel_16">

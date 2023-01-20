@@ -116,15 +116,14 @@
                     android:id="@+id/tv_live"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="@dimen/pixel_10"
                     android:text="30,000수"
                     android:textSize="@dimen/pixel_18"/>
 
-                <ImageView
-                    android:id="@+id/img_breed_note"
-                    android:layout_width="@dimen/pixel_35"
-                    android:layout_height="@dimen/pixel_35"
-                    android:src="@drawable/ic_baseline_edit_note_24"/>
+<!--                <ImageView-->
+<!--                    android:id="@+id/img_breed_note"-->
+<!--                    android:layout_width="@dimen/pixel_35"-->
+<!--                    android:layout_height="@dimen/pixel_35"-->
+<!--                    android:src="@drawable/ic_baseline_edit_note_24"/>-->
 
             </LinearLayout>
 

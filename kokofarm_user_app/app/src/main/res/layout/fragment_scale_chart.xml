@@ -39,6 +39,7 @@
             android:id="@+id/scale_tv_df"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/pixel_16"
             android:layout_marginHorizontal="@dimen/pixel_16"
             android:text="중량별 정규분포"
             style="@style/Text.lg_accent_style"/>
@@ -51,6 +52,7 @@
             android:id="@+id/scale_tv_tw"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/pixel_16"
             android:layout_marginHorizontal="@dimen/pixel_16"
             android:text="오늘 증체중량"
             style="@style/Text.lg_accent_style"/>
@@ -63,6 +65,7 @@
             android:id="@+id/scale_tv_dw"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/pixel_16"
             android:layout_marginHorizontal="@dimen/pixel_16"
             android:text="일령별 환경센서"
             style="@style/Text.lg_accent_style"/>

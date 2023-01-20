@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">kokofarm_user_app</string>
+    <string name="login_txt">Login</string>
+    <string name="nav_env">Outdoor environment</string>
+</resources>

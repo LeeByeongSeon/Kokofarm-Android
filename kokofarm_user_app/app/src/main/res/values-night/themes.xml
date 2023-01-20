@@ -69,7 +69,7 @@
 
     <!-- accent font -->
     <style name="Text.lg_accent_style" parent="android:TextAppearance">
-        <item name="android:textStyle">normal</item>
+        <item name="android:textStyle">bold</item>
         <item name="android:textSize">@dimen/font_lg</item>
         <item name="android:fontFamily">@font/pretendard_medium</item>
         <item name="android:includeFontPadding">false</item>

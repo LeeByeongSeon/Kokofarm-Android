@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:gravity="center_vertical"
     android:orientation="horizontal"
     tools:ignore="MissingDefaultResource">
 
@@ -12,7 +11,7 @@
         android:id="@+id/breed_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginVertical="@dimen/pixel_10"
+        android:layout_marginBottom="@dimen/pixel_10"
         android:layout_marginHorizontal="@dimen/pixel_16"
         app:cardElevation="@dimen/overlay_04"
         app:cardCornerRadius="@dimen/pixel_10"
@@ -34,85 +33,112 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_weight="0"
+                        android:gravity="left
+"
                         android:includeFontPadding="false"
                         android:text="사육일지 입력"
                         style="@style/Text.lg_accent_style"/>
 
                     <TextView
                         android:id="@+id/tv_dong_name"
+                        style="@style/Text.md_regular_style"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/pixel_72"
-                        android:layout_marginRight="@dimen/pixel_10"
+                        android:layout_weight="1"
+                        android:gravity="right"
                         android:includeFontPadding="false"
-                        android:text="드림농장 1동"
-                        style="@style/Text.md_regular_style"/>
+                        android:text="드림농장 1동" />
 
                 </LinearLayout>
 
-                <View
-                    style="@style/solid_line_horizontal"/>
+<!--                <View-->
+<!--                    style="@style/solid_line_horizontal"/>-->
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/pixel_2"
+                    android:layout_marginVertical="@dimen/pixel_10"
+                    android:src="@drawable/dotted_line_horizontal_1"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
-                    <TextView
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginRight="@dimen/pixel_10"
-                        android:includeFontPadding="false"
-                        android:text="기준일자"
-                        style="@style/Text.sm_regular_style"/>
+                        android:layout_weight="1">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:includeFontPadding="false"
+                            android:text="기준일자"
+                            style="@style/Text.sm_regular_style"/>
 
-                    <TextView
-                        android:layout_width="@dimen/pixel_10"
-                        android:layout_height="wrap_content"
-                        android:text=":"
-                        style="@style/Text.sm_regular_style"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=":"
+                            android:layout_marginHorizontal="@dimen/pixel_10"
+                            style="@style/Text.sm_regular_style"/>
 
-                    <TextView
-                        android:id="@+id/tv_date"
+                        <TextView
+                            android:id="@+id/tv_date"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:includeFontPadding="false"
+                            android:text="2023-01-10"
+                            style="@style/Text.sm_regular_style"
+                            android:textColor="@color/darkRedColor"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:includeFontPadding="false"
-                        android:text="2023-01-10"
-                        android:layout_marginRight="@dimen/pixel_35"
-                        style="@style/Text.sm_regular_style"
-                        android:textColor="@color/darkRedColor"/>
+                        android:gravity="end"
+                        android:layout_weight="1">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="@dimen/pixel_28"
-                        android:includeFontPadding="false"
-                        android:text="축종"
-                        style="@style/Text.sm_regular_style"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:includeFontPadding="false"
+                            android:text="축종"
+                            style="@style/Text.sm_regular_style"/>
 
-                    <TextView
-                        android:id="@+id/tv_type"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:includeFontPadding="false"
-                        android:text="육계"
-                        style="@style/Text.lg_accent_style"
-                        android:textColor="@color/darkRedColor"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=":"
+                            android:layout_marginHorizontal="@dimen/pixel_10"
+                            style="@style/Text.sm_regular_style"/>
+
+                        <TextView
+                            android:id="@+id/tv_type"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:includeFontPadding="false"
+                            android:gravity="end"
+                            android:text="육계"
+                            style="@style/Text.sm_regular_style"
+                            android:textColor="@color/darkRedColor"/>
+
+                    </LinearLayout>
 
                 </LinearLayout>
-
-                <View
-                    style="@style/solid_line_horizontal"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-
+                    android:layout_marginTop="@dimen/pixel_10"
                     android:orientation="horizontal">
 
                     <TextView
@@ -139,13 +165,11 @@
 
                 </LinearLayout>
 
-                <View
-                    style="@style/solid_line_horizontal"/>
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:layout_marginTop="@dimen/pixel_10">
 
                     <TextView
                         android:layout_width="match_parent"
@@ -195,14 +219,12 @@
 
                 </LinearLayout>
 
-                <View
-                    style="@style/solid_line_horizontal"/>
-
                 <LinearLayout
                     android:id="@+id/scale_lv_visible"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:layout_marginTop="@dimen/pixel_30">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -283,14 +305,12 @@
 
                 </LinearLayout>
 
-                <View
-                    style="@style/solid_line_horizontal"/>
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:layout_marginTop="@dimen/pixel_30">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -308,11 +328,11 @@
 
                     <EditText
                         android:id="@+id/et_death"
+                        android:layout_width="@dimen/pixel_100"
+                        android:layout_height="wrap_content"
                         android:inputType="number"
                         android:maxLength="5"
-                        android:text="0"
-                        android:layout_width="@dimen/pixel_100"
-                        android:layout_height="wrap_content" />
+                        android:text="0" />
 
                 </LinearLayout>
                 <LinearLayout
@@ -374,13 +394,11 @@
 
                 </LinearLayout>
 
-                <View
-                    style="@style/solid_line_horizontal"/>
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:layout_marginTop="@dimen/pixel_10">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -425,22 +443,11 @@
 
                 </LinearLayout>
 
-                <View
-                    style="@style/solid_line_horizontal"/>
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/pixel_50"
-                    android:orientation="horizontal">
-
-                    <com.google.android.material.button.MaterialButton
-                        android:id="@+id/btn_save"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:layout_marginHorizontal="@dimen/pixel_28"
-                        android:text="저장"/>
+                    android:orientation="horizontal"
+                    android:layout_marginTop="@dimen/pixel_10">
 
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/btn_cancel"
@@ -450,6 +457,14 @@
                         android:layout_marginHorizontal="@dimen/pixel_28"
                         android:backgroundTint="@color/darkRedColor"
                         android:text="취소"/>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_save"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginHorizontal="@dimen/pixel_28"
+                        android:text="저장"/>
 
                 </LinearLayout>
 

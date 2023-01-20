@@ -108,7 +108,6 @@ public class DongCardView extends LinearLayout {
 
         //inflater.inflate(R.layout.badge_card_view, this.findViewById(R.id.badge_error_zone), true);
         BadgeCardView cdv = new BadgeCardView(context);
-//        cdv.setContents("ssibal");
 
         errorBadgeList.add(cdv);
 

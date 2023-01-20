@@ -40,7 +40,7 @@ public class ComeoutCardView extends LinearLayout {
 
     public void setDay(String day){
         TextView tv = this.findViewById(R.id.tv_day);
-        tv.setText(day + "일령");
+        tv.setText(day);
     }
 
     public void setIndate(String indate){
