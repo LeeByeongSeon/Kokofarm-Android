@@ -35,7 +35,7 @@
                     android:layout_marginTop="@dimen/pixel_10"
                     android:paddingBottom="@dimen/pixel_10"
                     android:text="@string/per_feed"
-                    style="@style/Text.md_regular_style"/>
+                    style="@style/Text.sm_regular_style"/>
 
                 <TextView
                     android:id="@+id/tv_feed_per"
@@ -208,7 +208,7 @@
                     android:layout_marginTop="@dimen/pixel_10"
                     android:paddingBottom="@dimen/pixel_10"
                     android:text="@string/per_water"
-                    style="@style/Text.md_regular_style"/>
+                    style="@style/Text.sm_regular_style"/>
 
                 <TextView
                     android:id="@+id/tv_water_per"

@@ -28,16 +28,21 @@
         </menu>
     </item>
 
-    <item android:title="@string/setting_txt">
-        <menu>
-            <item
-                android:id="@+id/nav_settings"
-                android:title="@string/setting_txt"
-                android:icon="@drawable/ic_baseline_settings_24"/>
-            <item
-                android:id="@+id/nav_logout"
-                android:title="@string/logout_txt"
-                android:icon="@drawable/ic_baseline_logout_24"/>
-        </menu>
-    </item>
+<!--    <item android:title="@string/setting_txt">-->
+<!--        <menu>-->
+<!--            <item-->
+<!--                android:id="@+id/nav_settings"-->
+<!--                android:title="@string/setting_txt"-->
+<!--                android:icon="@drawable/ic_baseline_settings_24"/>-->
+<!--            <item-->
+<!--                android:id="@+id/nav_logout"-->
+<!--                android:title="@string/logout_txt"-->
+<!--                android:icon="@drawable/ic_baseline_logout_24"/>-->
+<!--        </menu>-->
+<!--    </item>-->
+
+    <item
+        android:id="@+id/nav_logout"
+        android:title="@string/logout_txt"
+        android:icon="@drawable/ic_baseline_logout_24"/>
 </menu>

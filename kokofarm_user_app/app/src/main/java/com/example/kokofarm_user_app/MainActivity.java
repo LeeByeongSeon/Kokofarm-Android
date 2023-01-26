@@ -222,9 +222,9 @@ public class MainActivity extends AppCompatActivity {
                     drawerLayout.closeDrawer(GravityCompat.END);
                     return true;
 
-                case R.id.nav_settings:
-                    PageManager.getInstance().moveActivity(this, SettingActivity.class);
-                    return true;
+//                case R.id.nav_settings:
+//                    PageManager.getInstance().moveActivity(this, SettingActivity.class);
+//                    return true;
 
                 case R.id.nav_logout:
                     drawerLayout.closeDrawer(GravityCompat.END);
