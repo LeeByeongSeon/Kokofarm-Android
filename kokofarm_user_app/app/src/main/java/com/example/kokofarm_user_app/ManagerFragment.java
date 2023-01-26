@@ -128,12 +128,12 @@ public class ManagerFragment extends Fragment {
 
             int farmCnt = in + out;
 
-            PageManager.getInstance().setTopContentsCollapsing("농장현황");
-            PageManager.getInstance().setTopLeftTitle("총 농장");
+            PageManager.getInstance().setTopContentsCollapsing(PageManager.getInstance().getRString(R.string.farm_status));
+            PageManager.getInstance().setTopLeftTitle(PageManager.getInstance().getRString(R.string.total_farm));
             PageManager.getInstance().setTopLeftContents(farmCnt + "");
-            PageManager.getInstance().setTopCenterTitle("입추 농장");
+            PageManager.getInstance().setTopCenterTitle(PageManager.getInstance().getRString(R.string.enter_farm));
             PageManager.getInstance().setTopCenterContents(in + "");
-            PageManager.getInstance().setTopRightTitle("입추 동 수");
+            PageManager.getInstance().setTopRightTitle(PageManager.getInstance().getRString(R.string.enter_dong));
             PageManager.getInstance().setTopRightContents(dongInCount + "");
 
             PageManager.getInstance().hideToolbar(false);

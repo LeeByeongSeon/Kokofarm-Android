@@ -26,12 +26,12 @@
     <string name="min_weight">최소</string>
     <string name="max_weight">최대</string>
     <string name="all_in_count">총 입추</string>
-    <string name="live_count">생존</string>
-    <string name="live_ratio">생존 율</string>
+    <string name="live_count">생존 수</string>
+    <string name="live_ratio">생존율</string>
     <string name="extra_count">덤 입추</string>
-    <string name="death_count">폐사</string>
-    <string name="cull_count">도태</string>
-    <string name="out_count">솎기</string>
+    <string name="death_count">폐사 수</string>
+    <string name="cull_count">도태 수</string>
+    <string name="out_count">솎기 수</string>
     <string name="per_feed">수 당 급이량</string>
     <string name="per_water">수 당 급수량</string>
     <string name="remain_feed">사료잔량</string>
@@ -54,20 +54,7 @@
     <string name="days_feed">일령별 급이량 변화</string>
     <string name="days_water">일령별 급수량 변화</string>
 
-    <string name="out_txt">지난 출하내역</string>
-
-    <string name="weight_txt">중량</string>
-    <string name="temp_txt">온도</string>
-    <string name="humi_txt">습도</string>
-    <string name="co2_txt">이산화탄소</string>
-    <string name="nh3_txt">암모니아</string>
-    <string name="h2s_txt">황화수소</string>
-    <string name="pm_txt">미세먼지</string>
-    <string name="pm_10_txt">초미세먼지</string>
-    <string name="solar_txt">일사량</string>
-    <string name="lux_txt">조도</string>
-    <string name="wind_txt">풍속</string>
-    <string name="wind_direction_txt">풍향</string>
+    <string name="release_history">지난 출하내역</string>
 
     <string name="avg_temp_txt">평균 온도</string>
     <string name="avg_humi_txt">평균 습도</string>
@@ -80,9 +67,71 @@
 
     <string name="number_txt">번호</string>
     <string name="dong_txt">동</string>
-    <string name="in_date_txt">입추일자</string>
-    <string name="out_date_txt">출하일자</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="in_date_txt">입추일</string>
+    <string name="out_date_txt">출하일</string>
+
     <string name="login_txt">로그인</string>
+
+    <string name="today_water_change">오늘 급이량 변화</string>
+    <string name="daily_water_change">일령별 급이량 변화</string>
+    <string name="today_feed_change">오늘 급수량 변화</string>
+    <string name="daily_feed_change">일령별 급수량 변화</string>
+    <string name="avg_weight_change">평균중량 변화</string>
+    <string name="avg_weight_distribution">중량별 정규분포</string>
+    <string name="today_weight_increase">오늘 증체중량</string>
+    <string name="env_sensor_change">환경센서 변화</string>
+    <string name="day_txt">일령</string>
+    <string name="network_txt">네트워크</string>
+    <string name="out_day_txt">출하일령</string>
+    <string name="standard_fcr">표준 FCR</string>
+    <string name="fcr_weight">FCR 기반 평균중량</string>
+
+    <string name="weight_txt">중량</string>
+    <string name="temp_txt">온도</string>
+    <string name="humi_txt">습도</string>
+    <string name="co2_txt">이산화탄소</string>
+    <string name="nh3_txt">암모니아</string>
+    <string name="h2s_txt">황화수소</string>
+    <string name="pm_10_txt">미세먼지</string>
+    <string name="pm_25_txt">초미세먼지</string>
+    <string name="solar_txt">일사량</string>
+    <string name="lux_txt">조도</string>
+    <string name="wind_speed_txt">풍속</string>
+    <string name="wind_direction_txt">풍향</string>
+
+    <string name="weight_unit">중량 (g)</string>
+    <string name="temp_unit">온도 (°C)</string>
+    <string name="humi_unit">습도 (%)</string>
+    <string name="co2_unit">이산화탄소 (ppm)</string>
+    <string name="nh3_unit">암모니아 (ppm)</string>
+    <string name="h2s_unit">황화수소 (ppm)</string>
+    <string name="pm_10_unit">미세먼지 (μg/m3)</string>
+    <string name="pm_25_unit">초미세먼지 (μg/m3)</string>
+    <string name="solar_unit">일사량 (W/㎡)</string>
+    <string name="lux_unit">조도 (lux)</string>
+    <string name="wind_speed_unit">풍속 (m/s)</string>
+    <string name="wind_direction_unit">풍향</string>
+    <string name="prev_txt">이전</string>
+    <string name="next_txt">다음</string>
+    <string name="farm_status">농장현황</string>
+    <string name="detail_info">세부정보</string>
+    <string name="setting_txt">설정</string>
+    <string name="logout_txt">로그아웃</string>
+    <string name="cnt_txt">수</string>
+    <string name="sd_block">동별 표준편차</string>
+    <string name="total_farm">총 농장</string>
+    <string name="enter_farm">입추 농장</string>
+    <string name="enter_dong">입추 동 수</string>
+    <string name="released_txt">출하상태</string>
+    <string name="dong_txt_empty">동</string>
+    <string name="sd_txt">표준편차</string>
+    <string name="mean_weight">예측 평체</string>
+    <string name="avg_for_sensor">저울 센서별 평균</string>
+    <string name="scale_num">번 저울</string>
+    <string name="ext_change_by_days">일령별 외기환경 변화</string>
+    <string name="release_count">출하 횟수</string>
+    <string name="avg_weight_5">5회차 평균중량</string>
+    <string name="avg_day_5">5회사 평균일령</string>
+    <string name="ext_sensor_txt">외기환경</string>
+
 </resources>

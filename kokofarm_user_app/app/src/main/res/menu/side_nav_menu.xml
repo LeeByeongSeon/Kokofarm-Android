@@ -5,11 +5,11 @@
 <!--        android:checkableBehavior="single">-->
 <!--        -->
 <!--    </group>-->
-    <item android:title="세부보기">
+    <item android:title="@string/detail_info">
         <menu>
             <item
                 android:id="@+id/nav_manager"
-                android:title="농장현황"
+                android:title="@string/farm_status"
                 android:visible="false"
                 android:icon="@drawable/ic_baseline_home_24"/>
             <item
@@ -28,15 +28,15 @@
         </menu>
     </item>
 
-    <item android:title="설정">
+    <item android:title="@string/setting_txt">
         <menu>
             <item
                 android:id="@+id/nav_settings"
-                android:title="설정"
+                android:title="@string/setting_txt"
                 android:icon="@drawable/ic_baseline_settings_24"/>
             <item
                 android:id="@+id/nav_logout"
-                android:title="로그아웃"
+                android:title="@string/logout_txt"
                 android:icon="@drawable/ic_baseline_logout_24"/>
         </menu>
     </item>

@@ -12,6 +12,7 @@ import android.animation.ObjectAnimator;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -20,6 +21,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
@@ -133,7 +135,6 @@ public class MainActivity extends AppCompatActivity {
 
         // 로그인 분기 작업
         checkLogin();
-
     }
 
     @RequiresApi(api = Build.VERSION_CODES.O)
@@ -233,6 +234,25 @@ public class MainActivity extends AppCompatActivity {
 
             return false;
         });
+
+        // 언어 변경 버튼 이벤트
+        ImageButton korea = binding.mainSideNav.getHeaderView(0).findViewById(R.id.btn_trans_south_korea);
+        ImageButton usa = binding.mainSideNav.getHeaderView(0).findViewById(R.id.btn_trans_united_states);
+
+        korea.setOnClickListener(view -> trans_language(Locale.KOREA));
+        usa.setOnClickListener(view -> trans_language(Locale.US));
+    }
+
+    // 언어 변경 시 이벤트
+    private void trans_language(Locale locale){
+        Configuration config = new Configuration();
+        config.locale = locale;
+        getResources().updateConfiguration(config, getResources().getDisplayMetrics());
+
+        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        finish();
+        startActivity(intent);
     }
 
     // Back 처리 (Drawer 닫기, HomeFragment 에서 앱 종료)

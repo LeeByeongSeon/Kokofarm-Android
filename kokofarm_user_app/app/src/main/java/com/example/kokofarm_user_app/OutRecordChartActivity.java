@@ -20,7 +20,7 @@ public class OutRecordChartActivity extends AppCompatActivity {
         // Toolbar set
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle(R.string.out_txt);
+        getSupportActionBar().setTitle(R.string.release_history);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 }

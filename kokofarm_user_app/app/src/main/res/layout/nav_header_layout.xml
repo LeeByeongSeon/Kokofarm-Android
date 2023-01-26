@@ -17,6 +17,7 @@
         android:gravity="top|end">
 
         <ImageButton
+            android:id="@+id/btn_trans_south_korea"
             android:layout_width="@dimen/pixel_48"
             android:layout_height="@dimen/pixel_40"
             android:layout_marginEnd="@dimen/pixel_10"
@@ -26,6 +27,7 @@
             android:padding="0dp"/>
 
         <ImageButton
+            android:id="@+id/btn_trans_united_states"
             android:layout_width="@dimen/pixel_48"
             android:layout_height="@dimen/pixel_40"
             android:layout_marginEnd="@dimen/pixel_16"

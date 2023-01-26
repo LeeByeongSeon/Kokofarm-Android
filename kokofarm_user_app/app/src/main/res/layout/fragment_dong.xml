@@ -95,7 +95,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="평균중량" />
+                                android:text="@string/avg_weight" />
 
                             <TextView
                                 android:id="@+id/dong_tv_avg_weight"
@@ -118,7 +118,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="표준편차" />
+                                android:text="@string/sd_txt" />
 
                             <TextView
                                 android:id="@+id/dong_tv_devi"
@@ -151,7 +151,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="입추일자"
+                            android:text="@string/in_date_txt"
                             android:textSize="@dimen/pixel_16"
                             style="@style/Text.md_regular_style"/>
 
@@ -206,7 +206,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/pixel_16"
-            android:text="예측 평체"
+            android:text="@string/mean_weight"
             style="@style/Text.lg_accent_style"
             app:layout_constraintTop_toBottomOf="@+id/cdv_dong_breed"
             app:layout_constraintStart_toStartOf="parent"
@@ -250,7 +250,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="어제"
+                        android:text="@string/yesterday_txt"
                         android:textSize="@dimen/pixel_16"
                         style="@style/Text.md_regular_style"/>
 
@@ -405,20 +405,20 @@
             </com.google.android.material.card.MaterialCardView>
 
         </LinearLayout>
-        
+
         <TextView
             android:id="@+id/dong_summary_3_txt"
+            style="@style/Text.lg_accent_style"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/pixel_16"
-            android:text="저울 센서별 평균"
-            style="@style/Text.lg_accent_style"
-            app:layout_constraintTop_toBottomOf="@+id/dong_summary_2"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintHorizontal_bias="0.01"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:text="@string/avg_for_sensor"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintVertical_bias="0.005"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.01"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dong_summary_2"
+            app:layout_constraintVertical_bias="0.005" />
 
         <GridLayout
             android:id="@+id/dong_summary_3"
@@ -471,7 +471,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="center"
-                            android:text="온도"
+                            android:text="@string/temp_txt"
                             style="@style/Text.sm_regular_style"/>
 
                         <TextView
@@ -527,7 +527,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="center"
-                            android:text="습도"
+                            android:text="@string/humi_txt"
                             style="@style/Text.sm_regular_style"/>
 
                         <TextView
@@ -583,7 +583,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="center"
-                            android:text="이산화탄소"
+                            android:text="@string/co2_txt"
                             style="@style/Text.sm_regular_style"/>
 
                         <TextView
@@ -639,7 +639,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="center"
-                            android:text="암모니아"
+                            android:text="@string/nh3_txt"
                             style="@style/Text.sm_regular_style"/>
 
                         <TextView
@@ -695,7 +695,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="center"
-                            android:text="미세먼지"
+                            android:text="@string/pm_10_txt"
                             style="@style/Text.sm_regular_style"/>
 
                         <TextView
@@ -751,7 +751,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="center"
-                            android:text="조도"
+                            android:text="@string/lux_txt"
                             style="@style/Text.sm_regular_style"/>
 
                         <TextView
@@ -802,26 +802,23 @@
 
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/dong_summary_5_txt"
-            style="@style/Text.lg_accent_style"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/pixel_16"
-            android:text="외기환경 센서"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-<<<<<<< HEAD
-            app:layout_constraintHorizontal_bias="0.97"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintVertical_bias="0.075"/>
+<!--        <TextView-->
+<!--            android:id="@+id/dong_summary_5_txt"-->
+<!--            style="@style/Text.lg_accent_style"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="@dimen/pixel_16"-->
+<!--            android:text="외기환경 센서"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.97"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintVertical_bias="0.075"/>-->
 
-
-=======
-            app:layout_constraintHorizontal_bias="0.007"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/dong_summary_4"
-            app:layout_constraintVertical_bias="0.02" />
+<!--            app:layout_constraintHorizontal_bias="0.007"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/dong_summary_4"-->
+<!--            app:layout_constraintVertical_bias="0.02" />-->
 
 <!--        <ImageView-->
 <!--            android:id="@+id/dong_summary_collapse"-->
@@ -835,24 +832,22 @@
 <!--            app:layout_constraintHorizontal_bias="0.97"-->
 <!--            app:layout_constraintBottom_toBottomOf="parent"-->
 <!--            app:layout_constraintVertical_bias="0.02"/>-->
-        
-        
->>>>>>> be7ae96d07097d59334d057a4a5758de40f6cbfb
-        <LinearLayout
-            android:id="@+id/dong_summary_5"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/dong_summary_5_txt"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintVertical_bias="0.005">
 
-            <include
-                android:id="@+id/dong_out_sensor"
-                layout="@layout/include_cardview_out_sensor"/>
+<!--        <LinearLayout-->
+<!--            android:id="@+id/dong_summary_5"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/dong_summary_5_txt"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintVertical_bias="0.005">-->
 
-        </LinearLayout>
+<!--            <include-->
+<!--                android:id="@+id/dong_out_sensor"-->
+<!--                layout="@layout/include_cardview_out_sensor"/>-->
+
+<!--        </LinearLayout>-->
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

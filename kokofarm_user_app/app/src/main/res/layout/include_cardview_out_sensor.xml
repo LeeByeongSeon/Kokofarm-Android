@@ -32,7 +32,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="start"
-                android:text="온도 (°C)"
+                android:text="@string/temp_unit"
                 style="@style/Text.md_regular_style"/>
 
             <ImageView
@@ -70,7 +70,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="start"
-                android:text="습도 (%)"
+                android:text="@string/humi_unit"
                 style="@style/Text.md_regular_style"/>
 
             <ImageView
@@ -107,7 +107,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="start"
-                android:text="암모니아 (ppm)"
+                android:text="@string/nh3_unit"
                 style="@style/Text.md_regular_style"/>
 
             <ImageView
@@ -145,7 +145,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="start"
-                android:text="황화수소 (ppm)"
+                android:text="@string/h2s_unit"
                 style="@style/Text.md_regular_style"/>
 
             <ImageView
@@ -182,7 +182,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="start"
-                android:text="미세먼지"
+                android:text="@string/pm_10_unit"
                 style="@style/Text.md_regular_style"/>
 
             <ImageView
@@ -220,7 +220,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="start"
-                android:text="초미세먼지"
+                android:text="@string/pm_25_unit"
                 style="@style/Text.md_regular_style"/>
 
             <ImageView
@@ -257,7 +257,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="start"
-                android:text="풍향"
+                android:text="@string/wind_direction_unit"
                 style="@style/Text.md_regular_style"/>
 
             <ImageView
@@ -292,11 +292,11 @@
                 android:src="@drawable/wind"/>
 
             <TextView
+                style="@style/Text.md_regular_style"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="start"
-                android:text="풍속 (m/s)"
-                style="@style/Text.md_regular_style"/>
+                android:text="@string/wind_speed_unit" />
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -332,7 +332,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="start"
-                android:text="일사량 (lux)"
+                android:text="@string/solar_unit"
                 style="@style/Text.md_regular_style"/>
 
             <ImageView

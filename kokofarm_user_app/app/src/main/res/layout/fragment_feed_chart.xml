@@ -19,7 +19,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/pixel_16"
-            android:text="오늘 급이량 변화"
+            android:text="@string/today_water_change"
             style="@style/Text.lg_accent_style"/>
 
         <include
@@ -32,7 +32,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/pixel_16"
             android:layout_marginTop="@dimen/pixel_10"
-            android:text="일령별 급이량 변화"
+            android:text="@string/daily_water_change"
             style="@style/Text.lg_accent_style"/>
 
         <include
@@ -45,7 +45,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/pixel_16"
             android:layout_marginTop="@dimen/pixel_10"
-            android:text="오늘 급수량 변화"
+            android:text="@string/today_water_change"
             style="@style/Text.lg_accent_style"/>
 
         <include
@@ -58,7 +58,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/pixel_16"
             android:layout_marginTop="@dimen/pixel_10"
-            android:text="일령별 급수량 변화"
+            android:text="@string/daily_water_change"
             style="@style/Text.lg_accent_style"/>
 
         <include

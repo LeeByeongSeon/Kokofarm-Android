@@ -20,7 +20,7 @@
         <TextView
             android:layout_width="@dimen/pixel_50"
             android:layout_height="wrap_content"
-            android:text="동"
+            android:text="@string/dong_txt"
             android:textSize="@dimen/pixel_12"
             android:textAlignment="center"/>
 
@@ -46,7 +46,7 @@
             android:id="@+id/tv_farm"
             android:layout_width="@dimen/pixel_72"
             android:layout_height="wrap_content"
-            android:text="일령"
+            android:text="@string/day_txt"
             android:textSize="@dimen/pixel_12"
             android:textAlignment="center"/>
 
@@ -71,7 +71,7 @@
         <TextView
             android:layout_width="@dimen/pixel_72"
             android:layout_height="wrap_content"
-            android:text="평균중량"
+            android:text="@string/avg_weight"
             android:textSize="@dimen/pixel_12"
             android:textAlignment="center"/>
 
@@ -96,7 +96,7 @@
         <TextView
             android:layout_width="@dimen/pixel_72"
             android:layout_height="wrap_content"
-            android:text="네트워크"
+            android:text="@string/network_txt"
             android:textSize="@dimen/pixel_12"
             android:textAlignment="center"/>
 

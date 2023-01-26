@@ -1,6 +1,134 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">kokofarm_user_app</string>
+
+    <string name="login_id">ID</string>
+    <string name="login_pw">Password</string>
+
+    <!-- Bottom Navigation View Menu Item -->
+    <string name="nav_home">Home</string>
+    <string name="nav_feed">Feed&amp;Water</string>
+    <string name="nav_scale">IoT Scale</string>
+    <string name="nav_env">External Env.</string>
+    <string name="nav_dong">Details per Block</string>
+
+    <string name="nav_breed">Breeding Record</string>
+    <string name="nav_record">"Release History "</string>
+    <string name="nav_breed_info">Breeding Info</string>
+
+    <string name="notice_1">Enter the initial count (addition extra)</string>
+    <string name="notice_2">Record the number of deaths on that date</string>
+    <string name="farm_header">Summary</string>
+    <string name="fcr_header">FCR</string>
+    <string name="fcr_16days">※ Check after 16 days</string>
+    <string name="feed_header">Feed&amp;Water</string>
+    <string name="dong_header">Details per Block</string>
+    <string name="avg_weight">Avg Weight</string>
+    <string name="min_weight">Min</string>
+    <string name="max_weight">Max</string>
+    <string name="all_in_count">Total</string>
+    <string name="live_count">Live Cnt</string>
+    <string name="live_ratio">Live rate</string>
+    <string name="extra_count">Extra Cnt</string>
+    <string name="death_count">Death Cnt</string>
+    <string name="cull_count">Cull Cnt</string>
+    <string name="out_count">Thin Out Cnt</string>
+    <string name="per_feed">Feeding per Bird</string>
+    <string name="per_water">Watering per Bird</string>
+    <string name="remain_feed">Remaining Amount</string>
+    <string name="per_hour_water">Watering per Hour</string>
+    <string name="all_txt">All</string>
+    <string name="today_txt">Today</string>
+    <string name="yesterday_txt">Prev</string>
+    <string name="dong_avg_weight">Avg Weight between block</string>
+    <string name="dong_feed">Feeding between block</string>
+    <string name="dong_water">Watering between block</string>
+
+    <string name="today_death_count">Today Death</string>
+    <string name="today_cull_count">Today Cull</string>
+    <string name="today_out_count">Today Thin Out</string>
+    <string name="today_increase_weight">Weight increased</string>
+    <string name="weight_gaussian">Distribution by weight</string>
+    <string name="after_15days">Show after 15 days</string>
+    <string name="days_env">Env. Sensor History</string>
+    <string name="days_avg_weight">Avg Weight History</string>
+    <string name="days_feed">Feeding History</string>
+    <string name="days_water">Watering History</string>
+
+    <string name="release_history">"Release History "</string>
+
+    <string name="weight_txt">Weight</string>
+    <string name="temp_txt">"Temp "</string>
+    <string name="humi_txt">"Humid "</string>
+    <string name="co2_txt">CO₂</string>
+    <string name="nh3_txt">NH₃</string>
+    <string name="h2s_txt">H₂S</string>
+    <string name="pm_10_txt">PM-10</string>
+    <string name="pm_25_txt">PM-2.5</string>
+    <string name="solar_txt">Solar</string>
+    <string name="lux_txt">Lux</string>
+    <string name="wind_speed_txt">Wind Speed</string>
+    <string name="wind_direction_txt">Wind Direction</string>
+
+    <string name="avg_temp_txt">Avg Temp</string>
+    <string name="avg_humi_txt">Avg Humid</string>
+    <string name="avg_co2_txt">Avg CO₂</string>
+    <string name="avg_nh3_txt">Avg NH₃</string>
+
+    <string name="set_theme">Dark Mode</string>
+    <string name="set_alarm">Alarm</string>
+    <string name="set_notice">Notice</string>
+
+    <string name="number_txt">Number</string>
+    <string name="dong_txt">" Block"</string>
+    <string name="in_date_txt">Enter Date</string>
+    <string name="out_date_txt">Release Date</string>
+
     <string name="login_txt">Login</string>
-    <string name="nav_env">Outdoor environment</string>
+    <string name="today_water_change">Today\'s Feeding</string>
+    <string name="daily_water_change">Feeding History</string>
+    <string name="today_feed_change">Today\'s Watering</string>
+    <string name="daily_feed_change">Watering History</string>
+    <string name="avg_weight_distribution">Distribution by weight</string>
+    <string name="avg_weight_change">Avg Weight History</string>
+    <string name="today_weight_increase">Weight increased</string>
+    <string name="env_sensor_change">Env. Sensor Change</string>
+    <string name="day_txt">Day</string>
+    <string name="network_txt">Network</string>
+    <string name="out_day_txt">Release Day</string>
+    <string name="standard_fcr">Standard FCR</string>
+    <string name="fcr_weight">Avg Weight based on FCR</string>
+    <string name="weight_unit">Weight</string>
+    <string name="temp_unit">Temp (°C)</string>
+    <string name="humi_unit">Humid (%)</string>
+    <string name="co2_unit">CO₂ (ppm)</string>
+    <string name="nh3_unit">NH₃ (ppm)</string>
+    <string name="h2s_unit">H₂S (ppm)</string>
+    <string name="pm_10_unit">PM-10 (μg/m3)</string>
+    <string name="pm_25_unit">PM-2.5 (μg/m3)</string>
+    <string name="solar_unit">Solar (W/㎡)</string>
+    <string name="lux_unit">Lux</string>
+    <string name="wind_speed_unit">Wind Speed (m/s)</string>
+    <string name="wind_direction_unit">Wind Direction</string>
+    <string name="prev_txt">prev</string>
+    <string name="next_txt">next</string>
+    <string name="farm_status">Farm List</string>
+    <string name="detail_info">Detail</string>
+    <string name="setting_txt">Setting</string>
+    <string name="logout_txt">Logout</string>
+    <string name="sd_block">SD Block</string>
+    <string name="cnt_txt">" "</string>
+    <string name="total_farm">Total</string>
+    <string name="enter_farm">Enter Farm</string>
+    <string name="enter_dong">Enter Block</string>
+    <string name="released_txt">Released</string>
+    <string name="dong_txt_empty">" "</string>
+    <string name="sd_txt">SD</string>
+    <string name="mean_weight">Mean Avg Weight</string>
+    <string name="avg_for_sensor">Avg. Sensor Unit</string>
+    <string name="scale_num">" scale"</string>
+    <string name="ext_change_by_days">"External Env. Change by days "</string>
+    <string name="release_count">Release Count</string>
+    <string name="avg_weight_5">5 R Avg Weight</string>
+    <string name="avg_day_5">5 R Avg Day</string>
+    <string name="ext_sensor_txt">Extermal Env. Sensor</string>
 </resources>

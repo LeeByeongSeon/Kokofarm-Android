@@ -7,6 +7,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.kokofarm_user_app.R;
+import com.example.kokofarm_user_app.manager.PageManager;
 
 import org.json.JSONObject;
 
@@ -44,7 +45,7 @@ public class BreedCardView extends LinearLayout {
 
     public void setLive(String live){
         TextView tv = this.findViewById(R.id.tv_live);
-        tv.setText(live + "수");
+        tv.setText(live + PageManager.getInstance().getRString(R.string.cnt_txt));
     }
 
     public void setDeath(String death){

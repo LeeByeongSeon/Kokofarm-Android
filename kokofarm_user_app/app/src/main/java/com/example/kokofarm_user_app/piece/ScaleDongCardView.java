@@ -45,12 +45,12 @@ public class ScaleDongCardView extends LinearLayout {
 
     public void setDong(String dong){
         TextView tv = this.findViewById(R.id.tv_dong);
-        tv.setText(dong + "동");
+        tv.setText(dong + PageManager.getInstance().getRString(R.string.dong_txt));
     }
 
     public void setDay(String day){
         TextView tv = this.findViewById(R.id.tv_day);
-        tv.setText(day + "일령");
+        tv.setText(day + PageManager.getInstance().getRString(R.string.day_txt));
     }
 
     public void setAvgWeight(String weight){

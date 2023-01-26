@@ -3,6 +3,7 @@ package com.example.kokofarm_user_app.manager;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Build;
 import android.util.Log;
 import android.view.View;
@@ -94,6 +95,10 @@ public class PageManager {
 
     public void setScrollView(NestedScrollView scrollView){
         this.scrollView = scrollView;
+    }
+
+    public String getRString(int id){
+        return mainActivity.getResources().getString(id);
     }
 
     public void moveFragment(Fragment fragment){
@@ -298,11 +303,11 @@ public class PageManager {
         String name = dong.equals("") ? topContentsName : topContentsName + "-" + dong + "동";
 
         setTopContentsCollapsing(name);
-        setTopLeftTitle("평균중량");
+        setTopLeftTitle(getRString(R.string.avg_weight));
         setTopLeftContents(topContentsWeight);
-        setTopCenterTitle("생존 수");
+        setTopCenterTitle(getRString(R.string.live_count));
         setTopCenterContents(topContentsLive);
-        setTopRightTitle("동별 표준편차");
+        setTopRightTitle(getRString(R.string.sd_block));
         setTopRightContents(topContentsDiff);
     }
 
@@ -335,12 +340,12 @@ public class PageManager {
             int farmCnt = in + out;
 
             setTopContentsCollapsing(title);
-            setTopLeftTitle("총 농장");
-            setTopLeftContents(farmCnt + "");
-            setTopCenterTitle("입추 농장");
-            setTopCenterContents(in + "");
-            setTopRightTitle("입추 동 수");
-            setTopRightContents(dongInCount + "");
+            PageManager.getInstance().setTopLeftTitle(PageManager.getInstance().getRString(R.string.total_farm));
+            PageManager.getInstance().setTopLeftContents(farmCnt + "");
+            PageManager.getInstance().setTopCenterTitle(PageManager.getInstance().getRString(R.string.enter_farm));
+            PageManager.getInstance().setTopCenterContents(in + "");
+            PageManager.getInstance().setTopRightTitle(PageManager.getInstance().getRString(R.string.enter_dong));
+            PageManager.getInstance().setTopRightContents(dongInCount + "");
 
             hideToolbar(false);
             hideTopInfo(false);

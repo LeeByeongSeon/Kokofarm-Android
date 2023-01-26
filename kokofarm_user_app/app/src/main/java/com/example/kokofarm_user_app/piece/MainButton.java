@@ -34,9 +34,9 @@ public class MainButton extends MaterialButton {
         // 버튼 사이 공백
         params.rightMargin = size;
 
-        String s = contents.equals("") ? "전체" : contents + "동";
+        String s = contents.equals("") ? PageManager.getInstance().getRString(R.string.all_txt) : contents + PageManager.getInstance().getRString(R.string.dong_txt_empty);
         this.setText(s);
-        this.setTextSize(20.0f);
+        this.setTextSize(15.0f);
 
         // 버튼 크기 조정하기위해 setMinimumWidth 로 0을 맞추준다음 setWidth 로 원하는 사이즈 기입
         this.setMinimumWidth(0);

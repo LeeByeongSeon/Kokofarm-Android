@@ -69,8 +69,13 @@ public class OutSensorFragment extends Fragment {
 
         String farm = DataCacheManager.getInstance().getSelectFarm();
 
+        // 선택된 농장이 없을 경우
         if(farm.equals("")){
+            PageManager.getInstance().showManagerTopContents(PageManager.getInstance().getRString(R.string.ext_sensor_txt));
             return;
+        }
+        else{
+            PageManager.getInstance().showFarmTopContents("");
         }
 
         try {

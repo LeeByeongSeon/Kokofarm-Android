@@ -39,7 +39,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="표준 FCR"
+                    android:text="@string/standard_fcr"
                     style="@style/Text.sm_regular_style"/>
 
                 <TextView
@@ -61,7 +61,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="FCR 기반 평균중량"
+                    android:text="@string/fcr_weight"
                     style="@style/Text.sm_regular_style"/>
 
                 <TextView

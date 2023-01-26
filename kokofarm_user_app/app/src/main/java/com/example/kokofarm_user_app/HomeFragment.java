@@ -152,7 +152,6 @@ public class HomeFragment extends Fragment {
     public void setFragmentData(Context context){
 
         // 선택된 농장이 없으면 관리자 화면으로 보냄
-        Log.e("getSelectFarm", DataCacheManager.getInstance().getSelectFarm());
         if(DataCacheManager.getInstance().getSelectFarm().equals("")){
             PageManager.getInstance().movePage("manager");
             return;
@@ -306,7 +305,7 @@ public class HomeFragment extends Fragment {
         PageManager.getInstance().setTopContentsData(
                 fName,
                 String.format(Locale.getDefault(), "%.1fg", totalAvgWeight),
-                live + "수",
+                live + getResources().getString(R.string.cnt_txt),
                 String.format(Locale.getDefault(), "%.1fg", dongDiff)
         );
         PageManager.getInstance().showFarmTopContents("");

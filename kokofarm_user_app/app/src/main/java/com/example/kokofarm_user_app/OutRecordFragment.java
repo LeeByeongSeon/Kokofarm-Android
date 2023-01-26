@@ -173,15 +173,15 @@ public class OutRecordFragment extends Fragment {
 
         // 선택된 농장이 없을 경우
         if(DataCacheManager.getInstance().getSelectFarm().equals("")){
-            PageManager.getInstance().showManagerTopContents("출하기록");
+            PageManager.getInstance().showManagerTopContents(PageManager.getInstance().getRString(R.string.release_history));
         }
         else{
-            PageManager.getInstance().setTopContentsCollapsing("출하기록");
-            PageManager.getInstance().setTopLeftTitle("출하 횟수");
+            PageManager.getInstance().setTopContentsCollapsing(PageManager.getInstance().getRString(R.string.release_history));
+            PageManager.getInstance().setTopLeftTitle(PageManager.getInstance().getRString(R.string.release_count));
             PageManager.getInstance().setTopLeftContents(comeoutCnt + "");
-            PageManager.getInstance().setTopCenterTitle("5회차 평균일령");
-            PageManager.getInstance().setTopCenterContents(String.format("%.1f", avgDay) + "일령");
-            PageManager.getInstance().setTopRightTitle("5회차 평균중량");
+            PageManager.getInstance().setTopCenterTitle(PageManager.getInstance().getRString(R.string.avg_day_5));
+            PageManager.getInstance().setTopCenterContents(String.format("%.1f", avgDay) + PageManager.getInstance().getRString(R.string.day_txt));
+            PageManager.getInstance().setTopRightTitle(PageManager.getInstance().getRString(R.string.avg_weight_5));
             PageManager.getInstance().setTopRightContents(String.format("%.1f", avgWeight) + "g");
         }
     }

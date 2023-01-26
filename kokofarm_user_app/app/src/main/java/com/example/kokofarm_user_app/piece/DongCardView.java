@@ -13,6 +13,7 @@ import androidx.annotation.RequiresApi;
 
 import com.example.kokofarm_user_app.R;
 import com.example.kokofarm_user_app.manager.DataCacheManager;
+import com.example.kokofarm_user_app.manager.PageManager;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -47,7 +48,7 @@ public class DongCardView extends LinearLayout {
 
     public void setDong(String dong){
         TextView tv = this.findViewById(R.id.tv_dong);
-        tv.setText(dong + "동");
+        tv.setText(dong + PageManager.getInstance().getRString(R.string.dong_txt));
     }
 
     public void setDay(String day){
@@ -57,7 +58,7 @@ public class DongCardView extends LinearLayout {
 
     public void setLive(String live){
         TextView tv = this.findViewById(R.id.tv_live);
-        tv.setText(live + "수");
+        tv.setText(live + PageManager.getInstance().getRString(R.string.cnt_txt));
     }
 
     public void setAvgWeight(String avg){
@@ -128,10 +129,10 @@ public class DongCardView extends LinearLayout {
 
             String beStatus = dongJson.getString("beStatus");
             if(beStatus.equals("O")){
-                setDay("출하상태");
+                setDay(PageManager.getInstance().getRString(R.string.released_txt));
             }
             else{
-                setDay(dongJson.getString("beInterm") + "일령");
+                setDay(dongJson.getString("beInterm") + PageManager.getInstance().getRString(R.string.day_txt));
             }
 
             setDong(dongJson.getString("beDongid"));

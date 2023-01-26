@@ -103,7 +103,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginRight="@dimen/pixel_22"
-                            android:text="평균중량"
+                            android:text="@string/avg_weight"
                             android:textSize="@dimen/pixel_18"
                             android:textAlignment="center"/>
                     </LinearLayout>
@@ -117,7 +117,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="생존 수"
+                            android:text="@string/live_count"
                             android:textSize="@dimen/pixel_18"
                             android:textAlignment="center"/>
 

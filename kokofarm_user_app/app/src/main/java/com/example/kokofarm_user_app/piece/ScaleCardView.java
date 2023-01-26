@@ -13,6 +13,7 @@ import androidx.annotation.RequiresApi;
 
 import com.example.kokofarm_user_app.R;
 import com.example.kokofarm_user_app.manager.DataCacheManager;
+import com.example.kokofarm_user_app.manager.PageManager;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -44,7 +45,7 @@ public class ScaleCardView extends LinearLayout {
 
     public void setCellNum(String cellNum){
         TextView tv = this.findViewById(R.id.tv_scale_num);
-        tv.setText(cellNum + "번 저울");
+        tv.setText(cellNum + PageManager.getInstance().getRString(R.string.scale_num));
     }
 
     public void setWeight(String weight){

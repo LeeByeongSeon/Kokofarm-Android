@@ -50,7 +50,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginRight="@dimen/pixel_10"
                         android:includeFontPadding="false"
-                        android:text="일령"
+                        android:text="@string/day_txt"
                         style="@style/Text.sm_regular_style"/>
 
                     <TextView

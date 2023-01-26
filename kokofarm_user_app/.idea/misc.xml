@@ -106,6 +106,7 @@
         <entry key="..\:/Users/bslee/Documents/Kokofarm-Android/kokofarm_user_app/app/src/main/res/layout/include_cardview_farm_detail.xml" value="0.21875" />
         <entry key="..\:/Users/bslee/Documents/Kokofarm-Android/kokofarm_user_app/app/src/main/res/layout/include_cardview_fcr.xml" value="0.20677083333333332" />
         <entry key="..\:/Users/bslee/Documents/Kokofarm-Android/kokofarm_user_app/app/src/main/res/layout/include_cardview_out_env.xml" value="0.20677083333333332" />
+        <entry key="..\:/Users/bslee/Documents/Kokofarm-Android/kokofarm_user_app/app/src/main/res/layout/include_cardview_out_sensor.xml" value="0.23333333333333334" />
         <entry key="..\:/Users/bslee/Documents/Kokofarm-Android/kokofarm_user_app/app/src/main/res/layout/include_cardview_outrecord.xml" value="0.21875" />
         <entry key="..\:/Users/bslee/Documents/Kokofarm-Android/kokofarm_user_app/app/src/main/res/layout/include_cardview_scale.xml" value="0.21875" />
         <entry key="..\:/Users/bslee/Documents/Kokofarm-Android/kokofarm_user_app/app/src/main/res/layout/include_cardview_scale_dong.xml" value="0.21875" />
@@ -117,6 +118,7 @@
         <entry key="..\:/Users/bslee/Documents/Kokofarm-Android/kokofarm_user_app/app/src/main/res/layout/nav_header_layout.xml" value="0.21875" />
         <entry key="..\:/Users/bslee/Documents/Kokofarm-Android/kokofarm_user_app/app/src/main/res/layout/toolbar.xml" value="0.20677083333333332" />
         <entry key="..\:/Users/bslee/Documents/Kokofarm-Android/kokofarm_user_app/app/src/main/res/menu/bottom_nav_menu.xml" value="0.20677083333333332" />
+        <entry key="..\:/Users/bslee/Documents/Kokofarm-Android/kokofarm_user_app/app/src/main/res/menu/side_nav_menu.xml" value="0.23333333333333334" />
       </map>
     </option>
   </component>

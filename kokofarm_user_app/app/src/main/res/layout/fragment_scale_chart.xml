@@ -28,7 +28,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/pixel_16"
             android:layout_marginHorizontal="@dimen/pixel_16"
-            android:text="평균중량"
+            android:text="@string/avg_weight_change"
             style="@style/Text.lg_accent_style"/>
 
         <include
@@ -41,7 +41,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/pixel_16"
             android:layout_marginHorizontal="@dimen/pixel_16"
-            android:text="중량별 정규분포"
+            android:text="@string/avg_weight_distribution"
             style="@style/Text.lg_accent_style"/>
 
         <include
@@ -54,7 +54,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/pixel_16"
             android:layout_marginHorizontal="@dimen/pixel_16"
-            android:text="오늘 증체중량"
+            android:text="@string/today_increase_weight"
             style="@style/Text.lg_accent_style"/>
 
         <include
@@ -67,7 +67,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/pixel_16"
             android:layout_marginHorizontal="@dimen/pixel_16"
-            android:text="일령별 환경센서"
+            android:text="@string/env_sensor_change"
             style="@style/Text.lg_accent_style"/>
 
         <include

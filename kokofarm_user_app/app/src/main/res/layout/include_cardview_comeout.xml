@@ -50,7 +50,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginRight="@dimen/pixel_10"
                         android:includeFontPadding="false"
-                        android:text="출하 일령"
+                        android:text="@string/out_day_txt"
                         style="@style/Text.sm_regular_style"/>
 
                     <TextView
@@ -86,7 +86,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="입추일"
+                            android:text="@string/in_date_txt"
                             android:textSize="@dimen/pixel_14"
                             style="@style/Text.sm_regular_style"/>
 
@@ -111,7 +111,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="출하일"
+                            android:text="@string/out_date_txt"
                             android:textSize="@dimen/pixel_14"
                             style="@style/Text.sm_regular_style"/>
 
@@ -137,7 +137,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="평균중량"
+                            android:text="@string/avg_weight"
                             android:textSize="@dimen/pixel_14"
                             style="@style/Text.sm_regular_style"/>
 
