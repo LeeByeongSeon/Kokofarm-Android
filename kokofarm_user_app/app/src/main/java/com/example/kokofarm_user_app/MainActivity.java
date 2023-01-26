@@ -152,6 +152,7 @@ public class MainActivity extends AppCompatActivity {
         else{
             showManagerNav(false);
             botNav.setSelectedItemId(R.id.nav_home);
+            PageManager.getInstance().movePage();
         }
     }
 

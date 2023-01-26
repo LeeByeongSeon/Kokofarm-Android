@@ -236,6 +236,7 @@ public class PageManager {
 
             case "logout":
                 lastItem = 0;
+                mainActivity.setTopContentsCollapsing("");
                 mainActivity.hideToolbar(true);
                 mainActivity.hideTopInfo(true);
                 mainActivity.hideSelectBar(true);

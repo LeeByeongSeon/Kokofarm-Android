@@ -148,15 +148,15 @@ public class FeedFragment extends Fragment {
                 feedMax += dongJson.getInt("sfFeedMax");
                 feedRemain += dongJson.getInt("sfFeed");
 
-                JSONObject shFeedData = new JSONObject(dongJson.getString("shFeedData"));
-                waterPerHour += shFeedData.getInt("feed_water");
-
                 dongMap.get("avgWeight").add((float)dongJson.getDouble("beAvgWeight"));
                 dongMap.get("feed").add((float)dongJson.getDouble("sfDailyFeed"));
                 dongMap.get("water").add((float)dongJson.getDouble("sfDailyWater"));
 
                 farmPerFeed = (float) dongJson.getDouble("fFeedPer");
                 farmPerWater = (float) dongJson.getDouble("fWaterPer");
+
+                JSONObject shFeedData = new JSONObject(dongJson.getString("shFeedData"));
+                waterPerHour += shFeedData.getInt("feed_water");
             }
 
         } catch (JSONException e) {
