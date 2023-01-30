@@ -131,4 +131,13 @@
     <string name="avg_weight_5">5 R Avg Weight</string>
     <string name="avg_day_5">5 R Avg Day</string>
     <string name="ext_sensor_txt">Extermal Env. Sensor</string>
+    <string name="breed_record_input">Breeding Record</string>
+    <string name="base_date">Base Date</string>
+    <string name="breed_type">Type</string>
+    <string name="feed_input_before_enter">Feed put in before Enter (Kg)</string>
+    <string name="enter_count">Enter Cnt</string>
+    <string name="breed_input_info_1">※ Input Enter Cnt based on the initial state</string>
+    <string name="breed_input_info_2">※ Record only the dead on the base date</string>
+    <string name="cancel_txt">Cancel</string>
+    <string name="save_txt">Save</string>
 </resources>

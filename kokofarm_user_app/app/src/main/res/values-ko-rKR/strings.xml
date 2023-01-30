@@ -131,5 +131,14 @@
     <string name="avg_day_5">5회사 평균일령</string>
     <string name="release_count">출하 횟수</string>
     <string name="ext_sensor_txt">외기환경</string>
+    <string name="breed_record_input">사육일지 입력</string>
+    <string name="base_date">기준일자</string>
+    <string name="breed_type">축종</string>
+    <string name="feed_input_before_enter">입추 전 사료 투입량(Kg)</string>
+    <string name="enter_count">입추 수</string>
+    <string name="breed_input_info_1">※ 입추, 덤 수는 최초 입추 기준</string>
+    <string name="breed_input_info_2">※ 폐사, 도태, 솎기 수는 해당일자 것만 기록</string>
+    <string name="cancel_txt">취소</string>
+    <string name="save_txt">저장</string>
 
 </resources>
