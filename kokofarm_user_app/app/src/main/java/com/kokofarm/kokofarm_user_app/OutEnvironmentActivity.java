@@ -34,7 +34,7 @@ public class OutEnvironmentActivity extends AppCompatActivity {
         // Toolbar set
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("외기환경");
+        getSupportActionBar().setTitle(R.string.nav_env);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         setData();

@@ -148,5 +148,11 @@
     <string name="water">급수량</string>
     <string name="recommended_weight">권고중량</string>
     <string name="count">수</string>
+    <string name="east">동</string>
+    <string name="west">서</string>
+    <string name="south">남</string>
+    <string name="north">북</string>
+    <string name="month">월</string>
+    <string name="day">일</string>
 
 </resources>

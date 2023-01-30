@@ -146,4 +146,10 @@
     <string name="water">Water</string>
     <string name="recommended_weight">Recommended Weight</string>
     <string name="count">Count</string>
+    <string name="east">East</string>
+    <string name="west">West</string>
+    <string name="south">South</string>
+    <string name="north">North</string>
+    <string name="month">Month</string>
+    <string name="day">Day</string>
 </resources>

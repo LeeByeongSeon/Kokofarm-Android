@@ -133,7 +133,7 @@ public class CombinedChartMaker {
 
 //        Log.e("val", val + "");
         if(ret.length() < 6 || ret.substring(6).equals("00:00")){
-            return ret.substring(0, 2) + "월 " + ret.substring(3, 5) + "일";
+            return ret.substring(0, 2) + R.string.month+" " + ret.substring(3, 5) + R.string.day;
         }
 
         return ret;

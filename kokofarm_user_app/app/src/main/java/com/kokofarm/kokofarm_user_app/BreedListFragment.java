@@ -3,6 +3,7 @@ package com.kokofarm.kokofarm_user_app;
 import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -59,7 +60,9 @@ public class BreedListFragment extends Fragment {
 
         setFragmentData(container.getContext());
 
-        int maxPage = (int) Math.ceil(breedCardList.size() / pager);
+        int maxPage = (int) Math.ceil(breedCardList.size() / (float)pager);
+
+        Log.e("MAX page", maxPage+"");
 
         // 카드뷰 페이징 버튼 처리
         binding.breedTopPaging.btnPrev.setOnClickListener(view -> {
@@ -167,9 +170,11 @@ public class BreedListFragment extends Fragment {
             }
         }
         else{
+            Log.e("current page", currPage+"");
             int start = breedCardList.size() - pager * (page - 1) - 1;
             int end = Math.max(start - pager, -1);
             for (int i=start; i>end; i--){
+                Log.e("i====>", i+"");
                 breedCardZone.addView(breedCardList.get(i));
             }
         }

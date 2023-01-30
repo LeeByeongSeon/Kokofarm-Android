@@ -8,6 +8,7 @@ import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -81,7 +82,7 @@ public class OutRecordFragment extends Fragment {
         }
 
         try {
-            maxPage = (int) Math.ceil(comeoutList.getInt("cnt") / pager);
+            maxPage = (int) Math.ceil(comeoutList.getInt("cnt") / (float)pager);
         } catch (JSONException e) {
             e.printStackTrace();
         }

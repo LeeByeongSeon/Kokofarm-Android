@@ -297,7 +297,7 @@ public class PageManager {
 
     public void showFarmTopContents(String dong){
 
-        String name = dong.equals("") ? topContentsName : topContentsName + "-" + dong + "동";
+        String name = dong.equals("") ? topContentsName : topContentsName + "-" + dong + R.string.dong_txt;
 
         setTopContentsCollapsing(name);
         setTopLeftTitle(getRString(R.string.avg_weight));
