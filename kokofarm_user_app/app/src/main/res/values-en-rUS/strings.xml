@@ -140,4 +140,10 @@
     <string name="breed_input_info_2">※ Record only the dead on the base date</string>
     <string name="cancel_txt">Cancel</string>
     <string name="save_txt">Save</string>
+    <string name="today_feed">Today Feed</string>
+    <string name="today_water">Today Water</string>
+    <string name="feed">Feed</string>
+    <string name="water">Water</string>
+    <string name="recommended_weight">Recommended Weight</string>
+    <string name="count">Count</string>
 </resources>

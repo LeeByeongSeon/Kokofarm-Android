@@ -8,7 +8,7 @@
     <!-- 홈 -->
     <fragment
         android:id="@+id/nav_home"
-        android:name="com.example.kokofarm_user_app.HomeFragment"
+        android:name="com.kokofarm.kokofarm_user_app.HomeFragment"
         android:label="@string/nav_home"
         tools:layout="@layout/fragment_home">
 
@@ -31,7 +31,7 @@
     <!-- 급이/급수 -->
     <fragment
         android:id="@+id/nav_feed"
-        android:name="com.example.kokofarm_user_app.FeedFragment"
+        android:name="com.kokofarm.kokofarm_user_app.FeedFragment"
         android:label="@string/nav_feed"
         tools:layout="@layout/fragment_feed">
 
@@ -44,7 +44,7 @@
     <!-- IoT저울 -->
     <fragment
         android:id="@+id/nav_scale"
-        android:name="com.example.kokofarm_user_app.ScaleFragment"
+        android:name="com.kokofarm.kokofarm_user_app.ScaleFragment"
         android:label="@string/nav_scale"
         tools:layout="@layout/fragment_scale">
 
@@ -53,7 +53,7 @@
     <!-- 사육일지 -->
     <fragment
         android:id="@+id/nav_breed"
-        android:name="com.example.kokofarm_user_app.BreedFragment"
+        android:name="com.kokofarm.kokofarm_user_app.BreedFragment"
         android:label="@string/nav_breed_info"
         tools:layout="@layout/fragment_env">
 
@@ -62,7 +62,7 @@
     <!-- 동별 현황 -->
     <fragment
         android:id="@+id/nav_dong"
-        android:name="com.example.kokofarm_user_app.DongFragment"
+        android:name="com.kokofarm.kokofarm_user_app.DongFragment"
         android:label="@string/nav_dong"
         tools:layout="@layout/fragment_dong">
 
@@ -71,7 +71,7 @@
     <!-- 외기환경 -->
     <fragment
         android:id="@+id/nav_env"
-        android:name="com.example.kokofarm_user_app.EnvFragment"
+        android:name="com.kokofarm.kokofarm_user_app.EnvFragment"
         android:label="@string/nav_env"
         tools:layout="@layout/fragment_breed">
 
@@ -80,7 +80,7 @@
     <!-- 출하내역 -->
     <fragment
         android:id="@+id/nav_record"
-        android:name="com.example.kokofarm_user_app.OutRecordFragment"
+        android:name="com.kokofarm.kokofarm_user_app.OutRecordFragment"
         android:label="@string/nav_record"
         tools:layout="@layout/fragment_out_record">
 
@@ -89,7 +89,7 @@
     <!-- 동별 급이/급수 현황 -->
     <fragment
         android:id="@+id/nav_feed_dong"
-        android:name="com.example.kokofarm_user_app.FeedChartFragment"
+        android:name="com.kokofarm.kokofarm_user_app.FeedChartFragment"
         android:label="동별 급이/급수 현황"
         tools:layout="@layout/fragment_feed_chart">
 

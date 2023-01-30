@@ -14,5 +14,5 @@
         android:id="@+id/setting_fragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:name="com.example.kokofarm_user_app.SettingFragment"/>
+        android:name="com.kokofarm.kokofarm_user_app.SettingFragment"/>
 </LinearLayout>

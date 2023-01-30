@@ -140,5 +140,11 @@
     <string name="breed_input_info_2">※ 폐사, 도태, 솎기 수는 해당일자 것만 기록</string>
     <string name="cancel_txt">취소</string>
     <string name="save_txt">저장</string>
+    <string name="today_feed">일일 급이량</string>
+    <string name="today_water">일일 급수량</string>
+    <string name="feed">급이량</string>
+    <string name="water">급수량</string>
+    <string name="recommended_weight">권고중량</string>
+    <string name="count">수</string>
 
 </resources>

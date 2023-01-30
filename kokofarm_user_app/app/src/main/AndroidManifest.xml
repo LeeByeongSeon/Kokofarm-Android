@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.kokofarm_user_app">
+    package="com.kokofarm.kokofarm_user_app">
 
     <!-- 권한 관련 -->
     <uses-permission android:name="android.permission.INTERNET"/>
@@ -15,7 +15,7 @@
         android:usesCleartextTraffic="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name="com.kokofarm.kokofarm_user_app.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,15 +23,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".OutEnvironmentActivity"
-            android:parentActivityName=".MainActivity"/>
-        <activity android:name=".BreedInfoActivity"
-            android:parentActivityName=".MainActivity"/>
-        <activity android:name=".OutRecordActivity"
-            android:parentActivityName=".MainActivity"/>
-        <activity android:name=".OutRecordChartActivity"
-            android:parentActivityName=".OutRecordActivity"/>
-        <activity android:name=".SettingActivity"
-            android:parentActivityName=".MainActivity"/>
+        <activity android:name="com.kokofarm.kokofarm_user_app.OutEnvironmentActivity"
+            android:parentActivityName="com.kokofarm.kokofarm_user_app.MainActivity"/>
+        <activity android:name="com.kokofarm.kokofarm_user_app.OutRecordActivity"
+            android:parentActivityName="com.kokofarm.kokofarm_user_app.MainActivity"/>
+        <activity android:name="com.kokofarm.kokofarm_user_app.OutRecordChartActivity"
+            android:parentActivityName="com.kokofarm.kokofarm_user_app.OutRecordActivity"/>
+        <activity android:name="com.kokofarm.kokofarm_user_app.SettingActivity"
+            android:parentActivityName="com.kokofarm.kokofarm_user_app.MainActivity"/>
     </application>
 </manifest>
