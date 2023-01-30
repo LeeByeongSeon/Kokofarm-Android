@@ -243,15 +243,16 @@ public class CombinedChartMaker {
     public void makeTimeLineChart(JSONObject jsonData, HashMap<String, String> fieldMap){
 
         try {
-
+            // 초기화
             initLegend(chart);
             initCombinedChart(chart);
 
             if (jsonData != null) {
-
+                // line 과 bar 기본 생성
                 ArrayList<ArrayList<Entry>> lines = new ArrayList<>();
                 ArrayList<ArrayList<BarEntry>> bars = new ArrayList<>();
 
+                // 초기화
                 for (int i = 0; i < fieldMap.size(); i++) {
                     lines.add(new ArrayList<>());
                     bars.add(new ArrayList<>());
@@ -260,6 +261,9 @@ public class CombinedChartMaker {
                 try {
 //                    Log.e("jsonData", jsonData.toString());
 
+                    // 데이터를 float으로 받아서 날짜로 변경해줘야 함
+                    // 첫 시간 데이터를 0으로 받음
+                    // 시간 주기가 1시간인 경우 1이 증가할때 마다 1시간으로 변환
                     String first = "";
 
                     //JSONObject retData = jsonData.getJSONObject("retData");
@@ -290,6 +294,7 @@ public class CombinedChartMaker {
                                 bars.get(idx).add(new BarEntry(diff, val.floatValue()));
                                 idx++;
                             }
+
                         }
                         else{
                             int idx = 0;
@@ -332,8 +337,8 @@ public class CombinedChartMaker {
                         data.setData(ld);
                         break;
                 }
-                chart.setData(data);
 
+                chart.setData(data);
                 //Log.e("CombinedData", "" + data.getBarData().getDataSets());
 
                 yMin = isSetY ? yMin : data.getYMin() - 1f;
