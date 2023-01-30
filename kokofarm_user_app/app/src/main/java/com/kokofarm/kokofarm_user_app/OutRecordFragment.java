@@ -125,23 +125,18 @@ public class OutRecordFragment extends Fragment {
         }
 
         int comeoutCnt = 0;
-        double avgDay = 0d;
-        double avgWeight = 0d;
 
         LinearLayout outRecordList = binding.outRecordList;
         outRecordList.removeAllViews();
 
         try {
-            int cnt = 0;
-            int dongCnt = comeoutList.getInt("dongCnt");        // 전체 동 수
             comeoutCnt = comeoutList.getInt("cnt");             // 전체 출하 횟수
-            int chechMax = dongCnt * 5;
 
             for (Iterator<String> it = comeoutList.keys(); it.hasNext(); ){
 
                 String code = it.next();
 
-                if(code.equals("dongCnt") || code.equals("cnt")){
+                if(code.equals("dongCnt") || code.equals("cnt") || code.equals("weight5R") || code.equals("interm5R")){
                     continue;
                 }
 
@@ -150,21 +145,6 @@ public class OutRecordFragment extends Fragment {
                 ComeoutCardView ccv = new ComeoutCardView(context);
                 ccv.initData(record);
                 outRecordList.addView(ccv);
-
-                if(cnt < chechMax){
-                    avgDay += record.getInt("interm");
-                    avgWeight += record.getDouble("awWeight");
-                }
-
-                cnt++;
-
-            }
-
-            if(cnt > 0){
-                cnt = Math.min(cnt, chechMax);
-
-                avgDay = FloatCompute.divide(avgDay, cnt);            // 5회차 평균 일령
-                avgWeight = FloatCompute.divide(avgWeight, cnt);      // 5회차 평균 중량
             }
 
         } catch (JSONException e) {
@@ -176,6 +156,9 @@ public class OutRecordFragment extends Fragment {
             PageManager.getInstance().showManagerTopContents(PageManager.getInstance().getRString(R.string.release_history));
         }
         else{
+            double avgDay = comeoutList.optDouble("interm5R", 0);
+            double avgWeight = comeoutList.optDouble("weight5R", 0);
+
             PageManager.getInstance().setTopContentsCollapsing(PageManager.getInstance().getRString(R.string.release_history));
             PageManager.getInstance().setTopLeftTitle(PageManager.getInstance().getRString(R.string.release_count));
             PageManager.getInstance().setTopLeftContents(comeoutCnt + "");
