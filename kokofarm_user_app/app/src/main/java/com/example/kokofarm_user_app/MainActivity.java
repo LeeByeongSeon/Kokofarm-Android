@@ -408,6 +408,15 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    public void hideScrollTop(boolean hide){
+        if(hide){
+            binding.mainFab.scrollTopBtn.setVisibility(View.GONE);
+        }
+        else{
+            binding.mainFab.scrollTopBtn.setVisibility(View.VISIBLE);
+        }
+    }
+
     public void setTopContentsCollapsing(String s){
         binding.mainCollapsing.setTitle(s);
     }

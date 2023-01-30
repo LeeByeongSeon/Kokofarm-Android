@@ -223,6 +223,8 @@ public class PageManager {
 
         Log.e("movePage", pageName);
 
+        mainActivity.hideScrollTop(false);
+
         switch (pageName){
             case "login":
                 lastItem = 0;
@@ -231,6 +233,7 @@ public class PageManager {
                 mainActivity.hideSelectBar(true);
                 mainActivity.hideBottomNav(true);
                 mainActivity.hideSideNav(true);
+                mainActivity.hideScrollTop(true);
                 moveFragment(LoginFragment.newInstance(false));
                 break;
 
@@ -242,6 +245,7 @@ public class PageManager {
                 mainActivity.hideSelectBar(true);
                 mainActivity.hideBottomNav(true);
                 mainActivity.hideSideNav(true);
+                mainActivity.hideScrollTop(true);
                 moveFragment(LoginFragment.newInstance(true));
                 break;
 
