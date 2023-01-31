@@ -160,4 +160,5 @@
     <string name="very_unhealthy">Very Unhealthy</string>
     <string name="month">" "</string>
     <string name="day">" "</string>
+    <string name="app_name">KOKOFARM</string>
 </resources>

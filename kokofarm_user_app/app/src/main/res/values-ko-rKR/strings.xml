@@ -160,5 +160,6 @@
     <string name="very_unhealthy">매우 나쁨</string>
     <string name="month">월</string>
     <string name="day">일</string>
+    <string name="app_name">코코팜</string>
 
 </resources>

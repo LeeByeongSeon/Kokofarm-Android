@@ -11,6 +11,7 @@ import androidx.navigation.fragment.NavHostFragment;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentSender;
 import android.content.res.Configuration;
 import android.os.Build;
 import android.os.Bundle;
@@ -22,6 +23,12 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 
+import com.google.android.gms.tasks.Task;
+import com.google.android.play.core.appupdate.AppUpdateInfo;
+import com.google.android.play.core.appupdate.AppUpdateManager;
+import com.google.android.play.core.appupdate.AppUpdateManagerFactory;
+import com.google.android.play.core.install.model.AppUpdateType;
+import com.google.android.play.core.install.model.UpdateAvailability;
 import com.kokofarm.kokofarm_user_app.databinding.ActivityMainBinding;
 import com.kokofarm.kokofarm_user_app.kkf_utils.SimpleTimer;
 import com.kokofarm.kokofarm_user_app.manager.ConfigManager;
@@ -75,6 +82,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
+
+        check_update();
+
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
@@ -162,6 +172,8 @@ public class MainActivity extends AppCompatActivity {
 //        Log.e("onResume", "onResume");
 
         super.onResume();
+
+        check_update();
     }
 
     @Override
@@ -400,12 +412,15 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    // 스크롤 top 버튼과 app bar layout hide show
     public void hideScrollTop(boolean hide){
         if(hide){
-            binding.mainFab.scrollTopBtn.setVisibility(View.GONE);
+            binding.mainFab.scrollTopBtn.hide();
+            binding.mainAppbar.setVisibility(View.GONE);
         }
         else{
-            binding.mainFab.scrollTopBtn.setVisibility(View.VISIBLE);
+            binding.mainFab.scrollTopBtn.show();
+            binding.mainAppbar.setVisibility(View.VISIBLE);
         }
     }
 
@@ -462,5 +477,38 @@ public class MainActivity extends AppCompatActivity {
 //        }
 //        return super.onSupportNavigateUp();
 //    }
+
+    private AppUpdateManager appUpdateManager;
+    public void check_update(){
+        if(appUpdateManager  == null){
+            appUpdateManager  = AppUpdateManagerFactory.create(this);
+        }
+
+        int request_code = 10;
+
+        Task<AppUpdateInfo> appUpdateInfoTask = appUpdateManager .getAppUpdateInfo();
+
+        appUpdateInfoTask.addOnSuccessListener(appUpdateInfo -> {
+            Log.e("update_test", "updateAvailability => " + appUpdateInfo.updateAvailability() + " type : " + appUpdateInfo.isUpdateTypeAllowed(AppUpdateType.IMMEDIATE));
+            if (appUpdateInfo.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE
+                    && appUpdateInfo.isUpdateTypeAllowed(AppUpdateType.IMMEDIATE)) {
+
+                Log.e("check_update", "UPDATE_AVAILABLE");
+                try {
+                    appUpdateManager.startUpdateFlowForResult(
+                            appUpdateInfo,
+                            AppUpdateType.IMMEDIATE,
+                            this,
+                            request_code
+                    );
+                } catch (IntentSender.SendIntentException e) {
+                    e.printStackTrace();
+                }
+            }
+            else{
+                Log.e("check_update", "UPDATE_NOT_AVAILABLE");
+            }
+        });
+    }
 
 }
