@@ -5,6 +5,7 @@ import android.util.Log;
 
 import androidx.annotation.RequiresApi;
 
+import com.kokofarm.kokofarm_user_app.R;
 import com.kokofarm.kokofarm_user_app.kkf_utils.BackTasker;
 import com.kokofarm.kokofarm_user_app.kkf_utils.DateUtil;
 
@@ -461,11 +462,11 @@ public class DataCacheManager {
     }
 
     public String getDustStatus(int val){
-        String ret = "좋음";
+        String ret = PageManager.getInstance().getRString(R.string.good);
 
-        if(val >= 16 && val < 36) ret = "보통";
-        else if(val >= 36 && val < 76) ret = "나쁨";
-        else if(val >= 76) ret = "매우나쁨";
+        if(val >= 16 && val < 36) ret = PageManager.getInstance().getRString(R.string.moderate);
+        else if(val >= 36 && val < 76) ret = PageManager.getInstance().getRString(R.string.unhealthy);
+        else if(val >= 76) ret = PageManager.getInstance().getRString(R.string.very_unhealthy);
         else if(val < 0) ret = "-";
 
         return ret;
@@ -478,28 +479,28 @@ public class DataCacheManager {
         switch(val){
             case 0:
             case 360:
-                ret = "북";
+                ret = PageManager.getInstance().getRString(R.string.north);
                 break;
             case 45:
-                ret = "북동";
+                ret = PageManager.getInstance().getRString(R.string.northeast);
                 break;
             case 90:
-                ret = "동";
+                ret = PageManager.getInstance().getRString(R.string.east);
                 break;
             case 135:
-                ret = "남동";
+                ret = PageManager.getInstance().getRString(R.string.southeast);
                 break;
             case 180:
-                ret = "남";
+                ret = PageManager.getInstance().getRString(R.string.south);
                 break;
             case 225:
-                ret = "남서";
+                ret = PageManager.getInstance().getRString(R.string.southwest);
                 break;
             case 270:
-                ret = "서";
+                ret = PageManager.getInstance().getRString(R.string.west);
                 break;
             case 315:
-                ret = "북서";
+                ret = PageManager.getInstance().getRString(R.string.northwest);
                 break;
             default :
                 ret ="-";
