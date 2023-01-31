@@ -131,6 +131,7 @@ public class FeedChartFragment extends Fragment {
             maker.makeTimeLineChart(todayChartJson,
                     new HashMap<String, String>() {{
                         put("feed_feed", PageManager.getInstance().getRString(R.string.feed));
+//                        put("feed_feed", "급이량");
                     }});
             maker.setMarker(context, R.layout.marker_text_view);
             chart.invalidate();
@@ -146,6 +147,7 @@ public class FeedChartFragment extends Fragment {
             maker.makeTimeLineChart(dailyChartJson,
                     new HashMap<String, String>() {{
                         put("feed_feed", PageManager.getInstance().getRString(R.string.feed));
+//                        put("feed_feed", "급이량");
                     }});
             maker.setMarker(context, R.layout.marker_text_view);
             chart.invalidate();
@@ -161,6 +163,7 @@ public class FeedChartFragment extends Fragment {
             maker.makeTimeLineChart(todayChartJson,
                     new HashMap<String, String>() {{
                         put("feed_water", PageManager.getInstance().getRString(R.string.water));
+//                        put("feed_water", "급수량");
                     }});
             maker.setMarker(context, R.layout.marker_text_view);
             chart.invalidate();
@@ -176,6 +179,7 @@ public class FeedChartFragment extends Fragment {
             maker.makeTimeLineChart(dailyChartJson,
                     new HashMap<String, String>() {{
                         put("feed_water", PageManager.getInstance().getRString(R.string.water));
+//                        put("feed_water", "급수량");
                     }});
             maker.setMarker(context, R.layout.marker_text_view);
             chart.invalidate();

@@ -150,8 +150,6 @@
     <string name="west">서</string>
     <string name="south">남</string>
     <string name="north">북</string>
-    <string name="month">월</string>
-    <string name="day">일</string>
     <string name="northeast">북동</string>
     <string name="southeast">남동</string>
     <string name="southwest">남서</string>
@@ -160,7 +158,7 @@
     <string name="moderate">보통</string>
     <string name="unhealthy">나쁨</string>
     <string name="very_unhealthy">매우 나쁨</string>
-    <string name="moderate">보통</string>
-    <string name="unhealthy">나쁨</string>
+    <string name="month">월</string>
+    <string name="day">일</string>
 
 </resources>

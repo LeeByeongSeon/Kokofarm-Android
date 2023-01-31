@@ -58,7 +58,7 @@
 
     <string name="weight_txt">Weight</string>
     <string name="temp_txt">"Temp "</string>
-    <string name="humi_txt">"Humid "</string>
+    <string name="humi_txt">Humidity</string>
     <string name="co2_txt">CO₂</string>
     <string name="nh3_txt">NH₃</string>
     <string name="h2s_txt">H₂S</string>
@@ -70,7 +70,7 @@
     <string name="wind_direction_txt">Wind Direction</string>
 
     <string name="avg_temp_txt">Avg Temp</string>
-    <string name="avg_humi_txt">Avg Humid</string>
+    <string name="avg_humi_txt">Avg Humidity</string>
     <string name="avg_co2_txt">Avg CO₂</string>
     <string name="avg_nh3_txt">Avg NH₃</string>
 
@@ -99,7 +99,7 @@
     <string name="fcr_weight">Avg Weight based on FCR</string>
     <string name="weight_unit">Weight</string>
     <string name="temp_unit">Temp (°C)</string>
-    <string name="humi_unit">Humid (%)</string>
+    <string name="humi_unit">Humidity (%)</string>
     <string name="co2_unit">CO₂ (ppm)</string>
     <string name="nh3_unit">NH₃ (ppm)</string>
     <string name="h2s_unit">H₂S (ppm)</string>
@@ -160,6 +160,4 @@
     <string name="very_unhealthy">Very Unhealthy</string>
     <string name="month">" "</string>
     <string name="day">" "</string>
-    <string name="moderate">Moderate</string>
-    <string name="unhealthy">Unhealthy</string>
 </resources>
